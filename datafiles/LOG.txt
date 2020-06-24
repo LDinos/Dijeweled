@@ -1,0 +1,331 @@
+=1.8.1=
+Changes:
+- Slightly improved keyboard/gamepad controls
+- Fixed surface error crash
+- Removed mouse functions for the second player in local multiplayer
+
+=1.8=
+Changes:
+- **Added local multiplayer** (you can play with two players in the same computer now!)
+- Added bots in local multiplayer
+You can choose player 2's controls in the lobby. When chosen, that controller will be unavailable for player 1. Both can use mouse. Hybrid movement is disabled in local multiplayer
+- Added more 2D backgrounds made by Muddy Water
+- Added 2 voicelines by io identifying the winner at the end of a multiplayer match
+- Updated credits
+
+=1.7.1=
+Changes:
+- Hotfix for coal quests
+- Removed Yalek's zen music by request
+
+=1.7=
+Changes:
+- Doom lock appearance is slightly better (gem is not invisible for half a second now)
+- Fixed "matchless" typo
+- Fixed a very rare replay bug when the level completes after a coal geode (you could press "replay" while the gems were moving away and make the game crash)
+- You are now allowed to freely resize your game window. This will show up as "Custom" in the screen size option
+- Removed debug character showing when typing an IP
+- You can quickly insert custom quests now by the quest menu (only 1 insertion at a time for now). Also, from now on, your name will be credited when creating a custom quest
+- Some internal changes on how quests are read for faster compiling. If you find any problems with the quests, please report them!
+- Custom quests are now stored in a folder called CustomQuests, so if you don't see your custom quests, go to %appdata%/local/bej_temp_remaster and move all custom quests (named '0.ini', '1.ini' etc) to the CustomQuests folder (if there isn't a folder, make one yourself with the exact name)
+- Replays, just like custom quests also have their own folder from now on called Replays. Same deal as above
+- Gem swap animation is now ease-in-out instead of just ease-in. Animation time is the same.
+- Updated Donators list in credits
+- Timer on quests appears only in the bottom bar now
+- Twist spinner is slightly slower (it takes 13 frames to complete the spin instead of 10)
+- Blazing speed explosions will push the gems up now (previously only flame explosions would do that)
+
+=1.6.1=
+Changes:
+- Fixed executable icon transparency
+- Fixed Zenify bar visual glitch
+- Fixed quest objective nospecialgems gameover bug
+- Fixed quest menu scroll up
+- Fixed quest editor backspace not resulting in deleting text and added a Main menu button in there
+- Added a custom quest option in nospecials and nolightning to end the game when it happens. Otherwise it just resets all the stats back to 0.
+
+=1.6=
+Changes:
+- Probably a HUGE performance update. If you had any lags, try playing now and see if it got fixed
+- Fixed minor error with the glow texture on lock appearances
+- Made some small infoboxes in Online Lobby when hovering on the options
+- Somehow I had broken bomb/doom/lock spawns but I fixed them now (not sure if that was broken in 1.5 anyway)
+
+=1.5=
+Changes:
+- Fixed swap crash when a near flame gem explodes and triggers the swapped flame gem some frames later
+- Fixed Buyo Buyo gem image scale
+- Fixed (I think) random hypercube creation not being able to move after spawning on a lock
+- Fixed avalanche gem spawn freeze when hypercubes are lined up (it thinks it's a match)
+- Avalanche gem spawn now takes in consideration if you have a hypercube
+- Buyo Buyo now has 5 gem skins instead of 7
+- Fixed Style being bigger than the Points
+- Lightnings, novas and hypercubes now are more optimized in online. Now disconnecting due to bad connection is at minimal levels!
+- Hypercube explosions now give Style points
+- Added option in the settings.ini to remove Zen Sleeping and hiding the items (run zen mode at least once to make it appear in the file). Find it in appdata/local/bej_temp_remaster
+- Fixed online ready button making the game start many times if spammed
+- Added a 5 minute music version for Time Attack (basically extended the music, might improve it later on tho cuz there are some transitions that i dont like)
+
+=1.4.6=
+Changes:
+- Added a Credits button in the main Menu
+- Fixed (I think) a minor irritation when zen mode is hiding the game items, making the next swap unpredictable when everything re-appears
+- Fixed a crash on bej2 type of quests where a 4-gem match explosion and creation at the same time would produce a hidden gem inside of it
+- Updated credits messages (changed every instance of the phrase "Challenge Mode" to "Quests")
+- Minor optimizations to texture pages
+- Playing online is now dissallowed if you have debug mode enabled
+- When typing an IP address, the IP text will be hidden for safety reasons (for example, when streaming)
+
+=1.4.5=
+Changes:
+- When zen items are hidden for being idle for a long time, now they reappear when keyboard controls are being used (fixed invisible matching)
+- Fixed the pixel interpolation being turned off at random occasions, making stuff pixelated and ugly
+
+=1.4.4=
+Changes:
+- Lots of texture page optimizations (reduced from 21 to 10). This means much less memory usage and 20MB less of disk space, but might make some minor effects slightly less appealing or a little more cpu demanding, since they are using code functions instead of sprites for the effect to be done
+- Removed leftover debug numbers in username creation
+- Made small optimizations in Online gems (removed unused code from the enemy's gems)
+
+=1.4.3=
+Changes:
+- Added an update check in the main menu (Requires internet connection)
+- Fixed a crash with the Undo button in quests
+- Hypecube animation now gets slow-mo'ed too when you Replay a combo
+- Added an option in settings.ini to disable discord rich presence in case it can't be executed for some reason. Specifically, if you want to disable rich presence, go to C:\Users\your_username\AppData\Local\bej_temp_remaster, open settings.ini with notepad, go to the [Settings] section, and set "discord_allowed" from 1 to 0.
+
+=1.4.2=
+Changes:
+- Fixed an error with the hypercube softlock algorithm (it would produce an error if there were gaps in the board if u spammed swapping in zen mode and having no moves)
+- Fixed gameover error crash (never met that error myself, but i made it at least not crash)
+- Potentially fixed Bomb Wheel Spinner conditions weirdness (you would win with red skull) (need more testing)
+- Potentially fixed Hybrid multiple selection and diagonal swap bug (need more testing)
+- Returned "Excellent"+ compliments for any 6+ gem matches (they had been accidentally nerfed after changing the gem point base values, and a 7-gem match would just return "good"). This means that every 6+ gem match will produce a replay button
+- Zenify value is finally being autosaved now. This should not break the previous save you have
+- Bomb spawning algorithm is MUCH better now. Instead of getting a random chance that a bomb will spawn after the TurnsToSpawn condition is 0 (I chose randomness so that the bomb will not spawn always on the first bottom gem spawn), I made that chance depend on how many gaps the board has, so the bomb will spawn NO MATTER WHAT and it doesn't always have to be the very first spawned gem (previously it might have not even spawned). This might make Arcade slightly harder near the end of the levels, because now bombs will TRULY spawn every 1 move
+
+=1.4.1=
+Changes:
+- Made the locking animation a little smoother
+- Added Hybrid movement (Keyboard WASD works while playing with mouse)
+
+=1.4=
+Changes:
+- Randomized Backdrops shaders in Online so you won't only have that green backdrop
+- Added 3 more visualizers in Arcade! By the way, if you have debug mode on, press T while in the menu to enter the visualizer room. In there, pressing Z will change the visualizer
+- Made chat typing more responsive and better
+- You can now change gamepad binds
+- You can now stop the bomb wheel spinner using gamepad
+- Added new Online game rule option "Allow Ultranovas". With this unchecked, you won't have Septas and Octas allowed
+- Re-added a README.txt file in the zip, be sure to read it
+
+=1.3=
+Changes:
+- Added music in Possible Moves last 2 quests
+- Some controller and keyboard support is here. Specifically, you can now play any gamemode with a gamepad/keyboard, however clickable buttons and menu are not working without mouse. More features will come later on
+- Now pressing Undo/Reset will also undo/reset more elements (multiplier, challenge bonus etc)
+- Fixed a hypercube bug in Avalanche Online
+- Fixed Crash when pressing Reset in a bej2 puzzle type mode when coals were present
+- Fixed board text in custom quest editor appearing even when gem spawn is dissallowed
+- Updated rich presence for Countdown Mode
+- Challenge bonus in custom quests will now produce only the skins that are available for that quest
+
+=1.2=
+Changes:
+- Added new Secret Gamemode called Countdown (unlocked by default)
+- Made the indicator red when you are unable to move the gem because of illegal swap punishment (when multiswap is enabled)
+- Added Stats screen for new gamemode Countdown and Buyo Buyo
+
+=1.1=
+Changes:
+- Changed Base Points values for Classic Mode, making it harder to complete each level
+- Made some stuff to the bomb spinner to make it look at least a little better + removed debug numbers
+- Version number and debug mode appears everywhere now (menu, gameplay, etc...)
+- Indicator will be green if you are able to make matchless moves, and white when you are not.
+- Sleep margin option can get negative values now, in case they help with the lag
+- Added hypercube animation in Online and fixed instance where rival's gems wouldn't be stationary on hypercube explosion
+- Zen initial background is randomized
+- Changed text in quest editor for Gem Spawn Allowed
+- Fixed (I think) locking sprite animation not following the gem when it's being swapped 
+- Removed Keyboard controls as they were REALLY broken
+
+=1.0=
+Changes:
+- Added 2 new simple music tracks for Quests that include timers
+- Made it possible to bring the pause menu when playing Online
+- Lobby chat now differentiates user messages from log messages
+- As a host, if the other player disconnects while in Lobby, you no longer get kicked to main menu
+- Added Ice break particles
+- Added one new background shader
+- Added a README in the zip
+- Changed Bejeweled 3 Menu background with a zen backdrop
+
+=beta v7b=
+Changes:
+- Online Multiplayer is now available with Time attack only for the moment! (Please be patient for Avalanche and Lightning later on)
+- Online Twist mode is also available!
+- Nova+ creation/explosion points have been reduced in order to make gameplay slower on arcade mode. This could mean broken replays in blitz mode
+- Blitz Replay menu is now completely ready and can fit as many replays as you want!
+- Extended the Zen music using one more track from Yalek
+
+b:
+- Removed debug numbers in online
+- Made style points correct now
+- Disconnect feature when versions are different (will crash before v7b)
+
+=beta v6=
+Changes:
+- ONLINE IS NOT YET MADE FOR THIS VERSION
+- Reworked credits sprite (no more compile error about credits being a huge sprite)
+- Reworked swapping, making the collision checkin faster or even not needed at all
+- Removed Survivor Mode's replay button, causing the Moves counter going up each time you pressed it
+- Fixed countdown number visual glitch not moving when swap is happening
+- Fixed zenify visual glitch when swapping
+- Zenify no more makes bad gems count down
+
+=beta v5=
+Changes:
+- Renamed Challenge Mode to Quest Mode
+- Added Discord Rich Presence (= Details are given to Discord on what gamemode you are playing)
+- Some bug fixes that I can't really remember
+
+Note: In the quest menu, you might still have the default description "Create custom challenge" instead of "Create custom quest". This is due to previous writings in the files and I can't fix that
+
+=beta v4=
+Changes:
+- Made score text appear on top of gems (can be turned off in options if it's too distracting for you)
+- Made changes to the points system, especially septanovas and octanovas that give more points now (3000 and 5000 respectively). This might mean that some blitz replays will show wrong stats now.
+- Fixed compact mode's bad points. A 4-gem match would previously give the same points as a 3-gem match
+- Made level completion better
+- Made Buyo Buyo much smoother in its movement. Also added levels properly.
+- Buyo Buyo is now available in "Secret" gamemodes (and is unlocked)
+- Stats can be seen from menu now. If stats seem broken (eg: title says "Untitled") I suggest you deleting the stats_*.ini files from appdata/local/bej_temp_remaster
+
+=beta v3b=
+Changes:
+- Fixed num_fruits scoreboard not showing up on custom challenges
+- Fixed some hypercube bugs
+- Fixed illegal crash if locks didn't have a place to spawn
+
+=beta v3=
+Changes:
+- Made fruit score text when triggered
+- Fixed animation glitch on gems when zenify ends
+- A hypercube triggering a fruit will make it explode
+- Blazing Speed board texture fades off just before it finishes
+- Fixed a lightning hitting hyper error crash
+- Slowed down background animation speed in zen
+- Added screensaving if idle on zen
+- Fixed a glitch with objective "Hypercubes destroyed" not showing a scoreboard
+- Nerfed Survivor gamemode (BombMax = 6 -> BombMax = 3)
+- Started using a higher resolution lightning glow
+- Started using Cryo's awesome skull design
+- Fixed ice settings getting confused with lock ones, making them impossible to have a maximum limit of them.
+- Disabling enhanced graphics will now turn 3D backdrops into 2D zen ones.
+- Fixed destroyed_fruits stat not working
+- Added :b: uyo :b: uyo which you can play on April 1st (It might be buggy though, because I spent only one day for this). Keep in mind that you will lose if a gem touches out of the Board EVEN IF IT BRINGS A MATCH!
+
+=beta v2c=
+Changes:
+- Made some depth fixes in twist spinner
+- Made some nice optimizations. If you get errors, please report them
+- Fruit now shakes gems while being triggered
+- Fixed twist stats
+- Fixed secret gamemode's board state (now you will be getting your powered gems back)
+- Updated credits
+- Fixed out of sync danger music. If you get errors, or weirdness with music, please report it
+
+b:
+- Fixed hypercube bug
+
+c:
+- Dual Hype match now produces a board with the correct amount of skins
+- Remove debug board that I accidentally left on (always get sleep when u can to avoid mistakes like these...)
+
+=beta v1=
+Changes
+- Implemented custom challenges. Please test as many combinations as you can and be aware that it's possible to softlock your challenges.
+- Implemented STATS screen
+- 4 new secret gamemodes!
+- Some new zen backgrounds
+- Zen music addition from Yalek
+- Made zen levels easier to complete
+- Added a credits scene for when you complete the challenge (soon: static credits in help menu). If you have already completed challenge mode, just play one challenge once and you will get to the credits.
+
+I also added a README text which you should read, ESPECIALLY if it's the first time you download this game
+I hope you have fun and find as many bugs as possible because to my surprise, I didn't find as many >.> Maybe they are too hidden...
+
+=alpha 0.4=
+Changes:
+- Probably fixed blitz replays once and for all (need testing!)
+- Added more info in replay menu + delete button
+- Made coals give more powerful bonus
+- Multiswap is now enabled in Zen mode
+- Other cool additions to make this look more like a game
+
+=alpha 0.3b=
+Changes:
+- Fixed fruit not triggering powered gems
+- Pause menu will get you to the challenges room instead of main menu when "main menu" is clicked
+- Fixed some challenge info. Keep hunting for wrong info!
+- Window now says product version
+
+=alpha 0.3=
+Changes:
+- Fixed some info again
+- Doom/bomb loses in challenge returns you on challenge menu
+- Lag Timer on top left corner (1.00 = normal, anything below = you are playing in SLOW-MO!!)
+- Fixed powered skull bug (I think)
+- Undo autosave wont be enabled for illegal moves now in board cleaner challenges
+- Hypecube match will decrease 'Moves Remaining' value now in challenges
+- Fixed bottom skulls producing error
+- Added music for 1min blitz
+- Fixed Fullscreen bug (I think)
+
+=alpha 0.2=
+Changes:
+- Fixed some info
+- Changed zenify objectives
+- Fixed magnification displacement
+- Made gem edges smoother
+- Made more infoboxes
+- Fixed Custom challenges making game unclickable
+- Added secret debug option in the files
+
+=alpha 0.1=
+What's new: Challenge mode (no custom ones yet), options in main menu, bug fixes, two new types of gems, and one music piece. THE DESIGN IS STILL EARLY SO SOME THINGS MIGHT LOOK HORRIBLE, AND SOME CHALLENGES MIGHT NOT HAVE MUSIC AT ALL
+
+=test_release04=
+What's new: Zen mode, performance boost, new autosave algorithm system
+
+=test_releast03=
+- Made fall speed 0 when flame gems explode (if they are falling)
+- Changed scoreboard texture a little
+- Changed collision creators conditions when gems are destroyed
+- Added illegal move punishment when multiswap is enabled
+- Changed score system a little bit
+- Added hypercubes
+- Added Frozen gems, ice locks and invisible gems
+- Multiplier is now exactly like in Twist
+- Gems are dragged vertically aswell, in the animation of 4+ gem creation
+- Added game over section
+
+=test_release02=
+TLDR of the fixes: Added Replay effect, fixed some bugs and added a sleep margin option in pause menu! Also probably made VSync option available. Unless you find some game breaking bugs, this will be the last public test release for a while. The next one will be the dijeweled single remake full release :)
+
+=test_release01=
+- Made some checking stuff MUCH lighter in code (=more fps)
+- Made gem movement to bottom of the board smoother
+- Upgraded autosave variables (fruits exploding now included)
+- Removed danger tune for now
+- Changed bomb spinner texture
+
+=test_release00=
+- Copy pasted multi
+- Added Arcade Mode
+- Added Multiplier
+- Added Arcade mechanics
+- Added Fruits, locks, bombs, dooms
+- Added Replay
+
+

@@ -1,0 +1,13 @@
+depth = -10
+image_xscale = 0
+image_yscale = 0
+alarm[2] = 1
+//myscore = choose(50,60,70,80,90,100) //first choose the score
+mysize = choose(2,3,4)
+color1 = choose(c_green,c_yellow,c_lime,c_blue,c_aqua)
+color2 = choose(c_green,c_yellow,c_lime,c_blue,c_aqua)
+alarm[0] = 20
+alarm[1] = 120
+alarm[3] = 2
+alarm[4] = 30
+ready = false

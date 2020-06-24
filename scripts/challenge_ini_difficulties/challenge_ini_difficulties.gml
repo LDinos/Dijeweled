@@ -1,0 +1,220 @@
+var X = "untick"
+var Y = "tick"
+var i = 0
+
+//0
+challenge_ini_write_info(i,0,X,X,X,X,X,X,X,X,X,X,X,1,0,Y)
+challenge_ini_write_info(i,1,X,X,X,X,X,X,X,X,X,Y,X,2,1,Y)
+challenge_ini_write_info(i,2,X,X,X,X,X,X,X,X,X,Y,X,2,1,Y)
+challenge_ini_write_info(i,3,X,X,X,X,X,X,X,X,X,X,X,3,1,Y)
+challenge_ini_write_info(i,4,X,X,X,X,X,X,X,X,X,X,X,5,1,Y)
+challenge_ini_write_info(i,5,X,X,X,X,X,X,X,X,X,X,X,6,1,Y)
+	i++
+//1
+challenge_ini_write_info(i,0,Y,X,X,X,X,X,X,Y,X,X,"3:00",1,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,X,X,Y,X,X,"5:00",2,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,X,X,Y,X,X,"5:00",3,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,X,X,Y,X,X,"3:00",3,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,Y,X,X,"1:00",6,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,X,X,Y,X,X,"3:00",6,1,X)
+	i++
+//2
+challenge_ini_write_info(i,0,Y,X,X,X,X,X,X,X,X,X,X,1,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,X,X,X,X,X,X,1,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,X,X,X,X,X,X,1,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,X,X,X,X,X,X,2,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,X,X,X,"1:00",3,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,X,X,X,X,X,"1:00",3,1,X)
+	i++
+//3
+challenge_ini_write_info(i,0,Y,X,X,X,X,X,X,X,X,X,X,1,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,X,X,X,X,X,X,2,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,X,X,X,X,X,X,3,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,X,X,X,X,X,X,3,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,X,X,X,"1:00",5,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,X,X,X,X,X,X,5,1,X)
+	i++
+//4
+challenge_ini_write_info(i,0,Y,X,X,X,X,X,X,X,X,X,X,1,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,X,X,X,X,X,X,1,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,X,X,X,X,X,X,3,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,X,X,X,X,X,X,3,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,X,X,X,X,3,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,X,X,X,X,X,X,3,1,X)
+	i++
+//5
+challenge_ini_write_info(i,0,Y,X,X,X,X,X,X,X,X,X,X,1,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,X,X,X,X,X,X,2,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,X,X,X,X,X,X,3,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,X,X,X,X,X,X,4,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,X,X,X,X,4,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,X,X,X,X,X,X,5,1,X)
+	i++
+//6
+challenge_ini_write_info(i,0,Y,X,X,X,X,X,X,X,X,X,"5:00",1,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,X,X,X,X,X,"3:00",3,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,X,X,X,X,X,"3:00",3,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,X,X,X,X,X,"3:00",3,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,X,X,X,"1:00",4,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,X,X,X,X,X,"1:00",6,1,X)
+	i++
+//7
+challenge_ini_write_info(i,0,Y,X,X,X,X,X,X,X,X,X,"3:00",1,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,X,X,X,X,X,"3:00",2,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,X,X,X,X,X,"3:00",3,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,X,X,X,X,X,"3:00",3,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,X,X,X,"1:00",6,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,X,X,X,X,X,"1:00",7,1,X)
+	i++
+//8
+challenge_ini_write_info(i,0,Y,X,X,X,Y,Y,X,Y,X,X,X,2,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,Y,Y,X,Y,X,X,X,3,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,Y,Y,X,Y,X,X,X,4,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,Y,Y,X,Y,X,X,X,5,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,Y,Y,X,Y,X,X,X,6,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,Y,Y,X,Y,X,X,X,7,1,X)
+	i++
+//9
+challenge_ini_write_info(i,0,Y,X,X,Y,X,X,X,X,X,X,X,3,0,X)
+challenge_ini_write_info(i,1,Y,X,X,Y,X,X,X,X,X,X,X,4,1,X)
+challenge_ini_write_info(i,2,Y,X,X,Y,X,X,X,X,X,X,X,5,1,X)
+challenge_ini_write_info(i,3,Y,X,X,Y,X,X,X,X,X,X,"8:00",6,1,X)
+challenge_ini_write_info(i,4,Y,X,X,Y,X,X,X,X,X,X,"5:00",7,1,X)
+challenge_ini_write_info(i,5,Y,X,X,Y,X,X,X,X,X,X,"3:00",8,1,X)
+	i++
+//10
+challenge_ini_write_info(i,0,X,X,X,X,X,X,X,X,Y,X,X,2,0,Y)
+challenge_ini_write_info(i,1,X,X,X,X,X,X,X,X,Y,X,X,3,1,Y)
+challenge_ini_write_info(i,2,X,X,X,X,X,X,X,X,Y,X,X,4,1,Y)
+challenge_ini_write_info(i,3,X,X,X,X,X,X,X,X,Y,X,"3:00",5,1,Y)
+challenge_ini_write_info(i,4,X,X,X,X,X,X,X,X,Y,X,X,6,1,Y)
+challenge_ini_write_info(i,5,X,X,X,X,X,X,X,X,Y,X,X,7,1,Y)
+	i++
+//11
+challenge_ini_write_info(i,0,Y,X,X,X,X,X,X,X,X,Y,X,1,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,X,X,X,X,Y,"3:00",3,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,X,X,X,X,Y,"5:00",4,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,X,X,X,X,Y,"3:00",4,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,X,X,Y,"3:00",5,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,X,X,X,X,Y,"3:00",6,1,X)
+	i++
+//12
+challenge_ini_write_info(i,0,Y,X,X,X,Y,X,X,X,X,X,X,1,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,Y,X,X,X,X,X,"3:00",2,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,Y,X,X,Y,X,X,X,3,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,Y,Y,X,Y,X,X,X,4,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,Y,X,X,Y,X,X,"3:00",5,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,Y,Y,X,Y,X,X,X,8,1,X)
+	i++
+//13
+challenge_ini_write_info(i,0,Y,X,X,X,X,X,X,X,X,X,X,1,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,X,X,X,X,X,"5:00",2,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,X,X,X,X,X,"5:00",3,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,X,X,X,X,X,"3:00",5,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,X,X,X,"3:00",6,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,X,X,X,X,X,"1:00",7,1,X)
+	i++
+//14
+challenge_ini_write_info(i,0,Y,X,X,X,X,X,X,X,X,X,X,1,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,X,X,X,X,X,X,2,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,X,X,X,X,X,X,2,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,X,X,X,X,X,X,3,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,X,X,X,X,5,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,X,X,X,X,X,X,6,1,X)
+	i++
+//15
+challenge_ini_write_info(i,0,Y,X,X,X,X,X,X,X,X,X,X,1,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,X,X,X,X,X,X,1,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,X,X,X,X,X,X,2,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,X,X,X,X,X,X,2,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,X,X,X,X,3,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,X,X,X,X,X,X,5,1,X)
+	i++
+//16
+challenge_ini_write_info(i,0,Y,X,X,Y,X,X,X,X,X,X,"3:00",3,0,X)
+challenge_ini_write_info(i,1,Y,X,X,Y,X,X,X,X,X,X,"3:00",3,1,X)
+challenge_ini_write_info(i,2,Y,X,X,Y,X,Y,X,X,X,X,"3:00",4,1,X)
+challenge_ini_write_info(i,3,Y,X,X,Y,X,Y,X,X,X,X,"3:00",4,1,X)
+challenge_ini_write_info(i,4,Y,X,X,Y,X,Y,X,X,X,X,"3:00",5,1,X)
+challenge_ini_write_info(i,5,Y,X,X,Y,X,Y,X,X,X,X,"5:00",8,1,X)
+	i++
+//17
+challenge_ini_write_info(i,0,Y,X,Y,Y,X,X,X,X,X,Y,X,1,0,X)
+challenge_ini_write_info(i,1,Y,X,Y,Y,X,X,X,X,X,Y,"1:00",3,1,X)
+challenge_ini_write_info(i,2,Y,X,Y,Y,X,X,X,X,X,Y,"3:00",3,1,X)
+challenge_ini_write_info(i,3,Y,X,Y,Y,X,X,X,X,X,Y,"5:00",3,1,X)
+challenge_ini_write_info(i,4,Y,X,Y,Y,X,X,X,X,X,Y,X,6,1,X)
+challenge_ini_write_info(i,5,Y,X,Y,Y,X,X,X,X,X,Y,"5:00",8,1,X)
+	i++
+//18
+challenge_ini_write_info(i,0,Y,X,X,X,X,Y,X,X,X,X,X,2,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,Y,X,X,X,X,X,3,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,Y,X,X,X,X,X,4,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,Y,X,X,X,X,"5:00",4,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,Y,X,X,X,X,X,5,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,Y,X,X,X,X,X,6,1,X)
+	i++
+//19
+challenge_ini_write_info(i,0,Y,X,X,X,X,Y,X,X,X,X,X,1,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,Y,X,X,X,X,X,3,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,Y,X,X,X,X,X,5,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,Y,X,X,X,X,X,5,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,Y,X,X,X,X,X,6,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,Y,X,X,X,X,X,7,1,X)
+	i++
+//20
+challenge_ini_write_info(i,0,Y,X,X,X,X,X,Y,X,X,X,X,2,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,X,Y,X,X,X,X,5,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,X,Y,X,X,X,X,6,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,X,Y,X,X,X,X,8,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,X,Y,X,X,X,X,9,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,X,Y,X,X,X,"3:00",10,1,X)
+	i++
+//21
+challenge_ini_write_info(i,0,Y,X,X,X,X,X,X,X,X,X,X,2,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,X,X,X,X,X,X,3,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,X,X,X,X,X,X,6,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,X,X,X,X,X,X,6,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,X,X,X,X,6,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,X,X,X,X,X,X,6,1,X)
+	i++
+//22
+challenge_ini_write_info(i,0,X,X,X,X,X,X,X,X,X,X,X,2,0,Y)
+challenge_ini_write_info(i,1,X,X,X,X,X,X,X,X,X,X,X,3,1,Y)
+challenge_ini_write_info(i,2,X,X,X,X,X,X,X,X,X,X,X,4,1,Y)
+challenge_ini_write_info(i,3,X,X,X,X,X,X,X,X,X,X,X,5,1,Y)
+challenge_ini_write_info(i,4,X,X,X,X,X,X,X,X,X,X,X,7,1,Y)
+challenge_ini_write_info(i,5,X,X,X,X,X,X,X,X,X,X,X,7,1,Y)
+	i++
+//23
+challenge_ini_write_info(i,0,X,X,X,X,X,X,X,X,X,X,X,2,0,Y)
+challenge_ini_write_info(i,1,X,X,X,X,X,X,X,X,X,X,X,3,1,Y)
+challenge_ini_write_info(i,2,X,X,X,X,X,X,X,X,X,X,X,4,1,Y)
+challenge_ini_write_info(i,3,X,X,X,X,X,X,X,X,X,X,X,4,1,Y)
+challenge_ini_write_info(i,4,X,X,X,X,X,X,X,X,X,X,X,5,1,Y)
+challenge_ini_write_info(i,5,X,X,X,X,X,X,X,X,X,X,X,6,1,Y)
+	i++
+//24
+challenge_ini_write_info(i,0,Y,X,X,X,Y,Y,X,Y,X,X,X,10,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,X,X,X,X,X,X,"3:00",10,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,X,X,X,X,X,X,10,1,X)
+challenge_ini_write_info(i,3,Y,X,X,X,X,Y,X,Y,X,X,X,10,1,X)
+challenge_ini_write_info(i,4,X,X,X,X,X,X,Y,X,Y,X,X,10,1,X)
+challenge_ini_write_info(i,5,Y,X,X,X,X,X,Y,X,X,X,X,10,1,X)
+	i++
+//25
+challenge_ini_write_info(i,0,Y,X,X,X,Y,Y,X,X,X,X,X,10,0,X)
+challenge_ini_write_info(i,1,Y,X,X,X,Y,Y,X,X,X,X,X,10,1,X)
+challenge_ini_write_info(i,2,Y,X,X,X,X,Y,X,X,X,X,X,10,1,X)
+challenge_ini_write_info(i,3,Y,Y,Y,X,X,X,X,X,X,X,X,10,1,X)
+challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,X,X,X,X,10,1,X)
+challenge_ini_write_info(i,5,Y,Y,Y,Y,X,X,X,X,X,X,"10:00",10,1,X)
+	i++
+//26
+challenge_ini_write_info(i,0,X,X,X,X,X,X,X,X,X,X,X,1,0,X)
+challenge_ini_write_info(i,1,X,X,X,X,X,X,X,X,X,X,X,1,1,X)
+challenge_ini_write_info(i,2,X,X,X,X,X,X,X,X,X,X,X,1,1,X)
+challenge_ini_write_info(i,3,X,X,X,X,X,X,X,X,X,X,X,1,1,X)
+challenge_ini_write_info(i,4,X,X,X,X,X,X,X,X,X,X,X,1,1,X)
+challenge_ini_write_info(i,5,X,X,X,X,X,X,X,X,X,X,X,1,1,X)
+	i++

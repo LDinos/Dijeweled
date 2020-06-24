@@ -1,0 +1,8 @@
+//draw_self()
+draw_set_font(font0)
+draw_set_color(c_white)
+draw_set_halign(fa_center)
+draw_set_valign(fa_middle)
+draw_text_transformed(636,392,string_hash_to_newline(field_converted + blink),1,1,0)
+//draw_text(room_width/2,16,keyboard_lastchar)
+draw_text(room_width/2,room_height-24,"(Press RMB to Paste)")
