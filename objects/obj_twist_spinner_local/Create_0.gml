@@ -34,7 +34,8 @@ pos_i = 0;
 
 touchedBoard = false;
 touchedCCW   = false;
-
+xlim = -1
+ylim = -1
 buttonW = 255;
 buttonH = 127;
 buttonX = 128;

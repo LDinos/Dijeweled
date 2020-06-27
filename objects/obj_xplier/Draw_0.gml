@@ -11,7 +11,7 @@ surface_set_target(x_surf)
 		sprite_index = spr_xplier_flow_rainbow
 		draw_sprite_tiled(sprite_index,0,x+t,y+32)
 	}
-	else if filler != 0 draw_sprite_tiled(sprite_index,0,x+t,y+48)
+	else if filler != 0 draw_sprite_tiled(sprite_index,0,x+t,y+32)
 surface_reset_target()
 draw_surface(x_surf,x,y)
 //--\\

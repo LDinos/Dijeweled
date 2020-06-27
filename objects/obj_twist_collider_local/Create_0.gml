@@ -1,6 +1,6 @@
 /// @description Insert description here
-with(instance_position(x,y-32,Gem_local)) {dont_fall_yet = true;} //alarm[7] = 11}
-with(instance_position(x+64,y-32,Gem_local)) {dont_fall_yet = true;}//alarm[7] = 11}
+//with(instance_position(x,y-32,Gem_local)) {dont_fall_yet = true;} //alarm[7] = 11}
+//with(instance_position(x+64,y-32,Gem_local)) {dont_fall_yet = true;}//alarm[7] = 11}
 
 gem[0] = noone
 gem[1] = noone

@@ -5,15 +5,24 @@ if func <= 1
 	var inside = 1 - power((func-1),2)
 	for(var i = 0; i<4;i++)
 	{
-		gem[i].x = ease_out_sine(func,gemxxdef[i],gemxx[i]-gemxxdef[i],1)//round(lerp(0,SWAP_X_END,power(percent,2))) //- x
-		gem[i].y = ease_out_sine(func,gemyydef[i],gemyy[i]-gemyydef[i],1)//round(lerp(0,SWAP_Y_END,power(percent,2))) //- y
-		//gem[i].x = lerp(gemxxdef[i],gemxx[i],inside)
-		//gem[i].y = lerp(gemyydef[i],gemyy[i],inside)
+		gem[i].SWAP_X = lerp(0,gemxx[i] - gemxxdef[i],inside)
+		gem[i].SWAP_Y = lerp(0,gemyy[i] - gemyydef[i],inside)
 	}
 	func += 0.08
+	if func > 1 
+	{
+		for(var i = 0; i<4;i++)
+		{
+			gem[i].SWAP_X = 0
+			gem[i].SWAP_Y = 0
+			gem[i].x = gemxx[i]
+			gem[i].y = gemyy[i]
+		}
+	}
 }
 else
 {
+	
 	if (instance_number(obj_twist_collider) == 1) Gamerule_1.moving = false
 	//instance_destroy(col)
 	flag = false; //if we increase the multiplier

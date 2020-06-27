@@ -6,7 +6,7 @@ if clickable
 		clr = c_white
 		if mouse_check_button_pressed(mb_left)
 		{
-			url_open("https://bitbucket.org/LDinos/dijeweled-remastered/downloads/")
+			url_open(url)
 		}
 	}
 	else clr = c_yellow

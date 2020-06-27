@@ -2,11 +2,16 @@
 if ds_map_find_value(async_load, "id") == file
 {
     var status = ds_map_find_value(async_load, "status");
-	var full_status = ds_map_find_value(async_load,"http_status");
+	//var full_status = ds_map_find_value(async_load,"http_status");
 	str = status
     if status == 0
         {
-			var ver = ds_map_find_value(async_load, "result");
+			//var path = ds_map_find_value(async_load, "result");
+			var textfile = file_text_open_read("vercheck.txt")
+				var ver = file_text_read_string(textfile)
+				file_text_readln(textfile)
+				url = file_text_read_string(textfile)
+			file_text_close(textfile)
 			if (ver == global.version) instance_destroy()
 			else {str = "Update available: " + ver; clickable = true}
         }
