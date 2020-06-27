@@ -1,3 +1,23 @@
+=1.9.1=
+- Fixed floating score text not appearing when gems were cleared
+- Twist spinning is more stable now, thus fixing most errors
+- Fixed untiled multiplier flow sprite
+- Removed bomb wheel spinner pipes
+- Update check is a bit updated, now the download url is included in the remote file
+
+=1.9=
+- Bots can now play twist mode (It's kinda broken atm, you might get errors occassionally, you have been warned)
+- Fixed online lobby not being able to be READY, would crash
+- You can no longer press PASS when it's the bot's turn (you sneaky cheater)
+- Fixed surface error with multiplier (xplier)
+- Fixed objective going underneath multiplier in quest mode
+- Fixed wrong objective on quest 25-6
+- Disabled starfield shader due to performance issues
+- Made volume of flame gem creation more quiet
+
+=1.8.2=
+- Hypercube no more moves hotfix
+
 =1.8.1=
 Changes:
 - Slightly improved keyboard/gamepad controls

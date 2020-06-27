@@ -11,7 +11,7 @@
     "option_windows_description_info": "A Bejeweled(c) Fanmade Game",
     "option_windows_disable_sandbox": true,
     "option_windows_display_cursor": true,
-    "option_windows_display_name": "Dijeweled Remastered  (v1.9)",
+    "option_windows_display_name": "Dijeweled Remastered  (v1.9.1)",
     "option_windows_enable_steam": false,
     "option_windows_executable_name": "${project_name}",
     "option_windows_icon": "${options_dir}\\windows\\icons\\icon.ico",
@@ -34,7 +34,7 @@
         "build": 9,
         "major": 0,
         "minor": 1,
-        "revision": 0
+        "revision": 1
     },
     "option_windows_vsync": false
 }

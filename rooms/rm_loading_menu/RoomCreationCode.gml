@@ -1,4 +1,4 @@
-global.version = "1.9" //dont forget to upload vercheck and change windows version!
+global.version = "1.9.1" //dont forget to upload vercheck and change windows version!
 global.canbepressed = false
 global.vsync_checked_once = false
 global.mynet = noone
