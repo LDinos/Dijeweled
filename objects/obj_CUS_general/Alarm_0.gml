@@ -1,5 +1,5 @@
 /// @description Insert description here
-//var filename = program_directory +"/CustomQuests/"+string(global.challenge_index)+".ini"
+//var filename = working_directory +"/CustomQuests/"+string(global.challenge_index)+".ini"
 if file_exists(filename)
 {
 	ini_open(filename)

@@ -1,5 +1,5 @@
 ///Used in quest menu, load all the info we need aka descriptions, allowances etc
-var f = program_directory +"/CustomQuests/"+string(index)+".ini"
+var f = working_directory +"/CustomQuests/"+string(index)+".ini"
 if file_exists(f)
 {
 	ini_open(f)

@@ -21,9 +21,9 @@ if global.canbepressed
 	if file != ""
     {
 		var lastnum = 0;
-		while(file_exists(program_directory +"/CustomQuests/"+string(lastnum)+".ini")) lastnum++
-		file_copy(file,program_directory +"/CustomQuests/"+string(lastnum)+".ini")
-		ini_open(program_directory +"/CustomQuests/"+string(lastnum)+".ini");
+		while(file_exists(working_directory +"/CustomQuests/"+string(lastnum)+".ini")) lastnum++
+		file_copy(file,working_directory +"/CustomQuests/"+string(lastnum)+".ini")
+		ini_open(working_directory +"/CustomQuests/"+string(lastnum)+".ini");
 			ini_write_real("General","ameditable",0)
 		ini_close()
 		with(obj_challenges_selection) read_custom_quest_info()

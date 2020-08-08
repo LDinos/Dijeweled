@@ -9,7 +9,7 @@ while(file_exists(path+string(i)+string(j)+".ini"))
 }
 var f = path+string(i)+string(j)+".ini"*/
 ///\\\
-var f = program_directory +"/CustomQuests/"+string(global.challenge_index) + ".ini" //UNCOMMENT ME \\
+var f = working_directory +"/CustomQuests/"+string(global.challenge_index) + ".ini" //UNCOMMENT ME \\
 ini_open(f)
 	#region GENERAL
 		var s = "General"
