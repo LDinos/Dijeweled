@@ -1,10 +1,10 @@
 ///@param iscustom
 var zentrue = false //if it becomes true later, we will move the undo/reset position to the right
-var file = program_directory+"challenges/challenge" +string(global.challenge_index)+".ini" //path for quests
+var file = working_directory+"challenges/challenge" +string(global.challenge_index)+".ini" //path for quests
 obj_quest_control.custom_quest = false
 if argument0 //if is custom quest
 {
-	file = program_directory +"/CustomQuests/"+string(global.challenge_index)+".ini"; //path for custom quests
+	file = working_directory +"/CustomQuests/"+string(global.challenge_index)+".ini"; //path for custom quests
 	obj_quest_control.custom_quest = true
 	
 }

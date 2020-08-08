@@ -41,7 +41,7 @@ if stati != 1
 		}
 		else
 		{
-			var f = program_directory +"/CustomQuests/"+string(j)+".ini"
+			var f = working_directory +"/CustomQuests/"+string(j)+".ini"
 			if file_exists(f)
 			{
 				ini_open(f)

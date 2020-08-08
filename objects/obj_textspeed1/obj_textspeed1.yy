@@ -51,7 +51,36 @@
     "physicsShape": 1,
     "physicsShapePoints": null,
     "physicsStartAwake": true,
-    "properties": null,
+    "properties": [
+        {
+            "id": "1eaa0803-1ed4-4466-aec5-54fc7c5e4d1a",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "Gamerule_1",
+            "varName": "gamerule_object",
+            "varType": 5
+        },
+        {
+            "id": "d5651f7f-1fa0-4ba6-8b84-18ec4ceec3d3",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "15",
+            "varName": "blazing_speed_cap",
+            "varType": 1
+        }
+    ],
     "solid": false,
     "spriteId": "6ab50f47-f65b-40db-ad06-b695dec4e14c",
     "visible": true

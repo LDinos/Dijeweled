@@ -32,7 +32,7 @@ if global.canbepressed && stati != 1
 	else
 	{	
 		global.challenge_index = index
-		var f = program_directory +"/CustomQuests/"+string(index)+".ini"
+		var f = working_directory +"/CustomQuests/"+string(index)+".ini"
 		if file_exists(f)
 		{
 			ini_open(f)
