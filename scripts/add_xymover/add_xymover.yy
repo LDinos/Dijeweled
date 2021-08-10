@@ -1,8 +1,12 @@
 {
-    "id": "d042e271-2b6e-48f0-9cff-cb67526d7d39",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "add_xymover",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Gem related",
+    "path": "folders/Scripts/Gem related.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "add_xymover",
+  "tags": [],
+  "resourceType": "GMScript",
 }

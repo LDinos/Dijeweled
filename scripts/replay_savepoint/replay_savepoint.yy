@@ -1,8 +1,12 @@
 {
-    "id": "691e6675-cf18-4f49-9db0-5f16d802db80",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "replay_savepoint",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "replay_savepoint",
+  "tags": [],
+  "resourceType": "GMScript",
 }

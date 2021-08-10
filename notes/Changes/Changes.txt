@@ -1,0 +1,96 @@
+Credits:
+> Programming: LDinos
+> Music: LDinos, PopCap
+> Sound Design: PopCap
+> Graphics: LDinos, PopCap, LunaChase, Vista
+> The Voice: IODBC
+> Pre-build Beta Testers: Boggy, Rubycored
+> Special Thanks:
+	YoYo Games and Gamemaker studio 2, for the amazing game making product!
+	LargeCommander https://www.deviantart.com/largecommander/art/Companion-Cube-245219325 for the companion cube design
+	Skaven http://soundcloud.com/skaven252?fbclid=IwAR1WeRsinmK_hZY7X82zUmBnZQGDWLZcKArZd_Mra8vljerKh29CDEcp7qU for his samples and inspiration
+	Jason Kapalka for creating this game in the first place
+	MLP and its community for reminding me to pursue my dreams
+	Ralsei for being fluffy
+	Bugs and glitches, for making me create stronger and stronger products
+	And of course, you, the Bejeweled Fans for your massive support and beta testing!
+> 
+
+- Bug fixing of course
+- Ice lock break particles
+- Challenge mode
+- Try to make zen a little more better
+- Tips, hints, infoboxes etc
+- Missing menu button functions
+- Music music music
+- Backdrop change/remove/make (since most are actually shader tests)
+
+for v0.12
+
+- Made stats room
+- Fixed 65th gem bug
+- Fixed gem stuck bug
+- Made changes to AHM
+- Fixed weird L-T formations not giving star gems
+- **Online is now playable!**
+- Fixed double GAMEOVER
+- Added stats and options button on menu
+- Fixed some options not saving when quitting or saving different settings instead
+- Added some music in stats screen
+
+for v_0.12b
+
+- Made online packets much lighter
+
+for v_0.13
+
+- April Fools
+
+for v_0.14
+
+- Updates lightning particles
+- Updated AHM system
+- Added shaders and removed cpu demanding lighting drawings
+- Fixed pass in avalanche
+- Made last row of gems not check for collision at all (= more fps)
+- 0 is an accepted keyword to write in your username now
+- Changed Lightning multiplier chance system after x12 (now it gets less frequent the more you play)
+- Made some simple effects on 4-gem match creations and above
+- (Online) Gems now also give acceleration/speed info to the server, so gems shouldn't get stuck easily (except if big lags), which means the gem unstucker script wont perform many actions and lag the server
+
+for v_0.14b
+- Fixed weird bug where 0 would not be accepted
+- Made gem list more than 64 just in case AHM does some tricky stuff
+
+for v_0.15
+- Made simple intro screen with new music
+- Added Help section
+- Added some simple gas backgrounds so the game isn't that black-ish
+- Made some scripts a little lighter
+- Changed collision system to a lighter one ( = more fps (from 190 fps -> 230 fps)
+- Changed gem explode sound effect (from a lightning explosion) to a more representive one
+- Hopefully online is okay now
+- You can paste an IP now
+- New stats for every gamemode (and online aswell)
+- Added coin system
+- Added unlockables (Boards only for now). This is in test development so don't expect all boards to be good appealing to your eyes :)
+
+for v_0.15b
+- Fixed something that I am almost sure causes AHM to sometimes not work correctly
+
+for v_0.15c
+- Fixed not stopping server after an online game
+- Made online more light
+
+for v_0.16
+- Fixed Stats bug where you could add up more stats by going left and right
+
+If you find any bugs, any problems or generally have any suggestions feel free to give feedback
+
+FUTURE THINGS TO DO:
+* Add more gamemodes online
+* Option to select time limit (1:00, 3:00, 5:00)
+* More unlockables
+* Maybe more gamemodes?
+* Make game look prettier
+* Make FPS over 9000

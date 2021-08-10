@@ -1,3 +1,4 @@
+function macros() {
 #macro DARK_GRAY $212121
 #macro LIGHT_GRAY $363636
 #macro BLACK_GRAY $0d0d0d
@@ -61,3 +62,7 @@
 
 
 
+
+
+
+}

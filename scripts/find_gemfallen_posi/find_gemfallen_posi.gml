@@ -1,17 +1,21 @@
 ///find_gemboard_pos(GEM,GAMERULE_INDEX)
 ///@param GemID
 ///@param Gamerule
-var returni = -1
-for(var u=0;u<8;u++)
-{
-	for(var q=0;q<8;q++)
+function find_gemfallen_posi(argument0, argument1) {
+	var returni = -1
+	for(var u=0;u<8;u++)
 	{
-		if argument1.gems_fallen[u,q] = argument0
+		for(var q=0;q<8;q++)
 		{
-		returni = u
-		break;
+			if argument1.gems_fallen[u,q] = argument0
+			{
+			returni = u
+			break;
+			}
 		}
 	}
-}
 
-return returni
+	return returni
+
+
+}
