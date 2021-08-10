@@ -1,12 +1,8 @@
 {
-  "isDnD": false,
-  "isCompatibility": false,
-  "parent": {
-    "name": "Stats",
-    "path": "folders/Scripts/Stats.yy",
-  },
-  "resourceVersion": "1.0",
-  "name": "stats_create_compact",
-  "tags": [],
-  "resourceType": "GMScript",
+    "id": "ed164831-4768-45d2-8f4b-9279cbfe284f",
+    "modelName": "GMScript",
+    "mvc": "1.0",
+    "name": "stats_create_compact",
+    "IsCompatibility": false,
+    "IsDnD": false
 }

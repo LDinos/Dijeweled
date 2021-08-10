@@ -1,11 +1,7 @@
 {
-  "type": 1,
-  "parent": {
-    "name": "Shaders",
-    "path": "folders/Shaders.yy",
-  },
-  "resourceVersion": "1.0",
-  "name": "shdr_bloom",
-  "tags": [],
-  "resourceType": "GMShader",
+    "id": "6a9e3bca-e150-4d23-bcb6-695a984ee1d8",
+    "modelName": "GMShader",
+    "mvc": "1.0",
+    "name": "shdr_bloom",
+    "type": 1
 }

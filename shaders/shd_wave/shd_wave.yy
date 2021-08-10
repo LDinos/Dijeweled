@@ -1,11 +1,7 @@
 {
-  "type": 1,
-  "parent": {
-    "name": "Backdrops",
-    "path": "folders/Shaders/Backdrops.yy",
-  },
-  "resourceVersion": "1.0",
-  "name": "shd_wave",
-  "tags": [],
-  "resourceType": "GMShader",
+    "id": "be395032-8a6e-4012-98db-f3720b76ffcb",
+    "modelName": "GMShader",
+    "mvc": "1.0",
+    "name": "shd_wave",
+    "type": 1
 }
