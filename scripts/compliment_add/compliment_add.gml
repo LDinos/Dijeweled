@@ -1,5 +1,10 @@
 ///@param compliment_points
-compliment_points += argument0
-event_user(0)
+function compliment_add(argument0) {
+	compliment_points += argument0
+	event_user(0)
 
 
+
+
+
+}

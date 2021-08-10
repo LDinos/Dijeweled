@@ -1,8 +1,12 @@
 {
-    "id": "440187b2-372d-4874-b455-4acdbbaa41cc",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "file_create_secrets",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "file_create_secrets",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -5,21 +5,25 @@
 ///@param textColor
 ///@param outlineColor
 ///@param size
-var xx=argument0;
-var yy=argument1;
-var text=argument2;
-var tcolor=argument3;
-var ocolor=argument4;
-var s = argument5
+function draw_text_outline_transformed(argument0, argument1, argument2, argument3, argument4, argument5) {
+	var xx=argument0;
+	var yy=argument1;
+	var text=argument2;
+	var tcolor=argument3;
+	var ocolor=argument4;
+	var s = argument5
  
-var pcolor=draw_get_color();
+	var pcolor=draw_get_color();
  
-draw_set_color(ocolor);
-draw_text_transformed(xx-1, yy, text,s,s,0);
-draw_text_transformed(xx+1, yy, text,s,s,0);
-draw_text_transformed(xx, yy-1, text,s,s,0);
-draw_text_transformed(xx, yy+1, text,s,s,0);
+	draw_set_color(ocolor);
+	draw_text_transformed(xx-1, yy, text,s,s,0);
+	draw_text_transformed(xx+1, yy, text,s,s,0);
+	draw_text_transformed(xx, yy-1, text,s,s,0);
+	draw_text_transformed(xx, yy+1, text,s,s,0);
  
-draw_set_color(tcolor);
-draw_text_transformed(xx, yy, text,s,s,0);
-draw_set_color(c_white);
+	draw_set_color(tcolor);
+	draw_text_transformed(xx, yy, text,s,s,0);
+	draw_set_color(c_white);
+
+
+}
