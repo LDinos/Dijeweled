@@ -1,0 +1,25 @@
+Converting GML script: ${project_dir}\scripts\scr_array_print\scr_array_print.gml
+Converted description /// @description scr_array_print(array, filename)/// @param array
+/// @param  filename
+
+Converting GML script: ${project_dir}\scripts\scr_ds_grid_print\scr_ds_grid_print.gml
+Converted description /// @description scr_ds_grid_print(DSGridIndex, filename, columnNames)/// @param DSGridIndex
+/// @param  filename
+/// @param  columnNames
+
+Converting GML script: ${project_dir}\scripts\scr_ds_list_print\scr_ds_list_print.gml
+Converted description /// @description scr_ds_list_print(DSListIndex, filename)/// @param DSListIndex
+/// @param  filename
+
+Converting GML script: ${project_dir}\scripts\scr_ds_map_print\scr_ds_map_print.gml
+Converted description /// @description scr_ds_map_print(dsMap, filename)/// @param dsMap
+/// @param  filename
+
+Converting GML script: ${project_dir}\scripts\scr_string_pad_right\scr_string_pad_right.gml
+Converted description /// @description scr_string_pad_right(string, length, subject)/// @param string
+/// @param  length
+/// @param  subject
+
+Converting GML script: ${project_dir}\scripts\scr_string_trim_right\scr_string_trim_right.gml
+Converted description /// @description scr_string_trim_right(string, characterSet)/// @param string
+/// @param  characterSet

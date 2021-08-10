@@ -1,0 +1,12 @@
+/// @description Kill dynamic structures
+ds_map_destroy(Replay_map)
+ds_list_destroy(list_of_matches)
+ds_list_destroy(list_of_bombs)
+ds_list_destroy(list_of_coals)
+ds_list_destroy(list_of_fruits)
+ds_list_destroy(list_of_ampowered)
+ds_list_destroy(list_of_ice_locks)
+ds_list_destroy(list_of_hiddengems)
+ds_list_destroy(list_of_locks)
+ds_list_destroy(list_of_skulls)
+if global.replay_match_allowed ds_map_destroy(Replay_match_map)
