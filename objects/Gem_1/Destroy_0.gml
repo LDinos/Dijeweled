@@ -125,7 +125,28 @@ if !amInvisible //if I am visible
 		{
 			#region gempower conditions
 	
-			if gempower = 5
+			if gempower = 9 
+			{
+				
+				Gamerule_1.lightOn = true 
+				#region gempower 9
+					var le1 = noone;
+					var le2 = noone;
+			        audio_play_sound(snd_electro,1,false)
+			        le1 = instance_create(x,y,MyDiagonalLight)
+					with(le1) image_angle += 45
+			        le2 = instance_create(x,y,MyDiagonalLight)
+			        with(le2) image_angle -= 45
+			        with(le1) skinnum = other.skinnum
+			        with(le2) skinnum = other.skinnum
+					var obj_diagonal_killer = instance_create(x,y,obj_diagonal_lightning_killer)
+					obj_diagonal_killer._i = _i
+					obj_diagonal_killer._j = _j
+					with(obj_diagonal_killer) alarm[0] = 1
+				#endregion
+				
+			}
+			else if gempower = 5
 			{
 				#region gempower 5
 				Gamerule_1.octanovaOn = true
