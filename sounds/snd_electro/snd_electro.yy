@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_electro",
-  "duration": 0.0,
+  "duration": 3.503492,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

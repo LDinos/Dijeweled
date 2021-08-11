@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_blz7",
-  "duration": 0.0,
+  "duration": 1.24712,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
