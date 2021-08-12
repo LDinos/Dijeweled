@@ -25,6 +25,9 @@ if !file_exists(global.STATS_file)
 		case "stats_survivor.ini":
 			stats_create_survivor()
 			break;
+		case "stats_insanity.ini":
+			stats_create_insanity()
+			break;	
 	}
 }
 

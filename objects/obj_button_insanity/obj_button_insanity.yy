@@ -36,7 +36,7 @@
     "path": "folders/Objects/Menu Buttons/Menu/Play/Secret.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_button_unknown",
+  "name": "obj_button_insanity",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -26,6 +26,9 @@ if !file_exists(global.STATS_file)
 		default: //blitz
 			stats_create_blitz()
 			break;
+		case "stats_insanity.ini":
+			stats_create_insanity()
+			break;	
 	}
 }
 

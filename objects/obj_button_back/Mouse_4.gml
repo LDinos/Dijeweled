@@ -23,6 +23,7 @@ if global.canbepressed
 	with(obj_button_survivor) instance_destroy()
 	with(obj_button_buyo) instance_destroy()
 	with(obj_button_countdown) instance_destroy()
+	with(obj_button_insanity) instance_destroy()
 	with(obj_button_secret) alarm[1] = 1
 	
 	with(obj_button_1min) alarm[1] = 5

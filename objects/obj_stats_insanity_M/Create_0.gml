@@ -1,6 +1,5 @@
 /// @description Stats in main menu
-
-global.STATS_file = "stats_arcade.ini"
+global.STATS_file = "stats_insanity.ini"
 if !file_exists(global.STATS_file)
 {
 	switch(global.STATS_file)
@@ -28,7 +27,7 @@ if !file_exists(global.STATS_file)
 			break;
 		case "stats_insanity.ini":
 			stats_create_insanity()
-			break;	
+			break;
 	}
 }
 

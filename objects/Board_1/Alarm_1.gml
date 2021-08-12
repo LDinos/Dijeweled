@@ -188,6 +188,17 @@ do
 		index++
 	}
 	
+	if Gamerule_1.NXT_diagonal > 0
+	{
+		with(gemsspawned[| index]) 
+		{
+		gempower = 9
+
+		}
+		Gamerule_1.NXT_diagonal--
+		index++
+	}
+	
 	if Gamerule_1.NXT_hypes > 0
 	{
 		with(gemsspawned[| index]) 
@@ -201,7 +212,7 @@ do
 	}
 	
 }
-until (Gamerule_1.NXT_flames = 0) && (Gamerule_1.NXT_hypes = 0) && (Gamerule_1.NXT_fruits = 0) && (Gamerule_1.NXT_lights = 0) && (Gamerule_1.NXT_novas = 0) && (Gamerule_1.NXT_septas = 0) && (Gamerule_1.NXT_octas = 0)
+until (Gamerule_1.NXT_flames = 0) && (Gamerule_1.NXT_hypes = 0) && (Gamerule_1.NXT_fruits = 0) && (Gamerule_1.NXT_lights = 0) && (Gamerule_1.NXT_novas = 0) && (Gamerule_1.NXT_septas = 0) && (Gamerule_1.NXT_octas = 0) && (Gamerule_1.NXT_diagonal = 0)
 
 //Tell replay about that
 if Gamerule_1.replay_allowed

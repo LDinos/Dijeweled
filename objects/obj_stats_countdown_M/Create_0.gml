@@ -28,6 +28,9 @@ if !file_exists(global.STATS_file)
 		case "stats_countdown.ini":
 			stats_create_countdown()
 			break;
+		case "stats_insanity.ini":
+			stats_create_insanity()
+			break;	
 		
 	}
 }

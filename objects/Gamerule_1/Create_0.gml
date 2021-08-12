@@ -51,6 +51,9 @@ switch room
 	case rm_swift:
 		global.DIS_name = "In Swift Mode"
 		break;
+	case rm_insanity:
+		global.DIS_name = "In Insanity Mode"
+		break;
 	case rm_survivor:
 		global.DIS_name = "In Survivor Mode"
 		break;

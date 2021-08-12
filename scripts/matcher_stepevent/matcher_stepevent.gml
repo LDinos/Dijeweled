@@ -13,6 +13,7 @@ function matcher_stepevent(argument0) {
 	//4 nova
 	//5 septa
 	//6 octa
+	//9 diagonal
 	//Then check for horizontal matches
 	var cando = true
 

@@ -47,6 +47,13 @@ if func >= 1
 					global.STATS_file = "stats_blitz"+string(global.timer)+".ini"
 					global.STATS_points = Gamerule_1.points
 					break;
+				case rm_insanity:
+					leave.room_to_go = rm_stats_normal
+					if !file_exists("stats_insanity.ini") stats_create_insanity()
+					global.STATS_file = "stats_insanity.ini"
+					global.STATS_points = Gamerule_1.points
+					global.STATS_level = Gamerule_1.level
+					break;
 				default:
 					leave.room_to_go = rm_menu
 					break;

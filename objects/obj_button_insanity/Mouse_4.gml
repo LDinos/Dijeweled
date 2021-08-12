@@ -2,13 +2,13 @@
 if global.canbepressed && unlocked
 {
 	global.canbepressed = false
-	if !file_exists("autosave_rm_swift")
+	if !file_exists("autosave_rm_insanity")
 	{
-		fade_to_room(rm_unknown)
+		fade_to_room(rm_insanity)
 	}
 	else
 	{
-		global.goto = rm_unknown
+		global.goto = rm_insanity
 		instance_create(256+128,room_height/2 - sprite_height,obj_neworcontinue)
 	}
 }

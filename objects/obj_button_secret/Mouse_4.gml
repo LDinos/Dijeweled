@@ -12,7 +12,7 @@ if global.canbepressed
 	//instance_create(xx,y,obj_button_arcade)
 	
 	instance_create(xx,y,obj_button_countdown)
-	instance_create(xx+sprite_width,y,obj_button_unknown)
+	instance_create(xx+sprite_width,y,obj_button_insanity)
 	instance_create(xx,y+sprite_height+32,obj_button_twist)
 	instance_create(xx,y+ sprite_height*2 + 32*2,obj_button_compact)
 	instance_create(xx,y+ sprite_height*3 +32*3,obj_button_swift)

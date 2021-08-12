@@ -134,9 +134,11 @@ if !amInvisible //if I am visible
 					var le2 = noone;
 			        audio_play_sound(snd_electro,1,false)
 			        le1 = instance_create(x,y,MyDiagonalLight)
+					with(le1) image_xscale = 1.5
 					with(le1) image_angle += 45
 			        le2 = instance_create(x,y,MyDiagonalLight)
-			        with(le2) image_angle -= 45
+			        with(le2) image_xscale = 1.5
+					with(le2) image_angle -= 45
 			        with(le1) skinnum = other.skinnum
 			        with(le2) skinnum = other.skinnum
 					var obj_diagonal_killer = instance_create(x,y,obj_diagonal_lightning_killer)

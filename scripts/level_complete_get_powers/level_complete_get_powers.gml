@@ -7,6 +7,7 @@ function level_complete_get_powers() {
 	NXT_septas = 0
 	NXT_octas = 0
 	NXT_hypes = 0
+	NXT_diagonal = 0
 	for(var i = 0; i<8;i++)
 	{
 		for(var j = 0; j<8;j++)
@@ -18,6 +19,9 @@ function level_complete_get_powers() {
 				{
 					switch gems_fallen[@i,j].gempower
 					{
+						case 9: 
+							NXT_diagonal++
+							break;
 						case 6:
 							NXT_fruits++
 							break;
