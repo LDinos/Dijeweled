@@ -87,7 +87,8 @@ if (levelbarfull)
 		}
 		ds_list_clear(list_of_coals) 
 		ds_list_clear(list_of_bombs) 
-		ds_list_clear(list_of_locks) 
+		ds_list_clear(list_of_locks)
+		ds_list_clear(list_of_skulls)
 		list_of_doom = noone
 		
 		with(obj_score) alarm[0] = 60

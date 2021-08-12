@@ -60,12 +60,15 @@ if amBomb || amLocked =2 || amLocked = 4 //if I am bomb or doom or skull
 			if (amBomb || amLocked = 2) Gamerule_1.bombis0 = true //if am Bomb/Doom
 			else //if am Skull
 			{
-				if Gamerule_1.IsGemActive2 //if everything is stationary
+				Gamerule_1.skullis0 = true;
+				was_skull_0 = true
+				if Gamerule_1.IsGemActive2 && !Gamerule_1.challengewon && !Gamerule_1.levelbarfull && !Gamerule_1.levelcompleted//if everything is stationary
 				{
 					if !instance_exists(obj_bombexplosion) //if we aren't game over'ing
 					{
 						if _i < 7 //if im not in the last board row
 						{
+							
 							with(Gamerule_1.gem_board1[_i+1,_j]) //create particles below me
 							{
 								part_particles_create(global.sys_above_gem, x, y, global.part_BombSmoke, 3);

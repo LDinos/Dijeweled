@@ -11,6 +11,6 @@ SkullSpawnInstant = true //Should it spawn every time it gets destroyed?
 
 SkullCounterLevelBased = true //Is the counter of the Skulls a level based variable?
 SkullCounterLevelBasedEnd = 23 //After which level do we stop changing the Skull counter value?
-SkullCounterDefault = 5 //The value to give to the newly spawned Skull
+SkullCounterDefault = 10 //The value to give to the newly spawned Skull
 SkullCounter = SkullCounterDefault //The value to give to the newly spawned Skull
-SkullMax = 3
+SkullMax = 5
