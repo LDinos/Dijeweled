@@ -1,3 +1,5 @@
+MyBoard = Board_1
+mysurf = -1
 modifier = 1
 if Gamerule_1.isReplay modifier = 2
 image_speed = 0.4/modifier

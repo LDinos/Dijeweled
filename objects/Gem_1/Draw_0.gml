@@ -9,6 +9,11 @@ if !amInvisible
 		draw_sprite(spr_powerup_base,skinnum,X,Y)
 		draw_sprite(spr_powerups,mypowerup,X,Y)
 	}
+	else if gempower = 9 //If Cross Diagonal
+	{
+		draw_sprite_ext(rainbow_thing_effect, cross_anim, X-8*7, Y-8*7, image_xscale, image_yscale, 0 ,c_white, 1)
+		draw_sprite_ext(sprite_index, image_index, X, Y, image_xscale, image_yscale, 0 , c_white , 1)
+	}
 	else if !amHype //if I am not a hypercube
 	{
 		#region powered bloom

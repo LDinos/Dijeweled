@@ -437,7 +437,6 @@ part_type_orientation(global.partFire,0,359,0,0,0);
 part_type_blend(global.partFire,1);
 part_type_life(global.partFire,5,10);
 part_type_death(global.partFire,1,global.partCinder);
-
 /*---------------------*/
 
 /*FOR LIGHTNING*/

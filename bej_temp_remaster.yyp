@@ -893,6 +893,7 @@
     {"id":{"name":"obj_doom_sperms","path":"objects/obj_doom_sperms/obj_doom_sperms.yy",},"order":17,},
     {"id":{"name":"obj_replay_dot","path":"objects/obj_replay_dot/obj_replay_dot.yy",},"order":1,},
     {"id":{"name":"obj_textspeed1","path":"objects/obj_textspeed1/obj_textspeed1.yy",},"order":3,},
+    {"id":{"name":"rainbow_thing_effect","path":"sprites/rainbow_thing_effect/rainbow_thing_effect.yy",},"order":26,},
     {"id":{"name":"obj_text_stayer","path":"objects/obj_text_stayer/obj_text_stayer.yy",},"order":5,},
     {"id":{"name":"obj_challenge_score","path":"objects/obj_challenge_score/obj_challenge_score.yy",},"order":7,},
     {"id":{"name":"obj_survivor_score","path":"objects/obj_survivor_score/obj_survivor_score.yy",},"order":9,},

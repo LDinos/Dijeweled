@@ -136,6 +136,24 @@ if MyGamerule.lightOn //if lightning is happening
 else bloom = false
 #endregion
 
+#region Cross Diagonal
+if MyGamerule.lightOn //if diagonal lightning is happening
+{
+	if global.OPT_lightallowed
+	{
+		if collision_rectangle(x-35,y-35,x+35,y+35,MyDiagonalLight,false,true) //check if the diagonal lightning is near me
+		{
+			bloom = true //and make me glow
+		}
+		else
+		{
+			bloom = false
+		}
+	}
+}
+else bloom = false
+#endregion
+
 if !lvlcomplete //if level isn't complete
 {
 #region Gem movement and collision
@@ -287,8 +305,7 @@ if visible //if I am visible
 			luck = irandom(10)
 			if luck < 2 sys = global.sys_above_gem
 			else sys = global.sys_below_gem
-			part_emitter_region(sys,global.emit_newstar,XX-32,XX+32,YY-32,YY+32,ps_shape_ellipse,ps_distr_gaussian)
-			part_emitter_burst(sys,global.emit_newstar,global.partLight,2)
+			if alarm[8] = -1 alarm[8] = 2
 		}
 	}
 	else if amHype //if im hypercube

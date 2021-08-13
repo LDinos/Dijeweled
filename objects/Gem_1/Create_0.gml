@@ -115,6 +115,9 @@ gem_to_hype = noone //gem to destroy first on hypercube match
 skin_to_hype = 0 //skin to destroy on hypercube match, 8 destroys all
 #endregion
 
+#region Cross stuff
+cross_anim = 0
+#endregion
 
 #region Shaky stuff
 dontshake = false //used for xymover when destroyed. this will be true if it gets destroyed by explosion
