@@ -288,7 +288,7 @@ if visible //if I am visible
 			if luck < 2 sys = global.sys_above_gem
 			else sys = global.sys_below_gem
 			part_emitter_region(sys,global.emit_newstar,XX-32,XX+32,YY-32,YY+32,ps_shape_ellipse,ps_distr_gaussian)
-			part_emitter_burst(sys,global.emit_newstar,global.partLight,2)
+			part_emitter_burst(sys,global.emit_newstar,global.part_star_stars,2)
 		}
 	}
 	else if amHype //if im hypercube
