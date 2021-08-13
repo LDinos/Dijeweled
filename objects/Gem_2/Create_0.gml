@@ -44,6 +44,7 @@ MyGem = Gem_2 //Instance variables so that copy pasting code through gems will b
 MyGamerule = Gamerule_2
 MyBoard = Board_2
 MyLightObj = lightningObj2
+MyDiagonalLight = diagonal_lightning_obj_2
 MyPlayer = player2
 //else if room = rm_twist MyPlayer = obj_twist_spinner
 MyDiss = gem_dissappear2

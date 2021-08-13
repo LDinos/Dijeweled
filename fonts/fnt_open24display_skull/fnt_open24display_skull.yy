@@ -1,8 +1,4 @@
 {
-  "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
-  },
   "hinting": 0,
   "glyphOperations": 0,
   "interpreter": 0,
@@ -19,6 +15,10 @@
   "sampleText": "abcdef ABCDEF\n0123456789 .,<>\"'&!?\nthe quick brown fox jumps over the lazy dog\nTHE QUICK BROWN FOX JUMPS OVER THE LAZY DOG",
   "includeTTF": false,
   "TTFName": "",
+  "textureGroupId": {
+    "name": "Default",
+    "path": "texturegroups/Default",
+  },
   "ascenderOffset": 2,
   "glyphs": {
     "32": {"x":2,"y":2,"w":14,"h":39,"character":32,"shift":14,"offset":0,},

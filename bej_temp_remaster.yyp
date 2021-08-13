@@ -998,6 +998,7 @@
     {"id":{"name":"rm_survivor","path":"rooms/rm_survivor/rm_survivor.yy",},"order":15,},
     {"id":{"name":"rm_swift","path":"rooms/rm_swift/rm_swift.yy",},"order":17,},
     {"id":{"name":"rm_countdown","path":"rooms/rm_countdown/rm_countdown.yy",},"order":19,},
+    {"id":{"name":"diagonal_lightning_obj_2","path":"objects/diagonal_lightning_obj_2/diagonal_lightning_obj_2.yy",},"order":56,},
     {"id":{"name":"rm_credits","path":"rooms/rm_credits/rm_credits.yy",},"order":21,},
     {"id":{"name":"rm_debug","path":"rooms/rm_debug/rm_debug.yy",},"order":23,},
     {"id":{"name":"rm_blitz_matchreplay","path":"rooms/rm_blitz_matchreplay/rm_blitz_matchreplay.yy",},"order":25,},

@@ -127,7 +127,6 @@ if !amInvisible //if I am visible
 	
 			if gempower = 9 
 			{
-				
 				Gamerule_1.lightOn = true 
 				#region gempower 9
 					var le1 = noone;
@@ -146,7 +145,6 @@ if !amInvisible //if I am visible
 					obj_diagonal_killer._j = _j
 					with(obj_diagonal_killer) alarm[0] = 1
 				#endregion
-				
 			}
 			else if gempower = 5
 			{

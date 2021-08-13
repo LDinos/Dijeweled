@@ -93,6 +93,24 @@ if MyGamerule.lightOn //if lightning is happening
 else bloom = false
 #endregion
 
+#region Diagonal
+if MyGamerule.lightOn //if lightning is happening
+{
+	if global.OPT_lightallowed
+	{
+		if collision_rectangle(x-35,y-35,x+35,y+35,MyDiagonalLight,false,true) //check if the diagonal lightning is near me
+		{
+			bloom = true //and make me glow
+		}
+		else
+		{
+			bloom = false
+		}
+	}
+}
+else bloom = false
+#endregion
+
 if !lvlcomplete //if level isn't complete
 {
 #region Gem movement and collision
