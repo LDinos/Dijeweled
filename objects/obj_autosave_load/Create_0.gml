@@ -94,6 +94,10 @@ if file_exists("autosave_"+string(room_get_name(room)))
 									}
 								 ds_list_add(Gamerule_1.list_of_ice_locks,Gem)
 								}
+								else if AMLOCKED = 4
+								{
+									ds_list_add(Gamerule_1.list_of_skulls,Gem)
+								}
 
 								if FRUITEXPLODING ds_list_add(Gamerule_1.list_of_fruits,Gem)
 								if (AMBOMB) ds_list_add(Gamerule_1.list_of_bombs,Gem)

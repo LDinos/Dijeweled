@@ -1,6 +1,6 @@
 /// @description Insert description here
 
-SkullSpawnLevelMin = -1 //When do we start allowing Skulls to spawn? (-1 = infinite)
+SkullSpawnLevelMin = 15 //When do we start allowing Skulls to spawn? (-1 = infinite)
 SkullSpawnLevelMax = -1 //When do we stop allowing Skulls? (-1 = infinite)
 
 SkullAlreadySpawnedOnce = false //has a Skull gem spawned in this level? We can only have one Skull per level

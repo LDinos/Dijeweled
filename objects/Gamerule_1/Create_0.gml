@@ -134,6 +134,8 @@ list_of_bombs = ds_list_create() //all bombs are insterted here so we can deesca
 list_of_matches = ds_list_create() //when checking for matches, all colors of the matches will be put here and checked by the challenge bonus
 rows = 8 //board row stuff, same as global.board_rows
 global.board_rows = 8
+columns = 8
+global.board_columns = 8
 global.paused = false //if we have pressed ESC
 
 autosave = false //if its false, then autosave once when gem is active, and become true until later

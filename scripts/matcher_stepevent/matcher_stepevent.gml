@@ -102,6 +102,37 @@ function matcher_stepevent(argument0) {
                        
 	        }
 	    }
+		
+	//Now the X match
+	center_gem = noone
+	for (i=1;i<=global.board_columns-2;i+=1)
+	    {
+	        n2 = 9
+	        for (j=1;j<=global.board_rows-2;j+=1)
+	        {
+	          if gem_board1[j+1,i+1] = noone || gem_board1[j-1,i-1] = noone || gem_board1[j+1,i-1] = noone || gem_board1[j-1,i+1] = noone
+	            {
+					matcher_script2(0)
+	            }
+	          else if (gem_board1[j,i].skinnum == gem_board1[j-1,i-1].skinnum) &&  (gem_board1[j,i].skinnum == gem_board1[j+1,i+1].skinnum) &&  (gem_board1[j,i].skinnum == gem_board1[j+1,i-1].skinnum) &&  (gem_board1[j,i].skinnum == gem_board1[j-1,i+1].skinnum) && (gem_board1[j,i].skinnum != 7)
+	            {
+	                matcher_script2(9)
+	          if j = global.board_rows-1 // on last check, check again since we dont have a next check.
+	            {
+					if n2 >= 9 
+					{
+						nummatches++
+						list_of_matches[| ds_list_size(list_of_matches)] = gem_board1[j,i].skinnum
+					}
+					matcher_script2(9) 
+				}
+				else
+				{
+					matcher_script2(0)  
+				}
+			}
+		}
+	}
 	//Now do their script
 	havecombo = false
 	for (i=0;i<=global.board_rows-1;i+=1)
@@ -143,7 +174,17 @@ function matcher_stepevent(argument0) {
 					blazingshouldup = false	
 					if gem_board1[i,j].gempower != 6
 					{
-						if gem_board1[i,j].matchme = 6 //octa
+						if gem_board1[i,j].matchme = 9  //Cross match (X match)
+			            {
+				            if specials_allowed
+							{
+									audio_play_sound(snd_lightcreate,0,false)
+									with(gem_board1[i,j]) make_power(argument0,9,other.id)
+							}
+				                else instance_destroy(gem_board1[i,j])
+                
+			            }
+						else if gem_board1[i,j].matchme = 6 //octa
 						{
 							if specials_allowed
 							{
@@ -180,7 +221,7 @@ function matcher_stepevent(argument0) {
 				                if specials_allowed
 								{
 									audio_play_sound(snd_lightcreate,0,false)
-									with(gem_board1[i,j]) make_power(argument0,9,other.id)
+									with(gem_board1[i,j]) make_power(argument0,2,other.id)
 								}
 				                else instance_destroy(gem_board1[i,j])
 							}
