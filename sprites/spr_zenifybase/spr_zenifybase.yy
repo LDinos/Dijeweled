@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"spr_zenifybase","path":"sprites/spr_zenifybase/spr_zenifybase.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "spr_zenifybase",
     "tags": [],
     "resourceType": "GMSequence",
   },

@@ -13,6 +13,13 @@ if anim_happening && !spinning //if I am doing the spinning animation, but I am 
 }
 #endregion
 
+if global.OPT_lightallowed {
+	if (nearby_glown_left) nearby_glown_left-- //am I glown because of a nearby power gem?
+	if (nearby_glown_right) nearby_glown_right--//am I glown because of a nearby power gem?
+	if (nearby_glown_up) nearby_glown_up--//am I glown because of a nearby power gem?
+	if (nearby_glown_down) nearby_glown_down--//am I glown because of a nearby power gem?
+}
+
 #region accspeed and replay slowmo modifier
 	var accspeed = 0.6; //default speed acceleration
 	modifier = 1; //speed slow-mo modifier. 1 = normal, 2 = half the speed
@@ -62,7 +69,7 @@ if amBomb || amLocked =2 || amLocked = 4 //if I am bomb or doom or skull
 			{
 				Gamerule_1.skullis0 = true;
 				was_skull_0 = true;
-				if Gamerule_1.IsGemActive2 && !Gamerule_1.challengewon //if everything is stationary
+				if Gamerule_1.IsGemActive2 && !Gamerule_1.challengewon && !Gamerule_1.levelbarfull && !Gamerule_1.levelcompleted//if everything is stationary
 				{
 					if !instance_exists(obj_bombexplosion) //if we aren't game over'ing
 					{
@@ -207,7 +214,6 @@ else //else, parent me with the Board (level transition effect)
 previous_i = _i
 _i = (y-MyBoard.y+63) div 64 //find my grid index. first row = 0, second = 1 etc
 _j = (x-MyBoard.x) div 64 //find my grid index. first collumn = 0, second = 1 etc
-
 if amLocked = 4 //if im skull
 {
 	if _i > previous_i //if i changed my grid index
@@ -226,11 +232,14 @@ if visible //if I am visible
 	{
 		var XX = x+SWAP_X
 		var YY = y+SWAP_Y
-		if gempower = 1 //flame
+		if global.OPT_lightallowed {
+			if (gempower != FRUIT) glow_nearby_gems(_i,_j)
+		}
+		if gempower = FLAME //flame
 		{
 			part_particles_create(global.sys_below_gem,XX,YY,global.partFire,1)
 		}
-		else if gempower = 2 //lighting
+		else if gempower = LIGHTNING //lighting
 		{
 			luck = irandom(10)
 			if luck < 2 sys = global.sys_above_gem
@@ -238,7 +247,7 @@ if visible //if I am visible
 			part_emitter_region(sys,global.emit_newstar,XX-32,XX+32,YY-32,YY+32,ps_shape_ellipse,ps_distr_gaussian)
 			part_emitter_burst(sys,global.emit_newstar,global.part_star_bolt,2)
 		}
-		else if gempower = 3 //nova
+		else if gempower = NOVA //nova
 		{
 			luck = irandom(10)
 			if luck < 2 sys = global.sys_above_gem
@@ -247,7 +256,7 @@ if visible //if I am visible
 			part_emitter_burst(sys,global.emit_newstar,global.part_star_bolt,2)
 			part_particles_create(global.sys_below_gem,XX,YY,global.partNovaFire,1)
 		}
-		else if gempower = 4 //septa
+		else if gempower = SEPTA //septa
 		{
 			part_particles_create(global.sys_below_gem,XX,YY,global.partFire,1)
 			part_particles_create(global.sys_below_gem,XX,YY,global.partCinder,1)
@@ -258,7 +267,7 @@ if visible //if I am visible
 			part_emitter_burst(sys,global.emit_newstar,global.part_star_bolt,2)
 			part_particles_create(choose(global.sys_below_gem,global.sys_above_gem),XX,YY,global.partSeptafractal,1)
 		}
-		else if gempower = 5 //octa
+		else if gempower = OCTA //octa
 		{
 			part_particles_create(global.sys_below_gem,XX,YY,global.partFire,1)
 			part_particles_create(global.sys_below_gem,XX,YY,global.partCinder,1)
@@ -269,7 +278,7 @@ if visible //if I am visible
 			part_emitter_burst(sys,global.emit_newstar,global.part_star_bolt,2)
 			part_particles_create(choose(global.sys_below_gem,global.sys_above_gem),XX,YY,global.partOctafractal,1)
 		}
-		else if gempower = 6 //fruit
+		else if gempower = FRUIT //fruit
 		{
 			if (sprite_index != spr_fruits) sprite_index = spr_fruits
 			if amFruitExploding

@@ -14,8 +14,8 @@ function make_power(argument0, argument1, argument2) {
 					case 1: S_num_flames++ break;
 					case 2: S_num_lights++ break;
 					case 3: S_num_novas++ break;
-					case 4: S_num_septas++ break;
-					case 5: S_num_octas++ break;
+					case 4: S_num_novas++; S_num_septas++ break;
+					case 5: S_num_novas++; S_num_septas++; S_num_octas++ break;
 				}
 			}
 #endregion

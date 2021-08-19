@@ -6,11 +6,11 @@
 		var cond_angle = 270
 		var else_angle = 0
 		
-		if (keyboard_lastkey == vk_up) || gamepad_lastkey(global.gp[0]) == gp_face1 || gamepad_lastkey(global.gp[0]) == gp_face2//C
+		if (keyboard_lastkey == vk_up) || (keyboard_lastkey == ord("X")) || gamepad_lastkey(global.gp[0]) == gp_face1 || gamepad_lastkey(global.gp[0]) == gp_face2//C
 		{
-			var ang = -90;
-			var cond_angle = 0
-			var else_angle = 270
+			ang = -90;
+			cond_angle = 0
+			else_angle = 270
 		}
 	
 		if image_angle != cond_angle image_angle += ang

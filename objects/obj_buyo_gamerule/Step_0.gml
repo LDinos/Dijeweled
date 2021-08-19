@@ -10,7 +10,9 @@ if check
 			if (prev_level != Gamerule_1.level)
 			{
 				audio_play_sound(snd_closecall,0,false)
+				audio_play_sound(snd_lightning_refill,0,false)
 				create_textellent("LEVEL UP")
+				event_user(0) //music
 				discord_update_presence(global.DIS_name,"Level " + string(Gamerule_1.level),"ico_512","")
 			}
 		}

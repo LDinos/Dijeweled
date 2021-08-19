@@ -1,5 +1,9 @@
 /// @description Gem object
 // You can write your code in this editor
+nearby_glown_left = false //am I glown because of a nearby power gem?
+nearby_glown_right = false //am I glown because of a nearby power gem?
+nearby_glown_up = false //am I glown because of a nearby power gem?
+nearby_glown_down = false //am I glown because of a nearby power gem?
 mypowerup = -1
 myid = -4
 was_skull_0 = false;

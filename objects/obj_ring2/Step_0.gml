@@ -12,7 +12,7 @@ with(Gem_1)
 				part_particles_create_color(global.sys_above_gem,x,y,global.part_fruit_break_sparkles,c_white,12)
 				audio_play_sound(rowblow,0,0)
 				create_col = false
-				if gempower != 6
+				if gempower != FRUIT
 				{
 					with(Gamerule_1) {points_add_nocombo(25); compliment_add(25)}
 					create_score_text(x,y,25,false,mycolor)
@@ -22,7 +22,7 @@ with(Gem_1)
 				else
 				{
 					ds_list_delete(Gamerule_1.list_of_fruits,ds_list_find_index(Gamerule_1.list_of_fruits,id))
-					gempower = 1
+					gempower = FLAME
 					if Gamerule_1.isQuest with(obj_quest_control)
 					{
 						S_destroyed_fruits++

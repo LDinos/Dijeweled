@@ -179,6 +179,7 @@ function matcher_stepevent(argument0) {
 			                {
 				                if specials_allowed
 								{
+									
 									audio_play_sound(snd_lightcreate,0,false)
 									with(gem_board1[i][j]) make_power(argument0,2,other.id)
 								}

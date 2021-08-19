@@ -1,5 +1,5 @@
 function create_challenge_ini() {
-	ini_write_real("ver","value",5) //if u change that, change also on rm_menu 'var ver'
+	ini_write_real("ver","value",7) //if u change that, change also on rm_menu 'var ver'
 	ini_write_real("hasseencredits","value",false)
 #region Category Titles
 	ini_write_string("Titles","0","BOARD CLEANER 1")
@@ -221,9 +221,9 @@ function create_challenge_ini() {
 	ini_write_string("Challenges",string(i) + ":0","Score 1000 points in a zenify combo") //2 M-UNTIMED
 	ini_write_string("Challenges",string(i) + ":1","Score 2500 points in a zenify combo") //3 M-UNTIMED
 	ini_write_string("Challenges",string(i) + ":2","Score 4000 points in a zenify combo") //4 M-UNTIMED
-	ini_write_string("Challenges",string(i) + ":3","Score 6000 points in a zenify combo") //4 M-UNTIMED
-	ini_write_string("Challenges",string(i) + ":4","Score 8000 points in a zenify combo") //5 M-UNTIMED
-	ini_write_string("Challenges",string(i) + ":5","Score 10000 points in a zenify combo") //6 M-UNTIMED
+	ini_write_string("Challenges",string(i) + ":3","Score 5500 points in a zenify combo") //4 M-UNTIMED
+	ini_write_string("Challenges",string(i) + ":4","Score 6500 points in a zenify combo") //5 M-UNTIMED
+	ini_write_string("Challenges",string(i) + ":5","Score 8000 points in a zenify combo") //6 M-UNTIMED
 		i++
 	//24
 	ini_write_string("Challenges",string(i) + ":0","Survive 150 difficult moves") //10

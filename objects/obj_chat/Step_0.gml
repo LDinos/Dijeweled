@@ -9,7 +9,13 @@ if keyboard_check(vk_anykey)
 			if consecutive_first {consecutive_writing = 15; consecutive_first = false}
 			else {consecutive_writing = 2}
 		//alarm[1] = 15
-			if (string_width(global.user) + string_width(text) < 452) text += keyboard_lastchar
+			if !keyboard_check(vk_shift) || (consecutive_writing != 2)
+			{
+				if (string_width(global.user) + string_width(text) < 452) text += keyboard_lastchar
+			}
+
+			/*if (consecutive_writing == 2) && !keyboard_check(vk_shift){
+			if (string_width(global.user) + string_width(text) < 452) text += keyboard_lastchar}*/
 		}
 		else consecutive_writing--
 	}

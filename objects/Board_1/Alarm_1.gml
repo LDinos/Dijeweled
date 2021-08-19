@@ -131,7 +131,7 @@ do
 	{
 		with(gemsspawned[| index])
 		{
-			gempower = 1
+			gempower = FLAME
 		}
 		Gamerule_1.NXT_flames--
 		index++
@@ -141,7 +141,7 @@ do
 	{
 		with(gemsspawned[| index])
 		{
-		gempower = 2
+		gempower = LIGHTNING
 		}
 		Gamerule_1.NXT_lights--
 		index++
@@ -151,7 +151,7 @@ do
 	{
 		with(gemsspawned[| index]) 
 		{
-		gempower = 3
+		gempower = NOVA
 		}
 		Gamerule_1.NXT_novas--
 		index++
@@ -161,7 +161,7 @@ do
 	{
 		with(gemsspawned[| index]) 
 		{
-		gempower = 4
+		gempower = SEPTA
 		}
 		Gamerule_1.NXT_septas--
 		index++
@@ -171,7 +171,7 @@ do
 	{
 		with(gemsspawned[| index]) 
 		{
-		gempower = 5
+		gempower = OCTA
 		}
 		Gamerule_1.NXT_octas--
 		index++
@@ -181,7 +181,7 @@ do
 	{
 		with(gemsspawned[| index]) 
 		{
-		gempower = 6
+		gempower = FRUIT
 
 		}
 		Gamerule_1.NXT_fruits--

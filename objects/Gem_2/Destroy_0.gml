@@ -61,7 +61,7 @@ if !amInvisible
 					cube.skin_to_hype = skin_to_hype
 					Gamerule_2.hypeOn = true
 				}
-				else if gempower = 5
+				else if gempower = OCTA
 				{
 					#region gempower 5
 					//with(MyGamerule) {points_add(600,false); compliment_add(600)}
@@ -77,7 +77,7 @@ if !amInvisible
 					}
 					#endregion
 				}
-				else if gempower = 4
+				else if gempower = SEPTA
 				{
 					#region gempower 4
 					//with(MyGamerule) {points_add(500,false); compliment_add(500)}
@@ -102,7 +102,7 @@ if !amInvisible
 					}
 					#endregion
 				}
-				else if gempower = 3
+				else if gempower = NOVA
 				    {
 						#region gempower 3
 						var le1 = noone;
@@ -131,7 +131,7 @@ if !amInvisible
 						with(le6) skinnum = other.skinnum
 						#endregion
 				    }
-				else if gempower = 2
+				else if gempower = LIGHTNING
 				    {
 						#region gempower 2
 						var le1 = noone;
@@ -143,7 +143,7 @@ if !amInvisible
 				        with(le2) {image_angle += 90; skinnum = other.skinnum}
 						#endregion
 				    }
-				else if gempower = 1
+				else if gempower = FLAME
 				{
 					#region gempower 1
 						magnify(x,y,true)

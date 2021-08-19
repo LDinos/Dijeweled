@@ -4,13 +4,14 @@ if i <= 7
 {
 	for(j=0;j<=7;j++)
 	{
-		if instance_exists(Gamerule_1.gem_board1[i,j])
+		var g = Gamerule_1.gem_board1[i][j]
+		if instance_exists(g)
 		{
-			if Gamerule_1.gem_board1[i,j].skinnum = 7
+			if g.skinnum = 7
 			{
-				with(Gamerule_1.gem_board1[i,j]) delete_gem()
+				with(g) delete_gem()
 			}
-			else instance_destroy(Gamerule_1.gem_board1[i,j],true)
+			else instance_destroy(g,true)
 		}
 	}
 	i++

@@ -54,7 +54,7 @@ if !Gamerule_local.IsGemActive && !Gamerule_local.hypeOn && !Gamerule_local.ligh
 					
 						if Gamerule_local.summoves2 = 0 && !havedone && Gamerule_local.AHM_allowed// && !Gamerule_1.juststarted
 							{
-								spawn_script(Gamerule_local,Gem_local)
+								spawn_script(Gamerule_local,Gem_local,false)
 							}	
 					}
 				#endregion

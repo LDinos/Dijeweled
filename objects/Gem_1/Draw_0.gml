@@ -4,17 +4,17 @@ var X = x+xmover+SWAP_X
 var Y = y+ymover+SWAP_Y
 if !amInvisible
 {
-	if mypowerup > -1
+	/*if mypowerup > -1
 	{
 		draw_sprite(spr_powerup_base,skinnum,X,Y)
 		draw_sprite(spr_powerups,mypowerup,X,Y)
 	}
-	else if !amHype //if I am not a hypercube
+	else*/ if !amHype //if I am not a hypercube
 	{
 		#region powered bloom
 		if global.OPT_lightallowed && Gamerule_1.shader_allowed
 		{
-			if amLit || (gempower > 0 && gempower < 6) || bloom
+			if amLit || (gempower > 0 && gempower < FRUIT) || bloom
 			{
 				var value = random_range(.2,.4)
 				if amLit value = 1
@@ -53,6 +53,14 @@ if !amInvisible
 					if (gempower = 0 && !bloom && skinnum < 7) draw_sprite_ext(shadow_index,image_index,X,Y,0.5,0.5,0,c_white,1)
 					}
 					draw_sprite_ext(sprite_index,image_index,X,Y,image_xscale,image_yscale,0,c_white,1)
+					if (global.OPT_lightallowed) {
+						if (anim_happening == false && gempower != FRUIT) {
+							if (nearby_glown_left) draw_sprite_ext(spr_gemglow_left,skinnum,X,Y,1,1,0,c_white,random_range(0.5,nearby_glown_left/GLOW_FADEOUT_FRAMES))
+							if (nearby_glown_right) draw_sprite_ext(spr_gemglow_right,skinnum,X,Y,1,1,0,c_white,random_range(0.5,nearby_glown_right/GLOW_FADEOUT_FRAMES))
+							if (nearby_glown_up) draw_sprite_ext(spr_gemglow_up,skinnum,X,Y,1,1,0,c_white,random_range(0.5,nearby_glown_up/GLOW_FADEOUT_FRAMES))
+							if (nearby_glown_down) draw_sprite_ext(spr_gemglow_down,skinnum,X,Y,1,1,0,c_white,random_range(0.5,nearby_glown_down/GLOW_FADEOUT_FRAMES))
+						}
+					}
 				}
 			}
 			else //zenify
@@ -113,5 +121,5 @@ if !amInvisible
 	}
 }
 else if Gamerule_1.debug draw_sprite(spr_hiddengem,0,X,Y)
-//draw_text(x,y,geodenum)
+//draw_text(x,y,skinnum)
 //if skinnum = 7 draw_text(x,y,geodenum_points[0])

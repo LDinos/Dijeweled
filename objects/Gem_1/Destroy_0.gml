@@ -122,7 +122,7 @@ if !amInvisible //if I am visible
 		{
 			#region gempower conditions
 	
-			if gempower = 5
+			if gempower = OCTA
 			{
 				#region gempower 5
 				Gamerule_1.octanovaOn = true
@@ -141,7 +141,7 @@ if !amInvisible //if I am visible
 				}
 				#endregion
 			}
-			else if gempower = 4
+			else if gempower = SEPTA
 			{
 				#region gempower 4
 				if Gamerule_1.isQuest with(obj_quest_control) {if (L_noslightning != -1) L_noslightning = 1}
@@ -172,7 +172,7 @@ if !amInvisible //if I am visible
 				}
 				#endregion
 			}
-			else if gempower = 3
+			else if gempower = NOVA
 			    {
 					#region gempower 3
 					if Gamerule_1.isQuest with(obj_quest_control) {if (L_noslightning != -1) L_noslightning = 1}
@@ -212,7 +212,7 @@ if !amInvisible //if I am visible
 					with(lek) skinnum = other.skinnum
 					#endregion
 			    }
-			else if gempower = 2
+			else if gempower = LIGHTNING
 			    {
 					#region gempower 2
 					if Gamerule_1.isQuest with(obj_quest_control) {if (L_noslightning != -1) L_noslightning = 1}
@@ -228,7 +228,7 @@ if !amInvisible //if I am visible
 					with(lek) skinnum = other.skinnum
 					#endregion
 			    }
-			else if gempower = 1
+			else if gempower = FLAME
 			{
 				explode(Gem_1)
 			}

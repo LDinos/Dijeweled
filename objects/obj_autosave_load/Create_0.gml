@@ -67,6 +67,11 @@ if file_exists("autosave_"+string(room_get_name(room)))
 								 var app = instance_create(x,y,iceAppear)
 								 app.mygem = Gem
 								}
+								else if AMBEINGLOCKED = 4 && AMLOCKED = 0 //In the case where the lock is settling, both ambeinglocked and amlocked are true. We want the case w
+								{
+								 var app = instance_create(x,y,skullAppear)
+								 app.mygem = Gem
+								}
 								else if AMLOCKED = 1 //In the case where the lock is settling, both ambeinglocked and amlocked are true. We want the case w
 								{
 									 if AMBEINGLOCKED = 1
@@ -93,6 +98,10 @@ if file_exists("autosave_"+string(room_get_name(room)))
 									 app.mygem = Gem
 									}
 								 ds_list_add(Gamerule_1.list_of_ice_locks,Gem)
+								}
+								else if AMLOCKED = 4
+								{
+									ds_list_add(Gamerule_1.list_of_skulls,Gem)
 								}
 
 								if FRUITEXPLODING ds_list_add(Gamerule_1.list_of_fruits,Gem)

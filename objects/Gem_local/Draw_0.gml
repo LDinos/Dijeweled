@@ -14,7 +14,7 @@ if !amInvisible
 		#region powered bloom
 		if global.OPT_lightallowed && Gamerule_1.shader_allowed
 		{
-			if amLit || (gempower > 0 && gempower < 6) || bloom
+			if amLit || (gempower > 0 && gempower < FRUIT) || bloom
 			{
 				var value = random_range(.2,.4)
 				if amLit value = 1

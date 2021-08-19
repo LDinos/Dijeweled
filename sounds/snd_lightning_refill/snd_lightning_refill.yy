@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_lightning_refill",
-  "duration": 2.098696,
+  "duration": 2.093696,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

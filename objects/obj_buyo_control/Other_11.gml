@@ -20,16 +20,5 @@
 			{
 				x += x_dif
 				scr_buyo_findij()
-				//reset spd
-				/*if _i >= 0
-				{
-					if (_i == 7) alarm[0] = spd
-					else if (Gamerule_1.gem_board1[_i+1,_j] != noone) alarm[0] = spd
-				}
-				else if _i2 >= 0
-				{
-					if (_i2 == 7) alarm[0] = spd
-					else if (Gamerule_1.gem_board1[_i2+1,_j2] != noone) alarm[0] = spd
-				}*/
 			}
 		}	
