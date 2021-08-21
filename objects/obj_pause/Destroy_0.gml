@@ -1,0 +1,20 @@
+/// @description Insert description here
+instance_destroy(obj_pause_tick_fullscreen)
+instance_destroy(obj_pause_tick_lighteffects)
+instance_destroy(obj_pause_tick_vsync)
+instance_destroy(obj_pause_tick_lvltransition)
+instance_destroy(obj_pause_tick_transparent)
+instance_destroy(obj_pause_tick_shownum)
+
+instance_destroy(obj_pause_return)
+instance_destroy(obj_pause_mainmenu)
+instance_destroy(obj_pause_controls)
+
+instance_destroy(obj_pause_arrowleft)
+instance_destroy(obj_pause_arrowright)
+instance_destroy(obj_pause_arrowleft_margin)
+instance_destroy(obj_pause_arrowright_margin)
+
+instance_destroy(obj_volume_music)
+instance_destroy(obj_volume_fx)
+instance_destroy(obj_volume_voice)

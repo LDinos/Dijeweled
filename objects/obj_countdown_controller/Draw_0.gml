@@ -1,0 +1,17 @@
+/// @description Insert description here
+draw_set_font(font0)
+centerize_text()
+draw_self()
+draw_text_transformed(x+sprite_width/2,y+16,"MOVES LEFT",0.4,0.4,0)
+draw_set_font(font0_big)
+draw_text_transformed(x+sprite_width/2,y+64,moves,1,1,0)
+
+//draw_set_blend_mode(bm_add)
+draw_sprite_ext(spr_countdown_lights,0,x,y,1,1,0,color[index,r1],1)
+draw_sprite_ext(spr_countdown_lights,1,x,y,1,1,0,color[index,r2],1)
+draw_sprite_ext(spr_countdown_lights,2,x,y,1,1,0,color[index,r3],1)
+//draw_set_blend_mode(bm_normal)
+draw_sprite(spr_countdown_circle,0,x,y)
+draw_sprite_ext(spr_gems,index,x +sprite_width/2,y + 9*16 - 8,.25,.25,0,c_white,1)
+draw_sprite_ext(spr_countdownglow,0,x,y,1,1,0,c_white,glowalpha)
+draw_text_transformed_color(x+sprite_width/2,y+64,moves,xx,yy,0,c_white,c_white,c_white,c_white,zoomalpha)
