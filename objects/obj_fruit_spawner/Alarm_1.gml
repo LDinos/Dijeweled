@@ -12,7 +12,7 @@ else
 		if amBeingLocked != 0 {amBeingLocked = 0; instance_destroy(instance_position(x,y,lockAppear)); instance_destroy(instance_position(x,y,doomAppear))}
 		if amBomb destroy_bomb()
 		else if amLocked = 1 destroy_lock()
-		gempower = 6
+		gempower = FRUIT
 	}
 	with(Gamerule_1)
 	{

@@ -1,5 +1,5 @@
 /// @description Fade off
-perc += 0.05
-x = lerp(xx,0-sprite_width,1 - power(perc-1,2))
-if perc < 1 alarm[1] = 1
-else perc = 0
+perc2 += FADE_OFF_SPEED 
+x = lerp(xx,0-sprite_width-4,1 - power(perc2-1,2))
+if perc2 < 1 alarm[1] = 1
+else perc2 = 0

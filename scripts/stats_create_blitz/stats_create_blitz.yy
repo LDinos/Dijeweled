@@ -1,8 +1,12 @@
 {
-    "id": "d27e1b30-b67c-422a-80f3-1fb10af4e72e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "stats_create_blitz",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Stats",
+    "path": "folders/Scripts/Stats.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "stats_create_blitz",
+  "tags": [],
+  "resourceType": "GMScript",
 }

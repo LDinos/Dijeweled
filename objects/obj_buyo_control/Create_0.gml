@@ -15,6 +15,8 @@ with(Gamerule_1)
 spd_def = (Gamerule_1.level div 2) + 1
 spd = spd_def
 
+accidental_down = false
+if keyboard_check(vk_down) || gamepad_button_check(global.gp[0],gp_padd) accidental_down = true
 doonce = false
 doonce2 = false
 //alarm[0] = spd //start falling

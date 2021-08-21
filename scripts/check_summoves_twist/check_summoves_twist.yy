@@ -1,8 +1,12 @@
 {
-    "id": "a3a9f198-682b-4ab6-965c-7024fd67199a",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "check_summoves_twist",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "check_summoves_twist",
+  "tags": [],
+  "resourceType": "GMScript",
 }

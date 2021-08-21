@@ -4,11 +4,15 @@ if (room == rm_LOCAL) deposit = obj_avalanchedeposit_local
 with(Gamerule_1) check_gaps(Board_1,Gem_1)
 deposit.spawn_invs = true
 
+var initial_gaps = []
+array_copy(initial_gaps,0,Gamerule_1.gaps,0,8)
+
 do
 {
 	var finished = false
 	var numgems = deposit.gems_to_send
-	var gaps = Gamerule_1.gaps
+	var gaps = []
+	array_copy(gaps,0,Gamerule_1.gaps,0,8)
 	var col_num_create = -1;
 	for(var i =0; i <8; i++) col_num_create[i] = 0
 	var board = Gamerule_1.gemboard
@@ -181,7 +185,7 @@ do
 		if gemcount < 64
 			{
 				var r = 0
-				for(var i = 1; i<8; i++)
+				for(var i = 1; i<8; i++) //Find the column with the biggest gap
 				{
 					if gaps[i] >= gaps[r]
 					{
@@ -193,7 +197,7 @@ do
 				{
 					var s = irandom(Gamerule_1.num_skin)
 					var stop = 0
-					while(stop < 4)
+					while(stop < 4) //make sure it doesn't match with anything
 					{
 						stop = 0
 						if r == 0
@@ -266,15 +270,20 @@ do
 }
 until finished
 
+
 deposit.gems_to_send = 1
 deposit.hidden_gems = numgems
-var gaps2 = Gamerule_1.gaps
+
 for(var j=0; j<8;j++)
 {
 	for(var i =0; i < col_num_create[j]; i++)
 	{
 		var g = instance_create(Board_1.x + j*64, Board_1.y - 64*(i+1), Gem_1)
-		var sk = board[gaps2[j]-1,j]
+		var sk = board[initial_gaps[j]-1,j]
+		if sk == -1
+		{
+			show_debug_message(sk)
+		}
 		with(g)
 		{
 			set_skin(sk)
@@ -294,7 +303,7 @@ for(var j=0; j<8;j++)
 			}
 			#endregion
 		}
-		gaps2[j]--
+		initial_gaps[j]--
 	}
 }
 

@@ -69,11 +69,11 @@ _j = (x-MyBoard.x) div 64
 var luck,sys;
 if gempower > 0 && visible
 {
-	if gempower = 1
+	if gempower = FLAME
 	{
 		part_particles_create(global.sys_below_gem,x,y,global.partFire,1)
 	}
-	else if gempower = 2 //lighting
+	else if gempower = LIGHTNING //lighting
 	{
 		luck = irandom(10)
 		if luck < 2 sys = global.sys_above_gem
@@ -81,7 +81,7 @@ if gempower > 0 && visible
 		part_emitter_region(sys,global.emit_newstar,x-32,x+32,y-32,y+32,ps_shape_ellipse,ps_distr_gaussian)
 		part_emitter_burst(sys,global.emit_newstar,global.part_star_bolt,2)
 	}
-	else if gempower = 3 //nova
+	else if gempower = NOVA //nova
 	{
 		luck = irandom(10)
 		if luck < 2 sys = global.sys_above_gem
@@ -90,7 +90,7 @@ if gempower > 0 && visible
 		part_emitter_burst(sys,global.emit_newstar,global.part_star_bolt,2)
 		part_particles_create(global.sys_below_gem,x,y,global.partNovaFire,1)
 	}
-	else if gempower = 4 //septa
+	else if gempower = SEPTA //septa
 	{
 		part_particles_create(global.sys_below_gem,x,y,global.partFire,1)
 		part_particles_create(global.sys_below_gem,x,y,global.partCinder,1)
@@ -101,7 +101,7 @@ if gempower > 0 && visible
 		part_emitter_burst(sys,global.emit_newstar,global.part_star_bolt,2)
 		part_particles_create(choose(global.sys_below_gem,global.sys_above_gem),x,y,global.partSeptafractal,1)
 	}
-	else if gempower = 5 //octa
+	else if gempower = OCTA //octa
 	{
 		part_particles_create(global.sys_below_gem,x,y,global.partFire,1)
 		part_particles_create(global.sys_below_gem,x,y,global.partCinder,1)
@@ -112,7 +112,7 @@ if gempower > 0 && visible
 		part_emitter_burst(sys,global.emit_newstar,global.part_star_bolt,2)
 		part_particles_create(choose(global.sys_below_gem,global.sys_above_gem),x,y,global.partOctafractal,1)
 	}
-	else if gempower = 6 //fruit
+	else if gempower = FRUIT //fruit
 	{
 		if (sprite_index != spr_fruits) sprite_index = spr_fruits
 		if amFruitExploding

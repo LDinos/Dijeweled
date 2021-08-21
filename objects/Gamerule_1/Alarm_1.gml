@@ -6,7 +6,11 @@ combo = 0
 if (levelbarfull) levelcompleted = true
 if bombis0 && !levelbarfull
 {
-	if !fruit_want_to_spawn alarm[7] = 1
+	if !challengewon
+	{
+		if !fruit_want_to_spawn alarm[7] = 1
+		else IsGemActive2 = true
+	}
 	else IsGemActive2 = true
 }
 else IsGemActive2 = true

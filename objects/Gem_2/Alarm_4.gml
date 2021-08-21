@@ -1,2 +1,0 @@
-/// @description Shake
-shake = true

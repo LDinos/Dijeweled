@@ -1,2 +1,6 @@
 ///Is last pressed key a number?
-return (keyboard_lastkey >= 48 && keyboard_lastkey <= 57)
+function keyboard_islastkey_number() {
+	return (keyboard_lastkey >= 48 && keyboard_lastkey <= 57)
+
+
+}

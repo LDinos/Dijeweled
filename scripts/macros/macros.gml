@@ -1,8 +1,9 @@
+function macros() {
 #macro DARK_GRAY $212121
 #macro LIGHT_GRAY $363636
 #macro BLACK_GRAY $0d0d0d
 #macro KEYBOARD -1
-
+#macro FADE_OFF_SPEED 0.02
 #macro NN_DISCONNECT 0
 #macro NN_LBY_CONNECTED 1
 #macro NN_CHAT 2
@@ -57,7 +58,18 @@
 #macro NN_MATCH_SEND_POINTS 51 //after a lightning/hypercube ends, we send the points that we got during that time
 #macro NN_MATCH_INVERTED_OVER 52 //when inverted swap is over, send that info
 #macro NN_MATCH_HORVER_OVER 53 //when horizontal or vertical swap is over, send that info
-#macro NN_MATCH_TUG_INFO 54 
+#macro NN_MATCH_TUG_INFO 54
+#macro GLOW_FADEOUT_FRAMES 10
+#macro FLAME 1
+#macro LIGHTNING 2
+#macro NOVA 3
+#macro SEPTA 4
+#macro OCTA 5
+#macro FRUIT 6
 
 
 
+
+
+
+}

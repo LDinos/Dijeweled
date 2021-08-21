@@ -24,7 +24,7 @@
 #endregion
 
 #region ROTATION
-	if keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("Z")) || gamepad_button_check_pressed_anyface(global.gp[0])
+	if keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(ord("X")) || gamepad_button_check_pressed_anyface(global.gp[0])
 	{
 		alarm[0] = -1
 		doonce = false
@@ -39,7 +39,7 @@
 		if keyboard_check(vk_left) || gamepad_button_check(global.gp[0],gp_padl)  left = true
 		else left = false
 		event_user(1)	
-		alarm[0] = -1
+		alarm[1] = -1
 		doonce = false
 	}
 	else if (keyboard_check(vk_left) || keyboard_check(vk_right)) || gamepad_button_check(global.gp[0],gp_padl) || gamepad_button_check(global.gp[0],gp_padr)
@@ -50,9 +50,9 @@
 			alarm[1] = 10
 		}
 	}
-	else doonce2 = false
+	else {doonce2 = false; alarm[1] = -1}
 	
-	if keyboard_check(vk_down) || gamepad_button_check(global.gp[0],gp_padd)
+	if (keyboard_check(vk_down) || gamepad_button_check(global.gp[0],gp_padd)) && !accidental_down
 	{		
 		spd = 20		
 	}
@@ -60,4 +60,6 @@
 	{
 		spd = spd_def
 	}
+	
+	if keyboard_check_released(vk_down) || gamepad_button_check_released(global.gp[0],gp_padd) accidental_down = false
 #endregion

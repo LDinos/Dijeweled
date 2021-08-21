@@ -35,29 +35,14 @@ if doonce == 0
 	#endregion
 	//show_message("I am gemactive")
 	if !zenify matcher_stepevent(Gem_1);	
-	#region do hidden gem (again)
-	/*var l = ds_list_size(list_of_hiddengems)
-	for(var i = 0; i<l; i++)
-	{
-		with(list_of_hiddengems[| i]) delete_gem()
-	}
-	
-	var l = ds_list_size(list_of_ice_locks)
-	for(var i = 0; i<l; i++)
-	{
-		with(list_of_ice_locks[| i]) ice_create_hiddengems()
-	}*/
-	#endregion
 }
 doonce = 1
 IsGemActive = true
 future_summoves = 0
 
-
-
 if bombis0
 {
-	var setitback = true
+	var setitback = true //if bomb goes 0 but somehow returns back up (eg fruit trigger), then revert
 	if list_of_doom != noone
 	{
 		if list_of_doom.countdown = 0 setitback = false

@@ -1,8 +1,12 @@
 {
-    "id": "a7e1ad46-ed40-41de-b1f2-8f590b32ac73",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_twist_swap",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_twist_swap",
+  "tags": [],
+  "resourceType": "GMScript",
 }

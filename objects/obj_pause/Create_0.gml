@@ -3,9 +3,9 @@
 instance_create(x+272,y+178,obj_pause_tick_fullscreen)
 instance_create(x+272,y+178 +32 + 16,obj_pause_tick_lighteffects)
 instance_create(x+272,y+178 +32*2 + 16*2,obj_pause_tick_vsync)
-instance_create(x+272,y+178 +32*3 + 16*3,obj_pause_tick_lvltransition)
+//instance_create(x+272,y+178 +32*3 + 16*3,obj_pause_tick_lvltransition)
 instance_create(x+272,y+178 +32*4 + 16*4,obj_pause_tick_transparent)
-instance_create(x+688,y+178 +32*4 + 16*4,obj_pause_tick_shownum)
+instance_create(x+272,y+178 +32*3 + 16*3,obj_pause_tick_shownum)
 
 if room = rm_menu_options
 {

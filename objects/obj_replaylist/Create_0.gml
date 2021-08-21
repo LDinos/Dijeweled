@@ -1,4 +1,5 @@
 /// @description Insert description here
+instance_deactivate_object(obj_logo)
 var ar = instance_create(736,112,obj_replaylist_arrow)
 with(ar) image_index = 1
 instance_create(736,576,obj_replaylist_arrow)

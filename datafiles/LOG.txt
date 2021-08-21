@@ -1,3 +1,24 @@
+=1.10=
+- Fixed quest information errors (mostly info for Time)
+- Fixed error when completing a bonus challenge with no multiplier
+- Fruit gems can now affect skull gem countdowns
+- Skull gems can no longer reach negative values
+- Fixed pattern quest types not having a skin for coal gems
+- Minor changes to the level up sequence
+- Added logo by B1Gaming
+- Fixed not having moves on Point Scorer quests
+- Fixed the fifth Board Cleaner 2 quest, now you MUST complete it in 10 moves
+- Magnification effect is now unavailable and the option is obsolete
+- Fixed bug with pressing ESC when paused and looking at bindings
+- Fixed score points appearing in board cleaner quests (they are not needed)
+- Fixed QUEST COMPLETE / GAME OVER at the same time when completing quests with 0 countdown in bombs/skulls/etc
+- Nerfed and fixed Zenifier quests since octanovas recently had been nerfed too
+- Making a Septanova will update both stats for Supernova and Septanova creations in Quests. As such, Octanova will increase the creation stats for Septanova and Supernova aswell.
+- Discord rich presence is unavailable due to developer errors, will be fixed in a future update (if the developer fixes it aswell)
+- Replaced copyrighted Puyo music with some unused music I had sitting. It has 4 changes throughout the game depending on how high your level is
+- Made Buyo Buyo slightly less clunky (still is though, I hate it)
+- Powered gems will now glow nearby gems as long as enhanced graphics are enabled
+
 =1.9.1=
 - Fixed floating score text not appearing when gems were cleared
 - Twist spinning is more stable now, thus fixing most errors

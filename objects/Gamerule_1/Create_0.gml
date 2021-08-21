@@ -105,6 +105,7 @@ bomb_danger = 1 //skull danger on bomb spinner
 var ch = irandom(99)
 bomb_win = (ch > 99/(5-bomb_danger)) //chance to win a predetermined bomb defusal
 bombis0 = false //variable used to disable player control when bomb counter hits 0
+skullis0 = false;
 juststarted = true //used for replay, dont give replay button if no user matches have been made yet. this is set to false after a match
 reset_compliments()
 gemdestroyonemove = 0 //gems destroyed in one move (used for the blue text)
@@ -241,5 +242,5 @@ bo.image_yscale = 64 //make it fat enough to stop gems from penetrating it
 
 check_summoves(false)
 //gaps = array_create(8,7)
-for(var i=8;i>0;i--) gaps[i] = 7
+for(var i=7;i>=0;i--) gaps[i] = 8
 check_gaps(Board_1,Gem_1)

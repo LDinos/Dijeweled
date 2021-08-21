@@ -30,7 +30,7 @@ if gem1 != noone && !visible //instance_exists(gem1)
 	#endregion
 }
 
-if !Gamerule_1.bombis0 && Gamerule_1.controlallowed && !Gamerule_1.isReplay //&& !global.bot1 && Gamerule_1.summoves2 > 0
+if !Gamerule_1.skullis0 && !Gamerule_1.bombis0 && Gamerule_1.controlallowed && !Gamerule_1.isReplay //&& !global.bot1 && Gamerule_1.summoves2 > 0
 {
 if (image_index == 1) image_index = 0
 

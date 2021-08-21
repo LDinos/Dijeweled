@@ -15,7 +15,7 @@ bar_sprite = 0 //number of bars to show
 xplier_index = 0 //number of gaps filled (for checking for fruit)
 xplier_real = 1 //real section for multiplier
 xx = x 
-perc = 0
+perc2 = 0 //level complete animation percentage completed variable
 t = 0
 x_surf = surface_create(8,sprite_height)
 if global.replay_match_isplaying

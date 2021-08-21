@@ -1,7 +1,7 @@
 /// @description Begone THOT!
 // You can write your code in this editor
 if (Gamerule_1.gem_board1[_i,_j] == id) Gamerule_1.gem_board1[_i,_j] =noone //remove me from the list
-
+if was_skull_0 Gamerule_1.skullis0 = false;
 if !amInvisible //if I am visible
 {
 	#region online
@@ -50,7 +50,6 @@ if !amInvisible //if I am visible
 			if (gemtocheck = other.id) gemtocheck = noone
 		}
 	#endregion
-	
 	if mypowerup > -1
 	{
 		#region Powerup
@@ -81,7 +80,6 @@ if !amInvisible //if I am visible
 			}
 		#endregion
 	}
-	
 	if Gamerule_1.isQuest //if we are in a quest
 	{
 		if obj_quest_control.L_nospecialgems != -1 //if we dissallow special gems in the quest
@@ -120,12 +118,11 @@ if !amInvisible //if I am visible
 			add_xymover(MyGem)
 		}
 
-
 		if skinnum != 7 //if im not coal
 		{
 			#region gempower conditions
 	
-			if gempower = 5
+			if gempower = OCTA
 			{
 				#region gempower 5
 				Gamerule_1.octanovaOn = true
@@ -144,7 +141,7 @@ if !amInvisible //if I am visible
 				}
 				#endregion
 			}
-			else if gempower = 4
+			else if gempower = SEPTA
 			{
 				#region gempower 4
 				if Gamerule_1.isQuest with(obj_quest_control) {if (L_noslightning != -1) L_noslightning = 1}
@@ -175,7 +172,7 @@ if !amInvisible //if I am visible
 				}
 				#endregion
 			}
-			else if gempower = 3
+			else if gempower = NOVA
 			    {
 					#region gempower 3
 					if Gamerule_1.isQuest with(obj_quest_control) {if (L_noslightning != -1) L_noslightning = 1}
@@ -215,7 +212,7 @@ if !amInvisible //if I am visible
 					with(lek) skinnum = other.skinnum
 					#endregion
 			    }
-			else if gempower = 2
+			else if gempower = LIGHTNING
 			    {
 					#region gempower 2
 					if Gamerule_1.isQuest with(obj_quest_control) {if (L_noslightning != -1) L_noslightning = 1}
@@ -231,7 +228,7 @@ if !amInvisible //if I am visible
 					with(lek) skinnum = other.skinnum
 					#endregion
 			    }
-			else if gempower = 1
+			else if gempower = FLAME
 			{
 				explode(Gem_1)
 			}
@@ -296,7 +293,6 @@ if !amInvisible //if I am visible
 			}
 		}
 		#endregion
-		
 		#region bad gem conditions
 		if amBomb //BOMB\\
 		{
@@ -370,4 +366,5 @@ if !amInvisible //if I am visible
 		}
 	#endregion
 	if Gamerule_1.isQuest with(obj_quest_control) {S_matched_gems++; S_destroyed_gems++}
+
 }

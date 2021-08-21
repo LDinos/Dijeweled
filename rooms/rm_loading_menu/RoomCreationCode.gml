@@ -1,4 +1,4 @@
-global.version = "1.9.1" //dont forget to upload vercheck and change windows version!
+global.version = "1.10" //dont forget to upload vercheck and change windows version on game options!
 global.canbepressed = false
 global.vsync_checked_once = false
 global.mynet = noone
@@ -17,9 +17,11 @@ ini_close()
 if (os_type != os_windows) global._discord_allowed = false
 if global._discord_allowed
 {
-discord_init_dll()
-discord_init_app("584549707301519391")
-discord_update_presence("In Main Menu",global.version,"ico_512","")
+	if discord_init_dll()
+		{
+			discord_init_app("584549707301519391")
+			discord_update_presence("In Main Menu",global.version,"ico_512","")
+		}
 }
 
 if !file_exists("binds.ini")
