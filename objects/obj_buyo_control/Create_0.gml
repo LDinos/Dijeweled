@@ -4,8 +4,8 @@ xx = 0 //x for second gem. Changes on rotation
 yy = -64 //y for second gem. Changes on rotation
 scr_buyo_findij()
 left = false
-gem1 = irandom(4) //center gem
-gem2 = irandom(4) //outer gem
+gem1 = -1;
+gem2 = -1;
 with(Gamerule_1)
 {
 	combo = 0

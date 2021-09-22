@@ -3,7 +3,7 @@
 	scr_buyo_findij()
 	var amlastrow = false
 	if (_i == 7 || _i2 == 7) amlastrow = true
-	if amlastrow || position_meeting(x,y+32+spd,Gem_1) || position_meeting(x+xx,y+32+yy+spd,Gem_1) //|| (floor((y+spd-Board_1.y+63)/64) == 8) || (floor((y+spd+yy-Board_1.y+63)/64) == 8)
+	if position_meeting(x,y+32+spd,Gem_1) || position_meeting(x+xx,y+32+yy+spd,Gem_1) || position_meeting(x+xx,y+yy+spd+32,stopper) || position_meeting(x,y+32+spd,stopper)
 	{
 		if !doonce 
 		{
