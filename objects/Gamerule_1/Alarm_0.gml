@@ -10,16 +10,19 @@ ds_list_clear(list_of_ampowered)
 if doonce == 0 
 {
 	#region do hidden gem
-	var l = ds_list_size(list_of_hiddengems)
-	for(var i = 0; i<l; i++)
+	if (!gameover)
 	{
-		with(list_of_hiddengems[| i]) delete_gem()
-	}
+		var l = ds_list_size(list_of_hiddengems)
+		for(var i = 0; i<l; i++)
+		{
+			with(list_of_hiddengems[| i]) delete_gem()
+		}
 	
-	var l = ds_list_size(list_of_ice_locks)
-	for(var i = 0; i<l; i++)
-	{
-		with(list_of_ice_locks[| i]) ice_create_hiddengems()
+		var l = ds_list_size(list_of_ice_locks)
+		for(var i = 0; i<l; i++)
+		{
+			with(list_of_ice_locks[| i]) ice_create_hiddengems()
+		}
 	}
 	#endregion
 	#region AUTOSAVE
@@ -36,7 +39,8 @@ if doonce == 0
 	//show_message("I am gemactive")
 	if !zenify matcher_stepevent(Gem_1);	
 }
-doonce = 1
+
+doonce = 1; 
 IsGemActive = true
 future_summoves = 0
 
@@ -58,3 +62,4 @@ with(spawner1) havedone = false
 with(spawner_avalanche) havedone = false
 timegemcooldown = false
 if (alarm[1] = -1 && !IsGemActive2) alarm[1] = 2
+
