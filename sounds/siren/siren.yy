@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "siren",
-  "duration": 1.114705,
+  "duration": 1.109705,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

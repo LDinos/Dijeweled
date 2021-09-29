@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_voice",
   },
   "soundFile": "vo_1",
-  "duration": 1.206202,
+  "duration": 1.201202,
   "parent": {
     "name": "voice",
     "path": "folders/Sounds/voice.yy",

@@ -1,5 +1,5 @@
 /// @description Pause menu, after pressing ESC in-game
-
+depth = -99
 instance_create(x+272,y+178,obj_pause_tick_fullscreen)
 instance_create(x+272,y+178 +32 + 16,obj_pause_tick_lighteffects)
 instance_create(x+272,y+178 +32*2 + 16*2,obj_pause_tick_vsync)
@@ -9,7 +9,7 @@ instance_create(x+272,y+178 +32*3 + 16*3,obj_pause_tick_shownum)
 
 if room = rm_menu_options
 {
-	instance_create(x+432,y+560,obj_pause_return)
+	instance_create(x+432,y+560, obj_pause_return)
 	instance_create(x+720, y+560, obj_pause_controls)
 }
 else

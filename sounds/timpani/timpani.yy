@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "timpani",
-  "duration": 1.68846893,
+  "duration": 1.683469,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

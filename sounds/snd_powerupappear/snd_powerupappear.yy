@@ -1,5 +1,5 @@
 {
-  "compression": 0,
+  "compression": 3,
   "volume": 1.0,
   "preload": false,
   "bitRate": 128,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_powerupappear",
-  "duration": 0.866678,
+  "duration": 0.861678,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

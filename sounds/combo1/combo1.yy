@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "combo1",
-  "duration": 2.110215,
+  "duration": 2.105215,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

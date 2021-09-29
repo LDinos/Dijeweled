@@ -1,5 +1,5 @@
 {
-  "compression": 0,
+  "compression": 3,
   "volume": 0.63,
   "preload": false,
   "bitRate": 128,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_secret_unlock",
-  "duration": 5.843367,
+  "duration": 5.838367,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

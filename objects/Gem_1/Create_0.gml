@@ -38,8 +38,6 @@ light_left = false //check begin step
 dragXX = 0
 dragYY = 0 //used in matcherstep event for when 4+ matches happen, do a gem drag animation
 
-geodenum = irandom_range(1,Gamerule_1.geodemax) //number of geodes if I am coal
-for(i=0;i<geodenum;i++) geodenum_points[i] = choose(50,100,150,200,250,300) //geode points if i am coal
 
 #region My
 MyGem = Gem_1 //Instance variables so that copy pasting code through gems will be easier
@@ -52,6 +50,9 @@ if (room == rm_blitz_matchreplay) MyPlayer = player1_matchreplay
 //else if room = rm_twist MyPlayer = obj_twist_spinner
 MyDiss = gem_dissappear
 #endregion
+
+geodenum = irandom_range(1,MyGamerule.geodemax) //number of geodes if I am coal
+for(i=0;i<geodenum;i++) geodenum_points[i] = choose(50,100,150,200,250,300) //geode points if i am coal
 
 #region Bomb stuff
 playcountdown = false //playing the bomb countdown audio when gems are stationiary and countdown <= 5
@@ -131,7 +132,7 @@ matchme = -1 //stuff for matchstep event
 spinning = false //am I selected and spinning?
 
 #region Skin
-skinnum = irandom_range(0,Gamerule_1.num_skin) //my skin
+skinnum = irandom_range(0,MyGamerule.num_skin) //my skin
 image_index = skinnum
 image_speed = 0
 image_xscale = .5 //Gem sprites are 256x256, so we need to scale them to 64

@@ -44,7 +44,7 @@ if amBomb || amLocked =2 || amLocked = 4 //if I am bomb or doom or skull
 			audio_play_sound(bomb5,0,0) //play the bomb sound effect the first time the bomb appears
 		}
 	}
-	else if countdown <= 7 //if my countdown value is less than 8
+	else //if countdown <= 7 //if my countdown value is less than 8
 	{
 		if playcountdown //if I haven't played the bomb sound effect
 		{
@@ -59,9 +59,17 @@ if amBomb || amLocked =2 || amLocked = 4 //if I am bomb or doom or skull
 					audio_play_sound(snd,0,0) //play the sound
 				}
 			}
-		}		
-		xmover = irandom_range(countdown-8,8-countdown) //shakiness value (used in the draw event)
-		ymover = irandom_range(countdown-8,8-countdown)
+		}
+			if (countdown <= 7) //if my countdown value is less than 8
+			{
+				xmover = irandom_range(countdown-8,8-countdown) //shakiness value (used in the draw event)
+				ymover = irandom_range(countdown-8,8-countdown)
+			}
+			else
+			{
+				xmover = 0
+				ymover = 0
+			}
 		if countdown = 0
 		{
 			if (amBomb || amLocked = 2) Gamerule_1.bombis0 = true //if am Bomb/Doom
@@ -103,11 +111,6 @@ if amBomb || amLocked =2 || amLocked = 4 //if I am bomb or doom or skull
 			}
 		}
 		else if was_skull_0 Gamerule_1.skullis0 = false; //if previously was skull on 0, now bring back control to the player
-	}
-	else //if my counter is more than 7, dont shake
-	{
-		xmover = 0
-		ymover = 0
 	}
 }
 else //if im not doom, skull or bomb

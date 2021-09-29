@@ -1,15 +1,7 @@
 /// @description Insert description here
 x = lerp(x,xdestination,0.1)
 if myturn //if it is my turn
-{
-	/*if !doonce
-	{
-		if Gamerule_1.IsGemActive2 && gems_existing < 64 && spawn_invs
-		{
-			doonce = true
-			//avalanche_create_invisible_gems(0)				
-		}
-	}*/
+{	
 	var non_inv_gems = 0;
 	with(Gem_1) {if !amInvisible non_inv_gems++}
 	gems_existing = hidden_gems + non_inv_gems //non_inv gems einai ta diamantia hdh sto board

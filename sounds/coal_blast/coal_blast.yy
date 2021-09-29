@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "coal_blast",
-  "duration": 1.383503,
+  "duration": 1.378503,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

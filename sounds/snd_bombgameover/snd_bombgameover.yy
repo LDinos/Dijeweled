@@ -1,5 +1,5 @@
 {
-  "compression": 0,
+  "compression": 3,
   "volume": 1.0,
   "preload": false,
   "bitRate": 128,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_bombgameover",
-  "duration": 8.327993,
+  "duration": 8.322993,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

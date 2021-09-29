@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_geode",
-  "duration": 0.405317,
+  "duration": 0.400317,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

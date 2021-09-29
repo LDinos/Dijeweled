@@ -1,5 +1,5 @@
 {
-  "compression": 0,
+  "compression": 3,
   "volume": 0.8,
   "preload": false,
   "bitRate": 128,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_danger",
-  "duration": 1.114705,
+  "duration": 1.109705,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

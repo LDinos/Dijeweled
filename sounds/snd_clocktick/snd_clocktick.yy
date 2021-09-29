@@ -1,5 +1,5 @@
 {
-  "compression": 0,
+  "compression": 3,
   "volume": 0.4,
   "preload": false,
   "bitRate": 128,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_clocktick",
-  "duration": 0.091984,
+  "duration": 0.086984,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_music",
   },
   "soundFile": "mus_blitzend",
-  "duration": 5.232279,
+  "duration": 5.227279,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

@@ -1,4 +1,4 @@
-global.version = "1.10" //dont forget to upload vercheck and change windows version on game options!
+global.version = "1.11" //dont forget to upload vercheck and change windows version on game options!
 global.canbepressed = false
 global.vsync_checked_once = false
 global.mynet = noone

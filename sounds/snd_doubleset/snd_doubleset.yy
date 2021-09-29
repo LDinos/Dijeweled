@@ -1,5 +1,5 @@
 {
-  "compression": 1,
+  "compression": 3,
   "volume": 1.0,
   "preload": false,
   "bitRate": 128,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_doubleset",
-  "duration": 1.409195,
+  "duration": 1.404195,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

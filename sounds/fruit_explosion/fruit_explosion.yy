@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "fruit_explosion",
-  "duration": 8.130238,
+  "duration": 8.125238,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

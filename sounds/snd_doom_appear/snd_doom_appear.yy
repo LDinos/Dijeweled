@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_doom_appear",
-  "duration": 3.159014,
+  "duration": 3.154014,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

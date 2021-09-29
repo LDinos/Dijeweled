@@ -60,8 +60,6 @@ if w_count <= 7
 					if !amFruitExploding
 					{
 						ds_list_add(Gamerule_1.list_of_fruits,other.gem[other.i])
-						//if Gamerule_1.fruit_exploding ds_list_add(Gamerule_1.list_of_fruits,other.gem[other.i])
-						//else fruit_explode()
 					}
 					amFruitExploding = true
 					

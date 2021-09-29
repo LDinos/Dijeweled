@@ -1,5 +1,5 @@
 {
-  "compression": 0,
+  "compression": 3,
   "volume": 1.0,
   "preload": false,
   "bitRate": 128,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_blz9",
-  "duration": 1.181803,
+  "duration": 1.176803,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

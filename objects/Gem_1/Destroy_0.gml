@@ -19,7 +19,7 @@ if !amInvisible //if I am visible
 			}
 		}
 		
-		if !Gamerule_1.octanovaOn
+		if !MyGamerule.octanovaOn
 		{
 			with(global.mynet)
 			{
@@ -31,7 +31,7 @@ if !amInvisible //if I am visible
 				network_send_packet(client_socket,buffer,buffer_tell(buffer))
 			}
 		}
-		Gamerule_1.GEM_ID[myid] = -1		
+		MyGamerule.GEM_ID[myid] = -1		
 	}
 	#endregion
 	with(obj_avalanchedeposit) event_user(0)
@@ -112,8 +112,7 @@ if !amInvisible //if I am visible
 		}
 		#endregion
 			
-
-		if MyGamerule.combo >= 1 && !dontshake && !Gamerule_1.fruit_exploding
+		if MyGamerule.combo >= 1 && !dontshake && !Gamerule_1.fruit_exploding //shake gems a bit on a cascade
 		{
 			add_xymover(MyGem)
 		}
@@ -127,15 +126,14 @@ if !amInvisible //if I am visible
 				#region gempower 5
 				Gamerule_1.octanovaOn = true
 				if Gamerule_1.isQuest with(obj_quest_control) {if (L_noslightning != -1) L_noslightning = 1}
-				//with(MyGamerule) {points_add(600,false); compliment_add(600)}
 				audio_play_sound(snd_septanovaexplode,2,false)
 				instance_create(x,y,obj_novaexplode)
 				part_particles_create(global.sys_above_gem,x,y,global.partSeptaExplosion,50)
 				part_particles_create(global.sys_above_gem,x,y,global.partSeptaExplosion2,5)
 				for(i=0;i<=7;i++)
 				{
-					var lk = instance_create(MyBoard.x+32*7, MyBoard.y + 64*i, MyLightKiller)		
-					var lek = instance_create(MyBoard.x+32*7, MyBoard.y + 64*i, MyLightObj)
+					var lk = instance_create(MyBoard.x+32*7, MyBoard.y + 64*i, MyLightKiller) //gem killer	
+					var lek = instance_create(MyBoard.x+32*7, MyBoard.y + 64*i, MyLightObj) //lightning sprite
 					with(lek) {skinnum = other.skinnum; octa = true;}
 					with(lk) skinnum = other.skinnum
 				}
@@ -145,13 +143,11 @@ if !amInvisible //if I am visible
 			{
 				#region gempower 4
 				if Gamerule_1.isQuest with(obj_quest_control) {if (L_noslightning != -1) L_noslightning = 1}
-				//with(MyGamerule) {points_add(500,false); compliment_add(500)}
-				//audio_play_sound(snd_novaexplode,1,false)
 				audio_play_sound(snd_septanovaexplode,2,false)
 				instance_create(x,y,obj_novaexplode)
 				part_particles_create(global.sys_above_gem,x,y,global.partSeptaExplosion,50)
 				part_particles_create(global.sys_above_gem,x,y,global.partSeptaExplosion2,5)
-				for(i=0;i<=4;i++)
+				for(i=0;i<=4;i++) //create lightnings, as long as they are not too cornered
 				{
 					le[i] = noone
 					if position_meeting(MyBoard.x +32*7,y + (i-2)*64,MyBoard)
@@ -182,7 +178,6 @@ if !amInvisible //if I am visible
 					var le4 = noone;
 					var le5 = noone;
 					var le6 = noone;
-					//with(MyGamerule) {points_add(300,false); compliment_add(300)}
 			        audio_play_sound(snd_novaexplode,1,false)
 					instance_create(x,y,obj_novaexplode)
 			        if position_meeting(MyBoard.x +32*7,y,MyBoard) le1 = instance_create(MyBoard.x +32*7,y,MyLightObj)
@@ -264,9 +259,9 @@ if !amInvisible //if I am visible
 		if amexplode explode(MyGem)
 
 		#region dissapearing gem, particles and collision
-		if create_col {with(instance_position(x,y-64,Gem_1)) {dont_fall_yet = true; alarm[7] = 10}}
+		if create_col {with(instance_position(x,y-64,Gem_1)) {dont_fall_yet = true; alarm[7] = 10}} //tell gem above not to fall yet
 		var diss = instance_create_depth(x,y,depth,MyDiss)
-		with(diss) 
+		with(diss) //dissappearing gem object
 		{
 			if other.cascade_diss
 			{
@@ -293,6 +288,7 @@ if !amInvisible //if I am visible
 			}
 		}
 		#endregion
+		
 		#region bad gem conditions
 		if amBomb //BOMB\\
 		{
@@ -350,6 +346,7 @@ if !amInvisible //if I am visible
 		var cube = instance_create(x,y,obj_hypercube_detonate)
 		cube.image_index = hyper_anim
 		cube.index = skin_to_hype
+		cube.destroy_companions = gem_to_hype.amCompanion
 		cube.gem[0] = gem_to_hype
 		#endregion
 	}
