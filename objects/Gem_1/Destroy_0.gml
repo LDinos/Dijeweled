@@ -346,6 +346,7 @@ if !amInvisible //if I am visible
 		var cube = instance_create(x,y,obj_hypercube_detonate)
 		cube.image_index = hyper_anim
 		cube.index = skin_to_hype
+		cube.destroy_companions = gem_to_hype.amCompanion
 		cube.gem[0] = gem_to_hype
 		#endregion
 	}

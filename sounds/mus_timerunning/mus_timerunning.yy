@@ -11,10 +11,10 @@
     "path": "audiogroups/audiogroup_music",
   },
   "soundFile": "mus_timerunning",
-  "duration": 144.005,
+  "duration": 144.0,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "music",
+    "path": "folders/Sounds/music.yy",
   },
   "resourceVersion": "1.0",
   "name": "mus_timerunning",

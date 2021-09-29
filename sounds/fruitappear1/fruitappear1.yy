@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "fruitappear1",
-  "duration": 5.426315,
+  "duration": 5.421315,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

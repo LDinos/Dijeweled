@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "vrooom",
-  "duration": 3.408628,
+  "duration": 3.403628,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

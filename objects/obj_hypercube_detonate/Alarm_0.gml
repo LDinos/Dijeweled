@@ -15,13 +15,25 @@ make_gems_fallen(Gamerule_1)
 					if index = 7 //dont destroy cubes/invs when hyping a coal
 					{
 						var am_hype = false
-						with(Gamerule_1.gems_fallen[i,j]) {if amHype am_hype = true}
+						var g = Gamerule_1.gems_fallen[i,j]
+						with(g) {if amHype am_hype = true}
 						
 						
-						if (Gamerule_1.gemboard[i,j] = index) && (!am_hype) && (!Gamerule_1.gems_fallen[i,j].amInvisible) 
+						if (Gamerule_1.gemboard[i,j] = index) && (!am_hype) && (!g.amInvisible) 
 						{
-							gem[u] = Gamerule_1.gems_fallen[i,j]; 
-							u++
+							if (destroy_companions)
+							{
+								if (g.amCompanion)
+								{
+									gem[u] = g; 
+									u++
+								}
+							}
+							else if (g.amLocked == 0 && !g.amCompanion) //im not skull/doom
+							{
+								gem[u] = g; 
+								u++
+							}
 						}
 					}
 					else

@@ -1,5 +1,5 @@
 {
-  "compression": 0,
+  "compression": 3,
   "volume": 1.0,
   "preload": false,
   "bitRate": 128,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_xplier_up",
-  "duration": 1.384819,
+  "duration": 1.379819,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

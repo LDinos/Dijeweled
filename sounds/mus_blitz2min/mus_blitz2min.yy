@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_music",
   },
   "soundFile": "mus_blitz2min",
-  "duration": 134.334549,
+  "duration": 134.329544,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

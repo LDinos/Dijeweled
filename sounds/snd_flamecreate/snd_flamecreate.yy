@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_flamecreate",
-  "duration": 2.942324,
+  "duration": 2.937324,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_lightcreate",
-  "duration": 2.900918,
+  "duration": 2.895918,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

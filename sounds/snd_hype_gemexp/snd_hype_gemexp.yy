@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_hype_gemexp",
-  "duration": 1.033526,
+  "duration": 1.028526,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

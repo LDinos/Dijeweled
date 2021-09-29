@@ -1,3 +1,19 @@
+=1.11=
+- Added new music for Zen Mode. This means that I am officialy using music in the game that is entirely created by me (finally).
+- Fixed buyo bug on last row where gems would suddenly teleport down
+- Added a bag randomization in buyo, so now you are guaranteed to get each combination of color
+- Made buyo level ups change the board skin
+- IP is now resolved when trying to connect online, so now letters can be accepted as valid ip addresses
+- Fixed 100 gems in one move quest bug. Now you truly have to destroy them in one move
+- Hypercube now destroys the correct gems when swapped with coals and companion gems
+- Fixed Avalanche Pass bug, now you can't pass the other player's turn
+- Fixed online pausing depth, now gameplay elements won't be on top of the pause menu
+- Checking for updates with no internet connection should now give you "Cannot retrieve info" correctly
+- Nerfed Skull Destroyer Quests (increased countdown base value for the last quests)
+- Added extremely subtle fade in/out on lightning effects
+- Fixed Skull bug that would softlock the game
+- I made all sfx sounds ( = everything except the voice and the music) be viewable in the game folder, since it was requested that sounds should be easily mod-able.
+
 =1.10=
 - Fixed quest information errors (mostly info for Time)
 - Fixed error when completing a bonus challenge with no multiplier

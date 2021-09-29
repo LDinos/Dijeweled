@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_lock_appear",
-  "duration": 1.359558,
+  "duration": 1.354558,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

@@ -410,7 +410,7 @@ function scr_recieved_packet(argument0) {
 			if (global.SET_gamemode == 1) 
 			{
 				instance_create(0,0,spawner_avalanche)
-				instance_create(room_width/2,992,obj_avalanche_pass)
+				instance_create_depth(room_width/2,992,0,obj_avalanche_pass)
 				with(spawner_avalanche) event_user(1)
 			}
 			else

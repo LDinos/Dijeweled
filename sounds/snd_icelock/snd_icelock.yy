@@ -1,5 +1,5 @@
 {
-  "compression": 0,
+  "compression": 3,
   "volume": 1.0,
   "preload": true,
   "bitRate": 128,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_icelock",
-  "duration": 2.006979,
+  "duration": 2.001979,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

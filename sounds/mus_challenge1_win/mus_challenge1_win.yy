@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_music",
   },
   "soundFile": "mus_challenge1_win",
-  "duration": 5.543458,
+  "duration": 5.538458,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

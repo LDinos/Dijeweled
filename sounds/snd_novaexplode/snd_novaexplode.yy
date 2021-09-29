@@ -1,5 +1,5 @@
 {
-  "compression": 0,
+  "compression": 3,
   "volume": 0.7,
   "preload": false,
   "bitRate": 512,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_novaexplode",
-  "duration": 3.71221113,
+  "duration": 3.707211,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
