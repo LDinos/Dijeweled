@@ -1,3 +1,7 @@
+=1.11.1=
+- Fixed stupid hypercube bug
+- Fixed game over error when moving a gem upwards to an ice-created gap, when a skull/bomb/doom gem is on 0
+
 =1.11=
 - Added new music for Zen Mode. This means that I am officialy using music in the game that is entirely created by me (finally).
 - Fixed buyo bug on last row where gems would suddenly teleport down
