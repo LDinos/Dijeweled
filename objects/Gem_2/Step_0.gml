@@ -71,7 +71,25 @@ if gempower > 0 && visible
 {
 	if gempower = FLAME
 	{
-		part_particles_create(global.sys_below_gem,x,y,global.partFire,1)
+		if global.OPT_lightallowed
+			{
+				var shouldhappen = irandom(1)
+				if shouldhappen != 1
+				{
+					var rand = irandom(particle_flame_points-1)
+					var xx = path_get_point_x(particle_flame_asset,rand)
+					var yy = path_get_point_y(particle_flame_asset,rand)
+					var sys = global.sys_below_gem
+					var luck = irandom(9)
+					if (luck == 0) sys = global.sys_above_gem
+					part_particles_create(sys,x+xx,y+yy,global.part_newflame_ember,1)
+					part_particles_create(sys,x+xx,y+yy,global.part_newflame,1)
+				}
+			}
+			else
+			{
+				part_particles_create(global.sys_below_gem,x,y,global.partFire,1)
+			}
 	}
 	else if gempower = LIGHTNING //lighting
 	{
