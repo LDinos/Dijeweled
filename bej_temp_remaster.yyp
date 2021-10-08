@@ -739,7 +739,6 @@
     {"id":{"name":"obj_stats_blitz_M60","path":"objects/obj_stats_blitz_M60/obj_stats_blitz_M60.yy",},"order":12,},
     {"id":{"name":"obj_stats_blitz_M180","path":"objects/obj_stats_blitz_M180/obj_stats_blitz_M180.yy",},"order":13,},
     {"id":{"name":"obj_stats_blitz_M300","path":"objects/obj_stats_blitz_M300/obj_stats_blitz_M300.yy",},"order":14,},
-    {"id":{"name":"spr_bck2","path":"sprites/spr_bck2/spr_bck2.yy",},"order":12,},
     {"id":{"name":"obj_stats_M_button_left","path":"objects/obj_stats_M_button_left/obj_stats_M_button_left.yy",},"order":15,},
     {"id":{"name":"obj_stats_M_button_right","path":"objects/obj_stats_M_button_right/obj_stats_M_button_right.yy",},"order":16,},
     {"id":{"name":"obj_button_stats_back","path":"objects/obj_button_stats_back/obj_button_stats_back.yy",},"order":17,},
