@@ -1,3 +1,4 @@
+///@description Used for bots, try "making" a match and see how important it would be if you really did it
 ///@param list_moves_array
 ///@param INDEX
 function do_virtual_match(argument0, argument1) {

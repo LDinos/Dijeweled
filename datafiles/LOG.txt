@@ -1,3 +1,14 @@
+=1.12=
+- Changed flame particles, made them look like in the original Bejeweled games. If the performance hit is too strong for your pc, it can go back to the previous particle system by turning off Enhanced Graphics
+- Fixed rare bug if you load an autosave during gems spawning when AHM algorithm is running, because it tries to setup a combo replay that doesn't exist
+- Nerfed last two Preserver quests by adding one more minute to the timer
+- Multiplayer lobby now remembers the latest settings until you close the game
+- Updated splash screen by using anti-aliasing in the text. Now the horrible 'W' letter is much better looking
+- Added new visualizer
+- Jellified green visualizer (it looks more like jelly)
+- Made bomb explosion say gameover on gamemodes other than Quest
+- Fixed Online lobby Ultranova option being wrong for the other player
+
 =1.11.1=
 - Fixed stupid hypercube bug
 - Fixed game over error when moving a gem upwards to an ice-created gap, when a skull/bomb/doom gem is on 0

@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Object common events",
+    "path": "folders/Scripts/Object common events.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Script155",
+  "name": "scr_gempower_particles",
   "tags": [],
   "resourceType": "GMScript",
 }

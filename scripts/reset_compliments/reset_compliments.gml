@@ -8,6 +8,4 @@ function reset_compliments() {
 	complimentsaid5 = false
 	complimentsaid6 = false
 	compliment_points = 0
-
-
 }

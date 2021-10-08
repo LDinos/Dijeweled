@@ -1,5 +1,5 @@
 function create_challenge_ini() {
-	ini_write_real("ver","value",7) //if u change that, change also on rm_menu 'var ver'
+	ini_write_real("ver","value",9) //if u change that, change also on rm_menu 'var ver'
 	ini_write_real("hasseencredits","value",false)
 #region Category Titles
 	ini_write_string("Titles","0","BOARD CLEANER 1")
@@ -70,8 +70,8 @@ function create_challenge_ini() {
 	ini_write_string("Challenges",string(i) + ":1","Get 20 green gems on board") //1
 	ini_write_string("Challenges",string(i) + ":2","Get 28 green gems on board") //3
 	ini_write_string("Challenges",string(i) + ":3","Get 22 green gems and 22 red gems on board") //3
-	ini_write_string("Challenges",string(i) + ":4","Get 25 green gems on board in 1 minute") //3
-	ini_write_string("Challenges",string(i) + ":5","Get 30 green gems on board in 1 minute") //3
+	ini_write_string("Challenges",string(i) + ":4","Get 25 green gems on board in 2 minutes") //3
+	ini_write_string("Challenges",string(i) + ":5","Get 30 green gems on board in 2 minutes") //3
 		i++
 	//5
 	ini_write_string("Challenges",string(i) + ":0","Destroy 50 gems in 20 moves") //1

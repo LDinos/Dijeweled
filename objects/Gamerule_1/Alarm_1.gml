@@ -1,7 +1,7 @@
 /// @description ISGEMACTIVE2
-// You can write your code in this editor
-//with(obj_zenify) cooldown = false
-if replay_allowed && complimentsaid1 && !levelbarfull && !juststarted && !bombis0 && !instance_exists(replay) instance_create(Board_1.x + (Board_1.sprite_width/2) - 64, room_height - 72,replay)
+// When we are sure no cascades are happening and gems are fully stationary
+
+if (replay_allowed && complimentsaid1 && !levelbarfull && !juststarted && !bombis0 && !instance_exists(replay)) instance_create(Board_1.x + (Board_1.sprite_width/2) - 64, room_height - 72,replay)
 combo = 0
 if (levelbarfull) levelcompleted = true
 if bombis0 && !levelbarfull

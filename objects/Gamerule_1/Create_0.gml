@@ -94,7 +94,6 @@ ini_open("settings.ini") //infobox information
 	ini_write_real("Debug","value",debug)
 ini_close()
 isQuest = false //Are we on challenge mode? (Used to check 'with(quest_control)' only on challenge based levels)
-//debug = true //Are we debugging? If so, some buttons will be enabled for debug
 previous_points = 0 //Points on the previous level, so that we can make the progress bar relevant to that
 zenify = false //Are we zenifying atm?
 amzen = false //Am I on Zen? Used on levelcompletegetnextpoints
@@ -105,7 +104,7 @@ bomb_danger = 1 //skull danger on bomb spinner
 var ch = irandom(99)
 bomb_win = (ch > 99/(5-bomb_danger)) //chance to win a predetermined bomb defusal
 bombis0 = false //variable used to disable player control when bomb counter hits 0
-skullis0 = false;
+skullis0 = false; //variable used to disable player control when skull counter hits 0
 juststarted = true //used for replay, dont give replay button if no user matches have been made yet. this is set to false after a match
 reset_compliments()
 gemdestroyonemove = 0 //gems destroyed in one move (used for the blue text)
@@ -117,8 +116,8 @@ if global.replay_match_allowed
 }
 
 isReplayChecked = false // if false, the replay_map will be filled with the stationary gems
-isReplay = false //are we currently watching a replay? FOR NOW PUT ON TRUE! ITS STILL WIP
-up_index = -1 //used for replay, this varaible is stating how many gems have spawned, so the replay will know when to end when checking the array vertically
+isReplay = false //are we currently watching a replay?
+up_index = -1 //used for replay, this variable is stating how many gems have spawned, so the replay will know when to end when checking the array vertically
 
 list_of_skulls = ds_list_create()
 list_of_hiddengems = ds_list_create() //list of all below ice hidden gems
@@ -151,16 +150,16 @@ shader_allowed = shader_is_compiled(shd_bright_contrast)
 ultranovas_allowed = true //do we allow any novas above 6? (septanova and octanova)
 specials_allowed = true //do we allow special gems or is this bejeweled 1?
 levelcompleteallowed = true //do we allow "Level complete" or is this some kind of quest
-replay_illegals_allowed = false //just for zenify mode where you make a last illegal move (for replay)
+replay_illegals_allowed = false //just for zenify mode, we allow an illegal move for replay
 wheel_spinner_allowed = false //do we allow bomb wheel spinners, or do we lose automatically on bomb = 0?
 points_xpliered_auto = false //is the multiplier dependant of the xplier object (false) or is it the same value as the level (true). 
-replay_allowed = true//do we allow combo replays?
+replay_allowed = true //do we allow combo replays?
 autosave_allowed = true //do we allow autosaving?
-compliments_allowed = true //do we hear the voice complimenting you?
+compliments_allowed = true //do we allow hearing the voice complimenting you?
 multiswap_allowed = false //do we allow multiswapping (swapping while cascades are happening)?
 points_allowed = true //do we count for points?
-controlallowed = true //are we allowed to move around / select gems at all?
-spawnallowed = true //are we allowed to spawn gems?
+controlallowed = true //are we allowed to swap / select gems at all?
+spawnallowed = true //are we allowed to spawn gems? (false in avalanche)
 AHM_allowed = true //should we always have possible moves? Used in arcade where moves MUST always exist
 illegals_allowed = true //are we allowed to do matchless swaps?
 force_moves_allowed = true //Do we force to always have moves, no matter what? (spawns a hypercube in that rare case)
@@ -190,7 +189,7 @@ gameover = false //Is the game over?
 style = 0 //style points (unused)
 matches = 0 //number of matches made
 future_summoves = 0 //after an AHM execution, this becomes 1 so it wont redo AHM work for no reason. This gets reseted when gemactive = 1
-summoves2 = 0 //number of possible moves
+summoves2 = 0 //number of possible moves on board
 timegemcooldown = false //OBSOLETE
 
 blazingchainup = false;
@@ -208,7 +207,6 @@ for(var i=0;i<8;i++)
 			gem_board1[i,j] = -4 //gems on normal position
 		}
 	}
-//above_ready = false; //are we ready to gemactive = 1 (checking gems above the board)?
 ready = true; //are we ready to gemactive = 1?
 	
 doonce = 1 //do something only once
@@ -241,6 +239,5 @@ bo.image_yscale = 64 //make it fat enough to stop gems from penetrating it
 
 
 check_summoves(false)
-//gaps = array_create(8,7)
 for(var i=7;i>=0;i--) gaps[i] = 8
 check_gaps(Board_1,Gem_1)

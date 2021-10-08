@@ -41,8 +41,8 @@ part_type_life(global.part_icebreak2,60,60);
 /*For new flame particles*/
 global.part_newflame =  part_type_create();
 part_type_size(global.part_newflame,0.3,0.5,0,0)
-part_type_sprite(global.part_newflame,spr_flamenew_part,true,false,false)
-part_type_life(global.part_newflame,48,48);
+part_type_sprite(global.part_newflame,spr_flamenew_part,true,true,false)
+part_type_life(global.part_newflame,40,40);
 
 global.part_newflame_ember =  part_type_create();
 part_type_size(global.part_newflame_ember,0.05,0.05,0,0)

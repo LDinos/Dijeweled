@@ -1,5 +1,5 @@
 /// @description GemActive
-// You can write your code in this editor
+// When we are sure all gems are stationary but cascades might happen, so they are not fully stationary yet
 if isQuest with(obj_quest_control) {event_user(4)}
 for(i=0;i<ds_list_size(list_of_ampowered);i++)
 {
