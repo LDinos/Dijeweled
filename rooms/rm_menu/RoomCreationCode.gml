@@ -19,7 +19,7 @@ if !file_exists("challenges.ini")
 }
 else
 {
-	var ver = 7 //current challenges version. if value in file is indifferent, recreate challenges
+	var ver = 9 //current challenges version. if value in file is indifferent, recreate challenges
 	ini_open("challenges.ini")
 		if ini_read_real("ver","value",0) != ver create_challenge_ini()
 	ini_close()

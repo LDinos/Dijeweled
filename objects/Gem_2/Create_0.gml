@@ -128,6 +128,8 @@ spinning = false //am I selected and spinning?
 #region Skin
 skinnum = irandom_range(0,Gamerule_1.num_skin) //my skin
 image_index = skinnum
+particle_flame_asset = asset_get_index("coord_" + string(image_index))
+particle_flame_points = path_get_number(particle_flame_asset)
 image_speed = 0
 image_xscale = .5 //Gem sprites are 256x256, so we need to scale them to 64
 image_yscale = .5

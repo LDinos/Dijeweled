@@ -49,6 +49,7 @@ with(Gamerule_local)
 	multiswap_allowed = global.SET_multiswap
 	hypeallowed = global.SET_hyper
 	illegals_allowed = global.SET_matchless
+	num_skin = global.SET_skin - 1
 
 	if (global.SET_gamemode == 1)
 	{

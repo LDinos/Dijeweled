@@ -1,6 +1,4 @@
 /// @description put gems on array and store them
-//ready = true;
-//var above_ready = true;
 if (!levelcompleted)
 {
 	if !IsGemActive

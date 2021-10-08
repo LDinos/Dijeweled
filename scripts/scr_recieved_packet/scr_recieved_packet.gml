@@ -464,7 +464,7 @@ function scr_recieved_packet(argument0) {
 			break;
 		case NN_LBY_SEND_SETTINGS: //client getting info previously asked
 			LOB_ultranovas.enabled = buffer_read(buffer,buffer_bool)
-			LOB_ultranovas.image_index = LOB_multiswap.enabled
+			LOB_ultranovas.image_index = LOB_ultranovas.enabled
 			LOB_multiswap.enabled = buffer_read(buffer,buffer_bool)
 			LOB_multiswap.image_index = LOB_multiswap.enabled
 			LOB_hypercubes.enabled = buffer_read(buffer,buffer_bool)

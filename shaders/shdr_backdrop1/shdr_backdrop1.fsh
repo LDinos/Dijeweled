@@ -25,5 +25,5 @@ void main()
 		uv+=p/l*(cos(z)+1.)*abs(sin(l*9.-z*2.));
 		c[i]=.01/length(abs(mod(uv,1.)-.5));
 	}
-	gl_FragColor= vec4(c/l/3.0,t);
+	gl_FragColor= vec4(c/l/3.0,1.0);
 }

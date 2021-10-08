@@ -5,5 +5,11 @@ ini_open("settings.ini")
 ini_close()
 x = room_width/2
 y = room_height - 32
-deftext = "Greetings, " + user + "!"
+deftext = choose(
+"Greetings, " + user + "!",
+"What's up, " + user + "?",
+"Hello " + user + "!",
+"What will you play today " + user + "?",
+"What are you up to " + user + "?"
+)
 text = deftext

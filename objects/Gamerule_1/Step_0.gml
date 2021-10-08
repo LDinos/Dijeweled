@@ -7,7 +7,7 @@ if (global.replay_match_allowed || global.replay_match_isplaying) cur_time++ //t
 if (points >= levelpointsneeded) && !time_allowed //if points are more than levelpointsneeded and time is not allowed, we know the progress bar is full
 {
 	if (levelcompleteallowed) levelbarfull = true
-	else leverballfull = false
+	else levelbarfull = false
 }
 else levelbarfull = false
 
