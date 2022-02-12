@@ -26,6 +26,7 @@ if canclick
 				if (LOB_gamemode.val = 0) global.SET_gamemode2 = LOB_gamemode_2.val
 				else if (LOB_gamemode.val = 1) global.SET_gamemode2 = LOB_gamemode_defence.enabled
 				canclick = false
+				with(obj_button_lobbyback) canclick = false
 				fade_to_room(rm_LOCAL)
 			}
 			else
@@ -74,6 +75,7 @@ if canclick
 		}
 		if (LOB_circle.enabled && LOB_circle2.enabled)
 		{
+			with(obj_button_lobbyback) canclick = false
 			fade_to_room(rm_ONLINE)
 			global.SET_multiswap = LOB_multiswap.enabled
 			global.SET_hyper = LOB_hypercubes.enabled

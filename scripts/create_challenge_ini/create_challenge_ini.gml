@@ -1,5 +1,5 @@
 function create_challenge_ini() {
-	ini_write_real("ver","value",9) //if u change that, change also on rm_menu 'var ver'
+	ini_write_real("ver","value",CHALLENGES_VER) //uses macro from rm_menu
 	ini_write_real("hasseencredits","value",false)
 #region Category Titles
 	ini_write_string("Titles","0","BOARD CLEANER 1")
@@ -167,7 +167,7 @@ function create_challenge_ini() {
 	ini_write_string("Challenges",string(i) + ":2","Create a 100 chain in 3 minutes") //4
 	ini_write_string("Challenges",string(i) + ":3","Create a 125 chain in 3 minutes") //4
 	ini_write_string("Challenges",string(i) + ":4","Create a 145 chain in 3 minutes") //5
-	ini_write_string("Challenges",string(i) + ":5","Create a 300 chain in 5 minutes") //8
+	ini_write_string("Challenges",string(i) + ":5","Create a 250 chain in 5 minutes") //8
 		i++
 	//17
 	ini_write_string("Challenges",string(i) + ":0","Score 1500 points in one move") //1

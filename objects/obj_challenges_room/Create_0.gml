@@ -1,6 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
+#macro STATUS_LOCKED 1
+#macro STATUS_UNLOCKED 0
+#macro STATUS_COMPLETED 2
 page = 0 //page used for custom challenges
+var survivor_unlock_thresold = 0; //on 15 challenges completed we unlock survivor gamemode
 global.canbepressed = true
 ini_open("challenges.ini")
 	index = ini_read_real("Last Index","index", 0)
@@ -10,11 +14,16 @@ ini_open("challenges.ini")
 		for(var j=0;j<6;j++)
 		{
 			AR_challenges[i,j] = ini_read_string("Challenges",string(i)+":"+string(j),"-")
-			AR_status[i,j] = ini_read_real("Info",string(i)+":"+string(j)+"-Status",0)
-			if (global.debug && AR_status[i,j] = 1) AR_status[i,j] = 0
+			AR_status[i,j] = ini_read_real("Info",string(i)+":"+string(j)+"-Status",STATUS_UNLOCKED)
+			if (global.debug && AR_status[i,j] = STATUS_LOCKED) AR_status[i,j] = STATUS_UNLOCKED
+			if (AR_status[i,j] == STATUS_COMPLETED) survivor_unlock_thresold++
 		}
 	}
 ini_close()
+
+if (survivor_unlock_thresold >= 15) {
+	gamemode_unlock(MODE_SURVIVOR, 0, 0)
+}
 
 func = 1
 dist = index*48

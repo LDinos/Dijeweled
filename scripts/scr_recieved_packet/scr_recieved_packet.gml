@@ -597,6 +597,9 @@ function scr_recieved_packet(argument0) {
 		case NN_MATCH_AVALANCHE_PASS:
 			audio_play_sound(snd_pass,0,false)
 			break;
+		case NN_AMREADY:
+			with(obj_online_getready) other_player_is_now_ready()
+			break;
 	}
 
 

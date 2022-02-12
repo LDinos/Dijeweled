@@ -1,5 +1,5 @@
 /// @description Window size value update
-if window_has_focus()
+if window_has_focus() && (os_type != os_android)
 {
 		var w = window_get_width()
 		var h = window_get_height()

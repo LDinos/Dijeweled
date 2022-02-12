@@ -6,5 +6,7 @@ draw_set_valign(fa_middle)
 var ip_text = hide_ip ? field_converted : field
 draw_text_transformed(636,392,string_hash_to_newline(ip_text + blink),1,1,0)
 //draw_text(room_width/2,16,keyboard_lastchar)
-draw_text(room_width/2,room_height-24,"(Press Right Click to Paste)")
-draw_text(room_width/2,room_height-48,"(Press Middle Click to hide IP)")
+if (os_type != os_android) {
+	draw_text(room_width/2,room_height-20,"(Press Right Click to Paste)")
+	draw_text(room_width/2,room_height-48,"(Press Middle Click to hide IP)")
+}

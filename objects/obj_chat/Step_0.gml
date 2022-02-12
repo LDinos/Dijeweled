@@ -32,18 +32,7 @@ if keyboard_check(vk_anykey)
 	}
 	else if keyboard_lastkey == vk_enter && text != ""
 	{
-		consecutive_writing = 0
-		consecutive_first = true
-		alarm[1] = -1
-		var txt = global.user + ": " + text
-		text = chat_write(txt,c_white)		
-		with(global.mynet)
-		{
-			buffer_seek(buffer,buffer_seek_start,0)
-			buffer_write(buffer,buffer_u8,NN_CHAT)
-			buffer_write(buffer,buffer_string,txt)
-			network_send_packet(client_socket,buffer,buffer_tell(buffer))
-		}				
+		send_message()			
 	}
 }
 //else {consecutive_writing = 0; consecutive_first = true}

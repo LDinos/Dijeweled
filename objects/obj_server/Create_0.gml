@@ -4,4 +4,4 @@ client_socket = noone
 server_socket = network_create_server(network_socket_tcp, 6969, 1);
 client_connected = false
 buffer = buffer_create(1,buffer_grow,1)
-network_set_config(network_config_connect_timeout, 6000);
+network_set_config(network_config_connect_timeout, 8000);

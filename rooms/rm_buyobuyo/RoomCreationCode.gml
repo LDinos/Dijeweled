@@ -12,3 +12,8 @@ with(Gamerule_1)
 	levelcompleteallowed = false
 	replay_allowed = false
 }
+
+if (os_type == os_android) {
+	var h = sprite_get_height(spr_buyomobilecontrols1)
+	instance_create_depth(0, room_height - h, 0, obj_buyomobile_controls)
+}

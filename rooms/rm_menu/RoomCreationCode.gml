@@ -1,3 +1,4 @@
+#macro CHALLENGES_VER 10 //change me if you make a change in create_challenge_ini
 draw_set_font(font0)
 randomise()
 effect_clear()
@@ -19,9 +20,8 @@ if !file_exists("challenges.ini")
 }
 else
 {
-	var ver = 9 //current challenges version. if value in file is indifferent, recreate challenges
 	ini_open("challenges.ini")
-		if ini_read_real("ver","value",0) != ver create_challenge_ini()
+		if ini_read_real("ver","value",0) != CHALLENGES_VER create_challenge_ini()
 	ini_close()
 }
 

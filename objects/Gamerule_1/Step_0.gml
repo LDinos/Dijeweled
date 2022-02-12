@@ -34,39 +34,15 @@ if (levelbarfull)
 		level++
 		discord_update_presence(global.DIS_name,"Level " + string(Gamerule_1.level),"ico_512","")
 		#region secret
-		if (level == 20) //secret unlock
+		if (level == 10) //secret unlock
 		{
 			if (room == rm_timeattack)
 			{
-				if !file_exists("secrets.ini") file_create_secrets()
-				var l = ds_list_create()
-				ini_open("secrets.ini")
-					var str = ini_read_string("secret","data","")
-					ds_list_read(l,str)
-					if l[| 0] == false
-					{
-						instance_create_depth(0,512,-99,obj_secretunlock)
-						l[| 0] = true
-						var str = ds_list_write(l)
-						ini_write_string("secret","data",str)
-					}
-				ini_close()
+				gamemode_unlock(MODE_TWIST, 0, 512)
 			}
 			else if (room == rm_zen)
 			{
-				if !file_exists("secrets.ini") file_create_secrets()
-				var l = ds_list_create()
-				ini_open("secrets.ini")
-					var str = ini_read_string("secret","data","")
-					ds_list_read(l,str)
-					if l[| 1] == false
-					{
-						instance_create_depth(0,512,-99,obj_secretunlock)
-						l[| 1] = true
-						var str = ds_list_write(l)
-						ini_write_string("secret","data",str)
-					}
-				ini_close()
+				gamemode_unlock(MODE_COMPACT, 0, 512)
 			}
 		}
 		#endregion

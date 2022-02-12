@@ -9,3 +9,11 @@ alarm[0] = 30
 image_speed = 0
 field = "127.0.0.1"
 field_converted = "127.0.0.1"
+
+function join() {
+	if field != ""
+	{
+		global.ip = field
+		instance_create(x,y,obj_client)
+	}
+}

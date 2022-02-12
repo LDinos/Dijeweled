@@ -1,6 +1,6 @@
 /// @description Pause menu, after pressing ESC in-game
 depth = -99
-instance_create(x+272,y+178,obj_pause_tick_fullscreen)
+if (os_type != os_android) instance_create(x+272,y+178,obj_pause_tick_fullscreen)
 instance_create(x+272,y+178 +32 + 16,obj_pause_tick_lighteffects)
 instance_create(x+272,y+178 +32*2 + 16*2,obj_pause_tick_vsync)
 //instance_create(x+272,y+178 +32*3 + 16*3,obj_pause_tick_lvltransition)
@@ -21,8 +21,8 @@ else
 	instance_create(x+576, y+560, obj_pause_controls)
 }
 
-instance_create(x+416,y+480+32,obj_pause_arrowleft)
-instance_create(x+576,y+480+32,obj_pause_arrowright)
+if (os_type != os_android) instance_create(x+416,y+480+32,obj_pause_arrowleft)
+if (os_type != os_android) instance_create(x+576,y+480+32,obj_pause_arrowright)
 instance_create(x+704,y+480+32,obj_pause_arrowleft_margin)
 instance_create(x+864,y+480+32,obj_pause_arrowright_margin)
 
@@ -34,8 +34,7 @@ ini_open("settings.ini")
 	text = ini_read_string("Settings","Size","1280x720")
 	text2 = ini_read_real("Settings","SleepMargin",15)
 ini_close()
-
-switch(text)
+if (os_type != os_android) switch(text)
 {
 	case "720x405":
 		choice = 0
@@ -61,3 +60,4 @@ switch(text)
 		text = "1280x720"
 		break;
 }
+else text = "Phone"
