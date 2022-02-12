@@ -1,4 +1,4 @@
-global.version = "1.12" //dont forget to upload vercheck and change windows version on game options!
+global.version = "1.13" //dont forget to upload vercheck and change windows version on game options!
 global.canbepressed = false
 global.vsync_checked_once = false
 global.mynet = noone
@@ -12,6 +12,7 @@ global.gp[0] = 0
 	global.SET_ultranovas = true
 	global.SET_gamemode2 = 0
 var gp_num = gamepad_get_device_count();
+global.match_curve = animcurve_get_channel(cur_swap, "channel_swap")
 for (var i = 0; i < gp_num; i++;)
    {
 		if gamepad_is_connected(i) {global.gp[0] = i; break}

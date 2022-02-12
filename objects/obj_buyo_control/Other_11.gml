@@ -1,4 +1,6 @@
 /// @description MOVE
+	if (!move_endlag_started) {move_endlag = 10; move_endlag_started = true}
+	else move_endlag = 5
 	audio_play_sound(snd_buyo_move,0,0)
 	var condition = (_j < 7 && _j2 < 7)
 	var x_dif = 64

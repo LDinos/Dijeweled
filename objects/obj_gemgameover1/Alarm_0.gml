@@ -20,21 +20,9 @@ if i <= 7
 else
 {
 	#region secret
-	if Gamerule_1.points >= 700000
+	if Gamerule_1.points >= 300000
 	{
-		if !file_exists("secrets.ini") file_create_secrets()
-		var l = ds_list_create()
-		ini_open("secrets.ini")
-			var str = ini_read_string("secret","data","")
-			ds_list_read(l,str)
-			if l[| 2] == false
-			{
-				instance_create_depth(0,512,-99,obj_secretunlock)
-				l[| 2] = true
-				var str = ds_list_write(l)
-				ini_write_string("secret","data",str)
-			}
-		ini_close()
+		gamemode_unlock(MODE_SWIFT, 0, 512)
 	}
 	#endregion
 	

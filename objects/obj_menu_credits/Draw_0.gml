@@ -10,7 +10,6 @@ draw_text_outline(xx,yy+48,"LDinos",c_white,c_black)
 xx+=256+32
 draw_text_outline(xx,yy,"Music",c_orange,c_black)//
 draw_text_outline(xx,yy+48,"LDinos",c_white,c_black)
-draw_text_outline(xx,yy+48+48,"Markelius (Zen Mode)",c_white,c_black)
 xx+=256+32
 draw_text_outline(xx,yy,"Sound FX",c_orange,c_black)//
 draw_text_outline(xx,yy+48,"LDinos",c_white,c_black)

@@ -421,8 +421,9 @@ var modi = modifier
 if instance_exists(MyPlayer.gemtomove1) && instance_exists(MyPlayer.gemtomove2)
 {
 	//power(percent,2)
-	SWAP_X = ease_inout_sine(percent,0,SWAP_X_END,1)//round(lerp(0,SWAP_X_END,power(percent,2))) //- x
-	SWAP_Y = ease_inout_sine(percent,0,SWAP_Y_END,1)//round(lerp(0,SWAP_Y_END,power(percent,2))) //- y
+	var a = animcurve_channel_evaluate(global.match_curve, percent) 
+	SWAP_X = lerp(0, SWAP_X_END, a) //ease_inout_sine(percent,0,SWAP_X_END,1)//round(lerp(0,SWAP_X_END,power(percent,2))) //- x
+	SWAP_Y = lerp(0, SWAP_Y_END, a) //ease_inout_sine(percent,0,SWAP_Y_END,1)//round(lerp(0,SWAP_Y_END,power(percent,2))) //- y
 
 	percent += 0.1/modi
 
