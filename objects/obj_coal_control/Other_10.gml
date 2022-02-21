@@ -18,7 +18,8 @@ else
 	{
 		if (CoalSpawnLevelMin <= Gamerule_1.level) && (ds_list_size(Gamerule_1.list_of_coals) < CoalMax)
 		{
-			with(spawner1) coalspawn = true //tell spawner to spawn coal
+			//with(spawner1) coalspawn = true //tell spawner to spawn coal
+			Gamerule_1.spawn_coal = true
 		}
 	}
 }

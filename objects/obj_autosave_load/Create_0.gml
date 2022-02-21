@@ -33,11 +33,12 @@ if file_exists("autosave_"+string(room_get_name(room)))
 							var my_x = Board_1.x + 64*j
 							var dif = 1 //spawn gems 1 pixel up so gemactive will be enabled
 							if AMLOCKED = 3 dif = 0 //dont do that to ice locks
-							var my_y = Board_1.y - 64*(7-i) + 64*7 - dif
+							var my_y = Board_1.y + 64*i - dif//- 64*(7-i) + 64*7 - dif
 							
 							var Gem = instance_create_depth(my_x, my_y,-1,Gem_1)
 							Gem.gempower = GEMPOWER
 							Gem.amHype = AMHYPE
+							Gem.i_limit = i
 							with(Gem) set_skin(GEMSKIN)
 							//Gem.skinnum = my_skin
 							//Gem.image_index = my_skin
@@ -110,8 +111,8 @@ if file_exists("autosave_"+string(room_get_name(room)))
 							}
 						
 						}
-						Gamerule_1.gem_board1[i,j] = Gem
-						Gamerule_1.gemboard[i,j] = GEMSKIN
+						Gamerule_1.gems_id_array[i][j] = Gem
+						Gamerule_1.gems_skin_array[i][j] = GEMSKIN
 					}
 				}
 			}
@@ -239,21 +240,21 @@ ini_close()
 	{
 		IsGemActive = true
 		
-		#region gem_board1
+		#region gems_id_array
 		for(i=global.board_rows-1;i>=0;i--)
 			{
 				for(j=7;j>=0;j--)
 				{
 
-					gem_board1[i,j] = noone	
+					gems_id_array[i][j] = noone	
 				}
 			}
 		with(Gem_1)
 			{
 				if _i >= 0
 				{
-					other.gem_board1[_i,_j] = id
-					other.gemboard[_i,_j] = skinnum
+					other.gems_id_array[_i,_j] = id
+					other.gems_skin_array[_i,_j] = skinnum
 				}
 			}
 		#endregion

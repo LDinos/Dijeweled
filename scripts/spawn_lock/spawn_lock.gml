@@ -6,7 +6,7 @@ function spawn_lock(argument0) {
 	{
 		for(var j = 0; j<8; j++)
 		{
-			var gem = Gamerule_1.gem_board1[i,j]
+			var gem = Gamerule_1.gems_id_array[i][j]
 			if gem != noone//instance_exists(gem)
 			{
 				if (gem.amLocked = 0) && (gem.gempower = 0) && (gem.skinnum != 7) && (!gem.amBomb) && (gem.amBeingLocked = 0)

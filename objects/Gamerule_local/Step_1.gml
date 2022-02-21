@@ -8,8 +8,8 @@ if !IsGemActive
 		{
 			for(var j=7;j>=0;j--)
 			{
-				gem_board1[@i,j] = noone
-				gemboard[@i,j] = -1
+				gems_id_array[@i,j] = noone
+				gems_skin_array[@i,j] = -1
 			}
 		}
 }
@@ -18,8 +18,8 @@ with(Gem_local) //fill it up with gems
 {
 	if _i >= 0
 	{
-		other.gem_board1[@_i,_j] = id
-		other.gemboard[@_i,_j] = skinnum
+		other.gems_id_array[@_i,_j] = id
+		other.gems_skin_array[@_i,_j] = skinnum
 			
 		if acc != 0 other.ready = false
 	}

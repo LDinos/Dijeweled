@@ -9,7 +9,7 @@ for(var i=0;i<3;i++)
 {
 	for(var j=0;j<=7;j++)
 	{
-		gem_array[i,j] = irandom_range(0,Gamerule_1.num_skin)
+		gem_array[i][j] = irandom_range(0,Gamerule_1.num_skin)
 	}
 }
 
@@ -25,21 +25,21 @@ do
 		{
 			if i == 1
 			{
-				if (gem_array[i-1,j] == gem_array[i,j]) && (gem_array[i,j] == gem_array[i+1,j])
+				if (gem_array[i-1,j] == gem_array[i][j]) && (gem_array[i][j] == gem_array[i+1,j])
 					{
 						amready = false
-						do gem_array[i,j] = irandom_range(0,Gamerule_1.num_skin)
-						until gem_array[i,j] != gem_array[i-1,j]
+						do gem_array[i][j] = irandom_range(0,Gamerule_1.num_skin)
+						until gem_array[i][j] != gem_array[i-1,j]
 					}
 			}
 			
 			if j >= 1 && j <= 6
 			{
-				if (gem_array[i,j-1] == gem_array[i,j]) && (gem_array[i,j] == gem_array[i,j+1])
+				if (gem_array[i,j-1] == gem_array[i][j]) && (gem_array[i][j] == gem_array[i,j+1])
 					{
 						amready = false
-						do gem_array[i,j] = irandom_range(0,Gamerule_1.num_skin)
-						until gem_array[i,j] != gem_array[i,j-1]
+						do gem_array[i][j] = irandom_range(0,Gamerule_1.num_skin)
+						until gem_array[i][j] != gem_array[i,j-1]
 					}
 			}
 			
@@ -58,7 +58,7 @@ do
 					//3
 					if j < 5
 					{
-						if gem_array[i,j] == gem_array[i,j+2] && gem_array[i,j] == gem_array[i,j+3] && gem_array[i,j] != -1
+						if gem_array[i][j] == gem_array[i,j+2] && gem_array[i][j] == gem_array[i,j+3] && gem_array[i][j] != -1
 						{
 							amready2 = true //Yay! we have at least one move to do, we are done here
 							break;
@@ -67,7 +67,7 @@ do
 					//4
 					if j > 2
 					{
-						if gem_array[i,j] == gem_array[i,j-2] && gem_array[i,j] == gem_array[i,j-3] && gem_array[i,j] != -1
+						if gem_array[i][j] == gem_array[i,j-2] && gem_array[i][j] == gem_array[i,j-3] && gem_array[i][j] != -1
 						{
 							amready2 = true //Yay! we have at least one move to do, we are done here
 							break;
@@ -76,7 +76,7 @@ do
 					//5
 					if (j < 7 && i < 2 && i > 0)
 					{
-						if gem_array[i,j] == gem_array[i-1,j+1] && gem_array[i,j] == gem_array[i+1,j+1] && gem_array[i,j] != -1
+						if gem_array[i][j] == gem_array[i-1,j+1] && gem_array[i][j] == gem_array[i+1,j+1] && gem_array[i][j] != -1
 						{
 							amready2 = true //Yay! we have at least one move to do, we are done here
 							break;
@@ -85,7 +85,7 @@ do
 					//6
 					if (j > 0 && i < 2 && i > 0)
 					{
-						if gem_array[i,j] == gem_array[i-1,j-1] && gem_array[i,j] == gem_array[i+1,j-1] && gem_array[i,j] != -1
+						if gem_array[i][j] == gem_array[i-1,j-1] && gem_array[i][j] == gem_array[i+1,j-1] && gem_array[i][j] != -1
 						{
 							amready2 = true //Yay! we have at least one move to do, we are done here
 							break;
@@ -94,7 +94,7 @@ do
 					//7
 					if (i > 0 && j < 7 && j > 0)
 					{
-						if gem_array[i,j] == gem_array[i-1,j-1] && gem_array[i,j] == gem_array[i-1,j+1] && gem_array[i,j] != -1
+						if gem_array[i][j] == gem_array[i-1,j-1] && gem_array[i][j] == gem_array[i-1,j+1] && gem_array[i][j] != -1
 						{
 							amready2 = true //Yay! we have at least one move to do, we are done here
 							break;
@@ -103,7 +103,7 @@ do
 					//8
 					if (i < 2 && j < 7 && j > 0)
 					{
-						if gem_array[i,j] == gem_array[i+1,j-1] && gem_array[i,j] == gem_array[i+1,j+1] && gem_array[i,j] != -1
+						if gem_array[i][j] == gem_array[i+1,j-1] && gem_array[i][j] == gem_array[i+1,j+1] && gem_array[i][j] != -1
 						{
 							amready2 = true //Yay! we have at least one move to do, we are done here
 							break;
@@ -119,7 +119,7 @@ do
 					{
 						for(j=0;j<=7;j++)
 						{
-							gem_array[i,j] = irandom_range(0,Gamerule_1.num_skin)
+							gem_array[i][j] = irandom_range(0,Gamerule_1.num_skin)
 						}
 					}
 				}
@@ -134,11 +134,11 @@ for(var i=0;i<3;i++)
 	{
 		my_x = Board_1.x + 64*j
 		my_y = Board_1.y - 64*(i+1)
-		my_skin = gem_array[i,j]
+		my_skin = gem_array[i][j]
 		Gem = instance_create_depth(my_x, my_y,-1,Gem_1)
 		with(Gem)
 		{
-			set_skin(other.gem_array[i,j])
+			set_skin(other.gem_array[i][j])
 			if global.online
 			{
 				scr_add_gemid(Gamerule_1)

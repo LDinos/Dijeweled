@@ -8,7 +8,8 @@ if !Gamerule_1.time_allowed && BombExaggerate != -1
 		if (pointstoreach >= BombExaggerate)
 		{
 			ExaggerateOnce = true
-			with(spawner1) bombspawn = other.BombCounter
+			Gamerule_1.spawn_bomb = true
+			//with(spawner1) bombspawn = other.BombCounter
 			TurnsToSpawnCur = 1
 		}
 	}

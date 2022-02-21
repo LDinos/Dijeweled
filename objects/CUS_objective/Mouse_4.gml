@@ -16,7 +16,7 @@ if image_index = 2
 		{
 			for(var j =0; j<8; j++)
 			{
-				bo.board[i,j] = board[# i,j]
+				bo.board[i][j] = board[# i,j]
 			}
 		}
 		bo.index = index

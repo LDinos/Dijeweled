@@ -5,6 +5,4 @@ function keyboard_swap_check(argument0, argument1) {
 	{
 		return keyboard_check(argument0)
 	}
-
-
 }

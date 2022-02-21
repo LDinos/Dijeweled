@@ -106,11 +106,11 @@ for(var i = 0; i < 8 ; i++)
 {
 	for(var j = 0; j < 8 ; j++)
 	{
-		C_pattern_isOn[i,j] = false
-		C_pattern[i,j] = -1
+		C_pattern_isOn[i][j] = false
+		C_pattern[i][j] = -1
 	}
 }
-	//C_pattern[i,j] if above true, make this thing here in room create event
+	//C_pattern[i][j] if above true, make this thing here in room create event
 	//VALUES: 0-6 SKINS, 7 COAL/HYPE, -1 ANYTHING/NOT NEEDED
 C_movesneeded = -1 //must do an amount of moves to win
 //38

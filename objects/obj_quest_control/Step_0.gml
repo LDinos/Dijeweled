@@ -39,12 +39,12 @@ if L_movesleft != -1
 			{
 				for(var j = 0; j < 8 ; j++)
 				{
-					C_pattern_isOn[i,j] = false
-					if C_pattern[i,j] != -1
+					C_pattern_isOn[i][j] = false
+					if C_pattern[i][j] != -1
 					{
 						n1++
 						
-						if (Gamerule_1.gemboard[i,j] == C_pattern[i,j]) {C_pattern_isOn[i,j] = true; n2++}
+						if (Gamerule_1.gems_skin_array[i][j] == C_pattern[i][j]) {C_pattern_isOn[i][j] = true; n2++}
 					}
 				}
 			}

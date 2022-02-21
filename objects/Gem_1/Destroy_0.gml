@@ -1,6 +1,12 @@
 /// @description Begone THOT!
 // You can write your code in this editor
-if (Gamerule_1.gem_board1[_i,_j] == id) Gamerule_1.gem_board1[_i,_j] =noone //remove me from the list
+if _i > 7 show_message("somethings wrong i: "+string(_i))
+if _j > 7 show_message("somethings wrong j: "+string(_j))
+if (Gamerule_1.gems_id_array[_i,_j] == id) {
+	Gamerule_1.gems_id_array[_i,_j] = noone //remove me from the list
+	Gamerule_1.gems_skin_array[_i,_j] = -1
+}
+Gamerule_1.gems_ready--
 if was_skull_0 Gamerule_1.skullis0 = false;
 if !amInvisible //if I am visible
 {
@@ -259,7 +265,7 @@ if !amInvisible //if I am visible
 		if amexplode explode(MyGem)
 
 		#region dissapearing gem, particles and collision
-		if create_col {with(instance_position(x,y-64,Gem_1)) {dont_fall_yet = true; alarm[7] = 10}} //tell gem above not to fall yet
+		//if create_col {with(instance_position(x,y-64,Gem_1)) {dont_fall_yet = true; alarm[7] = 10}} //tell gem above not to fall yet
 		var diss = instance_create_depth(x,y,depth,MyDiss)
 		with(diss) //dissappearing gem object
 		{
@@ -316,15 +322,16 @@ if !amInvisible //if I am visible
 				destroy_ice_lock()
 				with(Gamerule_1)
 				{
-					var l = ds_list_size(list_of_hiddengems)
-					for(var i = 0; i<l; i++)
-					{
-						with(list_of_hiddengems[| i]) delete_gem()
-					}
-					var l = ds_list_size(list_of_ice_locks)
-					for(var i = 0; i<l; i++)
-					{
-						with(list_of_ice_locks[| i]) ice_create_hiddengems()
+					if (IsGemActive) {
+						if (!gameover)
+						{
+							var l = ds_list_size(list_of_hiddengems)
+							for(var i = 0; i<l; i++)
+							{
+								with(list_of_hiddengems[| i]) delete_gem()
+							}	
+							check_for_ice_gems()
+						}
 					}
 				}
 			}

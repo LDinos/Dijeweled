@@ -6,7 +6,7 @@ function num_powers(argument0) {
 	{
 		for(var j=0;j<8;j++)
 		{
-			var ge = argument0.gem_board1[i,j]
+			var ge = argument0.gems_id_array[i][j]
 			if (ge != noone)
 			{
 				if (ge.gempower > 0 || ge.amHype) count++

@@ -10,13 +10,13 @@ function powerup_three_locks() {
 				var done = false
 				var i = irandom(7)
 				var j = irandom(7)
-				if Gamerule_1.gem_board1[i,j] != noone
+				if Gamerule_1.gems_id_array[i][j] != noone
 				{
-					if (Gamerule_1.gem_board1[i,j].amLocked = 0)
+					if (Gamerule_1.gems_id_array[i][j].amLocked = 0)
 					{
-						instance_create(Gamerule_1.gem_board1[i,j].x,Gamerule_1.gem_board1[i,j].y,lock_settling)
-						Gamerule_1.gem_board1[i,j].amLocked= 1
-						IDs[n] = Gamerule_1.gem_board1[i,j].myid
+						instance_create(Gamerule_1.gems_id_array[i][j].x,Gamerule_1.gems_id_array[i][j].y,lock_settling)
+						Gamerule_1.gems_id_array[i][j].amLocked= 1
+						IDs[n] = Gamerule_1.gems_id_array[i][j].myid
 						n++
 						done = true
 					}

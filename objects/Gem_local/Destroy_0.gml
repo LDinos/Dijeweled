@@ -1,6 +1,6 @@
 /// @description Begone THOT!
 // You can write your code in this editor
-if (MyGamerule.gem_board1[_i,_j] == id) MyGamerule.gem_board1[_i,_j] =noone //remove me from the list
+if (MyGamerule.gems_id_array[_i,_j] == id) MyGamerule.gems_id_array[_i,_j] =noone //remove me from the list
 
 if !amInvisible //if I am visible
 {

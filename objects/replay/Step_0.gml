@@ -14,6 +14,7 @@ instance_destroy(Gem_1,false)
 Gamerule_1.isReplay = true
 Gamerule_1.IsGemActive = false
 Gamerule_1.IsGemActive2 =false
+Gamerule_1.gems_ready = 0
 with(obj_background_shadered)
 {
 	ds_map_add(Gamerule_1.Replay_map, "background_nextlevel", shd)
@@ -74,9 +75,9 @@ with(obj_xplier)
 with(obj_levelbar) previous_points = Gamerule_1.atm_pre_points
 
 //instance_deactivate_object(spawner1)
-for(i=0;i<8;i++)
+for(var i=0;i<8;i++)
 {
-	for(j=0;j<8;j++)
+	for(var j=0;j<8;j++)
 	{
 		var key = string(i) + "-" + string(j)
 		if Gamerule_1.Replay_map[? key + "skin"] != -1
@@ -85,6 +86,7 @@ for(i=0;i<8;i++)
 			with(gem)
 			{
 				_i = floor((y-Board_1.y+63)/64)
+				i_limit = i
 				_j = (x-Board_1.x+63) div 64
 				
 				set_skin(Gamerule_1.Replay_map[? key + "skin"])
@@ -147,6 +149,12 @@ for(i=0;i<8;i++)
 				if amBomb ds_list_add(Gamerule_1.list_of_bombs,id)
 
 			}
+			Gamerule_1.gems_id_array[i][j] = gem
+			Gamerule_1.gems_skin_array[i][j] = gem.skinnum
+		}
+		else {
+			Gamerule_1.gems_id_array[i][j] = noone
+			Gamerule_1.gems_skin_array[i][j] = -1
 		}
 	}
 }
@@ -203,7 +211,7 @@ with(player1)
 	
 	gem1 = gem_move1
 	gem2 = gem_move2
-	do_match(Gamerule_1)
+	swap_gems(gem1,gem2,false)
 }
 instance_create(x,y,spawner_replay)
 }

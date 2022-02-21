@@ -67,14 +67,19 @@ function make_power(argument0, argument1, argument2) {
 					explode(argument0)
 					amexplode = false
 				}
-			
-			create_col = false
 			instance_destroy()
-		
+			argument2.gems_ready = 0
+			create_col = false
 	        newpower = instance_create(x,y,argument0)
-			with(newpower) set_skin(other.skinnum)
+			with(newpower) {
+				set_skin(other.skinnum)
+				i_limit = other.i_limit
+				_j = other._j
+			}
 	        newpower.gempower = argument1
 			newpower.myid = myid
+			Gamerule_1.gems_id_array[_i,_j] = newpower
+			Gamerule_1.gems_skin_array[_i,_j] = newpower.skinnum
 			idtosend = newpower.myid
 			powertosend = newpower.gempower
 	        with(newpower)
@@ -98,8 +103,6 @@ function make_power(argument0, argument1, argument2) {
 				}
 			
 	        }
-	        //gemout = instance_create(x,y,obj_gemoutlines)
-	        //gemout.image_index = newflame.skinnum     
 	    }
 
 

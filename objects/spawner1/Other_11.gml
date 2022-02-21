@@ -9,7 +9,7 @@ for(i=0;i<=global.board_rows-1;i++)
 	{
 		x1 = boardtype.x + 64*j
 		y1 = boardtype.y - 64*(i+1)
-		mskin = gem_array[i,j]
+		mskin = gem_array[i][j]
 		G = instance_create_depth(x1, y1,-1,gemtype) 
 		with(G) 
 		{

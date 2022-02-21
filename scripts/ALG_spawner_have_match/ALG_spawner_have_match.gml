@@ -14,7 +14,7 @@ function ALG_spawner_have_match(argument0, argument1, argument2) {
 			//1
 			if i > 2
 			{
-				if gem_array[i,j] == gem_array[i-2,j] && gem_array[i,j] == gem_array[i-3,j] && gem_array[i,j] != -1
+				if gem_array[i][j] == gem_array[i-2,j] && gem_array[i][j] == gem_array[i-3,j] && gem_array[i][j] != -1
 				{
 					amready2 = true //Yay! we have at least one move to do, we are done here
 					break;
@@ -23,7 +23,7 @@ function ALG_spawner_have_match(argument0, argument1, argument2) {
 			//2
 			if i < imax-4
 			{
-				if gem_array[i,j] == gem_array[i+2,j] && gem_array[i,j] == gem_array[i+3,j] && gem_array[i,j] != -1
+				if gem_array[i][j] == gem_array[i+2,j] && gem_array[i][j] == gem_array[i+3,j] && gem_array[i][j] != -1
 				{
 					amready2 = true //Yay! we have at least one move to do, we are done here
 					break;
@@ -32,7 +32,7 @@ function ALG_spawner_have_match(argument0, argument1, argument2) {
 			//3
 			if j < jmax-4
 			{
-				if gem_array[i,j] == gem_array[i,j+2] && gem_array[i,j] == gem_array[i,j+3] && gem_array[i,j] != -1
+				if gem_array[i][j] == gem_array[i,j+2] && gem_array[i][j] == gem_array[i,j+3] && gem_array[i][j] != -1
 				{
 					amready2 = true //Yay! we have at least one move to do, we are done here
 					break;
@@ -41,7 +41,7 @@ function ALG_spawner_have_match(argument0, argument1, argument2) {
 			//4
 			if j > 2
 			{
-				if gem_array[i,j] == gem_array[i,j-2] && gem_array[i,j] == gem_array[i,j-3] && gem_array[i,j] != -1
+				if gem_array[i][j] == gem_array[i,j-2] && gem_array[i][j] == gem_array[i,j-3] && gem_array[i][j] != -1
 				{
 					amready2 = true //Yay! we have at least one move to do, we are done here
 					break;
@@ -50,7 +50,7 @@ function ALG_spawner_have_match(argument0, argument1, argument2) {
 			//5
 			if (j < jmax-1 && i < imax-1 && i > 0)
 			{
-				if gem_array[i,j] == gem_array[i-1,j+1] && gem_array[i,j] == gem_array[i+1,j+1] && gem_array[i,j] != -1
+				if gem_array[i][j] == gem_array[i-1,j+1] && gem_array[i][j] == gem_array[i+1,j+1] && gem_array[i][j] != -1
 				{
 					amready2 = true //Yay! we have at least one move to do, we are done here
 					break;
@@ -59,7 +59,7 @@ function ALG_spawner_have_match(argument0, argument1, argument2) {
 			//6
 			if (j > 0 && i < imax-1 && i > 0)
 			{
-				if gem_array[i,j] == gem_array[i-1,j-1] && gem_array[i,j] == gem_array[i+1,j-1] && gem_array[i,j] != -1
+				if gem_array[i][j] == gem_array[i-1,j-1] && gem_array[i][j] == gem_array[i+1,j-1] && gem_array[i][j] != -1
 				{
 					amready2 = true //Yay! we have at least one move to do, we are done here
 					break;
@@ -68,7 +68,7 @@ function ALG_spawner_have_match(argument0, argument1, argument2) {
 			//7
 			if (i > 0 && j < jmax-1 && j > 0)
 			{
-				if gem_array[i,j] == gem_array[i-1,j-1] && gem_array[i,j] == gem_array[i-1,j+1] && gem_array[i,j] != -1
+				if gem_array[i][j] == gem_array[i-1,j-1] && gem_array[i][j] == gem_array[i-1,j+1] && gem_array[i][j] != -1
 				{
 					amready2 = true //Yay! we have at least one move to do, we are done here
 					break;
@@ -77,7 +77,7 @@ function ALG_spawner_have_match(argument0, argument1, argument2) {
 			//8
 			if (i < imax-1 && j < jmax-1 && j > 0)
 			{
-				if gem_array[i,j] == gem_array[i+1,j-1] && gem_array[i,j] == gem_array[i+1,j+1] && gem_array[i,j] != -1
+				if gem_array[i][j] == gem_array[i+1,j-1] && gem_array[i][j] == gem_array[i+1,j+1] && gem_array[i][j] != -1
 				{
 					amready2 = true //Yay! we have at least one move to do, we are done here
 					break;

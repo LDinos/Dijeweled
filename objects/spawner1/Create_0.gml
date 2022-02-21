@@ -15,11 +15,12 @@ if Gamerule_1.spawnallowed && !file_exists("autosave_"+string(room_get_name(room
 {
 #region make gems for first time
 //1) create gems
+var gem_array = [[]]
 for(i=0;i<=global.board_rows-1;i++)
 {
 	for(j=0;j<=7;j++)
 	{
-		gem_array[i,j] = irandom_range(0,Gamerule_1.num_skin)
+		gem_array[i][j] = irandom_range(0,Gamerule_1.num_skin)
 	}
 }
 
@@ -35,21 +36,21 @@ do
 		{
 			if i >= 1 && i <= global.board_rows-2
 			{
-				if (gem_array[i-1,j] == gem_array[i,j]) && (gem_array[i,j] == gem_array[i+1,j])
+				if (gem_array[i-1,j] == gem_array[i][j]) && (gem_array[i][j] == gem_array[i+1,j])
 					{
 						amready = false
-						do gem_array[i,j] = irandom_range(0,Gamerule_1.num_skin)
-						until gem_array[i,j] != gem_array[i-1,j]
+						do gem_array[i][j] = irandom_range(0,Gamerule_1.num_skin)
+						until gem_array[i][j] != gem_array[i-1,j]
 					}
 			}
 			
 			if j >= 1 && j <= 6
 			{
-				if (gem_array[i,j-1] == gem_array[i,j]) && (gem_array[i,j] == gem_array[i,j+1])
+				if (gem_array[i,j-1] == gem_array[i][j]) && (gem_array[i][j] == gem_array[i,j+1])
 					{
 						amready = false
-						do gem_array[i,j] = irandom_range(0,Gamerule_1.num_skin)
-						until gem_array[i,j] != gem_array[i,j-1]
+						do gem_array[i][j] = irandom_range(0,Gamerule_1.num_skin)
+						until gem_array[i][j] != gem_array[i,j-1]
 					}
 			}
 			
@@ -100,7 +101,7 @@ do
 					{
 						for(j=0;j<=7;j++)
 						{
-							gem_array[i,j] = irandom_range(0,Gamerule_1.num_skin)
+							gem_array[i][j] = irandom_range(0,Gamerule_1.num_skin)
 						}
 					}
 				}
@@ -115,30 +116,33 @@ if global.replay_match_allowed
 }
 
 // and now spawn them in board1
-for(i=0;i<=global.board_rows-1;i++)
+for(var i=0;i<=global.board_rows-1;i++)
 {
 	if match_replay match_up_index[i] = 1
-	for(j=0;j<=7;j++)
+	for(var j=0;j<=7;j++)
 	{
 		#region Match replay only
 		if match_replay
 		{
 			var key = string(i)+"-"+string(j)
-			ds_map_add(Gamerule_1.Replay_match_map,key + "_spawn",gem_array[i,j])
+			ds_map_add(Gamerule_1.Replay_match_map,key + "_spawn",gem_array[i][j])
 		}
 		#endregion
-		my_x = Board_1.x + 64*j
-		my_y = Board_1.y - 64*(i+1)
-		my_skin = gem_array[i,j]
-		Gem = instance_create_depth(my_x, my_y,-1,Gem_1)
+		var my_x = Board_1.x + 64*j
+		var my_y = Board_1.y - 64*(i+1)
+		var my_skin = gem_array[i][j]
+		var Gem = instance_create_depth(my_x, my_y,-1,Gem_1)
 		with(Gem) 
 		{
-			set_skin(other.gem_array[other.i,other.j])
+			i_limit = global.board_rows-1-i
+			set_skin(my_skin)
 			if global.online
 			{
 				scr_add_gemid(Gamerule_1)
 			}
 		}
+		Gamerule_1.gems_skin_array[global.board_rows-1-i][j] = Gem.skinnum
+		Gamerule_1.gems_id_array[global.board_rows-1-i][j] = Gem
 	}
 }
 #endregion

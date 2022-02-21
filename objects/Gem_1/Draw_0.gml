@@ -78,7 +78,7 @@ if !amInvisible
 				draw_set_font(fnt_open24display)
 				centerize_text()
 				draw_sprite_ext(spr_doomgem,skinnum,X,Y,image_xscale,image_yscale,0,c_white,1)
-				draw_text_outline(X,Y,countdown,c_white,c_black)
+				draw_text_outline(X,Y - 4,countdown,c_white,c_black)
 				draw_set_font(font0)
 			}
 			else if amLocked = 3
@@ -115,4 +115,4 @@ if !amInvisible
 		}
 		else draw_sprite(spr_gemselectglow,MyGamerule.illegals_allowed,x,y)
 	}
-}
+} else if global.debug draw_sprite(spr_inv,0,x,y)

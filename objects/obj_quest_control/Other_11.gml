@@ -77,7 +77,7 @@ if checkpoint > 0
 				{
 					var str = string(i)+string(j)
 					var skin = map[? str+"skin"]
-					Gamerule_1.gemboard[i,j] = skin
+					Gamerule_1.gems_skin_array[i][j] = skin
 					if skin >= 0
 					{
 					var GEM = instance_create(Board_1.x + j*64, Board_1.y + i*64,Gem_1)				
@@ -104,9 +104,9 @@ if checkpoint > 0
 						GEM.countdown = count_down
 						GEM.amHype = amhype
 						GEM.amInvisible = am_inv
-						Gamerule_1.gem_board1[i,j] = GEM
+						Gamerule_1.gems_id_array[i][j] = GEM
 					}
-					else Gamerule_1.gem_board1[i,j] = noone
+					else Gamerule_1.gems_id_array[i][j] = noone
 				}
 			}
 		}

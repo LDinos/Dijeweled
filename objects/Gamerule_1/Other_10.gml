@@ -1,6 +1,6 @@
 /// @description Compliment voices check
 
-	if compliment_points >= 6200
+	if compliment_points >= 6400
 	{
 		if !complimentsaid6
 		{
@@ -16,7 +16,7 @@
 			complimentsaid0 = true
 		}
 	}
-	else if compliment_points >= 4800
+	else if compliment_points >= 5400
 	{
 		if !complimentsaid5
 		{
@@ -31,7 +31,7 @@
 			complimentsaid0 = true
 		}
 	}
-	else if compliment_points >= 3700
+	else if compliment_points >= 4400
 	{
 		if !complimentsaid4
 		{
@@ -45,7 +45,7 @@
 			complimentsaid0 = true
 		}
 	}
-	else if compliment_points >= 3000
+	else if compliment_points >= 3400
 	{
 		if !complimentsaid3
 		{
@@ -58,7 +58,7 @@
 			complimentsaid0 = true
 		}
 	}
-	else if compliment_points >= 2000
+	else if compliment_points >= 2300
 	{
 		if !complimentsaid2
 		{
@@ -70,7 +70,7 @@
 			complimentsaid0 = true
 		}
 	}
-	else if compliment_points >= 1200
+	else if compliment_points >= 1300
 	{
 		if !complimentsaid1
 		{

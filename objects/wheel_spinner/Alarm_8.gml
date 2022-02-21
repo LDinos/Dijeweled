@@ -27,8 +27,11 @@ with(Gamerule_1)
 	with(my_bomb)
 	{
 		ds_list_delete(Gamerule_1.list_of_bombs,ds_list_find_index(Gamerule_1.list_of_bombs,id))
-		instance_destroy(id,false)
+		delete_gem()
 	}
+	should_move = false
+	must_spawn_gems = true
+	recheck_gem_readiness(Gem_1)
 }
 
 with(Gem_1)

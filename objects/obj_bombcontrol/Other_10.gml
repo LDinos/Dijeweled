@@ -4,7 +4,8 @@ if TurnsToSpawnCur = 0 && ds_list_size(Gamerule_1.list_of_bombs) < BombMax
 {
 	if BombSpawnLevelMin <= Gamerule_1.level
 	{
-		with(spawner1) bombspawn = other.BombCounter //tell spawner to spawn bomb with this counter
+		//with(spawner1) bombspawn = other.BombCounter //tell spawner to spawn bomb with this counter
+		Gamerule_1.spawn_bomb = true
 		var m = 1
 		if BombExaggerate > -1
 		{

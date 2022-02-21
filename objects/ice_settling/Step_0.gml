@@ -9,15 +9,16 @@ if instance_exists(mygem)
 		audio_play_sound(snd_icelock,0,0)
 		with(Gamerule_1)
 		{
-			var l = ds_list_size(list_of_hiddengems)
-			for(var i = 0; i<l; i++)
-			{
-				with(list_of_hiddengems[| i]) delete_gem()
-			}
-			var l = ds_list_size(list_of_ice_locks)
-			for(var i = 0; i<l; i++)
-			{
-				with(list_of_ice_locks[| i]) ice_create_hiddengems()
+			if (IsGemActive) {
+				if (!gameover)
+				{
+					var l = ds_list_size(list_of_hiddengems)
+					for(var i = 0; i<l; i++)
+					{
+						with(list_of_hiddengems[| i]) delete_gem()
+					}	
+					check_for_ice_gems()
+				}
 			}
 		}
 		instance_destroy()

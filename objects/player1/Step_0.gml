@@ -9,32 +9,74 @@ else
 	if Gamerule_1.IsGemActive2 multiswap_allowed = true
 	else multiswap_allowed = false
 }
-var canmove;
+var canmove = false;
 if !Gamerule_1.moving && !dont_swap && !Gamerule_1.lightOn && !Gamerule_1.fruit_exploding && !Gamerule_1.fruit_want_to_spawn && !Gamerule_1.fruit_spawning && Gamerule_1.illegal_cando canmove = true
-else canmove = false
 
-if gem1 != noone && !visible //instance_exists(gem1)
-{
-	#region Refresh xlim,ylim on moving gem
-	if gem1.acc != 0
-	{
-		mouse_xx_pos = gem1.x
-		mouse_yy_pos = gem1.y
-		xlimprevious = xlim
-		ylimprevious = ylim
-		xlim = gem1._j
-		ylim = gem1._i
-		x = Board_1.x + 64*xlim -32
-		y = Board_1.y + 64*ylim -32
-	}
-	#endregion
+if (gem1 != noone) { //always update xlim/ylim positions for the case when we grab a gem before it updates
+	xlim = gem1._j
+	ylim = gem1.i_limit
 }
 
-if !Gamerule_1.skullis0 && !Gamerule_1.bombis0 && Gamerule_1.controlallowed && !Gamerule_1.isReplay //&& !global.bot1 && Gamerule_1.summoves2 > 0
+if !Gamerule_1.skullis0 && !Gamerule_1.bombis0 && Gamerule_1.controlallowed && !Gamerule_1.isReplay
 {
 if (image_index == 1) image_index = 0
+var _x;
+var _y;
+var gemclicked = noone
+var clicked_mouse = mouse_check_button_pressed(mb_left)
+var clicked_controller = keyboard_swap_check_pressed(vk_space,Gamerule_1) || gamepad_button_swap_check_pressed(global.gp[0],gp_shoulderr,Gamerule_1)
+var hold_mouse = mouse_check_button(mb_left)
+if (clicked_controller) {
+	visible = true
+	_x = MyBoard.x + xlim *64 - 32
+	_y = MyBoard.y + ylim *64 - 32
+	mouse_xx_pos = _x
+	mouse_yy_pos = _y
+} else if (clicked_mouse) {
+	_x = mouse_x
+	_y = mouse_y
+	mouse_xx_pos = _x
+	mouse_yy_pos = _y
+} else if (hold_mouse) {
+	if (gem1 != noone) {
+		var ydist = mouse_y - mouse_yy_pos
+		var xdist = mouse_x - mouse_xx_pos
+		var cellx = 0
+		var celly = 0
+		if (abs(ydist) > 32) celly = sign(ydist)
+		else if (abs(xdist) > 32) cellx = sign(xdist)
+		if (cellx != 0 || celly != 0) && (cellx+xlim <= 7 && cellx+xlim >= 0 && celly+ylim <= 7 && celly+ylim >= 0) {
+			_x = MyBoard.x + (cellx+xlim)*64 - 32
+			_y = MyBoard.y + (celly+ylim)*64 - 32
+			clicked_mouse = true
+		}
+	}
+}
 
-if mouse_check_button_pressed(mb_left) //PRESSED ONCE (MOUSE)\\
+if (clicked_mouse || clicked_controller) {
+	gemclicked = instance_position(_x, _y, Gem_1)
+	if (gemclicked != noone) {
+		var unclickable = gemclicked.amInvisible || gemclicked.amLocked != 0
+		if (gem1 == noone && !unclickable) gem_select(gemclicked)
+		else if (gem1 != noone) {
+			if (gem1 == gemclicked) {with(gem1) unspin(); gem1 = noone}
+			else {
+				var dist_hor = abs(gemclicked._j - gem1._j)
+				var dist_ver = abs(gemclicked._i - gem1._i)
+				if (dist_hor+dist_ver == 1) {
+					if (canmove) && (gemclicked.amLocked == 0) && (multiswap_allowed) {
+						swap_gems(gem1, gemclicked, true)
+						gem1 = noone; gem2 = noone
+					}
+				}
+				else {with(gem1) unspin(); gem_select(gemclicked)}
+			}
+		}
+	}
+}
+
+/*
+if mouse_check_button_pressed(mb_left)  //PRESSED ONCE (MOUSE)\\
 	{
 		if instance_position(mouse_x,mouse_y,Gem_1) != noone //if mouse is onto a gem when clicked
 		{
@@ -77,14 +119,14 @@ else if mouse_check_button(mb_left)
 							{
 								if (xlim + s >= 0)
 								{
-									 gemtocheck = Gamerule_1.gem_board1[ylim,xlim+s]
+									 gemtocheck = Gamerule_1.gems_id_array[ylim,xlim+s]
 								}
 							}
 							else if s = 1
 							{
 								if (xlim + s <= 7)
 								{
-									 gemtocheck = Gamerule_1.gem_board1[ylim,xlim+s]
+									 gemtocheck = Gamerule_1.gems_id_array[ylim,xlim+s]
 								}
 							}
 						}
@@ -98,14 +140,14 @@ else if mouse_check_button(mb_left)
 							{
 								if (ylim + s >= 0)
 								{
-									 gemtocheck = Gamerule_1.gem_board1[ylim+s,xlim]
+									 gemtocheck = Gamerule_1.gems_id_array[ylim+s,xlim]
 								}
 							}
 							else if s = 1
 							{
 								if (ylim + s <= 7)
 								{
-									 gemtocheck = Gamerule_1.gem_board1[ylim+s,xlim]
+									 gemtocheck = Gamerule_1.gems_id_array[ylim+s,xlim]
 								}
 							}
 						}
@@ -349,7 +391,7 @@ else if mouse_check_button(mb_left)
 		current_button = 3
 		press = true
 		distx--
-	}
+	} 
 	if gamepad_button_swap_check(global.gp[0],gp_padr,Gamerule_1) || keyboard_swap_check(vk_right,Gamerule_1)
 	{
 		//alarm[0] = -1
@@ -410,6 +452,7 @@ else if mouse_check_button(mb_left)
 	else {gamepad_can_move = 0; gamepad_first_hit = true} //0 = you can press. 5 = time limit like an alarm
 	
 #endregion
+*/
 }
 
 if !Gamerule_1.illegal_cando image_index = 1

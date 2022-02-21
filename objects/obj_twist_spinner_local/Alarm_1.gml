@@ -57,7 +57,7 @@ if MyGamerule.controlallowed && isready
 		xlim = jtodo
 		ylim = itodo
 
-		gem1 = MyGamerule.gem_board1[itodo,jtodo]
+		gem1 = MyGamerule.gems_id_array[itodo,jtodo]
 		if instance_exists(gem1)
 		{
 			var canmove;
@@ -72,10 +72,10 @@ if MyGamerule.controlallowed && isready
 			if canmove
 			{
 				var gems;
-				gems[0] = Gamerule_local.gem_board1[itodo,jtodo]
-				gems[1] = Gamerule_local.gem_board1[itodo,jtodo+1]
-				gems[2] = Gamerule_local.gem_board1[itodo+1,jtodo+1]
-				gems[3] = Gamerule_local.gem_board1[itodo+1,jtodo]
+				gems[0] = Gamerule_local.gems_id_array[itodo,jtodo]
+				gems[1] = Gamerule_local.gems_id_array[itodo,jtodo+1]
+				gems[2] = Gamerule_local.gems_id_array[itodo+1,jtodo+1]
+				gems[3] = Gamerule_local.gems_id_array[itodo+1,jtodo]
 				var ready = true;			
 				for(var i = 0; i<4;i++)
 				{

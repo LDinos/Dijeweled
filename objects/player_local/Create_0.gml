@@ -44,6 +44,6 @@ for(i=0;i<=global.board_rows-1;i++)
 {
 	for(j=0;j<=Gamerule_1.board_xsize-1;j++)
 	{
-		gemboard[i,j] = -1
+		gems_skin_array[i][j] = -1
 	}
 }

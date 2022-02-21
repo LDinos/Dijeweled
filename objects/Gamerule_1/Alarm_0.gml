@@ -12,17 +12,14 @@ if doonce == 0
 	#region do hidden gem
 	if (!gameover)
 	{
+		update_gems_fallen_array()
+		update_gems_to_spawn_array()
 		var l = ds_list_size(list_of_hiddengems)
 		for(var i = 0; i<l; i++)
 		{
 			with(list_of_hiddengems[| i]) delete_gem()
-		}
-	
-		var l = ds_list_size(list_of_ice_locks)
-		for(var i = 0; i<l; i++)
-		{
-			with(list_of_ice_locks[| i]) ice_create_hiddengems()
-		}
+		}	
+		check_for_ice_gems()
 	}
 	#endregion
 	#region AUTOSAVE
@@ -37,7 +34,7 @@ if doonce == 0
 	}
 	#endregion
 	//show_message("I am gemactive")
-	if !zenify matcher_stepevent(Gem_1);	
+	if !zenify && !must_spawn_gems matcher_stepevent(Gem_1);	
 }
 
 doonce = 1; 

@@ -8,35 +8,35 @@ make_gems_fallen(MyGamerule)
 	{
 		for(var j=0;j<8;j++)
 		{
-			if MyGamerule.gems_fallen[i,j] != noone
+			if MyGamerule.gems_fallen[i][j] != noone
 			{
 				if index != 8 //case in which we destroy every gem (match together)
 				{
 					if index = 7 //dont destroy cubes/invs when hyping a coal
 					{
 						var am_hype = false
-						with(MyGamerule.gems_fallen[i,j]) {if amHype am_hype = true}
+						with(MyGamerule.gems_fallen[i][j]) {if amHype am_hype = true}
 						
 						
-						if (MyGamerule.gemboard[i,j] = index) && (!am_hype) && (!MyGamerule.gems_fallen[i,j].amInvisible) 
+						if (MyGamerule.gems_skin_array[i][j] = index) && (!am_hype) && (!MyGamerule.gems_fallen[i][j].amInvisible) 
 						{
-							gem[u] = MyGamerule.gems_fallen[i,j]; 
+							gem[u] = MyGamerule.gems_fallen[i][j]; 
 							u++
 						}
 					}
 					else
 					{
 						
-						if (MyGamerule.gemboard[i,j] = index) {
-							gem[u++] = MyGamerule.gems_fallen[i,j];
+						if (MyGamerule.gems_skin_array[i][j] = index) {
+							gem[u++] = MyGamerule.gems_fallen[i][j];
 						}
 					}
 				}
 				else 
 				{
-					if (!MyGamerule.gems_fallen[i,j].amInvisible)
+					if (!MyGamerule.gems_fallen[i][j].amInvisible)
 					{
-						gem[u] = MyGamerule.gems_fallen[i,j]; 
+						gem[u] = MyGamerule.gems_fallen[i][j]; 
 						u++
 					}
 				}

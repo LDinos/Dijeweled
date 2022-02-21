@@ -1,6 +1,18 @@
 /// @description Level complete check + cur_time
-should_move = true
-if (lightOn || hypeOn || fruit_exploding_dontmove) should_move = false
+
+var prev_shouldmove = should_move
+if (lightOn || hypeOn || fruit_exploding_dontmove || instance_exists(gem_dissappear)) should_move = false
+else {
+	should_move = true
+	if (prev_shouldmove != should_move) {
+		update_gems_fallen_array()
+		update_gems_to_spawn_array()
+		if (must_spawn_gems) {
+			must_spawn_gems = false
+			spawn_new_gems(Board_1, Gem_1)
+		}
+	}
+}
 if (global.replay_match_allowed || global.replay_match_isplaying) cur_time++ //this var is used on replay only
 
 // Finish level \\

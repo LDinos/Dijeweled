@@ -11,12 +11,12 @@ function level_complete_get_powers() {
 	{
 		for(var j = 0; j<8;j++)
 		{
-			if instance_exists(gems_fallen[@i,j])
+			if instance_exists(gems_id_array[i,j])
 			{
-				if gems_fallen[@i,j].amHype NXT_hypes++
+				if gems_id_array[i,j].amHype NXT_hypes++
 				else
 				{
-					switch gems_fallen[@i,j].gempower
+					switch gems_id_array[i,j].gempower
 					{
 						case 6:
 							NXT_fruits++

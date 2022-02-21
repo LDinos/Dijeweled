@@ -6,12 +6,12 @@ nearby_glown_left = false //am I glown because of a nearby power gem?
 nearby_glown_right = false //am I glown because of a nearby power gem?
 nearby_glown_up = false //am I glown because of a nearby power gem?
 nearby_glown_down = false //am I glown because of a nearby power gem?
-
+i_limit = 0 //y will keep increasing until grid index is i_limit
 was_skull_0 = false;
-
+dont_move_for_oneframe = false //fixing physics stuff
 mypowerup = -1
 myid = -4
-
+touched_down = false //have we touched down the ground? If yes, we tell gamerule once that we are stationary
 isturnback = false
 dont_fall_yet = false //while twist rotating, we dont want the gems above to fall down, thus we made this variable
 SWAP_X = 0 //swapping x firt point
@@ -236,12 +236,12 @@ if amBomb || amLocked =2 || amLocked = 4 //if I am bomb or doom or skull
 					{
 						if _i < 7 //if im not in the last board row
 						{
-							with(Gamerule_1.gem_board1[_i+1,_j]) //create particles below me
+							with(Gamerule_1.gems_id_array[_i+1,_j]) //create particles below me
 							{
 								part_particles_create(global.sys_above_gem, x, y, global.part_BombSmoke, 3);
 								part_particles_create(global.sys_above_gem, x, y, global.part_BombSmoke2, 3);
 							}
-							instance_destroy(Gamerule_1.gem_board1[_i+1,_j]) //and kill the gem below me
+							instance_destroy(Gamerule_1.gems_id_array[_i+1,_j]) //and kill the gem below me
 							part_particles_create(global.sys_above_gem,x,y+32,global.part_skullgembreak,15)
 							audio_play_sound(snd_skull_gem_break,0,0)
 						}
@@ -302,59 +302,41 @@ else bloom = false
 if !lvlcomplete //if level isn't complete
 {
 #region Gem movement and collision
-var shouldmove = true //by default, we are able to move
-if (ammoving) || (dont_fall_yet) || (!MyGamerule.should_move) shouldmove = false //unless im being swapped or i had a recent match below me or i mustn't move because of gamrule 1 restrictions
-else if (amInvisible) shouldmove = false //or I am invisible (used for gems below ice)
-else if (amLocked = 3) shouldmove = false //or i am ice locked
-
+var shouldmove = !((ammoving) || (dont_fall_yet) || (!MyGamerule.should_move) || (amInvisible) || (amLocked = 3) || (dont_move_for_oneframe))
 if shouldmove //if i should be able to move
-{
-
-//if (_i != 7) || acc != 0 //no need to check for collisions at the very bottom
-	{		
-			acc += accspeed //accelerate
-			if (y + acc > MyBoard.y + 512-64) //if that acceleration will bring us under the board
-			{
-				acc = 0 //stop
-				y = MyBoard.y + 512-64 //and set us to the bottom row
-			}
-			else //if that acceleration is moving us inside the board
-			{
-				if _i < 0 // dont check collision if we are ABOVE the board
-				{
-					var toucher = noone
-				}
-				else //inside the board
-				{
-					var toucher = collision_point(x,y+acc+(sprite_height/2),MyGem,false,true) //check below me
-				}
-				
-				if (toucher != noone) //if we are going to touch a gem
-				{
-					if toucher.acc = 0 //check if that gem isn't moving (which means we are going to crash on it)
-					{
-						acc = 0 //stop me
-						y = toucher.y - toucher.sprite_yoffset - (sprite_height/2)//...find the other y, and depending on the y origin, move me exactly above it
-					}
-					else if acc >= toucher.acc //if the other gem is moving too with a less speed than ours (we are crashing on it)
-					{
-						acc = toucher.acc - accspeed //take its speed and set it to me
-						y = toucher.y - toucher.sprite_yoffset - (sprite_height/2)//...find the other y, and depending on the y origin, move me exactly above it
-					}
-				}
-				else //if no one is below us
-				{
-					if !MyGamerule.flameon || acc < 0 //if a flame explosion is not happening or somehow we have negative velocity
-					{
-						y+=acc //move me, finally
-					}
-					else acc = 0 //if flame explosion is happening, dont move me further
-				}	
-			}
-			
+{	
+	acc += accspeed //accelerate
+	if (y + acc > MyBoard.y + 512-64) //if that acceleration will bring us under the board
+	{
+		acc = 0 //stop
+		y = MyBoard.y + 512-64 //and set us to the bottom row
 	}
+	else //if that acceleration is moving us inside the board
+	{
+		var ylimit = MyBoard.y + i_limit *64
+		if (y + acc >= ylimit) {
+			acc = 0
+			y = MyBoard.y + i_limit *64
+		}
+		else //if no one is below us
+		{
+			if !MyGamerule.flameon || acc < 0 //if a flame explosion is not happening or somehow we have negative velocity
+			{
+				y+=acc //move me, finally
+			}
+			else acc = 0 //if flame explosion is happening, dont move me further
+		}	
+	}	
 } else acc = 0
+if (dont_move_for_oneframe) dont_move_for_oneframe = false
 
+if (acc == 0) {
+if (!touched_down) with(MyGamerule) gems_ready++
+touched_down = true	
+} else {
+	if (touched_down) with(MyGamerule) gems_ready--
+	touched_down = false
+}
 
 
 
@@ -369,6 +351,7 @@ else //else, parent me with the Board (level transition effect)
 previous_i = _i
 _i = (y-MyBoard.y+63) div 64 //find my grid index. first row = 0, second = 1 etc
 _j = (x-MyBoard.x) div 64 //find my grid index. first collumn = 0, second = 1 etc
+
 if amLocked = 4 //if im skull
 {
 	if _i > previous_i //if i changed my grid index
@@ -415,7 +398,7 @@ if visible //if I am visible
 
 }
 	
-function EV_gem_ALARM5(){
+function EV_gem_ALARM5() {
 	/// @description MATCH ANIM
 var modi = modifier
 if instance_exists(MyPlayer.gemtomove1) && instance_exists(MyPlayer.gemtomove2)

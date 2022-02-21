@@ -10,12 +10,6 @@ function explode(argument0) {
 	if Gamerule_1.isReplay modi = 1.5
 	with(gmrl) {compliment_add(150)}
 	//\\
-	with(gmrl)
-		{
-			flameon = true
-			alarm[5] = 10
-		}
-	with(argument0) acc = 0
 	audio_play_sound(snd_explode,0,0)
 	for(var i=1;i<=15;i++)
 	{
@@ -31,7 +25,7 @@ function explode(argument0) {
 			var JTOUSE = clamp(_j + j, 0, 7)
 			if (i!=0 || j!=0)
 			{
-				with(gmrl.gem_board1[@ITOUSE,JTOUSE])
+				with(gmrl.gems_id_array[@ITOUSE,JTOUSE])
 				{
 					if !amPowered && matchme <= 0
 					{
@@ -77,8 +71,11 @@ function explode(argument0) {
 	{
 		with(instance_position(x + 64*i, y - 128, argument0)) if !amPowered push_up(argument0)
 	}
-	with(gmrl) {points_add_nocombo(stle); compliment_add(stle); style_add(stle,false)}
-
-
-
+	with(gmrl) {
+		points_add_nocombo(stle); 
+		compliment_add(stle); 
+		style_add(stle,false)
+		flameon = true
+		alarm[5] = 10
+	}
 }

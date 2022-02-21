@@ -19,7 +19,7 @@ for(i=0;i<=global.board_rows-1;i++)
 {
 	for(j=0;j<=7;j++)
 	{
-		gem_array[i,j] = irandom_range(0,Gamerule_1.num_skin)
+		gem_array[i][j] = irandom_range(0,Gamerule_1.num_skin)
 	}
 }
 
@@ -35,21 +35,21 @@ do
 		{
 			if i >= 1 && i <= global.board_rows-2
 			{
-				if (gem_array[i-1,j] == gem_array[i,j]) && (gem_array[i,j] == gem_array[i+1,j])
+				if (gem_array[i-1,j] == gem_array[i][j]) && (gem_array[i][j] == gem_array[i+1,j])
 					{
 						amready = false
-						do gem_array[i,j] = irandom_range(0,Gamerule_1.num_skin)
-						until gem_array[i,j] != gem_array[i-1,j]
+						do gem_array[i][j] = irandom_range(0,Gamerule_1.num_skin)
+						until gem_array[i][j] != gem_array[i-1,j]
 					}
 			}
 			
 			if j >= 1 && j <= 6
 			{
-				if (gem_array[i,j-1] == gem_array[i,j]) && (gem_array[i,j] == gem_array[i,j+1])
+				if (gem_array[i,j-1] == gem_array[i][j]) && (gem_array[i][j] == gem_array[i,j+1])
 					{
 						amready = false
-						do gem_array[i,j] = irandom_range(0,Gamerule_1.num_skin)
-						until gem_array[i,j] != gem_array[i,j-1]
+						do gem_array[i][j] = irandom_range(0,Gamerule_1.num_skin)
+						until gem_array[i][j] != gem_array[i,j-1]
 					}
 			}
 			
@@ -100,7 +100,7 @@ do
 					{
 						for(j=0;j<=7;j++)
 						{
-							gem_array[i,j] = irandom_range(0,Gamerule_1.num_skin)
+							gem_array[i][j] = irandom_range(0,Gamerule_1.num_skin)
 						}
 					}
 				}
@@ -116,7 +116,7 @@ for(i=0;i<=global.board_rows-1;i++)
 	{
 		my_x = Board_local.x + 64*j
 		my_y = Board_local.y - 64*(i+1)
-		my_skin = gem_array[i,j]
+		my_skin = gem_array[i][j]
 		Gem = instance_create_depth(my_x, my_y,-1,Gem_local)
 		with(Gem) 
 		{

@@ -74,16 +74,12 @@ function do_match(argument0) {
 			iprev = _i
 			jprev = _j
 			skinprev = skinnum
-			//myfriend = collision_point(x,y-64,other.myid,false,true)
-			//with(myfriend) matchnear = true
 		}
 		with(gem2)
 		{
 			iprev = _i
 			jprev = _j
 			skinprev = skinnum
-			//myfriend = collision_point(x,y-64,other.myid,false,true)
-			//with(myfriend) matchnear = true
 		}
 
 		percent = 0

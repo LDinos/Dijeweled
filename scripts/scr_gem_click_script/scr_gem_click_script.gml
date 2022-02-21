@@ -38,7 +38,7 @@ function scr_gem_click_script(argument0, argument1, argument2, argument3, argume
 						}
 						else {gem1 = noone; GM = noone}
 					}
-					else if gem1 = MyGamerule.gem_board1[@ylim,xlim] //if we have a gem1 and that gem1 is the gem we just selected
+					else if gem1 = MyGamerule.gems_id_array[@ylim,xlim] //if we have a gem1 and that gem1 is the gem we just selected
 					{
 						with(gem1) unspin() //unselect
 						gem1 = noone
@@ -59,7 +59,7 @@ function scr_gem_click_script(argument0, argument1, argument2, argument3, argume
 									{
 										if xlimprevious != 7
 										{
-											if (MyGamerule.gem_board1[ylim,xlim+2] != noone)
+											if (MyGamerule.gems_id_array[ylim,xlim+2] != noone)
 											{
 												xlim += 2 //we go to the right two places
 												x = MyBoard.x + 64*xlim - 32
@@ -77,7 +77,7 @@ function scr_gem_click_script(argument0, argument1, argument2, argument3, argume
 									{
 										if xlimprevious != 0
 										{
-											if (MyGamerule.gem_board1[ylim,xlim-2] != noone)
+											if (MyGamerule.gems_id_array[ylim,xlim-2] != noone)
 											{
 												xlim -= 2 //we go to the right two places
 												x = MyBoard.x + 64*xlim - 32
@@ -100,7 +100,7 @@ function scr_gem_click_script(argument0, argument1, argument2, argument3, argume
 									{
 										if ylimprevious != 7
 										{
-											if (MyGamerule.gem_board1[ylim+2,xlim] != noone)
+											if (MyGamerule.gems_id_array[ylim+2,xlim] != noone)
 											{
 												ylim += 2 //we go to the right two places
 												y = MyBoard.y + 64*ylim - 32
@@ -118,7 +118,7 @@ function scr_gem_click_script(argument0, argument1, argument2, argument3, argume
 									{
 										if ylimprevious != 0
 										{
-											if (MyGamerule.gem_board1[ylim-2,xlim] != noone)
+											if (MyGamerule.gems_id_array[ylim-2,xlim] != noone)
 											{
 												ylim -= 2 //we go to the right two places
 												y = MyBoard.y + 64*ylim - 32
@@ -134,12 +134,12 @@ function scr_gem_click_script(argument0, argument1, argument2, argument3, argume
 									}
 								#endregion
 								}
-								if MyGamerule.gem_board1[ylim,xlim].amLocked canmove = false 
+								if MyGamerule.gems_id_array[ylim,xlim].amLocked canmove = false 
 							}
 						#endregion
 							if canmove && multiswap_allowed
 							{
-								gem2 = MyGamerule.gem_board1[@ylim,xlim]
+								gem2 = MyGamerule.gems_id_array[@ylim,xlim]
 								if !gem1.amLit && !gem2.amLit && gem2.acc = 0 && ((gem1.y - MyBoard.y) mod 64 <= 1|| (gem1.y - MyBoard.y) mod 64 >= 62)
 								{
 									if (gem1.amHype && gem2.amInvisible) || (gem1.amHype && !MyGamerule.IsGemActive2) || (gem2.amHype && !MyGamerule.IsGemActive2)//dont match if hype goes with inv
@@ -186,7 +186,7 @@ function scr_gem_click_script(argument0, argument1, argument2, argument3, argume
 								mouse_xx_pos = argument1
 								mouse_yy_pos = argument2
 								with(gem1) unspin()
-								gem1 = MyGamerule.gem_board1[@ylim,xlim] //make new gem1
+								gem1 = MyGamerule.gems_id_array[@ylim,xlim] //make new gem1
 								with(gem1) spin()
 							}
 							//else gem1 = noone

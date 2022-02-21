@@ -15,7 +15,7 @@ do
 	array_copy(gaps,0,Gamerule_1.gaps,0,8)
 	var col_num_create = -1;
 	for(var i =0; i <8; i++) col_num_create[i] = 0
-	var board = Gamerule_1.gemboard
+	var board = Gamerule_1.gems_skin_array
 	var gemcount = instance_number(Gem_1)
 	var gemstobesorted = 0
 	var amready = true; //no matches done by default
@@ -61,7 +61,7 @@ do
 				{
 					if (j > 0 && j < 7)
 					{
-						if (board[i,j] == board[i,j-1]) && (board[i,j] == board[i,j+1]) && (board[i,j] != -1) && (board[i,j] != 7)
+						if (board[i][j] == board[i,j-1]) && (board[i][j] == board[i,j+1]) && (board[i][j] != -1) && (board[i][j] != 7)
 						{
 							amready = false; //we have a cascade :( REDO!
 							break;
@@ -70,7 +70,7 @@ do
 		
 					if (i > 0 && i < 7)
 					{
-						if (board[i,j] == board[i-1,j]) && (board[i,j] == board[i+1,j]) && (board[i,j] != -1) && (board[i,j] != 7)
+						if (board[i][j] == board[i-1,j]) && (board[i][j] == board[i+1,j]) && (board[i][j] != -1) && (board[i][j] != 7)
 						{
 							amready = false; //we have a cascade :( REDO!
 							break;
@@ -89,7 +89,7 @@ do
 					for(var j =0; j <8; j++)
 					{
 						//1
-						if board[i,j] == 7 //hypercube
+						if board[i][j] == 7 //hypercube
 						{
 							amready2 = true
 							break;
@@ -98,7 +98,7 @@ do
 						{
 							if i > 2
 							{
-								if board[i,j] == board[i-2,j] && board[i,j] == board[i-3,j] && board[i,j] != -1
+								if board[i][j] == board[i-2,j] && board[i][j] == board[i-3,j] && board[i][j] != -1
 								{
 									amready2 = true //Yay! we have at least one move to do, we are done here
 									break;
@@ -107,7 +107,7 @@ do
 							//2
 							if i < 5
 							{
-								if board[i,j] == board[i+2,j] && board[i,j] == board[i+3,j] && board[i,j] != -1
+								if board[i][j] == board[i+2,j] && board[i][j] == board[i+3,j] && board[i][j] != -1
 								{
 									amready2 = true //Yay! we have at least one move to do, we are done here
 									break;
@@ -116,7 +116,7 @@ do
 							//3
 							if j < 5
 							{
-								if board[i,j] == board[i,j+2] && board[i,j] == board[i,j+3] && board[i,j] != -1
+								if board[i][j] == board[i,j+2] && board[i][j] == board[i,j+3] && board[i][j] != -1
 								{
 									amready2 = true //Yay! we have at least one move to do, we are done here
 									break;
@@ -125,7 +125,7 @@ do
 							//4
 							if j > 2
 							{
-								if board[i,j] == board[i,j-2] && board[i,j] == board[i,j-3] && board[i,j] != -1
+								if board[i][j] == board[i,j-2] && board[i][j] == board[i,j-3] && board[i][j] != -1
 								{
 									amready2 = true //Yay! we have at least one move to do, we are done here
 									break;
@@ -134,7 +134,7 @@ do
 							//5
 							if (j < 7 && i < 7 && i > 0)
 							{
-								if board[i,j] == board[i-1,j+1] && board[i,j] == board[i+1,j+1] && board[i,j] != -1
+								if board[i][j] == board[i-1,j+1] && board[i][j] == board[i+1,j+1] && board[i][j] != -1
 								{
 									amready2 = true //Yay! we have at least one move to do, we are done here
 									break;
@@ -143,7 +143,7 @@ do
 							//6
 							if (j > 0 && i < 7 && i > 0)
 							{
-								if board[i,j] == board[i-1,j-1] && board[i,j] == board[i+1,j-1] && board[i,j] != -1
+								if board[i][j] == board[i-1,j-1] && board[i][j] == board[i+1,j-1] && board[i][j] != -1
 								{
 									amready2 = true //Yay! we have at least one move to do, we are done here
 									break;
@@ -152,7 +152,7 @@ do
 							//7
 							if (i > 0 && j < 7 && j > 0)
 							{
-								if board[i,j] == board[i-1,j-1] && board[i,j] == board[i-1,j+1] && board[i,j] != -1
+								if board[i][j] == board[i-1,j-1] && board[i][j] == board[i-1,j+1] && board[i][j] != -1
 								{
 									amready2 = true //Yay! we have at least one move to do, we are done here
 									break;
@@ -161,7 +161,7 @@ do
 							//8
 							if (i < 7 && j < 7 && j > 0)
 							{
-								if board[i,j] == board[i+1,j-1] && board[i,j] == board[i+1,j+1] && board[i,j] != -1
+								if board[i][j] == board[i+1,j-1] && board[i][j] == board[i+1,j+1] && board[i][j] != -1
 								{
 									amready2 = true //Yay! we have at least one move to do, we are done here
 									break;

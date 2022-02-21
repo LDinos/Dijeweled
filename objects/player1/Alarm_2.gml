@@ -1,7 +1,9 @@
 /// @description Match animation - after
 // You can write your code in this editor
-	make_gems_fallen(Gamerule_1)
-	flag = false
+	//make_gems_fallen(Gamerule_1)
+	update_skin_array(MyGamerule)
+	var flag1 = false
+	var flag2 = false
 	gemtoexplode1 = noone
 	gemtoexplode2 = noone
 	with(Gamerule_1)
@@ -9,10 +11,10 @@
 		check_for_xplier = true //check for multiplier increase/decrease on this move (gets to false after matcher_stepevent)
 		increase_xplier = false //as default, lets say we did an illegal move (decrease xplier)
 	}
-	with(gemtomove1) {check_ifmatch(Gamerule_1)}
-	with(gemtomove2) {check_ifmatch(Gamerule_1)}
+	with(gemtomove1) {flag1 = check_ifmatch(Gamerule_1)}
+	with(gemtomove2) {flag2 = check_ifmatch(Gamerule_1)}
 	
-	if flag
+	if (flag1 || flag2)
 	{
 		with(obj_countdown_controller) moves--
 		if Gamerule_1.isQuest
@@ -28,9 +30,6 @@
 		if !Gamerule_1.blazingspeed
 		{
 			Gamerule_1.blazingshouldup = true;
-			//with(Gamerule_1) blazing_check()
-			//Gamerule_1.blazingspeedchain++
-			//Gamerule_1.blazingcounter = 140
 		}
 		else
 			{
@@ -83,14 +82,13 @@
 			countdown_decrease()
 		}
 		with(obj_bonus_challenge) bonus_set_index(0)
-		//Gamerule_1.blazingspeedchain = 0
-		//Gamerule_1.blazingcounter = 140
+
 		if instance_exists(gemtomove1) && instance_exists(gemtomove2)
 		{
 			temp = gemtomove1
 			gemtomove1 = gemtomove2
 			gemtomove2 = temp
-			if !Gamerule_1.illegals_allowed && !Gamerule_1.replay_illegals_allowed do_match_turnback(Gamerule_1)
+			if !Gamerule_1.illegals_allowed && !Gamerule_1.replay_illegals_allowed swap_gems_back()
 			else
 			{				
 				with(Gem_1) matchnear = false;
@@ -109,4 +107,10 @@
 		else {alarm[7] = 3; Gamerule_1.moving = false}
 		
 	}
+
+	//swap_back = true;
+	//Gamerule_1.moving = false
+	//with(gemtomove1) alarm[2] = 2
+	//with(gemtomove2) alarm[2] = 2
+
 Gamerule_1.replay_illegals_allowed = false	

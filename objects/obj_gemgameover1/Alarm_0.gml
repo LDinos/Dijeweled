@@ -4,7 +4,7 @@ if i <= 7
 {
 	for(j=0;j<=7;j++)
 	{
-		var g = Gamerule_1.gem_board1[i][j]
+		var g = Gamerule_1.gems_id_array[i][j]
 		if instance_exists(g)
 		{
 			if g.skinnum = 7

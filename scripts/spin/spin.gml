@@ -1,6 +1,7 @@
 ///Make gem start the spin animation
 function spin() {
 	spinning = true
+	audio_play_sound(snd_gemselection,0,0)
 	if !amBomb && skinnum != 7 && gempower != 6 //&& !Gamerule_1.zenify//not bomb, not coal, not fruit
 	{	
 		anim_happening = true

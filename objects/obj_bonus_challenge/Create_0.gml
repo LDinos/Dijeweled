@@ -24,7 +24,7 @@ if global.replay_match_isplaying
 		for(var j=0;j<4;j++)
 		{
 			bonus_lit[j] = false //did we currently do the individual gem bonus?
-			future_bonuses[i,j] = Replay_load[? "challenge_pattern" + string(i)+string(j)]
+			future_bonuses[i][j] = Replay_load[? "challenge_pattern" + string(i)+string(j)]
 		}
 	}
 	for(var i=0;i<4;i++) bonus[i] = future_bonuses[0,i]

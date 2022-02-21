@@ -13,7 +13,6 @@ function matcher_stepevent(argument0) {
 	//5 septa
 	//6 octa
 	//Then check for horizontal matches
-	var cando = true
 
 	ds_list_clear(list_of_matches) //clear the challenge bonus list
 	//REPLAY\\
@@ -22,8 +21,7 @@ function matcher_stepevent(argument0) {
 		replay_savepoint()
 	}
 	/*-------------*/
-	if cando
-	{
+
 	center_gem = noone
 	nummatches = 0 //for doubleset soundeffect
 	with(argument0) matchme = -1
@@ -34,11 +32,11 @@ function matcher_stepevent(argument0) {
 	        for (j=1;j<=7;j+=1)
 	        {
         
-	          if gem_board1[i][j] = noone || gem_board1[i][j-1] = noone
+	          if gems_id_array[i][j] = noone || gems_id_array[i][j-1] = noone
 	            {
 					matcher_script1(0)
 	            }
-	          else if (gem_board1[i][j].skinnum == gem_board1[i][j-1].skinnum) && (gem_board1[i][j].skinnum != 7) //else add up
+	          else if (gems_id_array[i][j].skinnum == gems_id_array[i][j-1].skinnum) && (gems_id_array[i][j].skinnum != 7) //else add up
 	            {
 	                n++
 	            }
@@ -47,7 +45,7 @@ function matcher_stepevent(argument0) {
 					if n >=3
 					{
 						nummatches++
-						list_of_matches[| ds_list_size(list_of_matches)] = gem_board1[i][j-1].skinnum
+						list_of_matches[| ds_list_size(list_of_matches)] = gems_id_array[i][j-1].skinnum
 					}
 	                matcher_script1(0)
 	            }
@@ -56,7 +54,7 @@ function matcher_stepevent(argument0) {
 		            if n >=3 
 					{
 						nummatches++
-						list_of_matches[| ds_list_size(list_of_matches)] = gem_board1[i][j].skinnum
+						list_of_matches[| ds_list_size(list_of_matches)] = gems_id_array[i][j].skinnum
 					}
 		            matcher_script1(1)
 	            }
@@ -70,11 +68,11 @@ function matcher_stepevent(argument0) {
 	        n2 = 1
 	        for (j=1;j<=global.board_rows-1;j+=1)
 	        {
-	          if gem_board1[j][i] = noone || gem_board1[j-1][i] = noone
+	          if gems_id_array[j][i] = noone || gems_id_array[j-1][i] = noone
 	            {
 					matcher_script2(0)
 	            }
-	          else if (gem_board1[j][i].skinnum == gem_board1[j-1][i].skinnum) && (gem_board1[j][i].skinnum != 7)
+	          else if (gems_id_array[j][i].skinnum == gems_id_array[j-1][i].skinnum) && (gems_id_array[j][i].skinnum != 7)
 	            {
 	                n2++
 	            }
@@ -84,7 +82,7 @@ function matcher_stepevent(argument0) {
 	                if n2 >=3 
 					{
 						nummatches++
-						list_of_matches[| ds_list_size(list_of_matches)] = gem_board1[j-1][i].skinnum
+						list_of_matches[| ds_list_size(list_of_matches)] = gems_id_array[j-1][i].skinnum
 					}
 	                matcher_script2(0)        
 	            }
@@ -93,7 +91,7 @@ function matcher_stepevent(argument0) {
 					if n2 >=3 
 					{
 						nummatches++
-						list_of_matches[| ds_list_size(list_of_matches)] = gem_board1[j][i].skinnum
+						list_of_matches[| ds_list_size(list_of_matches)] = gems_id_array[j][i].skinnum
 					}
 					matcher_script2(1) 
 	            }
@@ -107,22 +105,22 @@ function matcher_stepevent(argument0) {
 	        for (j=0;j<=7;j+=1)
 	        {
 				
-	        if gem_board1[i][j] != noone
+	        if gems_id_array[i][j] != noone
 	        {
-				if gem_board1[i][j].matchme >= 0
+				if gems_id_array[i][j].matchme >= 0
 				{
 					if !ultranovas_allowed
 					{
-						if gem_board1[i][j].matchme > 4
+						if gems_id_array[i][j].matchme > 4
 						{
-							gem_board1[i][j].matchme = 4
+							gems_id_array[i][j].matchme = 4
 						}
 					}
 				
 					//for when a full board colored board happens, kick the top gem a little upwards
-					if (gem_board1[i][j].dragXX != 0) 
+					if (gems_id_array[i][j].dragXX != 0) 
 					{
-						with(gem_board1[i][j]) {create_gem_disabler()}
+						with(gems_id_array[i][j]) {create_gem_disabler()}
 					}
 					havecombo = true
 				
@@ -140,40 +138,40 @@ function matcher_stepevent(argument0) {
 					}
 					blazingchainup = false;
 					blazingshouldup = false	
-					if gem_board1[i][j].gempower != 6
+					if gems_id_array[i][j].gempower != 6
 					{
-						//show_message(gem_board1[i][j])
-						if gem_board1[i][j].matchme == 6 //octa
+						//show_message(gems_id_array[i][j])
+						if gems_id_array[i][j].matchme == 6 //octa
 						{
 							if specials_allowed
 							{
 								audio_play_sound(snd_octacreate,0,false)
 								audio_play_sound(snd_lightcreate,0,false)
-								with(gem_board1[i][j]) make_power(argument0,5,other.id)
+								with(gems_id_array[i][j]) make_power(argument0,5,other.id)
 							}
-			                else instance_destroy(gem_board1[i][j])
+			                else instance_destroy(gems_id_array[i][j])
 						}
-						else if gem_board1[i][j].matchme == 5 //septa
+						else if gems_id_array[i][j].matchme == 5 //septa
 						{
 							if specials_allowed
 							{
 								audio_play_sound(snd_septacreate,0,false)
 								audio_play_sound(snd_lightcreate,0,false)
-								with(gem_board1[i][j]) make_power(argument0,4,other.id)
+								with(gems_id_array[i][j]) make_power(argument0,4,other.id)
 							}
-							else instance_destroy(gem_board1[i][j])
+							else instance_destroy(gems_id_array[i][j])
 						}
-						else if gem_board1[i][j].matchme == 4 //nova
+						else if gems_id_array[i][j].matchme == 4 //nova
 			            {
 			                if specials_allowed
 							{
 								audio_play_sound(snd_supernovacreate,0,false)
 								audio_play_sound(snd_lightcreate,0,false)
-								with(gem_board1[i][j]) make_power(argument0,3,other.id)
+								with(gems_id_array[i][j]) make_power(argument0,3,other.id)
 							}
-							else instance_destroy(gem_board1[i][j])
+							else instance_destroy(gems_id_array[i][j])
 			            }
-			            else if gem_board1[i][j].matchme == 3  //lighting (5 match)
+			            else if gems_id_array[i][j].matchme == 3  //lighting (5 match)
 			            {
 							if !hypeallowed
 			                {
@@ -181,52 +179,52 @@ function matcher_stepevent(argument0) {
 								{
 									
 									audio_play_sound(snd_lightcreate,0,false)
-									with(gem_board1[i][j]) make_power(argument0,2,other.id)
+									with(gems_id_array[i][j]) make_power(argument0,2,other.id)
 								}
-				                else instance_destroy(gem_board1[i][j])
+				                else instance_destroy(gems_id_array[i][j])
 							}
 							else
 				            {
 				                if specials_allowed
 								{
 									audio_play_sound(snd_hypecreate,0,false)
-									with(gem_board1[i][j]) make_hype(argument0,other.id)
+									with(gems_id_array[i][j]) make_hype(argument0,other.id)
 								}
-				                else instance_destroy(gem_board1[i][j])              
+				                else instance_destroy(gems_id_array[i][j])              
 				            }
                 
 			            }
-			            else if gem_board1[i][j].matchme == 2  //star gem (5 match L-T)
+			            else if gems_id_array[i][j].matchme == 2  //star gem (5 match L-T)
 			            {
 			                if specials_allowed
 							{
 								audio_play_sound(snd_starcreate,0,false)
-								with(gem_board1[i][j]) make_power(argument0,2,other.id)
+								with(gems_id_array[i][j]) make_power(argument0,2,other.id)
 							}
-							else instance_destroy(gem_board1[i][j])
+							else instance_destroy(gems_id_array[i][j])
 			            }
-			            else if gem_board1[i][j].matchme == 1 //flame
+			            else if gems_id_array[i][j].matchme == 1 //flame
 			            {
 			                if specials_allowed
 							{
 								audio_play_sound(snd_flamecreate,0,false)
-								with(gem_board1[i][j]) make_power(argument0,1,other.id)
+								with(gems_id_array[i][j]) make_power(argument0,1,other.id)
 							}
-			                else instance_destroy(gem_board1[i][j])                
+			                else instance_destroy(gems_id_array[i][j])                
 			            }
-			            else if gem_board1[i][j].matchme == 0 //nada
+			            else if gems_id_array[i][j].matchme == 0 //nada
 			            { 
-							if !gem_board1[i][j].amPowered
+							if !gems_id_array[i][j].amPowered
 							{
-								if combo > 0 gem_board1[i][j].cascade_diss = true
-								instance_destroy(gem_board1[i][j])
+								if combo > 0 gems_id_array[i][j].cascade_diss = true
+								instance_destroy(gems_id_array[i][j])
 							}	
 						}
 					}
-					else if !gem_board1[i][j].amFruitExploding
+					else if !gems_id_array[i][j].amFruitExploding
 					{
-						gem_board1[i][j].amFruitExploding = true
-						ds_list_add(list_of_fruits, gem_board1[i][j])
+						gems_id_array[i][j].amFruitExploding = true
+						ds_list_add(list_of_fruits, gems_id_array[i][j])
 					}
 			
 				}
@@ -278,6 +276,7 @@ function matcher_stepevent(argument0) {
 			list_of_matches = other.list_of_matches
 			bonus_check_match()
 		}
+		if (spawnallowed) must_spawn_gems = true
 	}
 
 	if check_for_xplier
@@ -288,7 +287,5 @@ function matcher_stepevent(argument0) {
 		}
 		else with(obj_xplier) event_user(2)
 		check_for_xplier = false //dont check again until another user move has been made
-	}
-	}
-
+	}	
 }

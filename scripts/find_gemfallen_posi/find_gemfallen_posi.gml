@@ -1,4 +1,4 @@
-///find_gemboard_pos(GEM,GAMERULE_INDEX)
+///find_gems_skin_array_pos(GEM,GAMERULE_INDEX)
 ///@param GemID
 ///@param Gamerule
 function find_gemfallen_posi(argument0, argument1) {

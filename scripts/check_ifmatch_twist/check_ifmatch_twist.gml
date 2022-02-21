@@ -8,7 +8,7 @@ function check_ifmatch_twist(argument0) {
 	//x\\
 	if jx >= 1 && jx <=kek.board_xsize-2
 	{
-		if kek.gemboard[ix,jx-1] == kek.gemboard[ix,jx+1] && kek.gemboard[ix,jx-1] == skinnum
+		if kek.gems_skin_array[ix,jx-1] == kek.gems_skin_array[ix,jx+1] && kek.gems_skin_array[ix,jx-1] == skinnum
 		{
 			if skinnum != 7
 			{
@@ -20,7 +20,7 @@ function check_ifmatch_twist(argument0) {
 
 	if jx >= 2
 	{
-		if kek.gemboard[ix,jx-1] == kek.gemboard[ix,jx-2] && kek.gemboard[ix,jx-1] == skinnum
+		if kek.gems_skin_array[ix,jx-1] == kek.gems_skin_array[ix,jx-2] && kek.gems_skin_array[ix,jx-1] == skinnum
 		{
 			if skinnum != 7
 			{
@@ -32,7 +32,7 @@ function check_ifmatch_twist(argument0) {
 
 	if jx <= kek.board_xsize-3
 	{
-		if kek.gemboard[ix,jx+1] == kek.gemboard[ix,jx+2] && kek.gemboard[ix,jx+1] == skinnum
+		if kek.gems_skin_array[ix,jx+1] == kek.gems_skin_array[ix,jx+2] && kek.gems_skin_array[ix,jx+1] == skinnum
 		{
 			if skinnum != 7
 			{
@@ -45,7 +45,7 @@ function check_ifmatch_twist(argument0) {
 	//y\\
 	if ix >= 1 && ix <= global.board_rows-2
 	{
-		if kek.gemboard[ix-1,jx] == kek.gemboard[ix+1,jx] && kek.gemboard[ix-1,jx] == skinnum
+		if kek.gems_skin_array[ix-1,jx] == kek.gems_skin_array[ix+1,jx] && kek.gems_skin_array[ix-1,jx] == skinnum
 		{
 			if skinnum != 7
 			{
@@ -57,7 +57,7 @@ function check_ifmatch_twist(argument0) {
 
 	if ix >= 2
 	{
-		if kek.gemboard[ix-1,jx] == kek.gemboard[ix-2,jx] && kek.gemboard[ix-1,jx] == skinnum
+		if kek.gems_skin_array[ix-1,jx] == kek.gems_skin_array[ix-2,jx] && kek.gems_skin_array[ix-1,jx] == skinnum
 		{
 			if skinnum != 7
 			{
@@ -69,7 +69,7 @@ function check_ifmatch_twist(argument0) {
 
 	if ix <= global.board_rows-3
 	{
-		if kek.gemboard[ix+1,jx] == kek.gemboard[ix+2,jx] && kek.gemboard[ix+1,jx] == skinnum
+		if kek.gems_skin_array[ix+1,jx] == kek.gems_skin_array[ix+2,jx] && kek.gems_skin_array[ix+1,jx] == skinnum
 		{
 			if skinnum != 7
 			{

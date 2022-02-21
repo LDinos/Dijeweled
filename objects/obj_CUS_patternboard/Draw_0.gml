@@ -7,9 +7,9 @@ for (var i = 0; i < 8; i++)
 {
     for (var j = 0; j < 8; j++) 
 	{
-		if board[i,j] != -1
+		if board[i][j] != -1
 		{
-			var spr = board[i,j] mod 10
+			var spr = board[i][j] mod 10
 			draw_sprite(spr_gems_small,spr,x + j*64,y +i*64)
 		}
 	}

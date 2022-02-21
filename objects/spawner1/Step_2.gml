@@ -2,6 +2,7 @@
 // You can write your code in this editor
 if !Gamerule_1.isReplay //REMOVE COMMENT WHEN NOT WIP
 {
+/*	
 if !Gamerule_1.IsGemActive && !Gamerule_1.fruit_exploding && !Gamerule_1.hypeOn && !Gamerule_1.lightOn && Gamerule_1.spawnallowed && !Gamerule_1.flameon
 {
 	with(Gamerule_1) check_gaps(Board_1,Gem_1)
@@ -233,4 +234,5 @@ if !Gamerule_1.IsGemActive && !Gamerule_1.fruit_exploding && !Gamerule_1.hypeOn 
 
 	}
 }
+*/
 }

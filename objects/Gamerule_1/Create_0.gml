@@ -1,7 +1,12 @@
 /// @description All rules are here. This controls time, conditions, when to check for matches etc etc.
-//gem_board1 = gem id's
-//gemboard = gem skins (fallen down)
+//gems_id_array = gem id's
+//gems_skin_array = gem skins (fallen down)
 //gems_fallen = gem ids fallen down
+
+//Ready to spawn special gems
+spawn_bomb = false //is it time to spawn a bomb on the next batch of spawned gems
+spawn_coal = false //is it time to spawn a coal on the next batch of spawned gems
+spawn_hype = false //do we have to spawn two hypercubes? Used in hype-hype swap 
 
 #region Powerups
 	horizontal_swaps_only = false
@@ -89,7 +94,6 @@ ini_open("settings.ini") //infobox information
 	FirstTime_Zenify = ini_read_real("First Time","Zenify",true)
 	Zen_allow_sleep = ini_read_real("Settings","Zenify_sleep",true)
 	ini_write_real("Settings","Zenify_sleep",Zen_allow_sleep)
-	//debug = ini_read_real("Debug","value",false)
 	debug = global.debug
 	ini_write_real("Debug","value",debug)
 ini_close()
@@ -183,8 +187,6 @@ iam = Gamerule_1 //who am i?
 num_skin = 6 //number of skins, beginning from 0 to 6 (coal is on 7 but we dont spawn coals using this)
 board_xsize = 8 //board size for collumns (width)
 board_ysize = 8 //board size for rows (height)
-total_timegem = 0 //OBSOLETE
-images_res = .25 //default gem sprite is 256x256, so we need to scale it down to fit our board (256*0.25 = 64)
 gameover = false //Is the game over?
 style = 0 //style points (unused)
 matches = 0 //number of matches made
@@ -201,10 +203,12 @@ blazingcounter = 140 //timer between matches, after which blazing chain will be 
 alarm[3] = 1
 for(var i=0;i<8;i++)
 	{
+		gaps[i] = 0
 		for(var j=0;j<8;j++)
 		{
-			gems_fallen[i,j] = -4 //gems on fallen state (seeing the future to see where the gems WILL be)
-			gem_board1[i,j] = -4 //gems on normal position
+			gems_fallen[i][j] = -4 //gems on fallen state (seeing the future to see where the gems WILL be)
+			gems_id_array[i][j] = -4 //gems on normal position
+			gems_to_spawn[i][j] = -1 //skins for the fresh spawning gems after matches have been made
 		}
 	}
 ready = true; //are we ready to gemactive = 1?
@@ -233,11 +237,11 @@ IsGemActive = false //Am I able to check for matches?
 IsGemActive2 = false //Am I able to spawn fruits and generally anything else after the cascades have stopped?
 moving = false //are gems doing swap animation?
 swap_happened = false //when you do a swap, this goes true for just a step. Used in controls
-var bo = instance_create_depth(Board_1.x - 32, (Board_1.y + 32) + 64*(rows-1),-99,stopper) //make board collision at bottom
-bo.image_xscale = 64*8 //make it 512 of width (board width)
-bo.image_yscale = 64 //make it fat enough to stop gems from penetrating it
-
-
-check_summoves(false)
-for(var i=7;i>=0;i--) gaps[i] = 8
-check_gaps(Board_1,Gem_1)
+//var bo = instance_create_depth(Board_1.x - 32, (Board_1.y + 32) + 64*(rows-1),-99,stopper) //make board collision at bottom
+//bo.image_xscale = 64*8 //make it 512 of width (board width)
+//bo.image_yscale = 64 //make it fat enough to stop gems from penetrating it
+must_spawn_gems = false //did matches happen so that we have to spawn new gems?
+gems_ready = 0 //if this is equals to number of gems, then all gems are stationary
+//check_summoves(false)
+//for(var i=7;i>=0;i--) gaps[i] = 8
+//check_gaps(Board_1,Gem_1)

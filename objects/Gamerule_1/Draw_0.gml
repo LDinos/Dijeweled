@@ -4,16 +4,16 @@ draw_set_font(font2)
 draw_set_halign(fa_left)
 draw_text(8,16+m,string(floor(fps_real)) + " FPS")
 draw_text(8,48+m,"LAG " + string(lagness))
-
-#region draw gem_board1[i,j]
+draw_text(8,72+m,string(gems_ready))
+#region draw gems_id_array[i][j]
 /*
 for(i=0;i<=7;i++)
 {
 	for(j=0;j<=7;j++)
 	{
-		if gem_board1[i,j] != noone
+		if gems_id_array[i][j] != noone
 		{
-			switch gem_board1[i,j].skinnum
+			switch gems_id_array[i][j].skinnum
 			{
 				case 0:
 					color = c_red
@@ -43,19 +43,19 @@ for(i=0;i<=7;i++)
 		}
 		else color = c_black
 		draw_circle_color(Board_1.x - 256 + 32*j, (Board_1.y-512+256+m) + 32*i, 4,color,color,false)
-		//draw_text(Board_1.x + 32*j, (Board_1.y+256) + 32*i, gemboard[i,j])
+		//draw_text(Board_1.x + 32*j, (Board_1.y+256) + 32*i, gems_skin_array[i][j])
 	}
 }*/
 #endregion
 
-#region draw gemboard[i,j]
+#region draw gems_skin_array[i][j]
 if debug
 {
 for(i=0;i<=7;i++)
 {
 	for(j=0;j<=7;j++)
 	{
-		switch gemboard[i,j]
+		switch gems_skin_array[i][j]
 		{
 			case 0:
 				color = c_red
@@ -86,8 +86,8 @@ for(i=0;i<=7;i++)
 				color = c_black
 				break;
 		}
-		if gemboard[i,j] != -1 draw_circle_color(Board_1.x - 256 + 32*j, (Board_1.y-512+256+m) + 32*i, 4,color,color,false)
-		//draw_text(Board_1.x + 32*j, (Board_1.y+256+m) + 32*i, gemboard[i,j])
+		if gems_skin_array[i][j] != -1 draw_circle_color(Board_1.x - 256 + 32*j, (Board_1.y-512+256+m) + 32*i, 4,color,color,false)
+		//draw_text(Board_1.x + 32*j, (Board_1.y+256+m) + 32*i, gems_skin_array[i][j])
 		
 	}
 }

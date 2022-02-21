@@ -1,4 +1,4 @@
-function make_gemboard() {
+function make_gems_skin_array() {
 
 
 

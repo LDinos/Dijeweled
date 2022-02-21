@@ -12,7 +12,7 @@ function avalanche_create_invisible_gems(argument0) {
 		{
 			for(var j = 0; j<8; j++)
 			{
-				if Gamerule_1.gemboard[i,j] == -1
+				if Gamerule_1.gems_skin_array[i][j] == -1
 				{
 					var g = instance_create(Board_1.x + j*64, Board_1.y+i*64,Gem_1)
 					with(g)

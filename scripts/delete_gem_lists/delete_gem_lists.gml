@@ -4,9 +4,9 @@ function delete_gem_lists() {
 		{
 			for(j=0;j<8;j++)
 			{
-				gems_fallen[i,j] = noone
-				gem_board1[i,j] = noone
-				gemboard[i,j] = -1
+				gems_fallen[i][j] = noone
+				gems_id_array[i][j] = noone
+				gems_skin_array[i][j] = -1
 			}
 		}
 

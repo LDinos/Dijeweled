@@ -9,15 +9,15 @@ function do_virtual_match(argument0, argument1) {
 	var i1 = list_moves[INDEX,0]
 	var j1 = list_moves[INDEX,1]
 	var dir = list_moves[INDEX,2]
-	var gem = MyGamerule.gem_board1[i1,j1]
+	var gem = MyGamerule.gems_id_array[i1,j1]
 	importance += find_power_importance(gem.gempower)
 
 	if gem.amHype importance += 16 //hypercubes are as important as lightnings
 
 	if (importance == 0)
 	{
-		var virtual_board = MyGamerule.gemboard
-		var virtual_board_gems = MyGamerule.gem_board1
+		var virtual_board = MyGamerule.gems_skin_array
+		var virtual_board_gems = MyGamerule.gems_id_array
 		var i2 = i1
 		var j2 = j1
 		switch dir
@@ -56,9 +56,9 @@ function do_virtual_match(argument0, argument1) {
 			var power_importance = 0;
 			for( var j = 1; j < 8; j++)
 			{
-				if ((virtual_board[i,j] == virtual_board[i,j-1]) && (virtual_board[i,j] != -1))
+				if ((virtual_board[i][j] == virtual_board[i,j-1]) && (virtual_board[i][j] != -1))
 				{
-					power_importance += find_power_importance(virtual_board_gems[i,j].gempower)
+					power_importance += find_power_importance(virtual_board_gems[i][j].gempower)
 					n++
 				}
 				else if n >= 3 {importance += n-2 + power_importance; n =1}
@@ -78,9 +78,9 @@ function do_virtual_match(argument0, argument1) {
 			var power_importance = 0;
 			for( var i = 1; i < 8; i++)
 			{
-				if ((virtual_board[i,j] == virtual_board[i-1,j]) && (virtual_board[i,j] != -1))
+				if ((virtual_board[i][j] == virtual_board[i-1,j]) && (virtual_board[i][j] != -1))
 				{
-					power_importance += find_power_importance(virtual_board_gems[i,j].gempower)
+					power_importance += find_power_importance(virtual_board_gems[i][j].gempower)
 					n++
 				}
 				else if n >= 3 {importance += n-2 + power_importance; n = 1}

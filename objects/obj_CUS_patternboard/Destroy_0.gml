@@ -7,7 +7,7 @@ with(CUS_objective)
 		{
 			for(var j =0; j<8; j++)
 			{
-				board[# i,j] = other.board[i,j]
+				board[# i,j] = other.board[i][j]
 			}
 		}
 	}

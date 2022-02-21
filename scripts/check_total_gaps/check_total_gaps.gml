@@ -4,7 +4,7 @@ function check_total_gaps() {
 	{
 		for(var i = 0; i < 8; i++)
 		{
-			if Gamerule_1.gem_board1[i,j] == noone gaps++
+			if Gamerule_1.gems_id_array[i][j] == noone gaps++
 		}
 	}
 

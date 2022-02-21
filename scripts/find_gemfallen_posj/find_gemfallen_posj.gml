@@ -1,4 +1,4 @@
-///find_gemboard_pos(GEM,Gamerule)
+///find_gems_skin_array_pos(GEM,Gamerule)
 function find_gemfallen_posj(argument0, argument1) {
 	//Finds the gem j position (needs the gamerule index to know which player we are talking about)
 	var returnj = noone

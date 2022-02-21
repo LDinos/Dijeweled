@@ -15,6 +15,7 @@ if !instance_exists(lightningObj1)
 	}
 	Gamerule_1.lightOn = false //no longer producing lightning, now the gems can move :)
 	Gamerule_1.octanovaOn = false
+	with(Gamerule_1) recheck_gem_readiness(Gem_1)
 }
 
 

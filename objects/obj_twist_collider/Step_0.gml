@@ -36,45 +36,45 @@ else
 			{
 				for(var j=7;j>=0;j--)
 				{
-					gem_board1[i,j] = noone
+					gems_id_array[i][j] = noone
 				}
 			}
 		with(Gem_1) //fill it up with gems
 		{
 			if _i >= 0
 			{
-				other.gem_board1[_i,_j] = id
+				other.gems_id_array[_i,_j] = id
 			}
 		}
 
 
-		gems_fallen = gem_board1				
+		gems_fallen = gems_id_array				
 		for(var j=0;j<=7;j++)
 		{
 			var k = 7;
 			for(var i=7;i>=0;i--)
 			{
-				if gem_board1[i,j] != noone
+				if gems_id_array[i][j] != noone
 				{
 					var temp = gems_fallen[k,j]
-					gems_fallen[k,j] = gem_board1[i,j]
-					gems_fallen[i,j] = temp	
+					gems_fallen[k,j] = gems_id_array[i][j]
+					gems_fallen[i][j] = temp	
 					k--
 				}
 			}
 		}
 
-		for(var i=0;i<=7;i++) //and use gemboard to keep their fallen skins
+		for(var i=0;i<=7;i++) //and use gems_skin_array to keep their fallen skins
 			{
 				for(var j=0;j<=7;j++)
 				{
-					if gems_fallen[i,j] != noone
+					if gems_fallen[i][j] != noone
 					{
-						gemboard[i,j] = gems_fallen[i,j].skinnum
+						gems_skin_array[i][j] = gems_fallen[i][j].skinnum
 					}
 					else
 					{
-						gemboard[i,j] = -1
+						gems_skin_array[i][j] = -1
 					}
 				}
 			}

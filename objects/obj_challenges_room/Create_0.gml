@@ -13,10 +13,10 @@ ini_open("challenges.ini")
 		AR_titles[i] = ini_read_string("Titles",string(i),"-")
 		for(var j=0;j<6;j++)
 		{
-			AR_challenges[i,j] = ini_read_string("Challenges",string(i)+":"+string(j),"-")
-			AR_status[i,j] = ini_read_real("Info",string(i)+":"+string(j)+"-Status",STATUS_UNLOCKED)
-			if (global.debug && AR_status[i,j] = STATUS_LOCKED) AR_status[i,j] = STATUS_UNLOCKED
-			if (AR_status[i,j] == STATUS_COMPLETED) survivor_unlock_thresold++
+			AR_challenges[i][j] = ini_read_string("Challenges",string(i)+":"+string(j),"-")
+			AR_status[i][j] = ini_read_real("Info",string(i)+":"+string(j)+"-Status",STATUS_UNLOCKED)
+			if (global.debug && AR_status[i][j] = STATUS_LOCKED) AR_status[i][j] = STATUS_UNLOCKED
+			if (AR_status[i][j] == STATUS_COMPLETED) survivor_unlock_thresold++
 		}
 	}
 ini_close()

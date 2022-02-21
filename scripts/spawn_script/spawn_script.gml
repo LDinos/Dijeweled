@@ -6,7 +6,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 #region SHAPE
 	/*
 
-	Use argument0.gemsfallen[i,j] or gemboard!
+	Use argument0.gemsfallen[i][j] or gems_skin_array!
 	We will divide the cases from minimum gapss first. Of course the single gaps can work on 2+ gapss aswell, etc.
 
 	************ONE SPAWN***********************
@@ -180,8 +180,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	{
 		if j>=3 //have space to check back
 		{
-			g1 = argument0.gemboard[gaps[j]-1,j-2]
-			g2 = argument0.gemboard[gaps[j]-1,j-3]
+			g1 = argument0.gems_skin_array[gaps[j]-1,j-2]
+			g2 = argument0.gems_skin_array[gaps[j]-1,j-3]
 			if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{
 				//with(Gem_create) set_skin(other.g1)
@@ -196,8 +196,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	{
 		if j>=3 //have space to check back
 		{
-			g1 = argument0.gemboard[gaps[j]-1,j-1]
-			g2 = argument0.gemboard[gaps[j]-1,j-3]
+			g1 = argument0.gems_skin_array[gaps[j]-1,j-1]
+			g2 = argument0.gems_skin_array[gaps[j]-1,j-3]
 			if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{
 				//with(Gem_create) set_skin(other.g1)
@@ -212,8 +212,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	{
 		if j>=2 && j<=6 //have space to check back
 		{
-			g1 = argument0.gemboard[gaps[j]-1,j-2]
-			g2 = argument0.gemboard[gaps[j]-1,j+1]
+			g1 = argument0.gems_skin_array[gaps[j]-1,j-2]
+			g2 = argument0.gems_skin_array[gaps[j]-1,j+1]
 			if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{
 				//with(Gem_create) set_skin(other.g1)
@@ -228,8 +228,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	{
 		if j>=1 && j<=5 //have space to check back
 		{
-			g1 = argument0.gemboard[gaps[j]-1,j-1]
-			g2 = argument0.gemboard[gaps[j]-1,j+2]
+			g1 = argument0.gems_skin_array[gaps[j]-1,j-1]
+			g2 = argument0.gems_skin_array[gaps[j]-1,j+2]
 			if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{
 				//with(Gem_create) set_skin(other.g1)
@@ -244,8 +244,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	{
 		if j<=4 //have space to check back
 		{
-			g1 = argument0.gemboard[gaps[j]-1,j+1]
-			g2 = argument0.gemboard[gaps[j]-1,j+3]
+			g1 = argument0.gems_skin_array[gaps[j]-1,j+1]
+			g2 = argument0.gems_skin_array[gaps[j]-1,j+3]
 			if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{
 				//with(Gem_create) set_skin(other.g1)
@@ -260,8 +260,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	{
 		if j<=4 //have space to check back
 		{
-			g1 = argument0.gemboard[gaps[j]-1,j+2]
-			g2 = argument0.gemboard[gaps[j]-1,j+3]
+			g1 = argument0.gems_skin_array[gaps[j]-1,j+2]
+			g2 = argument0.gems_skin_array[gaps[j]-1,j+3]
 			if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{
 				//with(Gem_create) set_skin(other.g1)
@@ -276,8 +276,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	//0
 	 if gaps[j] >= 2 && j>=2
 	{
-		g1 = argument0.gemboard[gaps[j]-2,j-1]
-		g2 = argument0.gemboard[gaps[j]-2,j-2]
+		g1 = argument0.gems_skin_array[gaps[j]-2,j-1]
+		g2 = argument0.gems_skin_array[gaps[j]-2,j-2]
 		if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{	
 				//with(Gem_create) set_skin(other.g1)
@@ -289,8 +289,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	//1
 	 if gaps[j] >= 2 && j>=1 && j<=6
 	{
-		g1 = argument0.gemboard[gaps[j]-2,j-1]
-		g2 = argument0.gemboard[gaps[j]-2,j+1]
+		g1 = argument0.gems_skin_array[gaps[j]-2,j-1]
+		g2 = argument0.gems_skin_array[gaps[j]-2,j+1]
 		if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{	
 				//with(Gem_create) set_skin(other.g1)
@@ -302,8 +302,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	//2
 	 if gaps[j] >= 2 && j<=5
 	{
-		g1 = argument0.gemboard[gaps[j]-2,j+1]
-		g2 = argument0.gemboard[gaps[j]-2,j+2]
+		g1 = argument0.gems_skin_array[gaps[j]-2,j+1]
+		g2 = argument0.gems_skin_array[gaps[j]-2,j+2]
 		if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{	
 				//with(Gem_create) set_skin(other.g1)
@@ -317,8 +317,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	//0
 	 if gaps[j] >= 3 && j>=1
 	{
-		g1 = argument0.gemboard[gaps[j]-3,j-1]
-		g2 = argument0.gemboard[gaps[j]-2,j-1]
+		g1 = argument0.gems_skin_array[gaps[j]-3,j-1]
+		g2 = argument0.gems_skin_array[gaps[j]-2,j-1]
 		if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{	
 				//with(Gem_create) set_skin(other.g1)
@@ -330,8 +330,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	//1
 	 if gaps[j] >= 3 && j<=6
 	{
-		g1 = argument0.gemboard[gaps[j]-3,j+1]
-		g2 = argument0.gemboard[gaps[j]-2,j+1]
+		g1 = argument0.gems_skin_array[gaps[j]-3,j+1]
+		g2 = argument0.gems_skin_array[gaps[j]-2,j+1]
 		if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{	
 				//with(Gem_create) set_skin(other.g1)
@@ -345,8 +345,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	//0
 	 if gaps[j] <= global.board_rows-1 && j<=5
 	{
-		g1 = argument0.gemboard[gaps[j],j+1]
-		g2 = argument0.gemboard[gaps[j],j+2]
+		g1 = argument0.gems_skin_array[gaps[j],j+1]
+		g2 = argument0.gems_skin_array[gaps[j],j+2]
 		if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{	
 				//with(Gem_create) set_skin(other.g1)
@@ -358,8 +358,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	//1
 	 if gaps[j] <= global.board_rows-1 && j>=1 && j<=6
 	{
-		g1 = argument0.gemboard[gaps[j],j-1]
-		g2 = argument0.gemboard[gaps[j],j+1]
+		g1 = argument0.gems_skin_array[gaps[j],j-1]
+		g2 = argument0.gems_skin_array[gaps[j],j+1]
 		if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{	
 				//with(Gem_create) set_skin(other.g1)
@@ -371,8 +371,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	//2
 	 if gaps[j] <= global.board_rows-1 && j>=2
 	{
-		g1 = argument0.gemboard[gaps[j],j-1]
-		g2 = argument0.gemboard[gaps[j],j-2]
+		g1 = argument0.gems_skin_array[gaps[j],j-1]
+		g2 = argument0.gems_skin_array[gaps[j],j-2]
 		if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{	
 				//with(Gem_create) set_skin(other.g1)
@@ -386,8 +386,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	//0
 	 if gaps[j] <= global.board_rows-2 && j<=6
 	{
-		g1 = argument0.gemboard[gaps[j],j+1]
-		g2 = argument0.gemboard[gaps[j]+1,j+1]
+		g1 = argument0.gems_skin_array[gaps[j],j+1]
+		g2 = argument0.gems_skin_array[gaps[j]+1,j+1]
 		if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{	
 				//with(Gem_create) set_skin(other.g1)
@@ -399,8 +399,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	//1
 	 if gaps[j] <= global.board_rows-2 && j>=1
 	{
-		g1 = argument0.gemboard[gaps[j],j-1]
-		g2 = argument0.gemboard[gaps[j]+1,j-1]
+		g1 = argument0.gems_skin_array[gaps[j],j-1]
+		g2 = argument0.gems_skin_array[gaps[j]+1,j-1]
 		if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{	
 				//with(Gem_create) set_skin(other.g1)
@@ -412,8 +412,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	//2
 	 if gaps[j] <= global.board_rows-2 && j<=6
 	{
-		g1 = argument0.gemboard[gaps[j],j]
-		g2 = argument0.gemboard[gaps[j]+1,j+1]
+		g1 = argument0.gems_skin_array[gaps[j],j]
+		g2 = argument0.gems_skin_array[gaps[j]+1,j+1]
 		if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{	
 				//with(Gem_create) set_skin(other.g1)
@@ -425,8 +425,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	//3
 	 if gaps[j] <= global.board_rows-2 && j>=1
 	{
-		g1 = argument0.gemboard[gaps[j],j]
-		g2 = argument0.gemboard[gaps[j]+1,j-1]
+		g1 = argument0.gems_skin_array[gaps[j],j]
+		g2 = argument0.gems_skin_array[gaps[j]+1,j-1]
 		if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{	
 				//with(Gem_create) set_skin(other.g1)
@@ -438,8 +438,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	//4
 	 if gaps[j] <= global.board_rows-1 && gaps[j] >= 2 && j<=6
 	{
-		g1 = argument0.gemboard[gaps[j]-2,j+1]
-		g2 = argument0.gemboard[gaps[j],j+1]
+		g1 = argument0.gems_skin_array[gaps[j]-2,j+1]
+		g2 = argument0.gems_skin_array[gaps[j],j+1]
 		if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{	
 				//with(Gem_create) set_skin(other.g1)
@@ -451,8 +451,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	//5
 	 if gaps[j] <= global.board_rows-1 && gaps[j] >= 2 && j>=1
 	{
-		g1 = argument0.gemboard[gaps[j]-2,j-1]
-		g2 = argument0.gemboard[gaps[j],j-1]
+		g1 = argument0.gems_skin_array[gaps[j]-2,j-1]
+		g2 = argument0.gems_skin_array[gaps[j],j-1]
 		if (g1 == g2) && (g2 != -1) && (g1 != 7)
 			{	
 				//with(Gem_create) set_skin(other.g1)
@@ -467,8 +467,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 		//1
 		 if gaps[j] <= global.board_rows-4
 		{		
-			g1 = argument0.gemboard[gaps[j],j]
-			g2 = argument0.gemboard[gaps[j]+2,j]
+			g1 = argument0.gems_skin_array[gaps[j],j]
+			g2 = argument0.gems_skin_array[gaps[j]+2,j]
 			if (g1 == g2) && (g2 != -1) && (g1 != 7)
 				{	
 					//with(Gem_create) set_skin(other.g1)
@@ -480,8 +480,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 		//2
 		 if gaps[j] <= global.board_rows-4
 		{		
-			g1 = argument0.gemboard[gaps[j]+1,j]
-			g2 = argument0.gemboard[gaps[j]+2,j]
+			g1 = argument0.gems_skin_array[gaps[j]+1,j]
+			g2 = argument0.gems_skin_array[gaps[j]+2,j]
 			if (g1 == g2) && (g2 != -1) && (g1 != 7)
 				{	
 					//with(Gem_create) set_skin(other.g1)
@@ -497,7 +497,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			nextspawn = instance_position(Gem_create.x+64,y,argument1)
 			if nextspawn != noone
 			{
-				g1 = argument0.gemboard[gaps[j]-1,j+3]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+3]
 				if g1 != -1 && (g1 != 7)
 				{
 					ds_list_add(num_choices,32)
@@ -514,7 +514,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			nextspawn = instance_position(Gem_create.x-64,y,argument1)
 			if nextspawn != noone
 			{
-				g1 = argument0.gemboard[gaps[j]-1,j+2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+2]
 				if g1 != -1 && (g1 != 7)
 				{
 					ds_list_add(num_choices,33)
@@ -531,7 +531,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			nextspawn = instance_position(Gem_create.x+64,y,argument1)
 			if nextspawn != noone
 			{
-				g1 = argument0.gemboard[gaps[j]-1,j-2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-2]
 				if g1 != -1 && (g1 != 7)
 				{
 				ds_list_add(num_choices,34)
@@ -548,7 +548,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			nextspawn = instance_position(Gem_create.x-64,y,argument1)
 			if nextspawn != noone
 			{
-				g1 = argument0.gemboard[gaps[j]-1,j-3]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-3]
 				if g1 != -1 && (g1 != 7)
 				{
 				ds_list_add(num_choices,35)
@@ -564,8 +564,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 		//1
 		 if j >= 2
 		{		
-			g1 = argument0.gemboard[gaps[j]-1,j-1]
-			g2 = argument0.gemboard[gaps[j]-1,j-2]
+			g1 = argument0.gems_skin_array[gaps[j]-1,j-1]
+			g2 = argument0.gems_skin_array[gaps[j]-1,j-2]
 			if (g1 == g2) && (g2 != -1) && (g1 != 7)
 				{	
 					//with(Gem_create) set_skin(other.g1)
@@ -577,8 +577,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 		//2
 		 if j >= 1 && j <= 6
 		{		
-			g1 = argument0.gemboard[gaps[j]-1,j-1]
-			g2 = argument0.gemboard[gaps[j]-1,j+1]
+			g1 = argument0.gems_skin_array[gaps[j]-1,j-1]
+			g2 = argument0.gems_skin_array[gaps[j]-1,j+1]
 			if (g1 == g2) && (g2 != -1) && (g1 != 7)
 				{	
 					//with(Gem_create) set_skin(other.g1)
@@ -590,8 +590,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 		//3
 		 if j <= 5
 		{		
-			g1 = argument0.gemboard[gaps[j]-1,j+2]
-			g2 = argument0.gemboard[gaps[j]-1,j+1]
+			g1 = argument0.gems_skin_array[gaps[j]-1,j+2]
+			g2 = argument0.gems_skin_array[gaps[j]-1,j+1]
 			if (g1 == g2) && (g2 != -1) && (g1 != 7)
 				{	
 					//with(Gem_create) set_skin(other.g1)
@@ -603,8 +603,8 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 		//4
 		 if gaps[j] <= global.board_rows-2
 		{		
-			g1 = argument0.gemboard[gaps[j],j]
-			g2 = argument0.gemboard[gaps[j]+1,j]
+			g1 = argument0.gems_skin_array[gaps[j],j]
+			g2 = argument0.gems_skin_array[gaps[j]+1,j]
 			if (g1 == g2) && (g2 != -1) && (g1 != 7)
 				{	
 					//with(Gem_create) set_skin(other.g1)
@@ -619,7 +619,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			nextspawn = instance_position(Gem_create.x+64,y,argument1)
 			if nextspawn != noone
 			{
-				g1 = argument0.gemboard[gaps[j]-1,j-1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-1]
 				if (g1 != -1) && (gaps[j+1] == gaps[j]) && (g1 != 7)
 				{
 					ds_list_add(num_choices,36)
@@ -634,7 +634,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			nextspawn = instance_position(Gem_create.x-64,y,argument1)
 			if nextspawn != noone
 			{
-				g1 = argument0.gemboard[gaps[j]-1,j-2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-2]
 				if (g1 != -1) && (gaps[j-1] == gaps[j]) && (g1 != 7)
 				{
 					ds_list_add(num_choices,37)
@@ -649,7 +649,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			nextspawn = instance_position(Gem_create.x+64,y,argument1)
 			if nextspawn != noone
 			{
-				g1 = argument0.gemboard[gaps[j]-1,j+2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+2]
 				if (g1 != -1) && (gaps[j+1] == gaps[j]) && (g1 != 7)
 				{
 					ds_list_add(num_choices,38)
@@ -664,7 +664,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			nextspawn = instance_position(Gem_create.x-64,y,argument1)
 			if nextspawn != noone
 			{
-				g1 = argument0.gemboard[gaps[j]-1,j+1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+1]
 				if (g1 != -1) && (gaps[j-1] == gaps[j]) && (g1 != 7)
 				{
 					ds_list_add(num_choices,39)
@@ -682,7 +682,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 		{
 			if gaps[j] == gaps[j+1]
 			{
-				g1 = argument0.gemboard[gaps[j]-1,j-2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-2]
 				if (g1 != -1) && (g1 != 7) && instance_position(Gem_create.x + 64,Gem_create.y,argument1) = noone
 				{
 					if (include_gem_creators)
@@ -702,7 +702,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 		{
 			if gaps[j] == gaps[j+2]
 			{
-				g1 = argument0.gemboard[gaps[j]-1,j-1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-1]
 				if (g1 != -1) && (g1 != 7) && instance_position(Gem_create.x + 128,Gem_create.y,argument1) = noone
 				{
 					if (include_gem_creators)
@@ -722,7 +722,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 		{
 			if gaps[j] == gaps[j+2]
 			{
-				g1 = argument0.gemboard[gaps[j]-1,j+3]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+3]
 				if (g1 != -1) && (g1 != 7) && instance_position(Gem_create.x + 128,Gem_create.y,argument1) = noone
 				{
 					if (include_gem_creators)
@@ -742,7 +742,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 		{
 			if gaps[j] == gaps[j+1]
 			{
-				g1 = argument0.gemboard[gaps[j]-1,j+3]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+3]
 				if (g1 != -1) && (g1 != 7) && instance_position(Gem_create.x + 64,Gem_create.y,argument1) = noone
 				{
 					if (include_gem_creators)
@@ -762,7 +762,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 		{
 			if gaps[j] == gaps[j+3]
 			{
-				g1 = argument0.gemboard[gaps[j]-1,j+1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+1]
 				if (g1 != -1) && (g1 != 7) && instance_position(Gem_create.x + 64*3,Gem_create.y,argument1) = noone
 				{
 					if (include_gem_creators)
@@ -782,7 +782,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 		{
 			if gaps[j] == gaps[j+3]
 			{
-				g1 = argument0.gemboard[gaps[j]-1,j+2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+2]
 				if (g1 != -1) && (g1 != 7) && instance_position(Gem_create.x + 64*3,Gem_create.y,argument1) = noone
 				{
 					if (include_gem_creators)
@@ -800,7 +800,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	{
 		if gaps[j] >= 2 && gaps[j] <= global.board_rows - 3 //have space to check back
 		{
-			g1 = argument0.gemboard[gaps[j]+1,j]
+			g1 = argument0.gems_skin_array[gaps[j]+1,j]
 			if (g1 != -1) && (g1 != 7)
 			{
 				if (include_gem_creators)
@@ -816,7 +816,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	{
 		if gaps[j] >= 3 && gaps[j] <= global.board_rows - 2 //have space to check back
 		{
-			g1 = argument0.gemboard[gaps[j],j]
+			g1 = argument0.gems_skin_array[gaps[j],j]
 			if (g1 != -1) && (g1 != 7)
 			{
 				if (include_gem_creators)
@@ -836,7 +836,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 		switch num_choices[|sel]
 		{
 			case 0:
-				g1 = argument0.gemboard[gaps[j]-1,j-2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-2]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -853,7 +853,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 1:
-				g1 = argument0.gemboard[gaps[j]-1,j-1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -870,7 +870,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 2:
-				g1 = argument0.gemboard[gaps[j]-1,j-2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-2]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -887,7 +887,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 3:
-				g1 = argument0.gemboard[gaps[j]-1,j-1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -904,7 +904,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 4:
-				g1 = argument0.gemboard[gaps[j]-1,j+1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -921,7 +921,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 5:
-				g1 = argument0.gemboard[gaps[j]-1,j+2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+2]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -938,7 +938,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 6:
-				g1 = argument0.gemboard[gaps[j]-1,j-2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-2]
 				with(Gem_create) set_skin(other.g1)
 				newg = instance_create(Gem_create.x + 64, Gem_create.y,argument1)
 				with(newg) {scr_add_gemid(Gamerule_1);set_skin(other.g1); acc = other.Gem_create.acc}
@@ -969,7 +969,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 7:
-				g1 = argument0.gemboard[gaps[j]-1,j-1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-1]
 				with(Gem_create) set_skin(other.g1)
 				newg = instance_create(Gem_create.x + 128, Gem_create.y,argument1)
 				with(newg) {scr_add_gemid(Gamerule_1);set_skin(other.g1); acc = other.Gem_create.acc}
@@ -1000,7 +1000,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 8:
-				g1 = argument0.gemboard[gaps[j]-1,j+3]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+3]
 				with(Gem_create) set_skin(other.g1)
 				newg = instance_create(Gem_create.x + 128, Gem_create.y,argument1)
 				with(newg) {scr_add_gemid(Gamerule_1);set_skin(other.g1); acc = other.Gem_create.acc}
@@ -1031,7 +1031,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 9:
-				g1 = argument0.gemboard[gaps[j]-1,j+3]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+3]
 				with(Gem_create) set_skin(other.g1)
 				newg = instance_create(Gem_create.x + 64, Gem_create.y,argument1)
 				with(newg) {scr_add_gemid(Gamerule_1);set_skin(other.g1); acc = other.Gem_create.acc}
@@ -1062,7 +1062,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 10:
-				g1 = argument0.gemboard[gaps[j]-1,j+1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+1]
 				with(Gem_create) set_skin(other.g1)
 				newg = instance_create(Gem_create.x + 64*3, Gem_create.y,argument1)
 				with(newg) {scr_add_gemid(Gamerule_1);set_skin(other.g1); acc = other.Gem_create.acc}
@@ -1093,7 +1093,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 11:
-				g1 = argument0.gemboard[gaps[j]-1,j+2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+2]
 				with(Gem_create) set_skin(other.g1)
 				newg = instance_create(Gem_create.x + 64*3, Gem_create.y,argument1)
 				with(newg) {scr_add_gemid(Gamerule_1);set_skin(other.g1); acc = other.Gem_create.acc}
@@ -1124,7 +1124,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 12:
-				g1 = argument0.gemboard[gaps[j]-2,j-1]
+				g1 = argument0.gems_skin_array[gaps[j]-2,j-1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1141,7 +1141,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 13:
-				g1 = argument0.gemboard[gaps[j]-2,j-1]
+				g1 = argument0.gems_skin_array[gaps[j]-2,j-1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1158,7 +1158,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 14:
-				g1 = argument0.gemboard[gaps[j]-2,j+1]
+				g1 = argument0.gems_skin_array[gaps[j]-2,j+1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1175,7 +1175,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 15:
-				g1 = argument0.gemboard[gaps[j]-3,j-1]
+				g1 = argument0.gems_skin_array[gaps[j]-3,j-1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1192,7 +1192,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 16:
-				g1 = argument0.gemboard[gaps[j]-3,j+1]
+				g1 = argument0.gems_skin_array[gaps[j]-3,j+1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1209,7 +1209,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 17:
-				g1 = argument0.gemboard[gaps[j],j+1]
+				g1 = argument0.gems_skin_array[gaps[j],j+1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1226,7 +1226,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 18:
-				g1 = argument0.gemboard[gaps[j],j-1]
+				g1 = argument0.gems_skin_array[gaps[j],j-1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1243,7 +1243,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 19:
-				g1 = argument0.gemboard[gaps[j],j-1]
+				g1 = argument0.gems_skin_array[gaps[j],j-1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1260,7 +1260,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 20:
-				g1 = argument0.gemboard[gaps[j],j+1]
+				g1 = argument0.gems_skin_array[gaps[j],j+1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1277,7 +1277,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 21:
-				g1 = argument0.gemboard[gaps[j],j-1]
+				g1 = argument0.gems_skin_array[gaps[j],j-1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1294,7 +1294,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;	
 			case 22:
-				g1 = argument0.gemboard[gaps[j],j]
+				g1 = argument0.gems_skin_array[gaps[j],j]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1311,7 +1311,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 23:
-				g1 = argument0.gemboard[gaps[j],j]
+				g1 = argument0.gems_skin_array[gaps[j],j]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1328,7 +1328,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 24:
-				g1 = argument0.gemboard[gaps[j]-2,j+1]
+				g1 = argument0.gems_skin_array[gaps[j]-2,j+1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1345,7 +1345,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 25:
-				g1 = argument0.gemboard[gaps[j]-2,j-1]
+				g1 = argument0.gems_skin_array[gaps[j]-2,j-1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1362,7 +1362,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 26:
-				g1 = argument0.gemboard[gaps[j],j]
+				g1 = argument0.gems_skin_array[gaps[j],j]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1379,7 +1379,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 27:
-				g1 = argument0.gemboard[gaps[j]+1,j]
+				g1 = argument0.gems_skin_array[gaps[j]+1,j]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1396,7 +1396,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 28:
-				g1 = argument0.gemboard[gaps[j]-1,j-1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1413,7 +1413,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 29:
-				g1 = argument0.gemboard[gaps[j]-1,j-1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-1]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1430,7 +1430,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 30:
-				g1 = argument0.gemboard[gaps[j]-1,j+2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+2]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1447,7 +1447,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 31:
-				g1 = argument0.gemboard[gaps[j],j]
+				g1 = argument0.gems_skin_array[gaps[j],j]
 				with(Gem_create) set_skin(other.g1)
 			#region online
 				if global.online
@@ -1464,7 +1464,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 32:
-				g1 = argument0.gemboard[gaps[j]-1,j+3]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+3]
 				nextspawn = instance_position(Gem_create.x+64,y,argument1)
 				with(Gem_create) set_skin(other.g1)
 				with(nextspawn) set_skin(other.g1)
@@ -1494,7 +1494,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 33:
-				g1 = argument0.gemboard[gaps[j]-1,j+2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+2]
 				nextspawn = instance_position(Gem_create.x-64,y,argument1)
 				with(Gem_create) set_skin(other.g1)
 				with(nextspawn) set_skin(other.g1)
@@ -1524,7 +1524,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 34:
-				g1 = argument0.gemboard[gaps[j]-1,j-2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-2]
 				nextspawn = instance_position(Gem_create.x+64,y,argument1)
 				with(Gem_create) set_skin(other.g1)
 				with(nextspawn) set_skin(other.g1)
@@ -1554,7 +1554,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 35:
-				g1 = argument0.gemboard[gaps[j]-1,j-3]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-3]
 				nextspawn = instance_position(Gem_create.x-64,y,argument1)
 				with(Gem_create) set_skin(other.g1)
 				with(nextspawn) set_skin(other.g1)
@@ -1584,7 +1584,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 36:
-				g1 = argument0.gemboard[gaps[j]-1,j-1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-1]
 				nextspawn = instance_position(Gem_create.x+64,y,argument1)
 				with(Gem_create) set_skin(other.g1)
 				with(nextspawn) set_skin(other.g1)
@@ -1614,7 +1614,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 37:
-				g1 = argument0.gemboard[gaps[j]-1,j-2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-2]
 				nextspawn = instance_position(Gem_create.x-64,y,argument1)
 				with(Gem_create) set_skin(other.g1)
 				with(nextspawn) set_skin(other.g1)
@@ -1644,7 +1644,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 38:
-				g1 = argument0.gemboard[gaps[j]-1,j+2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+2]
 				nextspawn = instance_position(Gem_create.x+64,y,argument1)
 				with(Gem_create) set_skin(other.g1)
 				with(nextspawn) set_skin(other.g1)
@@ -1674,7 +1674,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 39:
-				g1 = argument0.gemboard[gaps[j]-1,j+1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+1]
 				nextspawn = instance_position(Gem_create.x-64,y,argument1)
 				with(Gem_create) set_skin(other.g1)
 				with(nextspawn) set_skin(other.g1)
@@ -1704,7 +1704,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 40:
-				g1 = argument0.gemboard[gaps[j]-1,j-2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-2]
 				newg = instance_create(Gem_create.x + 64, Gem_create.y,argument1)
 				newacc = Gem_create.acc
 				with(Gem_create) set_skin(other.g1)
@@ -1736,7 +1736,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 				//--------------------\\
 				break;
 			case 41:
-				g1 = argument0.gemboard[gaps[j]-1,j-1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j-1]
 				newg = instance_create(Gem_create.x + 128, Gem_create.y,argument1)
 				newacc = Gem_create.acc
 				with(Gem_create) set_skin(other.g1)
@@ -1768,7 +1768,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 42:
-				g1 = argument0.gemboard[gaps[j]-1,j+3]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+3]
 				newg = instance_create(Gem_create.x + 128, Gem_create.y,argument1)
 				newacc = Gem_create.acc
 				with(Gem_create) set_skin(other.g1)
@@ -1800,7 +1800,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 43:
-				g1 = argument0.gemboard[gaps[j]-1,j+3]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+3]
 				newg = instance_create(Gem_create.x + 64, Gem_create.y,argument1)
 				newacc = Gem_create.acc
 				with(Gem_create) set_skin(other.g1)
@@ -1832,7 +1832,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 44:
-				g1 = argument0.gemboard[gaps[j]-1,j+1]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+1]
 				newg = instance_create(Gem_create.x + 64*3, Gem_create.y,argument1)
 				newacc = Gem_create.acc
 				with(Gem_create) set_skin(other.g1)
@@ -1864,7 +1864,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 45:
-				g1 = argument0.gemboard[gaps[j]-1,j+2]
+				g1 = argument0.gems_skin_array[gaps[j]-1,j+2]
 				newg = instance_create(Gem_create.x + 64*3, Gem_create.y,argument1)
 				newacc = Gem_create.acc
 				with(Gem_create) set_skin(other.g1)
@@ -1896,7 +1896,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 46:
-				g1 = argument0.gemboard[gaps[j]+1,j]
+				g1 = argument0.gems_skin_array[gaps[j]+1,j]
 				if Gamerule_1.debug show_debug_message(gaps[j])
 				newg = instance_create(Gem_create.x, Gem_create.y-64,argument1)
 				newacc = Gem_create.acc
@@ -1929,7 +1929,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			#endregion
 				break;
 			case 47:
-				g1 = argument0.gemboard[gaps[j],j]
+				g1 = argument0.gems_skin_array[gaps[j],j]
 				if Gamerule_1.debug show_debug_message(gaps[j])
 				randg = instance_create(Gem_create.x, Gem_create.y-64,argument1)
 				newg = instance_create(Gem_create.x, Gem_create.y-128,argument1)

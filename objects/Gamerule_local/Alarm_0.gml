@@ -9,10 +9,14 @@ ds_list_clear(list_of_ampowered)
 if doonce == 0 
 {
 	#region do hidden gem
-	var l = ds_list_size(list_of_hiddengems)
-	for(var i = 0; i<l; i++)
+	if (!gameover)
 	{
-		with(list_of_hiddengems[| i]) delete_gem()
+		var l = ds_list_size(list_of_hiddengems)
+		for(var i = 0; i<l; i++)
+		{
+			with(list_of_hiddengems[| i]) delete_gem()
+		}	
+		check_for_ice_gems()
 	}
 	#endregion
 
