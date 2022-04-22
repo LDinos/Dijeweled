@@ -3,141 +3,25 @@
 /// @param {gem_id} gem1 first gem
 /// @param {gem_id} gem2 second gem
 function swap_gems(gem1,gem2, check_for_swap_back) {
-	if (gem1.amHype && gem2.amInvisible) || 
-	((gem1.amHype || gem2.amHype) && !MyGamerule.IsGemActive2) return 0;
+	if ((gem1.amHype || gem2.amHype) && !MyGamerule.IsGemActive2) return 0;
+	if (gem1.amHype && gem2.amInvisible) ||  (gem2.amHype && gem1.amInvisible) {
+		with(gem1) unspin()
+		other.gem1 = noone
+		other.gem2 = noone
+		return 0;
+	}
 	xlimprevious = gem1._j
 	ylimprevious = gem1.i_limit
 	xlim = gem2._j
 	ylim = gem2.i_limit
 	var x1 = xlimprevious; var x2 = xlim; var y1 = ylimprevious; var y2 = ylim
-	swap_back = check_for_swap_back
-	var saveagain = false
-	var modifier = 1
-	if Gamerule_1.isReplay modifier = 2
-	instance_destroy(replay) //Destroy replay button
-	if Gamerule_1.isQuest with(obj_quest_control) {event_user(0); event_user(3)} //Quest UNDO checkpoint and Lonemove reset
-	with(obj_makezenbkg) {alarm[0] = -1; if (hidden) unhide_items()}
-	MyGamerule.combo = 0
-	MyGamerule.juststarted = false;
-	MyGamerule.gemdestroyonemove = 0;
-	with(MyGamerule) {
-		reset_compliments()
-		swap_happened = true
-		alarm[9] = 1
-	}
-	with(Gamerule_1) {
-		if !isReplay {
-			Moves_Made++
-			if (replay_allowed) {
-				ds_map_delete(Replay_map,"Fruit_Spawn")
-				ds_map_delete(Replay_map,"NEWLEVELSPAWN")
-			}
-		}
-	}
-	
-	with(gem1) unspin()
-	with(gem1) {iprev = _i; jprev = _j; skinprev = skinnum}
-	with(gem2) {iprev = _i; jprev = _j; skinprev = skinnum}
-	gemtomove1 = gem1
-	gemtomove2 = gem2
-	gem1.ammoving = true;
-	gem2.ammoving = true;
-	MyGamerule.moving = true
-	ammoving = true
-	percent = 0
-	xx = gem1.x
-	yy = gem1.y
-	xx2 = gem2.x
-	yy2 = gem2.y
-	gem1.SWAP_X_END = gem2.x - gem1.x
-	gem2.SWAP_X_END = gem1.x - gem2.x
-	gem1.SWAP_Y_END = gem2.y - gem1.y
-	gem2.SWAP_Y_END = gem1.y - gem2.y
-	id.gem1 = noone //dont confuse this with temp variables gem1,2
-	id.gem2 = noone
-	MyGamerule.cursor_x1 = xlimprevious
-	MyGamerule.cursor_x2 = xlim
-	MyGamerule.cursor_y1 = ylimprevious
-	MyGamerule.cursor_y2 = ylim
-	if (!gem1.amHype && !gem2.amHype) || Gamerule_1.zenify || Gamerule_1.replay_illegals_allowed //hypercubes act like normal gems in zenify
-	{
-		change_gem_pos_vars(gem1, gem2, gem2._i, gem2._j, gem1._i, gem1._j)
-		alarm[1] = 1 //swap anim
-		swap_back = false
-		var list_of_bombs = Gamerule_1.list_of_bombs
-		var list_of_skulls = Gamerule_1.list_of_skulls
-		for(var i=0;i<ds_list_size(list_of_bombs);i++) {
-			with(list_of_bombs[| i])
-			{
-				countdown_decrease()
-			}
-		}
-		for(var i=0;i<ds_list_size(list_of_skulls);i++) {
-			with(list_of_skulls[| i])
-			{
-				countdown_decrease()
-			}
-		}
-		if global.online {
-			var idtosend1 = gem1.myid
-			var idtosend2 = gem2.myid
-			with(global.mynet) {
-				buffer_seek(buffer,buffer_seek_start,0)
-				buffer_write(buffer,buffer_u8,NN_MATCH_GEM_SWAP)
-				buffer_write(buffer,buffer_u8,idtosend1)
-				buffer_write(buffer,buffer_u8,idtosend2)
-				network_send_packet(client_socket,buffer,buffer_tell(buffer))
-			}
-		}
-	}
-	else { //if we have at least one hypercube
-		saveagain = true
-		if !MyGamerule.illegals_allowed
-		{
-			with(obj_avalanchedeposit) ammoving = true //hypercube bug fix, count my turn
-			with(obj_avalanchedeposit_local) ammoving = true
-		}
-		with(obj_countdown_controller) moves--
-		if (!Gamerule_1.isQuest) {
-			with(obj_quest_control) {
-				if (C_movesneeded != S_movesdone) S_movesdone++
-				if L_movesleft > 0 L_movesleft--
-			}
-		}
-		if !Gamerule_1.isReplay && Gamerule_1.replay_allowed {
-			with(Gamerule_1) {isReplayChecked = false; ds_map_clear(Replay_map); replay_savepoint()}
-		}
-		gem1.gem_to_hype = gem2
-		gem1.skin_to_hype = gem2.skinnum
-		gem2.gem_to_hype = gem1
-		gem2.skin_to_hype = gem1.skinnum
-		if (gem1.amHype && gem2.amHype) {
-			//var spawner = spawner1
-			//if (MyGamerule == Gamerule_local) spawner = spawner_local
-			//if !Gamerule_1.isReplay create_dualhype_newspawn(spawner)
-			Gamerule_1.spawn_hype = true
-			gem1.skin_to_hype = 8
-			gem2.skin_to_hype = 8
-		}
-		if gem1.amHype instance_destroy(gem1)
-		else if gem2.amHype instance_destroy(gem2)
-		MyGamerule.combo = 1
-	}
 	if (!Gamerule_1.isReplay && Gamerule_1.replay_allowed) { 
 		with(Gamerule_1)
 		{
 			with(obj_bombcontrol) other.atm_exaggerate_once = ExaggerateOnce
-			if !saveagain 
-			{
-				ds_map_clear(Replay_map)
-				isReplayChecked = false //dont set it to false if we made a hypercube match			
-				ds_map_add(Replay_map, "shouldinvert",true)
-			}
-			else
-			{
-				ds_map_add(Replay_map, "shouldinvert",false)
-			}
-		
+			ds_map_clear(Replay_map)
+			isReplayChecked = false //dont set it to false if we made a hypercube match	
+			replay_savepoint()
 			if instance_exists(obj_background_shadered)
 			{
 				ds_map_delete(Replay_map, "background_nextlevel")
@@ -175,6 +59,105 @@ function swap_gems(gem1,gem2, check_for_swap_back) {
 		
 		}
 	}
+	swap_back = check_for_swap_back
+	instance_destroy(replay) //Destroy replay button
+	if Gamerule_1.isQuest with(obj_quest_control) {event_user(0); event_user(3)} //Quest UNDO checkpoint and Lonemove reset
+	with(obj_makezenbkg) {alarm[0] = -1; if (hidden) unhide_items()}
+	with(MyGamerule) {
+		moving = true
+		combo = 0
+		juststarted = false
+		gemdestroyonemove = 0
+		reset_compliments()
+		swap_happened = true
+		alarm[9] = 1
+	}
+	with(Gamerule_1) {
+		if (!isReplay) {
+			Moves_Made++
+			if (replay_allowed) {
+				ds_map_delete(Replay_map,"Fruit_Spawn")
+				ds_map_delete(Replay_map,"NEWLEVELSPAWN")
+			}
+		}
+	}
+	
+	with(gem1) {unspin(); iprev = _i; jprev = _j; skinprev = skinnum; ammoving = true;}
+	with(gem2) {iprev = _i; jprev = _j; skinprev = skinnum; ammoving = true;}
+	gemtomove1 = gem1
+	gemtomove2 = gem2
+	percent = 0
+	gem1.SWAP_X_END = gem2.x - gem1.x
+	gem2.SWAP_X_END = gem1.x - gem2.x
+	gem1.SWAP_Y_END = gem2.y - gem1.y
+	gem2.SWAP_Y_END = gem1.y - gem2.y
+	id.gem1 = noone //dont confuse this with temp variables gem1,2
+	id.gem2 = noone
+	MyGamerule.cursor_x1 = xlimprevious
+	MyGamerule.cursor_x2 = xlim
+	MyGamerule.cursor_y1 = ylimprevious
+	MyGamerule.cursor_y2 = ylim
+	var gems_will_swap = (!gem1.amHype && !gem2.amHype) || Gamerule_1.zenify || Gamerule_1.replay_illegals_allowed 
+	if (gems_will_swap) //this is when gems will swap (unlike the condition where there are hypercubes)
+	{
+		change_gem_pos_vars(gem1, gem2, gem2._i, gem2._j, gem1._i, gem1._j)
+		alarm[1] = 1 //swap anim
+		swap_back = false
+		var list_of_bombs = Gamerule_1.list_of_bombs
+		var list_of_skulls = Gamerule_1.list_of_skulls
+		for(var i=0;i<ds_list_size(list_of_bombs);i++) {
+			with(list_of_bombs[| i])
+			{
+				countdown_decrease()
+			}
+		}
+		for(var i=0;i<ds_list_size(list_of_skulls);i++) {
+			with(list_of_skulls[| i])
+			{
+				countdown_decrease()
+			}
+		}
+		if global.online {
+			var idtosend1 = gem1.myid
+			var idtosend2 = gem2.myid
+			with(global.mynet) {
+				buffer_seek(buffer,buffer_seek_start,0)
+				buffer_write(buffer,buffer_u8,NN_MATCH_GEM_SWAP)
+				buffer_write(buffer,buffer_u8,idtosend1)
+				buffer_write(buffer,buffer_u8,idtosend2)
+				network_send_packet(client_socket,buffer,buffer_tell(buffer))
+			}
+		}
+	}
+	else { //if we have at least one hypercube
+		if !MyGamerule.illegals_allowed
+		{
+			with(obj_avalanchedeposit) ammoving = true //hypercube bug fix, count my turn
+			with(obj_avalanchedeposit_local) ammoving = true
+		}
+		with(obj_countdown_controller) moves--
+		if (!Gamerule_1.isQuest) {
+			with(obj_quest_control) {
+				if (C_movesneeded != S_movesdone) S_movesdone++
+				if L_movesleft > 0 L_movesleft--
+			}
+		}
+		if !Gamerule_1.isReplay && Gamerule_1.replay_allowed {
+			with(Gamerule_1) {isReplayChecked = false; ds_map_clear(Replay_map);}
+		}
+		gem1.gem_to_hype = gem2
+		gem1.skin_to_hype = gem2.skinnum
+		gem2.gem_to_hype = gem1
+		gem2.skin_to_hype = gem1.skinnum
+		if (gem1.amHype && gem2.amHype) {
+			Gamerule_1.spawn_hype = true
+			gem1.skin_to_hype = 8
+			gem2.skin_to_hype = 8
+		}
+		if gem1.amHype instance_destroy(gem1)
+		else if gem2.amHype instance_destroy(gem2)
+		MyGamerule.combo = 1
+	}
 	
 	if match_replay
 	{
@@ -198,6 +181,7 @@ function swap_gems_back() {
 	var gem1 = gemtomove1
 	var gem2 = gemtomove2
 	currently_swapping_back = true
+	alarm[7] = -1
 	Gamerule_1.replay_illegals_allowed = false
 	if global.online
 		{
@@ -213,17 +197,6 @@ function swap_gems_back() {
 			}
 		}
 	ammoving = true
-	with(gem1)
-	{
-		myfriend = collision_point(x,y-64,other.MyGem,false,true)
-		with(myfriend) matchnear = true
-	}
-	with(gem2)
-	{
-		myfriend = collision_point(x,y-64,other.MyGem,false,true)
-		with(myfriend) matchnear = true
-	}
-
 	percent = 0
 	var xx = gem1.x
 	var yy = gem1.y

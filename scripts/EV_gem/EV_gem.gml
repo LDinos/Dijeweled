@@ -236,12 +236,12 @@ if amBomb || amLocked =2 || amLocked = 4 //if I am bomb or doom or skull
 					{
 						if _i < 7 //if im not in the last board row
 						{
-							with(Gamerule_1.gems_id_array[_i+1,_j]) //create particles below me
+							with(Gamerule_1.gems_id_fallen_array[_i+1,_j]) //create particles below me
 							{
 								part_particles_create(global.sys_above_gem, x, y, global.part_BombSmoke, 3);
 								part_particles_create(global.sys_above_gem, x, y, global.part_BombSmoke2, 3);
 							}
-							instance_destroy(Gamerule_1.gems_id_array[_i+1,_j]) //and kill the gem below me
+							instance_destroy(Gamerule_1.gems_id_fallen_array[_i+1,_j]) //and kill the gem below me
 							part_particles_create(global.sys_above_gem,x,y+32,global.part_skullgembreak,15)
 							audio_play_sound(snd_skull_gem_break,0,0)
 						}
@@ -314,6 +314,11 @@ if shouldmove //if i should be able to move
 	else //if that acceleration is moving us inside the board
 	{
 		var ylimit = MyBoard.y + i_limit *64
+		/*if (MyGamerule.cursor_x1 == MyGamerule.cursor_x2) && (_j == MyGamerule.cursor_x1) {
+			var istop = MyGamerule.cursor_y1 > MyGamerule.cursor_y2 ? MyGamerule.cursor_y1 : MyGamerule.cursor_y2
+			if (_i < istop) ylimit = MyBoard.y + _i*64 
+		}*/
+
 		if (y + acc >= ylimit) {
 			acc = 0
 			y = MyBoard.y + i_limit *64
@@ -327,16 +332,10 @@ if shouldmove //if i should be able to move
 			else acc = 0 //if flame explosion is happening, dont move me further
 		}	
 	}	
+	gem_touchdown()	
 } else acc = 0
 if (dont_move_for_oneframe) dont_move_for_oneframe = false
 
-if (acc == 0) {
-if (!touched_down) with(MyGamerule) gems_ready++
-touched_down = true	
-} else {
-	if (touched_down) with(MyGamerule) gems_ready--
-	touched_down = false
-}
 
 
 

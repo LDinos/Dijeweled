@@ -7,6 +7,7 @@ function make_companion(argument0) {
 		if j == i && skinnum != 7
 		{
 		 skinnum = 7
+		 Gamerule_1.gems_skin_array[i_limit][_j] = 7
 		 amCompanion = true
 		 if argument0 amLocked = 1
 		 break

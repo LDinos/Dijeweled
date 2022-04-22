@@ -66,8 +66,8 @@ if MyGamerule.controlallowed && isready
 		xlim = jtodo
 		ylim = itodo
 
-		gem1 = MyGamerule.gems_id_array[itodo,jtodo]
-		gem2 = MyGamerule.gems_id_array[itomove,jtomove]
+		gem1 = MyGamerule.gems_id_fallen_array[itodo,jtodo]
+		gem2 = MyGamerule.gems_id_fallen_array[itomove,jtomove]
 		if instance_exists(gem1) && instance_exists(gem2)
 		{
 			mouse_yy_pos = gem1.y

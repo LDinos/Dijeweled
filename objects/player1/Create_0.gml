@@ -14,7 +14,6 @@ if global.replay_match_allowed
 else match_replay = false
 mouse_xx_pos = 0
 mouse_yy_pos = 0
-dont_swap = false
 swap_back = false
 currently_swapping_back = false
 whattoshow = 0
@@ -57,6 +56,6 @@ function change_gem_pos_vars(gem1,gem2,i1,j1,i2,j2) {
 	gem2._j = j2
 	gem1.i_limit = gem1._i
 	gem2.i_limit = gem2._i
-	MyGamerule.gems_id_array[i1][j1] = gem1
-	MyGamerule.gems_id_array[i2][j2] = gem2
+	MyGamerule.gems_id_fallen_array[i1][j1] = gem1
+	MyGamerule.gems_id_fallen_array[i2][j2] = gem2
 }

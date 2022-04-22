@@ -14,7 +14,7 @@ if L_movesleft != -1
 		num_of_objectives++
 		if !Gamerule_1.spawnallowed
 		{
-			if Gamerule_1.IsGemActive 
+			if Gamerule_1.IsGemActive2
 			{
 				if !gems0doonce
 				{

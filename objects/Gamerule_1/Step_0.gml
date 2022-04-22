@@ -1,6 +1,7 @@
 /// @description Level complete check + cur_time
+gems_ready = 0
 
-var prev_shouldmove = should_move
+var prev_shouldmove = should_move //should gems start moving
 if (lightOn || hypeOn || fruit_exploding_dontmove || instance_exists(gem_dissappear)) should_move = false
 else {
 	should_move = true
@@ -12,6 +13,34 @@ else {
 			spawn_new_gems(Board_1, Gem_1)
 		}
 	}
+}
+for(var i=0;i<8;i++) {
+	gaps[i] = 7
+	for(var j=0;j<8;j++) gems_id_array[i][j] = noone
+}
+with(Gem_1) {
+	if (_i >= 0) {
+		Gamerule_1.gems_id_array[_i][_j] = id
+		Gamerule_1.gaps[_i]--
+	}
+	if (acc == 0 && _i == i_limit) other.gems_ready++
+}
+ready = should_move && !(moving || flameon || fruit_spawning || fruit_exploding || gems_ready != instance_number(Gem_1))
+
+if ready && !levelcompleted
+{
+	if !IsGemActive {
+		if alarm[0] = -1 alarm[0] = 1 //isgemactive1
+	}
+}
+else
+{
+	autosave = false
+	doonce = 0
+	IsGemActive = false
+	IsGemActive2 = false
+	alarm[0] = -1
+	alarm[1] = -1
 }
 if (global.replay_match_allowed || global.replay_match_isplaying) cur_time++ //this var is used on replay only
 
@@ -26,9 +55,10 @@ else levelbarfull = false
 if (levelbarfull)
 {
 	with(obj_bonus_challenge) other.challenge_active = challenge_complete
-	
-	if !instance_exists(Coal_break) && (IsGemActive2) && (ds_list_empty(list_of_fruits)) && (!fruit_want_to_spawn) && (!fruit_spawning) && (!challenge_active) levelcompleted = true
-	else levelcompleted = false
+	if (!levelcompleted) {
+		if !instance_exists(Coal_break) && (IsGemActive2) && (ds_list_empty(list_of_fruits)) && (!fruit_want_to_spawn) && (!fruit_spawning) && (!challenge_active) levelcompleted = true
+		else levelcompleted = false
+	}
 	controlallowed = false //no more moves allowed from now on
 	with(player1) //make player 1 deselect gems
 	{
@@ -39,6 +69,7 @@ if (levelbarfull)
 	}
 	if (levelcompleted)
 	{
+		levelbarfull = false
 		part_particles_clear(global.sys_above_gem)
 		part_particles_clear(global.sys_below_gem)
 		level_complete_get_powers()
@@ -60,14 +91,9 @@ if (levelbarfull)
 		#endregion
 		audio_play_sound(vo_levelcomplete,0,0)
 		instance_create_depth(Board_1.x + 32 + Board_1.sprite_width/3 ,Board_1.y + 32 + Board_1.sprite_height/3,-15,obj_levelcompletetext)
-		with(obj_levelbar) {previous_points = other.points; other.previous_points = previous_points}
+		with(obj_levelbar) {show_full = true; previous_points = other.points; other.previous_points = previous_points}
 		level_set_points(level)
-		//levelcompleted = false
-		//controls\\
 		update_baddies()
-		//--------\\
-		/*instance_destroy(Gem_1,false)
-		delete_gem_lists()*/
 		with(Gem_1)
 		{
 			lvlcomplete = true

@@ -8,4 +8,5 @@ function reset_compliments() {
 	complimentsaid5 = false
 	complimentsaid6 = false
 	compliment_points = 0
+	spawn_replay_button = false
 }

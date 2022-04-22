@@ -130,10 +130,10 @@ if !out_of_bounds
 		{
 			
 			var gems;
-			gems[0] = Gamerule_1.gems_id_array[pos_i,pos_j]
-			gems[1] = Gamerule_1.gems_id_array[pos_i,pos_j+1]
-			gems[2] = Gamerule_1.gems_id_array[pos_i+1,pos_j+1]
-			gems[3] = Gamerule_1.gems_id_array[pos_i+1,pos_j]
+			gems[0] = Gamerule_1.gems_id_fallen_array[pos_i,pos_j]
+			gems[1] = Gamerule_1.gems_id_fallen_array[pos_i,pos_j+1]
+			gems[2] = Gamerule_1.gems_id_fallen_array[pos_i+1,pos_j+1]
+			gems[3] = Gamerule_1.gems_id_fallen_array[pos_i+1,pos_j]
 		
 			var ready = true;
 			for(var i = 0; i<4;i++)

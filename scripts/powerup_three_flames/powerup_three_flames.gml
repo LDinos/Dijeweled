@@ -10,14 +10,14 @@ function powerup_three_flames() {
 				var done = false
 				var i = irandom(7)
 				var j = irandom(7)
-				if Gamerule_1.gems_id_array[i][j] != noone
+				if Gamerule_1.gems_id_fallen_array[i][j] != noone
 				{
-					if (Gamerule_1.gems_id_array[i][j].gempower = 0) && (Gamerule_1.gems_id_array[i][j].mypowerup == -1)
+					if (Gamerule_1.gems_id_fallen_array[i][j].gempower = 0) && (Gamerule_1.gems_id_fallen_array[i][j].mypowerup == -1)
 					{
 						audio_play_sound(snd_flamecreate,0,false)
-						instance_create(Gamerule_1.gems_id_array[i][j].x,Gamerule_1.gems_id_array[i][j].y,obj_coalify)
-						Gamerule_1.gems_id_array[i][j].gempower = 1
-						IDs[n] = Gamerule_1.gems_id_array[i][j].myid
+						instance_create(Gamerule_1.gems_id_fallen_array[i][j].x,Gamerule_1.gems_id_fallen_array[i][j].y,obj_coalify)
+						Gamerule_1.gems_id_fallen_array[i][j].gempower = 1
+						IDs[n] = Gamerule_1.gems_id_fallen_array[i][j].myid
 						n++
 						done = true
 					}

@@ -13,6 +13,7 @@ if checkpoint > 0
 	instance_destroy(obj_xplier_sperm,false)
 	Gamerule_1.lightOn = false
 	with(player1) {gem1 = noone; gem2 = noone}
+	with(Gamerule_1) recheck_gem_readiness(Gem_1)
 	ini_open("CHK")
 		var map = ds_map_create()
 		var data = ini_read_string("Data",string(checkpoint-1),"")
@@ -104,9 +105,14 @@ if checkpoint > 0
 						GEM.countdown = count_down
 						GEM.amHype = amhype
 						GEM.amInvisible = am_inv
-						Gamerule_1.gems_id_array[i][j] = GEM
+						Gamerule_1.gems_id_fallen_array[i][j] = GEM
+						Gamerule_1.gems_skin_array[i][j] = skin
+						GEM.i_limit = i
 					}
-					else Gamerule_1.gems_id_array[i][j] = noone
+					else {
+						Gamerule_1.gems_id_fallen_array[i][j] = noone
+						Gamerule_1.gems_skin_array[i][j] = -1
+					}
 				}
 			}
 		}

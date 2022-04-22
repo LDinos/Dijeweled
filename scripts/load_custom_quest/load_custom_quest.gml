@@ -125,8 +125,11 @@ function load_custom_quest(argument0) {
 								g.amLocked = 1
 								ds_list_add(Gamerule_1.list_of_locks,g)
 							}
-						
+							Gamerule_1.gems_id_array[i][j] = g
+							g.i_limit = i
 						}
+						Gamerule_1.gems_skin_array[i][j] = skn
+						
 					}
 				}
 			}

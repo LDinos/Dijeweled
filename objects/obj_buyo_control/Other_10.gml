@@ -36,7 +36,7 @@
 			}
 			else if _i2 >= 0
 			{
-				if Gamerule_1.gems_id_array[_i2,_j2] != noone
+				if Gamerule_1.gems_id_fallen_array[_i2,_j2] != noone
 				{
 					y-=64
 					//alarm[0] = spd
@@ -56,7 +56,7 @@
 					movex = -64
 					if _i2 >= 0 && _i >= 0
 					{
-						if Gamerule_1.gems_id_array[_i,_j-1] == noone
+						if Gamerule_1.gems_id_fallen_array[_i,_j-1] == noone
 						{
 							doit2 = true
 						}
@@ -68,7 +68,7 @@
 				{
 					if _i2 >= 0 && _i >= 0
 					{
-						if Gamerule_1.gems_id_array[_i,_j+1] == noone
+						if Gamerule_1.gems_id_fallen_array[_i,_j+1] == noone
 						{
 							doit2 = true
 						}
@@ -80,7 +80,7 @@
 
 			}
 			else if _i2 < 0 doit = false
-			else if (Gamerule_1.gems_id_array[_i2,_j2] != noone) doit = true
+			else if (Gamerule_1.gems_id_fallen_array[_i2,_j2] != noone) doit = true
 			
 			if doit //return to previous rotation
 			{

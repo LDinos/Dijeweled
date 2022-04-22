@@ -1,7 +1,7 @@
 ///@param return_list?
 ///@description Check the sum of possible moves that we can use to match gems. If it goes to 0, AHM will be activated
 function check_summoves(argument0) {
-	//make_gems_id_array(id)
+	//make_gems_id_fallen_array(id)
 	summoves2 = 0
 #region Variable settings
 	var rows = global.board_rows;
@@ -16,16 +16,16 @@ function check_summoves(argument0) {
 		{
 			for(var j=0;j<=7;j++)
 			{
-				if gems_id_array[i][j] != noone //&& instance_exists(gems_id_array[i][j])
+				if gems_id_fallen_array[i][j] != noone //&& instance_exists(gems_id_fallen_array[i][j])
 				{
-					if gems_id_array[i][j].amHype
+					if gems_id_fallen_array[i][j].amHype
 					{
 					#region Hypercube
 						if (i > 0)
 						{
-							if gems_id_array[i-1,j] != noone
+							if gems_id_fallen_array[i-1,j] != noone
 							{
-								if check_surrounding_gem(gems_id_array[i-1,j]) {
+								if check_surrounding_gem(gems_id_fallen_array[i-1,j]) {
 									if return_list
 									{
 										i_gemtouse[summoves2] = i //the i position of the bot gem to use
@@ -42,9 +42,9 @@ function check_summoves(argument0) {
 						}
 						if (i < 7)
 						{
-							if gems_id_array[i+1,j] != noone
+							if gems_id_fallen_array[i+1,j] != noone
 							{
-								if check_surrounding_gem(gems_id_array[i+1,j])  {
+								if check_surrounding_gem(gems_id_fallen_array[i+1,j])  {
 									if return_list
 									{
 										i_gemtouse[summoves2] = i //the i position of the bot gem to use
@@ -61,9 +61,9 @@ function check_summoves(argument0) {
 						}
 						if (j < 7)
 						{
-							if gems_id_array[i,j+1] != noone
+							if gems_id_fallen_array[i,j+1] != noone
 							{
-								if check_surrounding_gem(gems_id_array[i,j+1]) 
+								if check_surrounding_gem(gems_id_fallen_array[i,j+1]) 
 								{
 									if return_list
 									{
@@ -81,9 +81,9 @@ function check_summoves(argument0) {
 						}
 						if (j > 0)
 						{
-							if gems_id_array[i,j-1] != noone
+							if gems_id_fallen_array[i,j-1] != noone
 							{
-								if check_surrounding_gem(gems_id_array[i,j-1])
+								if check_surrounding_gem(gems_id_fallen_array[i,j-1])
 								{
 									if return_list
 									{
@@ -101,7 +101,7 @@ function check_summoves(argument0) {
 						}
 					#endregion
 					}
-					gems_skin_array[i][j] = gems_id_array[i][j].skinnum
+					gems_skin_array[i][j] = gems_id_fallen_array[i][j].skinnum
 				}
 				else
 				{
@@ -184,9 +184,9 @@ function check_summoves(argument0) {
 	                    skin = gems_skin_array[i-1,j-1]
 	                    if gems_skin_array[i-1,j] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i-1,j].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i-1,j].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {
 											i_gemtouse[summoves2] = i //the i position of the bot gem to use
 											j_gemtouse[summoves2] = j // the j position of the bot gem to use
@@ -216,9 +216,9 @@ function check_summoves(argument0) {
 	                    skin = gems_skin_array[i+1,j-1]
 	                    if gems_skin_array[i+1,j] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i+1,j].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i+1,j].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {                                     
 											i_gemtouse[summoves2] = i //the i position of the bot gem to use
 											j_gemtouse[summoves2] = j // the j position of the bot gem to use
@@ -247,9 +247,9 @@ function check_summoves(argument0) {
 	                    skin = gems_skin_array[i-1,j-1]
 	                    if gems_skin_array[i,j-1] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i,j-1].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i,j-1].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    { 
 											i_gemtouse[summoves2] = i //the i position of the bot gem to use
 											j_gemtouse[summoves2] = j // the j position of the bot gem to use
@@ -278,9 +278,9 @@ function check_summoves(argument0) {
 	                {                    
 	                    if gems_skin_array[i,j+1] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i,j+1].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i,j+1].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {        
 											i_gemtouse[summoves2] = i 
 											j_gemtouse[summoves2] = j 
@@ -309,9 +309,9 @@ function check_summoves(argument0) {
 	                {                    
 	                    if gems_skin_array[i,j-1] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i,j-1].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i,j-1].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {
 											i_gemtouse[summoves2] = i 
 											j_gemtouse[summoves2] = j 
@@ -340,9 +340,9 @@ function check_summoves(argument0) {
 	                {                    
 	                    if gems_skin_array[i,j+1] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i,j+1].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i,j+1].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {
 											i_gemtouse[summoves2] = i 
 											j_gemtouse[summoves2] = j 
@@ -371,9 +371,9 @@ function check_summoves(argument0) {
 	                {                    
 	                    if gems_skin_array[i,j-1] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i,j-1].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i,j-1].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {
 											i_gemtouse[summoves2] = i 
 											j_gemtouse[summoves2] = j 
@@ -402,9 +402,9 @@ function check_summoves(argument0) {
 	                {                    
 	                    if gems_skin_array[i,j+1] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i,j+1].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i,j+1].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {
 											i_gemtouse[summoves2] = i 
 											j_gemtouse[summoves2] = j 
@@ -433,9 +433,9 @@ function check_summoves(argument0) {
 	                {                    
 	                    if gems_skin_array[i-1,j] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i-1,j].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i-1,j].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {
 											i_gemtouse[summoves2] = i 
 											j_gemtouse[summoves2] = j 
@@ -464,9 +464,9 @@ function check_summoves(argument0) {
 	                {                    
 	                    if gems_skin_array[i+1,j] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i+1,j].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i+1,j].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {
 											i_gemtouse[summoves2] = i 
 											j_gemtouse[summoves2] = j 
@@ -495,9 +495,9 @@ function check_summoves(argument0) {
 	                {                    
 	                    if gems_skin_array[i+1,j] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i+1,j].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i+1,j].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {
 											i_gemtouse[summoves2] = i 
 											j_gemtouse[summoves2] = j 
@@ -526,9 +526,9 @@ function check_summoves(argument0) {
 	                {                    
 	                    if gems_skin_array[i-1,j] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i-1,j].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i-1,j].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {
 											i_gemtouse[summoves2] = i 
 											j_gemtouse[summoves2] = j 
@@ -557,9 +557,9 @@ function check_summoves(argument0) {
 	                {                    
 	                    if gems_skin_array[i+1,j] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i+1,j].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i+1,j].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {
 											i_gemtouse[summoves2] = i 
 											j_gemtouse[summoves2] = j 
@@ -588,9 +588,9 @@ function check_summoves(argument0) {
 	                {                    
 	                    if gems_skin_array[i-1,j] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i-1,j].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i-1,j].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {
 											i_gemtouse[summoves2] = i 
 											j_gemtouse[summoves2] = j 
@@ -619,9 +619,9 @@ function check_summoves(argument0) {
 	                {                    
 	                    if gems_skin_array[i,j-1] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i,j-1].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i,j-1].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {
 											i_gemtouse[summoves2] = i 
 											j_gemtouse[summoves2] = j 
@@ -650,9 +650,9 @@ function check_summoves(argument0) {
 	                {                    
 	                    if gems_skin_array[i,j+1] != -1 //now check if the clickable gem is also not void
 	                        {
-	                            if gems_id_array[i,j+1].amLocked = 0 //and if its not void, check if its locked
+	                            if gems_id_fallen_array[i,j+1].amLocked = 0 //and if its not void, check if its locked
 	                            {
-	                                if gems_skin_array[i][j] = skin && gems_id_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
+	                                if gems_skin_array[i][j] = skin && gems_id_fallen_array[i][j].amLocked = 0//all good? last thing to do is check if Θ is same and not locked
 	                                    {
 											i_gemtouse[summoves2] = i 
 											j_gemtouse[summoves2] = j 

@@ -11,11 +11,7 @@ if doonce == 0
 	#region do hidden gem
 	if (!gameover)
 	{
-		var l = ds_list_size(list_of_hiddengems)
-		for(var i = 0; i<l; i++)
-		{
-			with(list_of_hiddengems[| i]) delete_gem()
-		}	
+		destroy_hidden_gems()
 		check_for_ice_gems()
 	}
 	#endregion

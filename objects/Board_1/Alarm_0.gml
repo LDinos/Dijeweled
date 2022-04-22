@@ -7,4 +7,5 @@ else
 	perc = 0
 	instance_destroy(Gem_1,false)
 	with(Gamerule_1) delete_gem_lists()
+	with(obj_levelbar) show_full = false
 }

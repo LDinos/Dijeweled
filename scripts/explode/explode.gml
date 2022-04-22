@@ -25,8 +25,9 @@ function explode(argument0) {
 			var JTOUSE = clamp(_j + j, 0, 7)
 			if (i!=0 || j!=0)
 			{
-				with(gmrl.gems_id_array[@ITOUSE,JTOUSE])
+				with(gmrl.gems_id_fallen_array[@ITOUSE,JTOUSE])
 				{
+					if amInvisible break;
 					if !amPowered && matchme <= 0
 					{
 						create_col = false

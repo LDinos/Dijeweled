@@ -12,8 +12,8 @@ if ds_map_exists(Replay_load, string(cur))
 	ylimprevious = Replay_load[? "ylim_previous" + string(cur)]
 	xlim = Replay_load[? "xlim_" + string(cur)]
 	ylim = Replay_load[? "ylim_" + string(cur)]
-	gem1 = Gamerule_1.gems_id_array[ylimprevious,xlimprevious]
-	gem2 = Gamerule_1.gems_id_array[ylim,xlim]
+	gem1 = Gamerule_1.gems_id_fallen_array[ylimprevious,xlimprevious]
+	gem2 = Gamerule_1.gems_id_fallen_array[ylim,xlim]
 	xx1 = gem1.x
 	yy1 = gem1.y
 	xx2 = gem2.x

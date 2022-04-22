@@ -35,28 +35,28 @@ else
 			{
 				for(var j=7;j>=0;j--)
 				{
-					gems_id_array[i][j] = noone
+					gems_id_fallen_array[i][j] = noone
 				}
 			}
 		with(Gem_local) //fill it up with gems
 		{
 			if _i >= 0
 			{
-				other.gems_id_array[_i,_j] = id
+				other.gems_id_fallen_array[_i,_j] = id
 			}
 		}
 
 
-		gems_fallen = gems_id_array				
+		gems_fallen = gems_id_fallen_array				
 		for(var j=0;j<=7;j++)
 		{
 			var k = 7;
 			for(var i=7;i>=0;i--)
 			{
-				if gems_id_array[i][j] != noone
+				if gems_id_fallen_array[i][j] != noone
 				{
 					var temp = gems_fallen[k,j]
-					gems_fallen[k,j] = gems_id_array[i][j]
+					gems_fallen[k,j] = gems_id_fallen_array[i][j]
 					gems_fallen[i][j] = temp	
 					k--
 				}

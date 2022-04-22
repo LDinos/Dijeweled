@@ -1,12 +1,6 @@
 /// @description GemActive
 // When we are sure all gems are stationary but cascades might happen, so they are not fully stationary yet
-if isQuest with(obj_quest_control) {event_user(4)}
-for(i=0;i<ds_list_size(list_of_ampowered);i++)
-{
-	with(list_of_ampowered[| i] ) amPowered = false
-}
-ds_list_clear(list_of_ampowered)
-
+var check_for_match = !zenify && !must_spawn_gems
 if doonce == 0 
 {
 	#region do hidden gem
@@ -14,12 +8,18 @@ if doonce == 0
 	{
 		update_gems_fallen_array()
 		update_gems_to_spawn_array()
-		var l = ds_list_size(list_of_hiddengems)
-		for(var i = 0; i<l; i++)
-		{
-			with(list_of_hiddengems[| i]) delete_gem()
-		}	
+		var gems_should_update = destroy_hidden_gems()
+		if (gems_should_update) {
+			if (check_for_match) matcher_stepevent(Gem_1)
+		}
 		check_for_ice_gems()
+		if (gems_should_update) { //check for spawns if hidden gems are gone
+			update_gems_fallen_array()
+			if update_gems_to_spawn_array() {
+				check_for_match = false
+				spawn_new_gems(Board_1, Gem_1)
+			}
+		} else if (check_for_match) matcher_stepevent(Gem_1);	
 	}
 	#endregion
 	#region AUTOSAVE
@@ -34,10 +34,15 @@ if doonce == 0
 	}
 	#endregion
 	//show_message("I am gemactive")
-	if !zenify && !must_spawn_gems matcher_stepevent(Gem_1);	
 }
+doonce = 1;
 
-doonce = 1; 
+if isQuest with(obj_quest_control) {event_user(4)}
+for(i=0;i<ds_list_size(list_of_ampowered);i++)
+{
+	with(list_of_ampowered[| i] ) amPowered = false
+}
+ds_list_clear(list_of_ampowered)
 IsGemActive = true
 future_summoves = 0
 

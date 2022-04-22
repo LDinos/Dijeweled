@@ -8,6 +8,5 @@ function destroy_ice_lock() {
 	audio_play_sound(snd_lock_break,0,0)
 	with(Gamerule_1) points_add_nocombo(50)
 	create_score_text(x,y+32,50,false,mycolor)
-
-
+	with(Gamerule_1) destroy_hidden_gems()
 }

@@ -14,7 +14,7 @@ instance_destroy(Gem_1,false)
 Gamerule_1.isReplay = true
 Gamerule_1.IsGemActive = false
 Gamerule_1.IsGemActive2 =false
-Gamerule_1.gems_ready = 0
+Gamerule_1.must_spawn_gems = false
 with(obj_background_shadered)
 {
 	ds_map_add(Gamerule_1.Replay_map, "background_nextlevel", shd)
@@ -22,6 +22,7 @@ with(obj_background_shadered)
 }
 with(Gamerule_1)
 {
+	for(var j = 0; j < 8; j++) up_index[j] = 0
 	delete_gem_lists()
 	fruit_spawning = false
 	clear_lists()
@@ -85,9 +86,9 @@ for(var i=0;i<8;i++)
 			var gem = instance_create_depth(Board_1.x + j*64 , Board_1.y + i*64,-1 ,Gem_1)
 			with(gem)
 			{
-				_i = floor((y-Board_1.y+63)/64)
+				_i = i
 				i_limit = i
-				_j = (x-Board_1.x+63) div 64
+				_j = j
 				
 				set_skin(Gamerule_1.Replay_map[? key + "skin"])
 				amInvisible = Gamerule_1.Replay_map[? key + "amInv"]
@@ -149,11 +150,11 @@ for(var i=0;i<8;i++)
 				if amBomb ds_list_add(Gamerule_1.list_of_bombs,id)
 
 			}
-			Gamerule_1.gems_id_array[i][j] = gem
+			Gamerule_1.gems_id_fallen_array[i][j] = gem
 			Gamerule_1.gems_skin_array[i][j] = gem.skinnum
 		}
 		else {
-			Gamerule_1.gems_id_array[i][j] = noone
+			Gamerule_1.gems_id_fallen_array[i][j] = noone
 			Gamerule_1.gems_skin_array[i][j] = -1
 		}
 	}
@@ -189,30 +190,17 @@ with(obj_bonus_challenge)
 }
 with(player1)
 {
-	shouldinvert = Gamerule_1.Replay_map[? "shouldinvert"]
+	//shouldinvert = Gamerule_1.Replay_map[? "shouldinvert"]
 	xlim = Gamerule_1.Replay_map[? "x2"]
 	ylim = Gamerule_1.Replay_map[? "y2"]
 	xlimprevious = Gamerule_1.Replay_map[? "x1"]
 	ylimprevious = Gamerule_1.Replay_map[? "y1"]
 	x = Board_1.x + 64*xlim -32
 	y = Board_1.y + 64*ylim -32
-	var gem_move1 = instance_position(Board_1.x + 64*xlimprevious, Board_1.y + 64*ylimprevious, Gem_1)
-	var gem_move2 = instance_position(Board_1.x + 64*xlim, Board_1.y + 64*ylim, Gem_1)
-	
-	if shouldinvert
-	{
-		var temp = gem_move1.x
-		gem_move1.x = gem_move2.x
-		gem_move2.x = temp
-		var temp = gem_move1.y
-		gem_move1.y = gem_move2.y
-		gem_move2.y = temp
-	}
-	
-	gem1 = gem_move1
-	gem2 = gem_move2
-	swap_gems(gem1,gem2,false)
+	gem1 = Gamerule_1.gems_id_fallen_array[ylimprevious][xlimprevious]
+	gem2 = Gamerule_1.gems_id_fallen_array[ylim][xlim]
+	swap_gems(gem1,gem2,true)
 }
-instance_create(x,y,spawner_replay)
+//instance_create(x,y,spawner_replay)
 }
 }

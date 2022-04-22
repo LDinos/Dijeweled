@@ -1,9 +1,9 @@
 /// @description ISGEMACTIVE2
 // When we are sure no cascades are happening and gems are fully stationary
 
-if (replay_allowed && complimentsaid1 && !levelbarfull && !juststarted && !bombis0 && !instance_exists(replay)) instance_create(Board_1.x + (Board_1.sprite_width/2) - 64, room_height - 72,replay)
+if (replay_allowed && spawn_replay_button && !levelbarfull && !juststarted && !bombis0 && !instance_exists(replay)) instance_create(Board_1.x + (Board_1.sprite_width/2) - 64, room_height - 72,replay)
 combo = 0
-if (levelbarfull) levelcompleted = true
+//if (levelbarfull) levelcompleted = true
 if bombis0 && !levelbarfull
 {
 	if !challengewon
@@ -16,6 +16,8 @@ if bombis0 && !levelbarfull
 else IsGemActive2 = true
 if IsGemActive2
 {
+	Gamerule_1.isReplay = false
+	instance_destroy(obj_replay_dot)
 	if !levelbarfull
 	{
 		check_summoves(false)

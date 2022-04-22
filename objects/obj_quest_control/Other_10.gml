@@ -34,20 +34,20 @@ if C_gemsare0 && !Gamerule_1.spawnallowed && !Gamerule_1.multiswap_allowed
 					ds_map_add(map,str+"skin",skin)
 					if skin >= 0
 					{
-						var gem_power = Gamerule_1.gems_id_array[i][j].gempower
-						var amlocked = Gamerule_1.gems_id_array[i][j].amLocked
-						var ambeinglocked = Gamerule_1.gems_id_array[i][j].amBeingLocked
-						var ambomb = Gamerule_1.gems_id_array[i][j].amBomb
-						var count_down = Gamerule_1.gems_id_array[i][j].countdown
-						var amhype = Gamerule_1.gems_id_array[i][j].amHype
-						var geode_num = Gamerule_1.gems_id_array[i][j].geodenum
-						var am_inv = Gamerule_1.gems_id_array[i][j].amInvisible
+						var gem_power = Gamerule_1.gems_id_fallen_array[i][j].gempower
+						var amlocked = Gamerule_1.gems_id_fallen_array[i][j].amLocked
+						var ambeinglocked = Gamerule_1.gems_id_fallen_array[i][j].amBeingLocked
+						var ambomb = Gamerule_1.gems_id_fallen_array[i][j].amBomb
+						var count_down = Gamerule_1.gems_id_fallen_array[i][j].countdown
+						var amhype = Gamerule_1.gems_id_fallen_array[i][j].amHype
+						var geode_num = Gamerule_1.gems_id_fallen_array[i][j].geodenum
+						var am_inv = Gamerule_1.gems_id_fallen_array[i][j].amInvisible
 						
 						//now lets write it
 						ds_map_add(map,str+"geodenum",geode_num)
 						for(var K=1; K<=geode_num;K++)
 						{
-							ds_map_add(map,str+"geodenum_points" + string(K), Gamerule_1.gems_id_array[i][j].geodenum_points[K-1])
+							ds_map_add(map,str+"geodenum_points" + string(K), Gamerule_1.gems_id_fallen_array[i][j].geodenum_points[K-1])
 						}
 						ds_map_add(map,str+"gempower",gem_power)
 						ds_map_add(map,str+"amLocked",amlocked)

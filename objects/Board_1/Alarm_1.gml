@@ -119,7 +119,7 @@ for(var i=0;i<=global.board_rows-1;i++)
 		with(gem) set_skin(my_skin)
 		ds_list_add(gemsspawned,gem)
 		gem.i_limit = 7-i
-		Gamerule_1.gems_id_array[7-i][j] = gem
+		Gamerule_1.gems_id_fallen_array[7-i][j] = gem
 		Gamerule_1.gems_skin_array[7-i][j] = my_skin
 	}
 }
@@ -241,14 +241,14 @@ ds_list_destroy(gemsspawned)
 						with(gem)
 						{
 							i_limit = 7-i
-							key = "NLS_" + string(other.i) +"_" +string(other.j) 
+							key = "NLS_" + string(i) +"_" +string(j) 
 							set_skin(Gamerule_1.Replay_map[? key + "_skin"])
 							gempower = Gamerule_1.Replay_map[? key + "_power"]
 							amHype = Gamerule_1.Replay_map[? key + "_hype"]
 							if amHype set_skin(7)
+							Gamerule_1.gems_id_fallen_array[7-i][j] = gem
+							Gamerule_1.gems_skin_array[7-i][j] = skinnum
 						}
-						Gamerule_1.gems_id_array[7-i][j] = gem
-						Gamerule_1.gems_skin_array[7-i][j] = my_skin
 					}
 				}
 			#endregion

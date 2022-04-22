@@ -111,7 +111,7 @@ if file_exists("autosave_"+string(room_get_name(room)))
 							}
 						
 						}
-						Gamerule_1.gems_id_array[i][j] = Gem
+						Gamerule_1.gems_id_fallen_array[i][j] = Gem
 						Gamerule_1.gems_skin_array[i][j] = GEMSKIN
 					}
 				}
@@ -240,20 +240,20 @@ ini_close()
 	{
 		IsGemActive = true
 		
-		#region gems_id_array
+		#region gems_id_fallen_array
 		for(i=global.board_rows-1;i>=0;i--)
 			{
 				for(j=7;j>=0;j--)
 				{
 
-					gems_id_array[i][j] = noone	
+					gems_id_fallen_array[i][j] = noone	
 				}
 			}
 		with(Gem_1)
 			{
 				if _i >= 0
 				{
-					other.gems_id_array[_i,_j] = id
+					other.gems_id_fallen_array[_i,_j] = id
 					other.gems_skin_array[_i,_j] = skinnum
 				}
 			}

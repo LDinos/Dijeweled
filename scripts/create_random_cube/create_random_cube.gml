@@ -8,7 +8,7 @@ function create_random_cube() {
 	{
 		for(var j=0;j<8;j++)
 		{
-			var g = Gamerule_1.gems_id_array[i][j]
+			var g = Gamerule_1.gems_id_fallen_array[i][j]
 			if instance_exists(g)
 			{
 				if (g.gempower = 0) && (!g.amInvisible) && g.amLocked == 0
@@ -48,25 +48,25 @@ function check_surrounding_gem(g) {
 
 function check_surrounding_gems(i,j) {
 	if (i > 0) {
-		var g = Gamerule_1.gems_id_array[i-1,j]
+		var g = Gamerule_1.gems_id_fallen_array[i-1,j]
 		if instance_exists(g) {
 			if (!g.amInvisible) && (g.amLocked == 0) return true;
 		}
 	}
 	if (j > 0) {
-		var g = Gamerule_1.gems_id_array[i,j-1]
+		var g = Gamerule_1.gems_id_fallen_array[i,j-1]
 		if instance_exists(g) {
 			if (!g.amInvisible) && (g.amLocked == 0) return true;
 		}
 	}
 	if (i < 7) {
-		var g = Gamerule_1.gems_id_array[i+1,j]
+		var g = Gamerule_1.gems_id_fallen_array[i+1,j]
 		if instance_exists(g) {
 			if (!g.amInvisible) && (g.amLocked == 0) return true;
 		}
 	}
 	if (j < 7) {
-		var g = Gamerule_1.gems_id_array[i,j+1]
+		var g = Gamerule_1.gems_id_fallen_array[i,j+1]
 		if instance_exists(g) {
 			if (!g.amInvisible) && (g.amLocked == 0) return true;
 		}

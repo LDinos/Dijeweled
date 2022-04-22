@@ -2,11 +2,11 @@
 // You can write your code in this editor
 if _i > 7 show_message("somethings wrong i: "+string(_i))
 if _j > 7 show_message("somethings wrong j: "+string(_j))
-if (Gamerule_1.gems_id_array[_i,_j] == id) {
-	Gamerule_1.gems_id_array[_i,_j] = noone //remove me from the list
+if (Gamerule_1.gems_id_fallen_array[_i,_j] == id) {
+	Gamerule_1.gems_id_fallen_array[_i,_j] = noone //remove me from the list
 	Gamerule_1.gems_skin_array[_i,_j] = -1
 }
-Gamerule_1.gems_ready--
+
 if was_skull_0 Gamerule_1.skullis0 = false;
 if !amInvisible //if I am visible
 {
@@ -320,20 +320,6 @@ if !amInvisible //if I am visible
 			else if amLocked = 3 //Ice
 			{
 				destroy_ice_lock()
-				with(Gamerule_1)
-				{
-					if (IsGemActive) {
-						if (!gameover)
-						{
-							var l = ds_list_size(list_of_hiddengems)
-							for(var i = 0; i<l; i++)
-							{
-								with(list_of_hiddengems[| i]) delete_gem()
-							}	
-							check_for_ice_gems()
-						}
-					}
-				}
 			}
 			else if amLocked = 4 //Skull
 			{

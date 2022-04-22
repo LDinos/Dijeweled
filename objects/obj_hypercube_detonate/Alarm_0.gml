@@ -1,6 +1,6 @@
 /// @description Do create event here
 var u = 0
-make_gems_fallen(Gamerule_1)
+//make_gems_fallen(Gamerule_1)
 //with(Gem_1)
 //{
 
@@ -8,14 +8,14 @@ make_gems_fallen(Gamerule_1)
 	{
 		for(var j=0;j<8;j++)
 		{
-			if Gamerule_1.gems_fallen[i][j] != noone
+			if Gamerule_1.gems_id_fallen_array[i][j] != noone
 			{
 				if index != 8 //case in which we destroy every gem (match together)
 				{
 					if index = 7 //dont destroy cubes/invs when hyping a coal
 					{
 						var am_hype = false
-						var g = Gamerule_1.gems_fallen[i][j]
+						var g = Gamerule_1.gems_id_fallen_array[i][j]
 						with(g) {if amHype am_hype = true}
 						
 						
@@ -40,15 +40,15 @@ make_gems_fallen(Gamerule_1)
 					{
 						
 						if (Gamerule_1.gems_skin_array[i][j] = index) {
-							gem[u++] = Gamerule_1.gems_fallen[i][j];
+							gem[u++] = Gamerule_1.gems_id_fallen_array[i][j];
 						}
 					}
 				}
 				else 
 				{
-					if (!Gamerule_1.gems_fallen[i][j].amInvisible)
+					if (!Gamerule_1.gems_id_fallen_array[i][j].amInvisible)
 					{
-						gem[u] = Gamerule_1.gems_fallen[i][j]; 
+						gem[u] = Gamerule_1.gems_id_fallen_array[i][j]; 
 						u++
 					}
 				}
@@ -56,5 +56,5 @@ make_gems_fallen(Gamerule_1)
 		}
 	}
 //}
-list_end = array_length_1d(gem)
+list_end = array_length(gem)
 alarm[1] = 1

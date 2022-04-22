@@ -2,7 +2,7 @@
 function replay_savepoint() {
 	if !isReplayChecked && !isReplay
 		{
-			up_index = -1
+			up_index = []
 			atm_points_needed = levelpointsneeded
 			atm_points = points
 			if instance_exists(obj_levelbar) atm_pre_points = obj_levelbar.previous_points
@@ -28,7 +28,7 @@ function replay_savepoint() {
 				for(var j=0;j<8;j++)
 				{
 					var key = string(i)+"-"+string(j)
-					var gemtowrite = gems_id_array[i][j]
+					var gemtowrite = gems_id_fallen_array[i][j]
 					var skinnumtowrite;
 					if gemtowrite = noone//!instance_exists(gemtowrite)
 					{
@@ -39,17 +39,17 @@ function replay_savepoint() {
 					ds_map_add(Replay_map,key + "skin",skinnumtowrite)
 					if skinnumtowrite != -1
 					{
-						ds_map_add(Replay_map,key + "amInv",gems_id_array[i][j].amInvisible)
-						ds_map_add(Replay_map,key + "power",gems_id_array[i][j].gempower)
-						ds_map_add(Replay_map,key + "amHype",gems_id_array[i][j].amHype)
-						ds_map_add(Replay_map,key + "amLocked",gems_id_array[i][j].amLocked)
-						ds_map_add(Replay_map,key + "amBeingLocked",gems_id_array[i][j].amBeingLocked)
-						ds_map_add(Replay_map,key + "amBomb",gems_id_array[i][j].amBomb)
-						ds_map_add(Replay_map,key + "countdown",gems_id_array[i][j].countdown+1)
-						ds_map_add(Replay_map,key + "geodenum",gems_id_array[i][j].geodenum)
-						for(var K = 1; K<=gems_id_array[i][j].geodenum;K++)
+						ds_map_add(Replay_map,key + "amInv",gems_id_fallen_array[i][j].amInvisible)
+						ds_map_add(Replay_map,key + "power",gems_id_fallen_array[i][j].gempower)
+						ds_map_add(Replay_map,key + "amHype",gems_id_fallen_array[i][j].amHype)
+						ds_map_add(Replay_map,key + "amLocked",gems_id_fallen_array[i][j].amLocked)
+						ds_map_add(Replay_map,key + "amBeingLocked",gems_id_fallen_array[i][j].amBeingLocked)
+						ds_map_add(Replay_map,key + "amBomb",gems_id_fallen_array[i][j].amBomb)
+						ds_map_add(Replay_map,key + "countdown",gems_id_fallen_array[i][j].countdown+1)
+						ds_map_add(Replay_map,key + "geodenum",gems_id_fallen_array[i][j].geodenum)
+						for(var K = 1; K<=gems_id_fallen_array[i][j].geodenum;K++)
 						{
-							ds_map_add(Replay_map,key + "geodenum_points"+string(K),gems_id_array[i][j].geodenum_points[K-1])
+							ds_map_add(Replay_map,key + "geodenum_points"+string(K),gems_id_fallen_array[i][j].geodenum_points[K-1])
 						}
 					}
 				}

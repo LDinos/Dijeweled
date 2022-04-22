@@ -34,9 +34,9 @@ if !global.replay_match_isplaying
 			{
 				for(var j=0;j<8;j++)
 				{
-					if (Gamerule_1.gems_id_array[i][j].skinnum != 7) && (Gamerule_1.gems_id_array[i][j].gempower = 0)
+					if (Gamerule_1.gems_id_fallen_array[i][j].skinnum != 7) && (Gamerule_1.gems_id_fallen_array[i][j].gempower = 0)
 					{
-						ds_list_add(wheretospawn,Gamerule_1.gems_id_array[i][j])
+						ds_list_add(wheretospawn,Gamerule_1.gems_id_fallen_array[i][j])
 					}
 				}
 			}

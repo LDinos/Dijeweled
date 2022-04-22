@@ -9,7 +9,7 @@ if shd = 0
 	var_mouse_pos_y = mouse_y - camera_get_view_y(0);
 	var_time_var+=0.01
 	shader_set(shdr_backdrop2);
-	    shader_set_uniform_f(uni_time_3, var_time_var);
+	    shader_set_uniform_f(uni_time_3, var_time_var/2);
 	    shader_set_uniform_f(uni_resolution_3, room_width/2, room_height/2);
 		draw_self()
 	shader_reset();
@@ -42,7 +42,7 @@ else if shd = 3
 {
 	var_time_var+=0.01;
 	shader_set(shdr_backdrop1);
-	    shader_set_uniform_f(uni_time_2, var_time_var);
+	    shader_set_uniform_f(uni_time_2, var_time_var/2);
 	    shader_set_uniform_f(uni_resolution_2, room_width*1.1, room_height*1.5);
 		draw_self()
 	shader_reset();

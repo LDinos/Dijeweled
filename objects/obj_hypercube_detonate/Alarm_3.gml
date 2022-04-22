@@ -3,6 +3,10 @@ if instance_number(obj_hypercube_detonate) <= 1 //only me exists
 {
 	Gamerule_1.moving = false
 	Gamerule_1.hypeOn = false
+	with(Gamerule_1) {
+		recheck_gem_readiness(Gem_1)
+		must_spawn_gems = true
+	}
 	with(global.mynet)
 	{
 		buffer_seek(buffer,buffer_seek_start,0)

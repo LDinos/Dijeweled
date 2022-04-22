@@ -14,15 +14,15 @@ if instance_exists(gemtomove1) && instance_exists(gemtomove2)
 	else
 	{
 		percent = 0
-		alarm[7] = 3
+		//alarm[7] = 3
 		swap_anim_lastframe(gemtomove1)
 		swap_anim_lastframe(gemtomove2)
 		if (currently_swapping_back) {
 			currently_swapping_back = false
 			with(MyGem) matchnear = false;
-			with(gemtomove1) alarm[2] = 5
-			with(gemtomove2) alarm[2] = 5
-			MyGamerule.moving = false
+			with(gemtomove1) alarm[2] = 2
+			with(gemtomove2) alarm[2] = 2
+			alarm[7] = 3
 		} else {
 			alarm[2] = 5
 		}

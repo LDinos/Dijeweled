@@ -8,7 +8,7 @@ if !IsGemActive
 		{
 			for(var j=7;j>=0;j--)
 			{
-				gems_id_array[@i,j] = noone
+				gems_id_fallen_array[@i,j] = noone
 				gems_skin_array[@i,j] = -1
 			}
 		}
@@ -18,7 +18,7 @@ with(Gem_local) //fill it up with gems
 {
 	if _i >= 0
 	{
-		other.gems_id_array[@_i,_j] = id
+		other.gems_id_fallen_array[@_i,_j] = id
 		other.gems_skin_array[@_i,_j] = skinnum
 			
 		if acc != 0 other.ready = false

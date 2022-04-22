@@ -1,5 +1,5 @@
 /// @description All rules are here for the second local player.
-//gems_id_array = gem id's
+//gems_id_fallen_array = gem id's
 //gems_skin_array = gem skins (fallen down)
 //gems_fallen = gem ids fallen down
 isReplay = false
@@ -119,7 +119,7 @@ for(var i=0;i<8;i++)
 		for(var j=0;j<8;j++)
 		{
 			gems_fallen[i][j] = -4 //gems on fallen state (seeing the future to see where the gems WILL be)
-			gems_id_array[i][j] = -4 //gems on normal position
+			gems_id_fallen_array[i][j] = -4 //gems on normal position
 		}
 	}
 //above_ready = false; //are we ready to gemactive = 1 (checking gems above the board)?

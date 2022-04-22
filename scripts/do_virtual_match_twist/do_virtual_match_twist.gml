@@ -8,10 +8,10 @@ function do_virtual_match_twist(argument0, argument1) {
 	var i1 = list_moves[INDEX,0]
 	var j1 = list_moves[INDEX,1]
 	var dir = list_moves[INDEX,2]
-	var gem1 = MyGamerule.gems_id_array[i1,j1]
-	var gem2 = MyGamerule.gems_id_array[i1+1,j1]
-	var gem3 = MyGamerule.gems_id_array[i1,j1+1]
-	var gem4 = MyGamerule.gems_id_array[i1+1,j1+1]
+	var gem1 = MyGamerule.gems_id_fallen_array[i1,j1]
+	var gem2 = MyGamerule.gems_id_fallen_array[i1+1,j1]
+	var gem3 = MyGamerule.gems_id_fallen_array[i1,j1+1]
+	var gem4 = MyGamerule.gems_id_fallen_array[i1+1,j1+1]
 	importance += find_power_importance(gem1.gempower)
 	importance += find_power_importance(gem2.gempower)
 	importance += find_power_importance(gem3.gempower)
@@ -22,7 +22,7 @@ function do_virtual_match_twist(argument0, argument1) {
 	//if (importance == 0)
 	{
 		var virtual_board = MyGamerule.gems_skin_array
-		var virtual_board_gems = MyGamerule.gems_id_array
+		var virtual_board_gems = MyGamerule.gems_id_fallen_array
 	
 		//1) virtual swap
 		var temp = virtual_board[i1,j1]

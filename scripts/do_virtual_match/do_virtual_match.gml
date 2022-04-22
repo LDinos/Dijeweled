@@ -9,7 +9,7 @@ function do_virtual_match(argument0, argument1) {
 	var i1 = list_moves[INDEX,0]
 	var j1 = list_moves[INDEX,1]
 	var dir = list_moves[INDEX,2]
-	var gem = MyGamerule.gems_id_array[i1,j1]
+	var gem = MyGamerule.gems_id_fallen_array[i1,j1]
 	importance += find_power_importance(gem.gempower)
 
 	if gem.amHype importance += 16 //hypercubes are as important as lightnings
@@ -17,7 +17,7 @@ function do_virtual_match(argument0, argument1) {
 	if (importance == 0)
 	{
 		var virtual_board = MyGamerule.gems_skin_array
-		var virtual_board_gems = MyGamerule.gems_id_array
+		var virtual_board_gems = MyGamerule.gems_id_fallen_array
 		var i2 = i1
 		var j2 = j1
 		switch dir

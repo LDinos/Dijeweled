@@ -1,5 +1,5 @@
 /// @description All rules are here. This controls time, conditions, when to check for matches etc etc.
-//gems_id_array = gem id's
+//gems_id_fallen_array = gem id's
 //gems_skin_array = gem skins (fallen down)
 //gems_fallen = gem ids fallen down
 inverted_swaps = false

@@ -1,2 +1,2 @@
 /// @description Insert description here
-draw_text(x,y,TurnsToSpawnCur)
+//draw_text(x,y,TurnsToSpawnCur)

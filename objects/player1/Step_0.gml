@@ -10,7 +10,7 @@ else
 	else multiswap_allowed = false
 }
 var canmove = false;
-if !Gamerule_1.moving && !dont_swap && !Gamerule_1.lightOn && !Gamerule_1.fruit_exploding && !Gamerule_1.fruit_want_to_spawn && !Gamerule_1.fruit_spawning && Gamerule_1.illegal_cando canmove = true
+if !Gamerule_1.moving && !Gamerule_1.lightOn && !Gamerule_1.fruit_exploding && !Gamerule_1.fruit_want_to_spawn && !Gamerule_1.fruit_spawning && Gamerule_1.illegal_cando canmove = true
 
 if (gem1 != noone) { //always update xlim/ylim positions for the case when we grab a gem before it updates
 	xlim = gem1._j
@@ -26,6 +26,7 @@ var gemclicked = noone
 var clicked_mouse = mouse_check_button_pressed(mb_left)
 var clicked_controller = keyboard_swap_check_pressed(vk_space,Gamerule_1) || gamepad_button_swap_check_pressed(global.gp[0],gp_shoulderr,Gamerule_1)
 var hold_mouse = mouse_check_button(mb_left)
+var mouse_held_after_click = false //very similar to hold_mouse, but its becoming true after the one click has passed
 if (clicked_controller) {
 	visible = true
 	_x = MyBoard.x + xlim *64 - 32
@@ -38,6 +39,7 @@ if (clicked_controller) {
 	mouse_xx_pos = _x
 	mouse_yy_pos = _y
 } else if (hold_mouse) {
+	mouse_held_after_click = true
 	if (gem1 != noone) {
 		var ydist = mouse_y - mouse_yy_pos
 		var xdist = mouse_x - mouse_xx_pos
@@ -59,17 +61,22 @@ if (clicked_mouse || clicked_controller) {
 		var unclickable = gemclicked.amInvisible || gemclicked.amLocked != 0
 		if (gem1 == noone && !unclickable) gem_select(gemclicked)
 		else if (gem1 != noone) {
-			if (gem1 == gemclicked) {with(gem1) unspin(); gem1 = noone}
+			if (gem1 == gemclicked) {
+				if !mouse_held_after_click {with(gem1) unspin(); gem1 = noone}
+			}
 			else {
 				var dist_hor = abs(gemclicked._j - gem1._j)
 				var dist_ver = abs(gemclicked._i - gem1._i)
 				if (dist_hor+dist_ver == 1) {
-					if (canmove) && (gemclicked.amLocked == 0) && (multiswap_allowed) {
+					var gemsready = (gem1.i_limit == gem1._i && gemclicked.i_limit == gemclicked._i)
+					if (canmove) && (gemsready) && (gemclicked.acc == 0) && (gem1.acc == 0) && (gemclicked.amLocked == 0) && (multiswap_allowed) {
 						swap_gems(gem1, gemclicked, true)
 						gem1 = noone; gem2 = noone
 					}
 				}
-				else {with(gem1) unspin(); gem_select(gemclicked)}
+				else {
+					if !mouse_held_after_click {with(gem1) unspin(); gem_select(gemclicked)}
+					}
 			}
 		}
 	}
@@ -119,14 +126,14 @@ else if mouse_check_button(mb_left)
 							{
 								if (xlim + s >= 0)
 								{
-									 gemtocheck = Gamerule_1.gems_id_array[ylim,xlim+s]
+									 gemtocheck = Gamerule_1.gems_id_fallen_array[ylim,xlim+s]
 								}
 							}
 							else if s = 1
 							{
 								if (xlim + s <= 7)
 								{
-									 gemtocheck = Gamerule_1.gems_id_array[ylim,xlim+s]
+									 gemtocheck = Gamerule_1.gems_id_fallen_array[ylim,xlim+s]
 								}
 							}
 						}
@@ -140,14 +147,14 @@ else if mouse_check_button(mb_left)
 							{
 								if (ylim + s >= 0)
 								{
-									 gemtocheck = Gamerule_1.gems_id_array[ylim+s,xlim]
+									 gemtocheck = Gamerule_1.gems_id_fallen_array[ylim+s,xlim]
 								}
 							}
 							else if s = 1
 							{
 								if (ylim + s <= 7)
 								{
-									 gemtocheck = Gamerule_1.gems_id_array[ylim+s,xlim]
+									 gemtocheck = Gamerule_1.gems_id_fallen_array[ylim+s,xlim]
 								}
 							}
 						}

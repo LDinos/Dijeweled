@@ -142,7 +142,7 @@ for(var i=0;i<=global.board_rows-1;i++)
 			}
 		}
 		Gamerule_1.gems_skin_array[global.board_rows-1-i][j] = Gem.skinnum
-		Gamerule_1.gems_id_array[global.board_rows-1-i][j] = Gem
+		Gamerule_1.gems_id_fallen_array[global.board_rows-1-i][j] = Gem
 	}
 }
 #endregion

@@ -7,21 +7,21 @@ function scr_autosave() {
 					for(j=0;j<8;j++)
 					{
 						var str = string(i) + "-" + string(j)
-						if gems_id_array[i][j] != noone
+						if gems_id_fallen_array[i][j] != noone
 						{
-							ds_map_add(map,str+"skinnum", gems_id_array[i][j].skinnum)
-							ds_map_add(map,str+"gempower", gems_id_array[i][j].gempower)
-							ds_map_add(map,str+"amHype", gems_id_array[i][j].amHype)
-							ds_map_add(map,str+"amInvisible", gems_id_array[i][j].amInvisible)
-							ds_map_add(map,str+"amBomb", gems_id_array[i][j].amBomb)
-							ds_map_add(map,str+"amLocked", gems_id_array[i][j].amLocked)
-							ds_map_add(map,str+"amBeingLocked", gems_id_array[i][j].amBeingLocked)
-							ds_map_add(map,str+"countdown", gems_id_array[i][j].countdown)
-							ds_map_add(map,str+"amFruitExploding", gems_id_array[i][j].amFruitExploding)
-							ds_map_add(map,str+"geodenum", gems_id_array[i][j].geodenum)
-							for(var K=1; K<=gems_id_array[i][j].geodenum;K++)
+							ds_map_add(map,str+"skinnum", gems_id_fallen_array[i][j].skinnum)
+							ds_map_add(map,str+"gempower", gems_id_fallen_array[i][j].gempower)
+							ds_map_add(map,str+"amHype", gems_id_fallen_array[i][j].amHype)
+							ds_map_add(map,str+"amInvisible", gems_id_fallen_array[i][j].amInvisible)
+							ds_map_add(map,str+"amBomb", gems_id_fallen_array[i][j].amBomb)
+							ds_map_add(map,str+"amLocked", gems_id_fallen_array[i][j].amLocked)
+							ds_map_add(map,str+"amBeingLocked", gems_id_fallen_array[i][j].amBeingLocked)
+							ds_map_add(map,str+"countdown", gems_id_fallen_array[i][j].countdown)
+							ds_map_add(map,str+"amFruitExploding", gems_id_fallen_array[i][j].amFruitExploding)
+							ds_map_add(map,str+"geodenum", gems_id_fallen_array[i][j].geodenum)
+							for(var K=1; K<=gems_id_fallen_array[i][j].geodenum;K++)
 							{
-								ds_map_add(map,str+"geodenum_points" + string(K), gems_id_array[i][j].geodenum_points[K-1])
+								ds_map_add(map,str+"geodenum_points" + string(K), gems_id_fallen_array[i][j].geodenum_points[K-1])
 							}
 						}
 						else ds_map_add(map,str+"skinnum", -1)

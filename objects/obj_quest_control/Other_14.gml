@@ -24,9 +24,9 @@ for(var i = 0 ; i<8; i++)
 			case 4: S_num_purple++ break;
 			case 5: S_num_orange++ break;
 			case 6: S_num_blue++ break;
-			case 7: if Gamerule_1.gems_id_array[i][j] != noone
+			case 7: if Gamerule_1.gems_id_fallen_array[i][j] != noone
 					{
-						if (Gamerule_1.gems_id_array[i][j].amLocked = 0 && !Gamerule_1.gems_id_array[i][j].amHype) S_num_coals++ 	
+						if (Gamerule_1.gems_id_fallen_array[i][j].amLocked = 0 && !Gamerule_1.gems_id_fallen_array[i][j].amHype) S_num_coals++ 	
 					}
 					break;			
 		}

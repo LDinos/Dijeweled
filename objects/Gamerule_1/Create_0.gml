@@ -1,5 +1,5 @@
 /// @description All rules are here. This controls time, conditions, when to check for matches etc etc.
-//gems_id_array = gem id's
+//gems_id_fallen_array = gem id's
 //gems_skin_array = gem skins (fallen down)
 //gems_fallen = gem ids fallen down
 
@@ -121,7 +121,7 @@ if global.replay_match_allowed
 
 isReplayChecked = false // if false, the replay_map will be filled with the stationary gems
 isReplay = false //are we currently watching a replay?
-up_index = -1 //used for replay, this variable is stating how many gems have spawned, so the replay will know when to end when checking the array vertically
+for(var i=0; i < 8; i++) up_index[i] = 0 //used for replay, this variable is stating how many gems have spawned, so the replay will know when to end when checking the array vertically
 
 list_of_skulls = ds_list_create()
 list_of_hiddengems = ds_list_create() //list of all below ice hidden gems
@@ -182,7 +182,6 @@ cur_time = 0 //time passed in gamemaker frames (cur_time = 60 -> 1 second)
 flameon = false //are flame gems currently exploding? This is used to disable spawning when thats happening
 color = c_red //debug for drawGUI
 challenge_active = false //if a challenge has been completed, challengebonus is closing doors and stuff. let us know that
-
 iam = Gamerule_1 //who am i?
 num_skin = 6 //number of skins, beginning from 0 to 6 (coal is on 7 but we dont spawn coals using this)
 board_xsize = 8 //board size for collumns (width)
@@ -193,7 +192,7 @@ matches = 0 //number of matches made
 future_summoves = 0 //after an AHM execution, this becomes 1 so it wont redo AHM work for no reason. This gets reseted when gemactive = 1
 summoves2 = 0 //number of possible moves on board
 timegemcooldown = false //OBSOLETE
-
+spawn_replay_button = false
 blazingchainup = false;
 blazingshouldup = false //did we do a match to make the blaze go up?
 blazingspeed = false //are we currently blazing weed?
@@ -206,8 +205,8 @@ for(var i=0;i<8;i++)
 		gaps[i] = 0
 		for(var j=0;j<8;j++)
 		{
-			gems_fallen[i][j] = -4 //gems on fallen state (seeing the future to see where the gems WILL be)
-			gems_id_array[i][j] = -4 //gems on normal position
+			gems_id_array[i][j] = -4 //gems currently where they are (using _i and _j variables)
+			gems_id_fallen_array[i][j] = -4 //gems on the position that they will fall into
 			gems_to_spawn[i][j] = -1 //skins for the fresh spawning gems after matches have been made
 		}
 	}
@@ -242,6 +241,3 @@ swap_happened = false //when you do a swap, this goes true for just a step. Used
 //bo.image_yscale = 64 //make it fat enough to stop gems from penetrating it
 must_spawn_gems = false //did matches happen so that we have to spawn new gems?
 gems_ready = 0 //if this is equals to number of gems, then all gems are stationary
-//check_summoves(false)
-//for(var i=7;i>=0;i--) gaps[i] = 8
-//check_gaps(Board_1,Gem_1)

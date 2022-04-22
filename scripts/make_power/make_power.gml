@@ -68,7 +68,6 @@ function make_power(argument0, argument1, argument2) {
 					amexplode = false
 				}
 			instance_destroy()
-			argument2.gems_ready = 0
 			create_col = false
 	        newpower = instance_create(x,y,argument0)
 			with(newpower) {
@@ -78,7 +77,7 @@ function make_power(argument0, argument1, argument2) {
 			}
 	        newpower.gempower = argument1
 			newpower.myid = myid
-			Gamerule_1.gems_id_array[_i,_j] = newpower
+			Gamerule_1.gems_id_fallen_array[_i,_j] = newpower
 			Gamerule_1.gems_skin_array[_i,_j] = newpower.skinnum
 			idtosend = newpower.myid
 			powertosend = newpower.gempower
