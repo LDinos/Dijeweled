@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -32,8 +33,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Menu",
-    "path": "folders/Objects/Menu Buttons/Menu.yy",
+    "name": "Play",
+    "path": "folders/Objects/Menu Buttons/Menu/Play.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_button_multiplayer",

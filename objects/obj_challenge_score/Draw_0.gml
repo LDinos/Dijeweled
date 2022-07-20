@@ -261,8 +261,8 @@ if quest.L_movesleft != -1
 }*/
 if (quest.C_pattern_enabled)
 {
-	var xx = x + sprite_width/2
-	var yy = y + i*sprite_height
+	var xx = i = 0 ? x + sprite_width / 2 : room_width - 96 //x + sprite_width/2
+	var yy = i = 0 ? y : 512 + 64 //+ i*sprite_height
 	draw_sprite(spr_chl_pattern,0,xx,yy)
 	for(var l = 0; l< 8; l++)
 	{
@@ -277,5 +277,5 @@ if (quest.C_pattern_enabled)
 			}
 		}
 	}
-	i++
+	//i++
 }

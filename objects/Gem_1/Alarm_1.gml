@@ -1,3 +1,3 @@
 /// @description Die later
-if !ammoving instance_destroy()
+if (!ammoving) instance_destroy()
 

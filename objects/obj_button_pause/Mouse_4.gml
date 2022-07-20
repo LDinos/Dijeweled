@@ -1,2 +1,2 @@
 /// @description Insert description here
-room_restart()
+toggle_pause()

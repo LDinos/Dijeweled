@@ -39,5 +39,5 @@ if file != ""
 else mystring = -1
 file_find_close();
 index = 0
-if array_length_1d(mystring) <= 15 index_last = array_length_1d(mystring)
+if array_length(mystring) <= 15 index_last = array_length(mystring)
 else index_last = 15

@@ -14,19 +14,19 @@ if MyGamerule.controlallowed && isready
 	}
 	if list_moves != -1
 	{
-		var list_height = array_height_2d(list_moves)-1
+		var list_height = array_length(list_moves)-1
 		var INDEX = irandom(list_height)
 		if (global.SET_gamemode == 1)
 		{
 			var list_moves_matchsorted = -1;
-			for (var i = 0; i<array_height_2d(list_moves); i++)
+			for (var i = 0; i<array_length(list_moves); i++)
 			{
 				list_moves_matchsorted[i] = do_virtual_match(list_moves,i) //lets find the most important swap
 			}
 			var findbest = 0;
 			var findworst = 0;
 			var findmedium = 0;
-			for (var i = 1; i<array_height_2d(list_moves); i++)
+			for (var i = 1; i<array_length(list_moves); i++)
 			{
 				if list_moves_matchsorted[i] > list_moves_matchsorted[findbest] {findbest = i}
 				if list_moves_matchsorted[i] < list_moves_matchsorted[findworst] {findworst = i}

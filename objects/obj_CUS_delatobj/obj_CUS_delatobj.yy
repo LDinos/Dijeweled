@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -29,8 +30,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Custom Quests",
-    "path": "folders/Objects/Custom Quests.yy",
+    "name": "Objectives",
+    "path": "folders/Objects/Custom Quests/Objectives.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_CUS_delatobj",

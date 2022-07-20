@@ -6,4 +6,3 @@ if var_inside < 1
 	var_inside += 0.05
 	alarm[0] = 1
 }
-else global.canbepressed = true

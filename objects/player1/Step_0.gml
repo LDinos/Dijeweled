@@ -255,7 +255,7 @@ else if mouse_check_button(mb_left)
 			yyy = ylim
 			yyy2 = ylim
 		}
-
+		if (swap_pressed && !position_meeting(mouse_x,mouse_y,Board_1) && !visible) swap_pressed = false //if hybrid when mouse is outside the board
 		if swap_pressed //swap down
 		{
 			if condition

@@ -1,5 +1,4 @@
-/// @description Take multi
-// You can write your code in this editor
+/// @description Take multi OBSOLETE
 audio_play_sound(snd_multiup,0,0)
 MyGamerule.xplier++
 MyGamerule.multinum = 0

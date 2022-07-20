@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -30,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Custom Quests",
-    "path": "folders/Objects/Custom Quests.yy",
+    "name": "Allow Bombs",
+    "path": "folders/Objects/Custom Quests/Allow Bombs.yy",
   },
   "resourceVersion": "1.0",
   "name": "CUS_bombs_max",

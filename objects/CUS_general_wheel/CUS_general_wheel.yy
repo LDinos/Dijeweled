@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -28,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Custom Quests",
-    "path": "folders/Objects/Custom Quests.yy",
+    "name": "General",
+    "path": "folders/Objects/Custom Quests/General.yy",
   },
   "resourceVersion": "1.0",
   "name": "CUS_general_wheel",

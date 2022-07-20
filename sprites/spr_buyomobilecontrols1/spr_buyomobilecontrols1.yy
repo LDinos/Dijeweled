@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_buyomobilecontrols1","path":"sprites/spr_buyomobilecontrols1/spr_buyomobilecontrols1.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_buyomobilecontrols1",
     "tags": [],
     "resourceType": "GMSequence",

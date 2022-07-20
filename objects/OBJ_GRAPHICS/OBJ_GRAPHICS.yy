@@ -2,6 +2,7 @@
   "spriteId": null,
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": {
     "name": "dev_graphics",
     "path": "sprites/dev_graphics/dev_graphics.yy",

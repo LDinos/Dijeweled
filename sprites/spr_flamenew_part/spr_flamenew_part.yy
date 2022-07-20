@@ -311,7 +311,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_flamenew_part","path":"sprites/spr_flamenew_part/spr_flamenew_part.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_flamenew_part",
     "tags": [],
     "resourceType": "GMSequence",
