@@ -1,2 +1,2 @@
 /// @description Insert description here
-allowed = CUS_general_spawn.enabled
+allowed = obj_CUS_general.buttons[4].value

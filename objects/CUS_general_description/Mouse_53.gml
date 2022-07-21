@@ -1,19 +1,8 @@
-/// @description Insert description here
 if obj_CUS_general.canclick
 {
 	if position_meeting(mouse_x,mouse_y,id)
 	{
-		if os_type == os_android {
-			dialog = get_string_async("Type your description",value);
-		}
-		on_focus = true
-		flick = "|"
-		alarm[0] = 30
+		var txt = get_string("Set Quest Description", value)
+		if (string_length(txt) <= max_val) value = txt
 	}
-	else
-	{
-		alarm[0] = -1
-		on_focus = false
-		flick = ""
-	}
-} else on_focus = false
+}

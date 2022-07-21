@@ -2,6 +2,8 @@
 hover = -1
 xx = 0
 yy = 0
+canclick = false
+alarm[0] = 10 //give a small time before we can click a button
 
 #region make info
 var i = 0

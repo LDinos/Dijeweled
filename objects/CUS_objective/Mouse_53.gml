@@ -3,19 +3,9 @@ if obj_CUS_general.canclick && hasinput
 {
 	if position_meeting(mouse_x,mouse_y,id)
 	{
-		on_focus = true
-		blink = "|"
-		alarm[1] = 30
+		var num = get_integer("Set Value", min_val)
+		num = clamp(num, min_val, max_val)
+		text2 = string(num)
 	}
-	else
-	{
-		alarm[1] = -1
-		on_focus = false
-		blink = ""
-	}
-} else on_focus = false
+} 
 
-if !on_focus
-{
-	if (text2 = "") text2 = string(min_val)
-}

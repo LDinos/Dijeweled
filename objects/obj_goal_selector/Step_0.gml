@@ -11,8 +11,8 @@ if (mouse_y > 32 && mouse_y < room_height - 16) && (mouse_x > 10*16 && mouse_x <
 }
 else hover = -1
 
-if (mouse_check_button_pressed(mb_left)) {
-	if hover > -1
+if (mouse_check_button_released(mb_left)) {
+	if (hover > -1 && canclick)
 	{
 		#region find type
 		var type = 0 //blue nothing

@@ -1,5 +1,6 @@
 /// @description Insert description here
 objectives = 0
+
 var filename = obj_CUS_general.filename
 if file_exists(filename)
 {
