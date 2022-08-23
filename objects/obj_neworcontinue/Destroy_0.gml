@@ -1,1 +1,2 @@
 instance_destroy(obj_neworcontinuebutts)
+instance_destroy(obj_neworcontinue_exit)

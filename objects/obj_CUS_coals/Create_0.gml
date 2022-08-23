@@ -30,10 +30,10 @@ if file_exists(filename)
 		obj_CUS_coals.enabled = ini_read_real(s,"allowed",0)
 		if obj_CUS_coals.enabled
 		{
+			buttons[0].value = ini_read_real(s,"random",0)
+			buttons[1].value = string(ini_read_real(s,"chance",1))
 			buttons[2].value = string(ini_read_real(s,"turns",1))
 			buttons[3].value = string(ini_read_real(s,"max",1))
-			buttons[0].enabled = ini_read_real(s,"random",0)
-			buttons[1].value = string(ini_read_real(s,"chance",1))
 		}
 	ini_close()
 }

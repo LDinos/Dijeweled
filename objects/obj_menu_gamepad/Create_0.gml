@@ -35,9 +35,10 @@ function menu_press_button(butt_master) {
 	menu_always_find_a_button(butt_master, 1)
 }
 
-function menu_dialog_change_button() {
-	if (current_butt_newcontinue) == 0 current_butt_newcontinue = 1
-	else current_butt_newcontinue = 0
+function menu_dialog_change_button(dir) {
+	current_butt_newcontinue += dir
+	if (current_butt_newcontinue) >= array_length(obj_neworcontinue.button_manager) current_butt_newcontinue = 0
+	else if (current_butt_newcontinue) < 0 current_butt_newcontinue = array_length(obj_neworcontinue.button_manager)-1
 	var butt = obj_neworcontinue.button_manager[current_butt_newcontinue]
 	for(var i = 0; i < array_length(obj_neworcontinue.button_manager); i++) {
 		with(obj_neworcontinue.button_manager[i]) event_perform(ev_mouse, ev_mouse_leave)

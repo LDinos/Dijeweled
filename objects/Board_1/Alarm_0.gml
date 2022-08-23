@@ -6,5 +6,8 @@ else
 {
 	perc = 0
 	instance_destroy(Gem_1,false)
-	with(Gamerule_1) delete_gem_lists()
+	with(Gamerule_1) {
+		delete_gem_lists()
+		bar_be_full = false
+	}
 }

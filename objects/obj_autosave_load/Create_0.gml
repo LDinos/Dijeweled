@@ -32,15 +32,13 @@ if file_exists("autosave_"+string(room_get_name(room)))
 						{
 							var my_x = Board_1.x + 64*j
 							var dif = 1 //spawn gems 1 pixel up so gemactive will be enabled
-							if AMLOCKED = 3 dif = 0 //dont do that to ice locks
+							if AMLOCKED == 3 dif = 0 //dont do that to ice locks
 							var my_y = Board_1.y - 64*(7-i) + 64*7 - dif
 							
 							var Gem = instance_create_depth(my_x, my_y,-1,Gem_1)
 							Gem.gempower = GEMPOWER
 							Gem.amHype = AMHYPE
 							with(Gem) set_skin(GEMSKIN)
-							//Gem.skinnum = my_skin
-							//Gem.image_index = my_skin
 							Gem.amBomb = AMBOMB
 							Gem.amLocked = AMLOCKED
 							Gem.countdown = COUNTDOWN

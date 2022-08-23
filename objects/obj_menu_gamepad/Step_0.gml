@@ -10,8 +10,7 @@ if (gamepad_id != noone) {
 			var butt_master = obj_menu_buttons_master
 			if (instance_exists(obj_neworcontinue)) {
 				if (dir_leftright != 0) {
-					current_butt_newcontinue = 1
-					menu_dialog_change_button()
+					menu_dialog_change_button(dir_leftright)
 				} else if (pressed_enter) {
 					var butt = obj_neworcontinue.button_manager[current_butt_newcontinue]
 					with(butt) event_perform(ev_mouse, ev_left_press)

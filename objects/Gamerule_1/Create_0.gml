@@ -22,6 +22,7 @@ geodemax = 4 //max geodes that a coal can spawn
 geode_xplier = 1 //coal geode points multiplier. Some modes like Countdown have a huge multiplier
 Moves_Made = 0 //used in survivor
 #region level variables
+bar_be_full = false
 level = 1
 levelbarfull = false //is the bar of the level full?
 levelpointsneeded = 5000 //how many points do we need to finish the current level
