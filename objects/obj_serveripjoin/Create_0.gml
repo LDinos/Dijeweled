@@ -14,6 +14,7 @@ function join() {
 	if field != ""
 	{
 		global.ip = field
+		global.mynet = obj_client
 		instance_create(x,y,obj_client)
 	}
 }

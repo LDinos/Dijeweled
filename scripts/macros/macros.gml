@@ -60,6 +60,7 @@ function macros() {
 #macro NN_MATCH_HORVER_OVER 53 //when horizontal or vertical swap is over, send that info
 #macro NN_MATCH_TUG_INFO 54
 #macro NN_AMREADY 55
+#macro NN_YOUARE_HOST 56
 #macro GLOW_FADEOUT_FRAMES 10
 #macro FLAME 1
 #macro LIGHTNING 2

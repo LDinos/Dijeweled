@@ -28,6 +28,7 @@ if !amInvisible //if I am visible
 				buffer_write(buffer,buffer_u8,other.myid)
 				buffer_write(buffer,buffer_bool,other.create_col)
 				if other.amHype buffer_write(buffer,buffer_u8,other.skin_to_hype)
+				else buffer_write(buffer,buffer_u8,0)
 				network_send_packet(client_socket,buffer,buffer_tell(buffer))
 			}
 		}

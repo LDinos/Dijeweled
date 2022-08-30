@@ -9,5 +9,7 @@ if (done == 2)
 	}	
 }
 
-
-if (done == 2) audio_play_sound(vo_gameover,0,false)
+if (done == 2) {
+	audio_play_sound(vo_gameover,0,false)
+	if (global.SET_skin == 7) instance_create(x,y,obj_uploadstats) //only for 7 skins we upload stats
+}

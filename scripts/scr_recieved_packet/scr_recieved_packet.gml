@@ -297,13 +297,14 @@ function scr_recieved_packet(argument0) {
 		case NN_MATCH_GEM_DEATH:
 			var d = buffer_read(buffer,buffer_u8)
 			var crtcol = buffer_read(buffer,buffer_bool)
+			var s = buffer_read(buffer,buffer_u8)
 			with(Gem_2) 
 			{
 				if (myid == d)
 				{
 					if amHype
 					{
-						skin_to_hype = buffer_read(buffer,buffer_u8)
+						skin_to_hype = s
 					}
 					create_col = crtcol
 					instance_destroy()
@@ -432,6 +433,7 @@ function scr_recieved_packet(argument0) {
 			{
 				chat_write(user + " has connected!",c_yellow)
 			}
+			with(obj_client) client_connected = true //for non-peer-to-peer cases
 			break;
 		case NN_CHAT:
 			var text = buffer_read(buffer,buffer_string)
@@ -599,6 +601,10 @@ function scr_recieved_packet(argument0) {
 			break;
 		case NN_AMREADY:
 			with(obj_online_getready) other_player_is_now_ready()
+			break;
+		case NN_YOUARE_HOST:
+			global.IAMHOST = true
+			global.mynet = obj_client //on non-peer-to-peer server, you are client and global host
 			break;
 	}
 

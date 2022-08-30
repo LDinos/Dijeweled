@@ -1,7 +1,7 @@
 {
-  "option_windows_display_name": "Dijeweled Remastered  (v1.13)",
+  "option_windows_display_name": "Dijeweled Remastered  (v1.14)",
   "option_windows_executable_name": "${project_name}",
-  "option_windows_version": "1.1.3.0",
+  "option_windows_version": "1.1.4.0",
   "option_windows_company_info": "LDinos",
   "option_windows_product_info": "Dijeweled",
   "option_windows_copyright_info": "(c) 2018-2022 LDinos",
