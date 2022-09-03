@@ -39,6 +39,10 @@
 	}
 	else //if no matches happen
 	{
+		if Gamerule_1.illegals_allowed {
+			MyGamerule.blazingspeedchain = 0
+			MyGamerule.blazingspeedtotalchain = 0
+		}
 		MyGamerule.chain = 0
 		audio_play_sound(snd_xplier_illegal,0,0)
 		MyGamerule.illegal_cando = false

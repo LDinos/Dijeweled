@@ -5,5 +5,5 @@ if mouse_over(x-box_width/2, y, x+box_width/2,y+box_height) {
 		click()
 	}
 }
-else hover = false
+else hover = gamepad_hover
 

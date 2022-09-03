@@ -26,3 +26,5 @@ else
 }
 
 discord_update_presence("In Main Menu",global.version,"ico_512","")
+
+with(obj_menu_buttons_master) change_to_group("initial")

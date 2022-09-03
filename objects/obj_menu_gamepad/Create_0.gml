@@ -1,4 +1,14 @@
 /// @description
+current_butt = 0 //current button index in menu
+current_butt_newcontinue = 0 //current button index in "new or continue" dialog
+current_butt_menu_stats_h = 1 // 0 = left, 1 = back, 2 = right
+current_butt_menu_stats_v = 3 // 0 = left, 1 = back, 2 = right
+current_butt_quests = {i : 0, j : 0}
+menu_stats_buttons = [[noone, noone, noone],
+					  [noone, noone, noone],
+					  [obj_button_stats_online, obj_button_stats_online, obj_button_stats_online],
+					  [obj_stats_M_button_left, obj_button_stats_back, obj_stats_M_button_right]
+					 ]
 function find_gamepad() {
 	gamepad_id = noone
 	var gp_num = gamepad_get_device_count();
@@ -46,28 +56,52 @@ function menu_dialog_change_button(dir) {
 	with(butt) event_perform(ev_mouse, ev_mouse_enter)
 }
 
-function menu_stats_change_button(dir) {
-	var butt_list = []
-	butt_list[0] = obj_stats_M_button_left
-	butt_list[1] = obj_button_stats_back
-	butt_list[2] = obj_stats_M_button_right
+function menu_stats_change_vertical(dir) {
+	do {
+		if (current_butt_menu_stats_v + dir >= array_length(menu_stats_buttons)) {
+			current_butt_menu_stats_v = 0
+		} else if (current_butt_menu_stats_v + dir < 0) {
+			current_butt_menu_stats_v = array_length(menu_stats_buttons) - 1
+		}
+		else current_butt_menu_stats_v += dir
+		if (menu_stats_buttons[current_butt_menu_stats_v][current_butt_menu_stats_h] == noone) dir += sign(dir)
+		
+	} until (menu_stats_buttons[current_butt_menu_stats_v][current_butt_menu_stats_h] != noone)
 	
-	current_butt_menu_stats += dir
-	if (current_butt_menu_stats < 0 ) current_butt_menu_stats = 2
-	else if (current_butt_menu_stats >= array_length(butt_list)) current_butt_menu_stats = 0
-	var butt = butt_list[current_butt_menu_stats]
-	for(var i = 0; i < array_length(butt_list); i++) {
-		with(butt_list[i]) event_perform(ev_mouse, ev_mouse_leave)
+	for(var i = 0; i < array_length(menu_stats_buttons); i++) {
+		for(var j = 0; j < array_length(menu_stats_buttons[0]); j++) {
+			var other_butt = menu_stats_buttons[i][j]
+			with(other_butt) event_perform(ev_mouse, ev_mouse_leave)
+		}
 	}
+	var butt = menu_stats_buttons[current_butt_menu_stats_v][current_butt_menu_stats_h]
+	with(butt) event_perform(ev_mouse, ev_mouse_enter)
+}
+
+function menu_stats_change_horizontal(dir) {
+	do {
+		if (current_butt_menu_stats_h + dir >= array_length(menu_stats_buttons[0])) {
+			current_butt_menu_stats_h = 0
+		} else if (current_butt_menu_stats_h + dir < 0) {
+			current_butt_menu_stats_h = array_length(menu_stats_buttons[0]) - 1
+		}
+		else current_butt_menu_stats_h += dir
+		if (menu_stats_buttons[current_butt_menu_stats_v][current_butt_menu_stats_h] == noone) dir += sign(dir)
+		
+	} until (menu_stats_buttons[current_butt_menu_stats_v][current_butt_menu_stats_h] != noone)
+	
+	for(var i = 0; i < array_length(menu_stats_buttons); i++) {
+		for(var j = 0; j < array_length(menu_stats_buttons[0]); j++) {
+			var other_butt = menu_stats_buttons[i][j]
+			with(other_butt) event_perform(ev_mouse, ev_mouse_leave)
+		}
+	}
+	var butt = menu_stats_buttons[current_butt_menu_stats_v][current_butt_menu_stats_h]
 	with(butt) event_perform(ev_mouse, ev_mouse_enter)
 }
 
 function menu_stats_press_button() {
-	var butt_list = []
-	butt_list[0] = obj_stats_M_button_left
-	butt_list[1] = obj_button_stats_back
-	butt_list[2] = obj_stats_M_button_right
-	var butt = butt_list[current_butt_menu_stats]
+	var butt = menu_stats_buttons[current_butt_menu_stats_v][current_butt_menu_stats_h]
 	with(butt) event_perform(ev_mouse, ev_left_press)
 }
 
@@ -100,8 +134,18 @@ function quests_unhover_all(master) {
 	}
 }
 
-current_butt = 0 //current button index in menu
-current_butt_newcontinue = 0 //current button index in "new or continue" dialog
-current_butt_menu_stats = 1 // 0 = left, 1 = back, 2 = right
-current_butt_quests = {i : 0, j : 0}
+function generic_move_horizontally(master, dir) {
+	if (current_butt + dir >= array_length(master.current_group)) {
+		current_butt = 0
+	} else if (current_butt+dir) < 0 {
+		current_butt = array_length(master.current_group)-1
+	} else current_butt += dir
+	
+	for(var i = 0; i < array_length(master.current_group); i++) {
+		with(master.current_group[i]) event_perform(ev_mouse, ev_mouse_leave)
+	}
+	with(master.current_group[current_butt]) event_perform(ev_mouse, ev_mouse_enter)
+	
+}
+
 find_gamepad()

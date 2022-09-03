@@ -1,4 +1,5 @@
 function stats_create_arcade() {
+	show_debug_message("did it")
 	var grid = ds_grid_create(10,3)
 
 		var i = 0;

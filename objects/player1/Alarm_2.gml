@@ -11,7 +11,7 @@
 	}
 	with(gemtomove1) {check_ifmatch(Gamerule_1)}
 	with(gemtomove2) {check_ifmatch(Gamerule_1)}
-	
+
 	if flag
 	{
 		with(obj_countdown_controller) moves--
@@ -51,7 +51,11 @@
 	}
 	else //if no matches happen
 	{
-		if Gamerule_1.illegals_allowed with(obj_countdown_controller) moves--
+		if Gamerule_1.illegals_allowed {
+			with(obj_countdown_controller) moves--
+			Gamerule_1.blazingspeedchain = 0
+			Gamerule_1.blazingspeedtotalchain = 0
+		}
 		if Gamerule_1.isQuest
 		{
 			if Gamerule_1.illegals_allowed

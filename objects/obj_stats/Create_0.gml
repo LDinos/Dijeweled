@@ -7,7 +7,7 @@ stats_array = ["stats_arcade.ini", "stats_swift.ini", "stats_classic.ini",
 				"stats_blitz180.ini", "stats_blitz300.ini","stats_survivor.ini", "stats_buyo.ini"]
 		
 function open_stats() {
-	if !file_exists(global.STATS_file) //create stats for first time
+	if !file_exists("Stats/"+global.STATS_file) //create stats for first time
 	{
 		switch(global.STATS_file)
 		{

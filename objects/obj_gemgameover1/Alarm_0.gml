@@ -62,6 +62,7 @@ else
 		ini_write_string("replay","time",timetouse)
 		ini_write_string("replay","score",Gamerule_1.points)
 		ini_write_real("replay","geode_xplier",Gamerule_1.geode_xplier)
+		ini_write_real("replay","replay_ver",1) //to check for any problems after changes
 	ini_close()
 }
 #endregion

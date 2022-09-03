@@ -133,8 +133,7 @@ function matcher_stepevent(argument0) {
 					
 					if blazingshouldup && blazingallowed
 					{
-						blazing_check()
-					
+						blazing_check()				
 						blazingspeedchain++
 						blazingcounter = 140
 					}

@@ -29,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Pause",
-    "path": "folders/Objects/Pause.yy",
+    "name": "Blitz",
+    "path": "folders/Objects/Menu Buttons/Menu/Play/Blitz.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_pause_tick_replaymatch",

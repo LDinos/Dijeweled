@@ -10,7 +10,7 @@ ini_open("Stats/"+global.STATS_file)
 	title = ini_read_string("Title","value","Untitled")
 	
 //2	//Compare my score with the stats-score, starting from the top player
-	myplace = -1
+	var myplace = -1
 	for(var i = 0; i <10;i++)
 	{
 		if (global.STATS_points >= stats_board[# i, 1]) //if my points are bigger...

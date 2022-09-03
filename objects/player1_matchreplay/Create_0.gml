@@ -44,6 +44,7 @@ ini_open(global.replay_string)
 	var sect = ini_read_string("replay","data","-")
 	ds_map_read(Replay_load,sect)
 	Gamerule_1.geode_xplier = ini_read_real("replay","geode_xplier",1)
+	replay_version = ini_read_real("replay","replay_ver",0)
 ini_close()
 
 random_set_seed(Replay_load[? "seed"])
