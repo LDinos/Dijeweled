@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_pausetick",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,15 +27,13 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"680ae8a8-a5e5-4e96-95aa-0a8ae3351646","path":"sprites/spr_pausetick/spr_pausetick.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"680ae8a8-a5e5-4e96-95aa-0a8ae3351646","path":"sprites/spr_pausetick/spr_pausetick.yy",},"LayerId":{"name":"57a70c46-964e-4aa0-b025-1701c3029bc1","path":"sprites/spr_pausetick/spr_pausetick.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_pausetick","path":"sprites/spr_pausetick/spr_pausetick.yy",},"resourceVersion":"1.0","name":"680ae8a8-a5e5-4e96-95aa-0a8ae3351646","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"dacd9bc1-4732-486a-b4ca-0287d6f37723","path":"sprites/spr_pausetick/spr_pausetick.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"dacd9bc1-4732-486a-b4ca-0287d6f37723","path":"sprites/spr_pausetick/spr_pausetick.yy",},"LayerId":{"name":"57a70c46-964e-4aa0-b025-1701c3029bc1","path":"sprites/spr_pausetick/spr_pausetick.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_pausetick","path":"sprites/spr_pausetick/spr_pausetick.yy",},"resourceVersion":"1.0","name":"dacd9bc1-4732-486a-b4ca-0287d6f37723","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"680ae8a8-a5e5-4e96-95aa-0a8ae3351646",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"dacd9bc1-4732-486a-b4ca-0287d6f37723",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_pausetick","path":"sprites/spr_pausetick/spr_pausetick.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -43,10 +44,10 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"0e40df96-21de-41ab-a842-4a6a9ada21d8","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"680ae8a8-a5e5-4e96-95aa-0a8ae3351646","path":"sprites/spr_pausetick/spr_pausetick.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"53a22086-3015-4905-83a3-96b4e9408874","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"dacd9bc1-4732-486a-b4ca-0287d6f37723","path":"sprites/spr_pausetick/spr_pausetick.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},
     "lockOrigin": false,
@@ -62,22 +63,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_pausetick","path":"sprites/spr_pausetick/spr_pausetick.yy",},
-    "resourceVersion": "1.4",
-    "name": "",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"57a70c46-964e-4aa0-b025-1701c3029bc1","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"57a70c46-964e-4aa0-b025-1701c3029bc1","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Pause",
     "path": "folders/Sprites/Pause.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "spr_pausetick",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

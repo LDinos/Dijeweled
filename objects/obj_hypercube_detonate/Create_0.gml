@@ -1,5 +1,6 @@
 /// @description Insert description here
 modifier = 1
+gem = []
 destroy_companions = false
 if Gamerule_1.isReplay modifier = 2
 alarm[0] = 1

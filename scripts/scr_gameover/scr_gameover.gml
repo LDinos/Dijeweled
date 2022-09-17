@@ -1,7 +1,7 @@
 /// @function script()
 /// @description default
 /// @param {type} param first parameter
-function gameover(has_level){
+function scr_gameover(has_level){
 		switch room
 		{
 			case rm_timeattack:

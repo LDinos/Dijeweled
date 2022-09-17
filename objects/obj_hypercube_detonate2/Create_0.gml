@@ -1,7 +1,7 @@
 /* PURPOSE */
 // A hypercube detonating in player 2's board in Online (a cheap version of a obj_hypercube_detonate)
 alarm[0] = 1
-gem = -1
+gem = []
 list_index = 0
 modifier = 1
 audio_play_sound(snd_hype_hit,0,false)

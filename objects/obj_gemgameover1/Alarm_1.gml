@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 var has_level = false
-gameover(has_level)
+scr_gameover(has_level)
 
 if global.replay_match_allowed room_goto(rm_menu_saverep)
 else if room == rm_blitz room_goto(rm_stats_blitz)

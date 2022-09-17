@@ -3,7 +3,7 @@
 if (!Gamerule_1.isQuest)
 {
 	var has_level = true
-	gameover(has_level)
+	scr_gameover(has_level)
 }
 else
 {

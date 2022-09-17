@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_scrolldn",
   "bboxMode": 1,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"ea90e788-15ea-4f2c-ad10-0122470af70a","path":"sprites/spr_scrolldn/spr_scrolldn.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ea90e788-15ea-4f2c-ad10-0122470af70a","path":"sprites/spr_scrolldn/spr_scrolldn.yy",},"LayerId":{"name":"450fe688-a070-41d6-98e3-a8dc906b9dc3","path":"sprites/spr_scrolldn/spr_scrolldn.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_scrolldn","path":"sprites/spr_scrolldn/spr_scrolldn.yy",},"resourceVersion":"1.0","name":"ea90e788-15ea-4f2c-ad10-0122470af70a","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ea90e788-15ea-4f2c-ad10-0122470af70a",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_scrolldn","path":"sprites/spr_scrolldn/spr_scrolldn.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"67583b8f-80ba-4fc4-9916-d412a431f718","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ea90e788-15ea-4f2c-ad10-0122470af70a","path":"sprites/spr_scrolldn/spr_scrolldn.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": -640,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_scrolldn","path":"sprites/spr_scrolldn/spr_scrolldn.yy",},
-    "resourceVersion": "1.4",
-    "name": "",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"450fe688-a070-41d6-98e3-a8dc906b9dc3","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"450fe688-a070-41d6-98e3-a8dc906b9dc3","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Quest Select Menu",
     "path": "folders/Sprites/Quest Related/Quest Select Menu.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "spr_scrolldn",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

@@ -2,7 +2,7 @@
 show_personal = false //Is this an object after a gameover (true) or seen through the menu stats (false)?
 stats_index = 0 //Menu only, the current array index for the gamemode to show stats from
 has_level = true //Do the stats include level information
-stats_array = ["stats_arcade.ini", "stats_swift.ini", "stats_classic.ini", 
+stats_array = ["stats_arcade.ini", "stats_swift.ini", "stats_classic.ini", "stats_countdown.ini",
 				"stats_compact.ini", "stats_twist.ini", "stats_blitz60.ini",
 				"stats_blitz180.ini", "stats_blitz300.ini","stats_survivor.ini", "stats_buyo.ini"]
 		
@@ -40,6 +40,9 @@ function open_stats() {
 				break;
 			case "stats_survivor.ini":
 				stats_create_survivor()
+				break;
+			case "stats_countdown.ini":
+				stats_create_countdown()
 				break;
 			case "stats_buyo.ini":
 				stats_create_buyo()

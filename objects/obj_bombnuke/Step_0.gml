@@ -37,7 +37,7 @@ if func >= 1
 					has_level = false
 					break;
 			}
-			gameover(has_level)
+			scr_gameover(has_level)
 		}
 		else
 		{

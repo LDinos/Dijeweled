@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_challenge_selection",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,15 +27,13 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"ee3731e3-ebab-4e54-8cf0-560b6f0b2da6","path":"sprites/spr_challenge_selection/spr_challenge_selection.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ee3731e3-ebab-4e54-8cf0-560b6f0b2da6","path":"sprites/spr_challenge_selection/spr_challenge_selection.yy",},"LayerId":{"name":"f49d77d9-3957-4afe-918c-e151e797b9d9","path":"sprites/spr_challenge_selection/spr_challenge_selection.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_challenge_selection","path":"sprites/spr_challenge_selection/spr_challenge_selection.yy",},"resourceVersion":"1.0","name":"ee3731e3-ebab-4e54-8cf0-560b6f0b2da6","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e31031f6-03ac-4479-add5-e7c36e36e0c8","path":"sprites/spr_challenge_selection/spr_challenge_selection.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e31031f6-03ac-4479-add5-e7c36e36e0c8","path":"sprites/spr_challenge_selection/spr_challenge_selection.yy",},"LayerId":{"name":"f49d77d9-3957-4afe-918c-e151e797b9d9","path":"sprites/spr_challenge_selection/spr_challenge_selection.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_challenge_selection","path":"sprites/spr_challenge_selection/spr_challenge_selection.yy",},"resourceVersion":"1.0","name":"e31031f6-03ac-4479-add5-e7c36e36e0c8","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ee3731e3-ebab-4e54-8cf0-560b6f0b2da6",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e31031f6-03ac-4479-add5-e7c36e36e0c8",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_challenge_selection","path":"sprites/spr_challenge_selection/spr_challenge_selection.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -43,10 +44,10 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"f5a345db-aeb1-44a9-983b-9bcf69d14006","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ee3731e3-ebab-4e54-8cf0-560b6f0b2da6","path":"sprites/spr_challenge_selection/spr_challenge_selection.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"0ed11507-1435-4a55-8919-0f936b919a9f","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e31031f6-03ac-4479-add5-e7c36e36e0c8","path":"sprites/spr_challenge_selection/spr_challenge_selection.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},
     "lockOrigin": false,
@@ -62,22 +63,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_challenge_selection","path":"sprites/spr_challenge_selection/spr_challenge_selection.yy",},
-    "resourceVersion": "1.4",
-    "name": "",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f49d77d9-3957-4afe-918c-e151e797b9d9","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f49d77d9-3957-4afe-918c-e151e797b9d9","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Quest Select Menu",
     "path": "folders/Sprites/Quest Related/Quest Select Menu.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "spr_challenge_selection",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

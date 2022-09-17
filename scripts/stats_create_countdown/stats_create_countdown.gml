@@ -24,7 +24,7 @@ function stats_create_countdown() {
 	i++
 
 
-	ini_open("stats_countdown.ini")
+	ini_open("Stats/stats_countdown.ini")
 		ini_write_string("Title","value","COUNTDOWN") //This is what will be shown on top of the stats
 		var str = ds_grid_write(grid)
 		ini_write_string("Data","grid",str)

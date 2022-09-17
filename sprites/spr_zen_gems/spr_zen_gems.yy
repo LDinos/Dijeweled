@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_zen_gems",
   "bboxMode": 1,
   "collisionKind": 1,
   "type": 0,
@@ -24,33 +27,19 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"982ec996-c611-4699-8173-b0ef74de10a7","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"982ec996-c611-4699-8173-b0ef74de10a7","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":{"name":"4333c724-9dff-43d9-bf91-25bb337cfbb1","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_zen_gems","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"982ec996-c611-4699-8173-b0ef74de10a7","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"5413c5df-084d-4bd9-b30f-778338b7a461","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"5413c5df-084d-4bd9-b30f-778338b7a461","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":{"name":"4333c724-9dff-43d9-bf91-25bb337cfbb1","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_zen_gems","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"5413c5df-084d-4bd9-b30f-778338b7a461","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"a534b50f-a7c8-4889-9503-29ad83bc94d9","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a534b50f-a7c8-4889-9503-29ad83bc94d9","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":{"name":"4333c724-9dff-43d9-bf91-25bb337cfbb1","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_zen_gems","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"a534b50f-a7c8-4889-9503-29ad83bc94d9","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"732604b6-0ffc-4770-8844-de87ac944c2a","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"732604b6-0ffc-4770-8844-de87ac944c2a","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":{"name":"4333c724-9dff-43d9-bf91-25bb337cfbb1","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_zen_gems","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"732604b6-0ffc-4770-8844-de87ac944c2a","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"7684d28e-5a1e-43d2-a3cc-98d48d9cd659","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7684d28e-5a1e-43d2-a3cc-98d48d9cd659","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":{"name":"4333c724-9dff-43d9-bf91-25bb337cfbb1","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_zen_gems","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"7684d28e-5a1e-43d2-a3cc-98d48d9cd659","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"ef187d69-c33d-4664-9ce5-fae3c3930f56","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ef187d69-c33d-4664-9ce5-fae3c3930f56","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":{"name":"4333c724-9dff-43d9-bf91-25bb337cfbb1","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_zen_gems","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"ef187d69-c33d-4664-9ce5-fae3c3930f56","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"662ed140-d622-450f-8ba3-ef7dc82084bb","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"662ed140-d622-450f-8ba3-ef7dc82084bb","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":{"name":"4333c724-9dff-43d9-bf91-25bb337cfbb1","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_zen_gems","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"662ed140-d622-450f-8ba3-ef7dc82084bb","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"4cb57541-eca9-4667-adc8-8aa61f9d4ae0","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"4cb57541-eca9-4667-adc8-8aa61f9d4ae0","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"LayerId":{"name":"4333c724-9dff-43d9-bf91-25bb337cfbb1","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_zen_gems","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","name":"4cb57541-eca9-4667-adc8-8aa61f9d4ae0","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"982ec996-c611-4699-8173-b0ef74de10a7",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5413c5df-084d-4bd9-b30f-778338b7a461",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a534b50f-a7c8-4889-9503-29ad83bc94d9",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"732604b6-0ffc-4770-8844-de87ac944c2a",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7684d28e-5a1e-43d2-a3cc-98d48d9cd659",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ef187d69-c33d-4664-9ce5-fae3c3930f56",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"662ed140-d622-450f-8ba3-ef7dc82084bb",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4cb57541-eca9-4667-adc8-8aa61f9d4ae0",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_zen_gems","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -61,7 +50,7 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"aab4abfe-019a-4066-a2bb-7fa504ca1d7b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"982ec996-c611-4699-8173-b0ef74de10a7","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"b5c0918c-236e-4f93-b2cd-4730bfa8971a","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5413c5df-084d-4bd9-b30f-778338b7a461","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"b777b5b9-fc89-4b8a-916e-7a224ccf3115","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a534b50f-a7c8-4889-9503-29ad83bc94d9","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
@@ -70,7 +59,7 @@
             {"id":"9097340f-7ad3-488b-bd58-16d9caa5b126","Key":5.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ef187d69-c33d-4664-9ce5-fae3c3930f56","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"f22118ad-13f7-4b60-8657-ac9ea224d4eb","Key":6.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"662ed140-d622-450f-8ba3-ef7dc82084bb","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"eb774897-913c-4d63-9070-a978f7b6158a","Key":7.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4cb57541-eca9-4667-adc8-8aa61f9d4ae0","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},
     "lockOrigin": false,
@@ -86,22 +75,13 @@
     "yorigin": 64,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_zen_gems","path":"sprites/spr_zen_gems/spr_zen_gems.yy",},
-    "resourceVersion": "1.4",
-    "name": "",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4333c724-9dff-43d9-bf91-25bb337cfbb1","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4333c724-9dff-43d9-bf91-25bb337cfbb1","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Zen",
     "path": "folders/Sprites/Gems/Zen.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "spr_zen_gems",
-  "tags": [],
-  "resourceType": "GMSprite",
 }
