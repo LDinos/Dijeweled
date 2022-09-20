@@ -451,6 +451,7 @@ function scr_recieved_packet(argument0) {
 		case NN_LBY_REQUEST_SETTINGS: //server getting the okay to send lobby settings back to client when he first joins
 			buffer_seek(global.mynet.buffer,buffer_seek_start,0)
 			buffer_write(global.mynet.buffer,buffer_u8,NN_LBY_SEND_SETTINGS)
+			buffer_write(global.mynet.buffer,buffer_bool,LOB_blazing.enabled)
 			buffer_write(global.mynet.buffer,buffer_bool,LOB_ultranovas.enabled)
 			buffer_write(global.mynet.buffer,buffer_bool,LOB_multiswap.enabled)
 			buffer_write(global.mynet.buffer,buffer_bool,LOB_hypercubes.enabled)
@@ -465,6 +466,8 @@ function scr_recieved_packet(argument0) {
 			network_send_packet(client_socket,global.mynet.buffer,buffer_tell(global.mynet.buffer))
 			break;
 		case NN_LBY_SEND_SETTINGS: //client getting info previously asked
+			LOB_blazing.enabled = buffer_read(buffer,buffer_bool)
+			LOB_blazing.image_index = LOB_blazing.enabled
 			LOB_ultranovas.enabled = buffer_read(buffer,buffer_bool)
 			LOB_ultranovas.image_index = LOB_ultranovas.enabled
 			LOB_multiswap.enabled = buffer_read(buffer,buffer_bool)
@@ -510,6 +513,10 @@ function scr_recieved_packet(argument0) {
 		case NN_LBY_ULTRANOVAS:
 			LOB_ultranovas.enabled = buffer_read(buffer,buffer_bool)
 			LOB_ultranovas.image_index = LOB_ultranovas.enabled
+			break;
+		case NN_LBY_BLAZING:
+			LOB_blazing.enabled = buffer_read(buffer,buffer_bool)
+			LOB_blazing.image_index = LOB_blazing.enabled
 			break;
 		case NN_LBY_TWIST: //client getting info
 			LOB_twist.enabled = buffer_read(buffer,buffer_bool)

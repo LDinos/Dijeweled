@@ -12,3 +12,4 @@ flick = ""
 text = "Player"
 alarm[0] = 30
 dialog = noone;
+max_length = 20

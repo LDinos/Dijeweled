@@ -41,7 +41,7 @@ with(Gamerule_local)
 	AHM_allowed = true
 	end_on_nomoves = false
 	replay_allowed = false
-	blazingallowed = true
+	blazingallowed = (global.SET_blazing && global.SET_gamemode == 0) ? true : false
 	levelcompleteallowed = false
 	autosave_allowed = false
 	controlallowed = false
@@ -73,7 +73,7 @@ with(Gamerule_1)
 	AHM_allowed = true
 	end_on_nomoves = false
 	replay_allowed = false
-	blazingallowed = true
+	blazingallowed = (global.SET_blazing && global.SET_gamemode == 0) ? true : false
 	levelcompleteallowed = false
 	autosave_allowed = false
 	controlallowed = false

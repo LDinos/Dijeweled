@@ -1,3 +1,5 @@
+LOB_blazing.enabled = global.SET_blazing
+LOB_blazing.image_index = LOB_blazing.enabled
 LOB_multiswap.enabled = global.SET_multiswap
 LOB_multiswap.image_index = LOB_multiswap.enabled
 LOB_hypercubes.enabled = global.SET_hyper

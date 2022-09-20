@@ -95,6 +95,7 @@
     {"id":{"name":"spr_gemoutlines","path":"sprites/spr_gemoutlines/spr_gemoutlines.yy",},"order":13,},
     {"id":{"name":"spr_coalnova","path":"sprites/spr_coalnova/spr_coalnova.yy",},"order":14,},
     {"id":{"name":"spr_coal_break","path":"sprites/spr_coal_break/spr_coal_break.yy",},"order":15,},
+    {"id":{"name":"LOB_blazing","path":"objects/LOB_blazing/LOB_blazing.yy",},"order":16,},
     {"id":{"name":"spr_geode","path":"sprites/spr_geode/spr_geode.yy",},"order":16,},
     {"id":{"name":"spr_buyomobiledown","path":"sprites/spr_buyomobiledown/spr_buyomobiledown.yy",},"order":36,},
     {"id":{"name":"photon","path":"sprites/photon/photon.yy",},"order":17,},

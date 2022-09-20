@@ -3,6 +3,7 @@ global.canbepressed = false
 global.vsync_checked_once = false
 global.mynet = noone
 global.gp[0] = 0
+	global.SET_blazing = true
 	global.SET_multiswap = true
 	global.SET_hyper = false
 	global.SET_matchless = false
