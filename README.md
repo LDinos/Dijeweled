@@ -17,11 +17,12 @@ Dijeweled is being worked on for over 4+ years now, starting from "Dijeweled", t
 <img src="https://i.pcmag.com/imagery/reviews/01JwP71TDkYZqIdckYYYybR-1..v1601052460.png" alt="drawing" width="300"/>
 
 ### Support
-If you want to support me, you can donate to me in [paypal through this link](https://www.paypal.com/paypalme/LDinos) or click the image below! All support is very much appreciated
+If you want to support me, you can donate to me using the sponsor button in Github above, or  [through this link](https://www.paypal.com/paypalme/LDinos) or by clicking the image below! All support is very much appreciated
+
 [<img src="https://news.gtp.gr/wp-content/uploads/2015/07/paypal_logo.jpg" width = 300/>](https://www.paypal.com/paypalme/LDinos)
 
 ### Special Thanks
-- To every contributor
+- To every contributor ❤️
 - To my amazing donators
 - To the wonderful Bejeweled Community
 - To PopCap
