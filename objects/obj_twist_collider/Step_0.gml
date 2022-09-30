@@ -24,8 +24,7 @@ else
 {
 	
 	if (instance_number(obj_twist_collider) == 1) Gamerule_1.moving = false
-	//instance_destroy(col)
-	flag = false; //if we increase the multiplier
+	flag = false; //do we increase the multiplier
 	
 	#region Gamerule
 	with(Gamerule_1)
@@ -83,8 +82,6 @@ else
 	
 	for(var i = 0; i<4;i++)
 	{
-		//gem[i].x = gemxx[i]
-		//gem[i].y = gemyy[i]
 		with(gem[i])
 		{
 			check_ifmatch_twist(Gamerule_1)

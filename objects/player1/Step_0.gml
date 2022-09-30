@@ -135,8 +135,6 @@ else if mouse_check_button(mb_left)
 											ylim = gem2._i
 											x = Board_1.x + 64*xlim - 32
 											y = Board_1.y + 64*ylim - 32
-											//if gem1.x == gem2.x show_debug_message("HOLD (V): " +string(abs(gem1.y-gem2.y)))
-											//else show_debug_message("HOLD (H): " +string(abs(gem1.x-gem2.x)))
 											with(gem1) unspin()
 											gemtocheck = noone
 											do_match(Gamerule_1)
@@ -331,28 +329,24 @@ else if mouse_check_button(mb_left)
 	var previous_button = current_button
 	if gamepad_button_swap_check(global.gp[0],gp_padd,Gamerule_1) || keyboard_swap_check(vk_down,Gamerule_1)
 	{
-		//alarm[0] = -1
 		current_button = 1
 		press = true
 		disty++
 	}
 	if gamepad_button_swap_check(global.gp[0],gp_padu,Gamerule_1) || keyboard_swap_check(vk_up,Gamerule_1)
 	{
-		//alarm[0] = -1
 		current_button = 2
 		press = true
 		disty--
 	}
 	if gamepad_button_swap_check(global.gp[0],gp_padl,Gamerule_1) || keyboard_swap_check(vk_left,Gamerule_1)
 	{
-		//alarm[0] = -1
 		current_button = 3
 		press = true
 		distx--
 	}
 	if gamepad_button_swap_check(global.gp[0],gp_padr,Gamerule_1) || keyboard_swap_check(vk_right,Gamerule_1)
 	{
-		//alarm[0] = -1
 		current_button = 4
 		press = true
 		distx++

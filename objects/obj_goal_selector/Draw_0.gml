@@ -23,15 +23,15 @@ centerize_text()
 	draw_text(160 + (448-160)/2,16,"Goals")
 	draw_text(448 + (592-448)/2,16,"Conditions")
 	
-	for(var i = 0; i < 21; i++)
+	for(var i = 0; i < 21; i++) //Column 1
 	{
 		draw_text_transformed_color(160 + (304-160)/2,48 + i*32,info[i,0],0.6,0.6,0,c_green,c_green,c_green,c_green,1)
 	}
-	for(var i = 0; i < 17; i++)
+	for(var i = 0; i < 17; i++) //Column 2
 	{
 		draw_text_transformed_color(304 + (448-304)/2,48 + i*32,info[21+i,0],0.6,0.6,0,c_green,c_green,c_green,c_green,1)
 	}
-	for(var i = 0; i < 5; i++)
+	for(var i = 0; i < 6; i++) //Limiters
 	{
 		draw_text_transformed_color(448 + (592-448)/2,48 + i*32,info[21+21+i,0],0.6,0.6,0,c_red,c_red,c_red,c_red,1)
 	}

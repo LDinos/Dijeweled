@@ -1,6 +1,4 @@
-/// @description Insert description here
-//application_surface_draw_enable(false)
-//draw_set_color(c_white)
+/// @description Background with GPU shaders
 window_get_height()
 
 var wh = x - sprite_width/2
@@ -92,17 +90,6 @@ var_wave_speed = .5; //higher = faster
 shader_enabled = true
 /**/
 
-/*2*/
-/*srf_tunnel = surface_create(room_width, room_height);
-srf_backdrop1 = surface_create(room_width, room_height);
-tunnel_offset_x	= 0;
-tunnel_offset_y	= 0;
-u_deform = shader_get_uniform(shdr_tunnel, "deform");
-u_light_size = shader_get_uniform(shdr_tunnel, "light_size");
-u_gradient_size	= shader_get_uniform(shdr_tunnel, "gradient_size");
-u_light_pos	= shader_get_uniform(shdr_tunnel, "light_pos");
-u_overlay_str = shader_get_uniform(shdr_tunnel, "overlay_str");*/
-/**/
 
 /*3*/
 uni_time_3 = shader_get_uniform(shdr_backdrop2,"iTime");

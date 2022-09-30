@@ -1,7 +1,9 @@
 #macro CHALLENGES_VER 10 //change me if you make a change in create_challenge_ini
+
 draw_set_font(font0)
 randomise()
 effect_clear()
+
 instance_destroy(obj_server)
 instance_destroy(obj_client)
 global.canbepressed = false

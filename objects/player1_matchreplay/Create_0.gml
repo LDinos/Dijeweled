@@ -29,8 +29,6 @@ xlim = 3 //cursor position
 ylim = 3
 
 Replay_load = ds_map_create()
-//var mystring = string(date_get_day(date_current_datetime())) + "-" + string(date_get_month(date_current_datetime())) + "-" + string(date_get_year(date_current_datetime()))	
-
 
 for(i=0;i<=global.board_rows-1;i++)
 {

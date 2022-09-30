@@ -28,9 +28,6 @@
 		if !Gamerule_1.blazingspeed
 		{
 			Gamerule_1.blazingshouldup = true;
-			//with(Gamerule_1) blazing_check()
-			//Gamerule_1.blazingspeedchain++
-			//Gamerule_1.blazingcounter = 140
 		}
 		else
 			{
@@ -87,8 +84,7 @@
 			countdown_decrease()
 		}
 		with(obj_bonus_challenge) bonus_set_index(0)
-		//Gamerule_1.blazingspeedchain = 0
-		//Gamerule_1.blazingcounter = 140
+
 		if instance_exists(gemtomove1) && instance_exists(gemtomove2)
 		{
 			temp = gemtomove1

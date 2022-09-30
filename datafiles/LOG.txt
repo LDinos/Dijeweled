@@ -1,3 +1,36 @@
+=1.14=
+- Broadened gamepad support. You can use gamepad everywhere except for these places: Menu replay 
+viewer, Custom Quest Editor, Custom Quest list scrolling, Multiplayer Lobbies
+- Added pause button under the board for phone users
+- Changed CCW button on phones to be in the left area of the screen so it wont get obstructed in multiplayer modes
+- Changed hybrid (WASD) movement to not do anything when mouse is outside of board
+- Pattern Design quests will have the pattern board on the right corner of the screen when quests have more than one objective (fixed zenify + pattern board being on top of each other)
+- Pattern gems are more distinguishable now (thanks B1!)
+- Custom Quest editor will now prompt a system input screen when needed so phones can finally use it too!
+- **Time attack has now global stats** (as long as gem colors are kept at 7, and you are online or Player 1 in local multiplayer). Keep in mind that the stats server wont always be online for stats uploading/requesting for now.
+- When illegal swaps are allowed, a matchless swap will reset the blazing speed chain (Note: Previous blitz replays are compatible and will still work)
+- Changes to the stats folder. NOTE: STATS WILL BE RECREATED SO YOUR PREVIOUS STATS WONT BE IN THIS VERSION. However they will still be in the Appdata/Local/bej_temp_remaster/stats_*.ini, so you can just move them in the Appdata/Local/bej_temp_remaster/Stats folder to get them back.
+- Blitz mode always records games, you just have to press cancel when the prompt appears if you don't want to save your replay.
+- This version also allows an external server to be hosted where two players can join without having to port forward. Currently the server is only available to me and will be used in tourneys.
+
+=1.13=
+- Changed secret gamemode requirements.
+    Compact -> Reach level 10 in Zen
+    Twist -> Reach level 10 in Arcade
+    Swift -> Reach 300,000 in blitz
+    Survivor -> Finish 15 quests (go to Quests menu to unlock survivor if you have already met the requirements)
+- Nerfed Chain Creator 6th quest from 300 chains to 250
+- Added Back button in Lobby for mobile users
+- Added ability to chat and write quest descriptions in phones
+- Buyo mode is now playable in phones
+- Renamed Lobby setting "Skin numbers" to "Gem colors"
+- Slight change to AHM, mandatory hypercube now always spawns in places where it can be swapped. If impossible, the game is over
+- Removed 3D backgrounds, Fullscreen option and screen size options from phone version
+- Added Join and Back buttons on server join window
+- Fixed wrong information on which player has won on Avalanche online
+- Made online STANDBY wait until we are sure the level has loaded up for both players
+- Minor logo change
+
 =1.12=
 - Changed flame particles, made them look like in the original Bejeweled games. If the performance hit is too strong for your pc, it can go back to the previous particle system by turning off Enhanced Graphics
 - Fixed rare bug if you load an autosave during gems spawning when AHM algorithm is running, because it tries to setup a combo replay that doesn't exist

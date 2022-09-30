@@ -286,7 +286,10 @@ if (L_nospecialgems != -1) && (!L_nospecialgems_endgame)
 }
 
 #region VICTORY/LOSS CONDITIONS
-if (num_of_completed_objectives == num_of_objectives) { /*if !Gamerule_1.bombis0*/ {Gamerule_1.challengewon = true ;victory = true}}
+if (num_of_completed_objectives == num_of_objectives) && (!L_endless) { 
+	Gamerule_1.challengewon = true;
+	victory = true
+}
 else //LOSS CONDITION
 {
 	if (L_badgem) loss = true

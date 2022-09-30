@@ -16,5 +16,4 @@ if (os_type == os_android) {
 	draw_set_valign(fa_middle)
 	draw_set_font(font0)
 	draw_text_transformed(buttonX+buttonW/2,buttonY+buttonH/2 - (512/2),touchedCCW ? "COUNTERCLOCKWISE" : "CLOCKWISE",0.5,0.5,90)
-	//draw_text(buttonX+buttonW/2,buttonY+buttonH/2, touchedCCW ? "COUNTERCLOCKWISE" : "CLOCKWISE");
 }

@@ -16,27 +16,7 @@ else
 		{
 			if (shd == num_shaders) shd = 0
 			else shd++
-			/*var shdbefore = shd
-			do
-			{
-			shd = irandom(num_shaders)
-			}until shd != shdbefore*/
 		}
 	}
 	with(obj_makezenbkg) event_user(0)
-	/*
-	var lay_id = layer_get_id("bg_BOT");
-	var back_id = layer_background_get_id(lay_id);
-	{
-		var current = layer_background_get_index(back_id)
-		var now;
-		
-		do
-		{
-			now = irandom(4)
-		}
-		until current != now
-		
-		layer_background_index(back_id,now)
-	}*/
 }

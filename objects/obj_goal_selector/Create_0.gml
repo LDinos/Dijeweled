@@ -94,4 +94,5 @@ info[42+i,0] = "drain_score"; info[42+i,1] = "Constantly drains the score, resul
 i++
 info[42+i,0] = "nospecials"; info[42+i,1] = "A condition that resets all stats if Special Gems are detonated"
 i++
+info[42+i,0] = "endless"; info[42+i,1] = "Makes the quest never end unless the user \nloses by time or by bad gems"
 #endregion

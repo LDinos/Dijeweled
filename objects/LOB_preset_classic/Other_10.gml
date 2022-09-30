@@ -28,3 +28,8 @@ with(LOB_multiswap)
 		enabled = false
 		image_index = 0
 	}
+	with(LOB_blazing)
+	{
+		enabled = false
+		image_index = 0
+	}

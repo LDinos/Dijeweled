@@ -16,11 +16,6 @@ for(i=0;i<32;i++)
 	draw_vertex_color(x+lengthdir_x(72,a2),y+lengthdir_y(72,a2),c_pie,1);
 }
 draw_primitive_end();
-/*
-draw_sprite_ext(spr_zenify,index_temp,x,y,1,1,0,c_rainbow,1)
-draw_circle_color(x,y,64,$252525,$252525,0);*/
-
-
 
 draw_self()
 draw_set_font(font0)

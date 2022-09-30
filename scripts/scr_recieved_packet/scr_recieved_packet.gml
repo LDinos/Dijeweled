@@ -507,7 +507,7 @@ function scr_recieved_packet(argument0) {
 		case NN_LBY_PRESS_CLASSIC: //client getting info that the host pressed CLASSIC preset
 			with(LOB_preset_classic) event_user(0)
 			break;
-		case NN_LBY_SKINS: //client getting infot
+		case NN_LBY_SKINS: //client getting info
 			LOB_skins.val = buffer_read(buffer,buffer_u8)
 			break;
 		case NN_LBY_ULTRANOVAS:

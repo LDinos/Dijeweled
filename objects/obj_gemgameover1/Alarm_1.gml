@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Gameover aftermath
 var has_level = false
 scr_gameover(has_level)
 

@@ -12,9 +12,3 @@ for(var i = 0; i < 4; i++)
 	if (sprite_to_use == spr_bonus_gems_on) scale = 1
 	draw_sprite_ext(sprite_to_use,bonus[i],x + 64*i,y+32,scale,scale,0,c_white,1)
 }
-
-/*
-for(i=0; i < ds_list_size(list_of_matches); i++)
-{
-	draw_text(8,600 + 16*i,list_of_matches[| i])
-}
