@@ -3,7 +3,7 @@ function set_value(val) {
 	value = val
 	obj_CUS_general.quest_struct[$ struct_category][$ struct_key] = val
 }
-
+msg = -1
 description = "-"
 input_help = " "
 struct_category = ""
