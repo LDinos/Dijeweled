@@ -6,6 +6,9 @@ effect_clear()
 
 instance_destroy(obj_server)
 instance_destroy(obj_client)
+global.user1 = "Player" //username for player 1 when spectating (different from global.user)
+global.spectator_name = false
+global.spectator = false
 global.canbepressed = false
 global.online = false
 global.replay_match_allowed = false

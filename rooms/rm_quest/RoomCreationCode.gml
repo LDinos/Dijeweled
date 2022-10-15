@@ -1,5 +1,5 @@
 room_speed = 60
-draw_texture_flush()
+//draw_texture_flush()
 /*These Gamerule variables will always be false in quests, no matter what*/
 Gamerule_1.levelcompleteallowed = false
 Gamerule_1.compliments_allowed = false

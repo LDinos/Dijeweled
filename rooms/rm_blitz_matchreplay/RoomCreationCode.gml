@@ -13,7 +13,7 @@ with(obj_levelbar)
 	time_now = time_full
 	alarm[2] = 80
 }
-draw_texture_flush()
+//draw_texture_flush()
 //RADIO\\
 //
 if global.timer <= 60 

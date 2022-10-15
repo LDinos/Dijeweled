@@ -13,11 +13,11 @@ should_move = true //gems should be able to move physically
 points_base_value = 25; //for classic mode, add plus base value for combos that are more than 1
 points_type = 1; //different way to get points in classic mode ( = 2)
 ONLINE_give_gem_id = false //if true, each gem when it spawns, will give ID info to the other player
-if global.online
-{
+//if global.online
+//{
 	GEM_ID = -1 //a list that fits 64 gems, so online multiplayer can have ids for each enemy gem
 	for (var i = 0; i < 64; i++) {GEM_ID[i] = -1}
-}
+//}
 geodemax = 4 //max geodes that a coal can spawn
 geode_xplier = 1 //coal geode points multiplier. Some modes like Countdown have a huge multiplier
 Moves_Made = 0 //used in survivor

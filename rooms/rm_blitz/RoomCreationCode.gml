@@ -17,7 +17,7 @@ with(obj_coal_control)
 {
 	CoalSpawnLevelMin = -1
 }
-draw_texture_flush()
+//draw_texture_flush()
 
 // //RADIO\\
 //

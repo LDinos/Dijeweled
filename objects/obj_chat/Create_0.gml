@@ -21,12 +21,6 @@ function send_message() {
 	consecutive_first = true
 	alarm[1] = -1
 	var txt = global.user + ": " + text
-	text = chat_write(txt,c_white)		
-	with(global.mynet)
-	{
-		buffer_seek(buffer,buffer_seek_start,0)
-		buffer_write(buffer,buffer_u8,NN_CHAT)
-		buffer_write(buffer,buffer_string,txt)
-		network_send_packet(client_socket,buffer,buffer_tell(buffer))
-	}	
+	text = chat_write(txt,c_white)	
+	network_send(NN_CHAT, [buffer_string], [txt])
 }

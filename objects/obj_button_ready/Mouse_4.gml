@@ -1,5 +1,5 @@
 /// @description Insert description here
-if canclick
+if canclick && !global.spectator
 {
 	if !global.online
 	{
@@ -45,12 +45,7 @@ if canclick
 					audio_play_sound(snd_lobby_ready,0,false)
 					LOB_circle.enabled = !LOB_circle.enabled
 					canclick = false;
-					with(global.mynet)
-					{
-						buffer_seek(buffer,buffer_seek_start,0)
-						buffer_write(buffer,buffer_u8,NN_LBY_READY)
-						network_send_packet(client_socket,buffer,buffer_tell(buffer))
-					}
+					network_send(NN_LBY_READY, [], [])
 				}
 			}
 		}
@@ -62,17 +57,14 @@ if canclick
 				{
 					audio_play_sound(snd_lobby_ready,0,false)
 					canclick = false;
-					with(global.mynet)
-					{
-						buffer_seek(buffer,buffer_seek_start,0)
-						buffer_write(buffer,buffer_u8,NN_LBY_READY)
-						network_send_packet(client_socket,buffer,buffer_tell(buffer))
-					}
+					network_send(NN_LBY_READY, [], [])
 				}
 			}
 		}
+		
 		if (LOB_circle.enabled && LOB_circle2.enabled)
 		{
+			if (global.IAMHOST) network_send(NN_DISSALLOW_SPECTATORS)
 			with(obj_button_lobbyback) canclick = false
 			fade_to_room(rm_ONLINE)
 			global.SET_blazing = LOB_blazing.enabled

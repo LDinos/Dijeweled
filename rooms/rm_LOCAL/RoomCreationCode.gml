@@ -1,7 +1,7 @@
 room_speed = 60
 instance_create(0,0,obj_local_getready)
 global.user2 = global.user + "(2)"
-draw_texture_flush()
+//draw_texture_flush()
 with(obj_background_shadered) shd = irandom(num_shaders)
 
 if !global.bot1

@@ -21,13 +21,7 @@ function points_add(argument0, argument1) {
 		{
 			if (!Gamerule_1.lightOn && !Gamerule_1.hypeOn)
 			{
-				with(global.mynet)
-				{
-					buffer_seek(buffer,buffer_seek_start,0)
-					buffer_write(buffer,buffer_u8,NN_POINTS_ADD)
-					buffer_write(buffer,buffer_u16,value)
-					network_send_packet(client_socket,buffer,buffer_tell(buffer))
-				}
+				network_send(NN_POINTS_ADD, [buffer_u16], [value])
 			}
 		}
 	

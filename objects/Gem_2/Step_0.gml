@@ -6,20 +6,22 @@
 
 #region Gem movement and collision
 var shouldmove = true
+var gmrl = MyGamerule
+if (global.spectator && player_id == 0) gmrl = Gamerule_1 //read gamerule 1 stuff when player 1 when spectating
 if (ammoving) || (dont_fall_yet) shouldmove = false
 else if (amInvisible) shouldmove = false
-else if (MyGamerule.lightOn) shouldmove = false
-else if (MyGamerule.hypeOn) shouldmove = false
+else if (gmrl.lightOn) shouldmove = false
+else if (gmrl.hypeOn) shouldmove = false
 else if (amLocked = 3) shouldmove = false
-else if (MyGamerule.fruit_exploding_dontmove) shouldmove = false
+else if (gmrl.fruit_exploding_dontmove) shouldmove = false
 if shouldmove
 {
 	{		
 			acc += accspeed
-			if (y + acc > Board_2.y + 512-64)
+			if (y + acc > MyBoard.y + 512-64)
 			{
 				acc = 0
-				y = Board_2.y + 512-64
+				y = MyBoard.y + 512-64
 			}
 			else
 			{

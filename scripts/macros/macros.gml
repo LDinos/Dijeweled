@@ -51,8 +51,8 @@ function macros() {
 #macro NN_LBY_DEFENSE 44
 #macro NN_MATCH_AVALANCHE_PASS 45
 #macro NN_LBY_ULTRANOVAS 46
-#macro NN_MATCH_POWERUP_SPAWN 47
-#macro NN_MATCH_POWERUP_TRIGGER 48
+#macro NN_DISSALLOW_SPECTATORS 47
+#macro NN_ALLOW_SPECTATORS 48
 #macro NN_MATCH_POWERUP_POWERREMOVE 49
 #macro NN_MATCH_POWERUP_LOCK 50
 #macro NN_MATCH_SEND_POINTS 51 //after a lightning/hypercube ends, we send the points that we got during that time
@@ -62,6 +62,11 @@ function macros() {
 #macro NN_AMREADY 55
 #macro NN_YOUARE_HOST 56
 #macro NN_LBY_BLAZING 57
+#macro NN_YOUARE_SPECTATOR 58
+#macro NN_SPECTATOR_JOINED 59
+#macro NN_SPECTATOR_DISCONNECT 60
+#macro NN_MATCH_AMEXPLODE 61
+#macro NN_SERVER_BYE 62
 #macro GLOW_FADEOUT_FRAMES 10
 #macro FLAME 1
 #macro LIGHTNING 2

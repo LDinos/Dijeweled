@@ -39,3 +39,5 @@ if !amInvisible
 	
 }
 else if Gamerule_1.debug draw_sprite(spr_hiddengem,0,x,y)
+
+draw_text(x,y,myid)

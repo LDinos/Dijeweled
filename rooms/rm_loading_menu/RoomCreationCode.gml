@@ -2,6 +2,7 @@ global.version = "1.15.2" //dont forget to upload vercheck and change windows ve
 global.canbepressed = false
 global.vsync_checked_once = false
 global.mynet = noone
+global.spectator = false //Am I spectating online match
 global.gp[0] = 0
 	global.SET_blazing = true
 	global.SET_multiswap = true

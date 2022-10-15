@@ -256,13 +256,7 @@ function matcher_stepevent(argument0) {
 		combo_check()
 		if global.online
 		{
-			with(global.mynet)
-			{
-				buffer_seek(buffer,buffer_seek_start,0)
-				buffer_write(buffer,buffer_u8,NN_MATCH_GEM_COMBO_SOUND)
-				buffer_write(buffer,buffer_u8,other.combo)
-				network_send_packet(client_socket,buffer,buffer_tell(buffer))
-			}
+			network_send(NN_MATCH_GEM_COMBO_SOUND, [buffer_u8], [combo])
 		}
 		combo++
 		if (combo > bestcombo) bestcombo = combo

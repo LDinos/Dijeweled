@@ -1,9 +1,14 @@
 /// @description Cheap Gem object for Online, used in the opponent's board
 // You can write your code in this editor
+if !variable_instance_exists(id,"player_id") player_id = 0 //Do I belong in player 1 or player 2? (for when spectating)
 start_locking = -1
 skin_to_hype = -1
 myid = -4 //used in network
-if Gamerule_1.ONLINE_give_gem_id scr_add_gemid(Gamerule_2)
+if Gamerule_1.ONLINE_give_gem_id {
+	var gmrl = Gamerule_2
+	if (global.spectator) gmrl = (player_id == 0) ? Gamerule_1 : Gamerule_2
+	scr_add_gemid(gmrl)
+}
 mypowerup = -1
 isturnback = false
 dont_fall_yet = false
@@ -42,8 +47,9 @@ for(i=0;i<geodenum;i++) geodenum_points[i] = choose(50,100,150,200,250,300) //ge
 #region My
 MyGem = Gem_2 //Instance variables so that copy pasting code through gems will be easier
 MyGamerule = Gamerule_2
-MyBoard = Board_2
+if !variable_instance_exists(id, "MyBoard") MyBoard = Board_2
 MyLightObj = lightningObj2
+if global.spectator MyLightObj = lightningObj_spectator
 MyPlayer = player2
 //else if room = rm_twist MyPlayer = obj_twist_spinner
 MyDiss = gem_dissappear2

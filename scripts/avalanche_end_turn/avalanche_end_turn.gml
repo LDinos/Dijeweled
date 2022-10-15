@@ -13,7 +13,7 @@ function avalanche_end_turn(argument0, argument1) {
 			Gamerule_1.IsGemActive = 0
 			Gamerule_1.IsGemActive2 = 0
 		}
-		else //if I am not player 2
+		else //if I am now player 2
 		{
 			Gamerule_local.controlallowed = true
 			Gamerule_local.IsGemActive = 0
@@ -27,13 +27,7 @@ function avalanche_end_turn(argument0, argument1) {
 	num_turns++
 	ammoving = false
 	xdestination = board.x - 32 + sprite_width/2
-	with(global.mynet)
-	{
-		buffer_seek(buffer,buffer_seek_start,0)
-		buffer_write(buffer,buffer_u8,NN_MATCH_AVALANCHE_END_TURN)
-		buffer_write(buffer,buffer_u8,other.gems_to_send) //make pass2 sound effect?
-		network_send_packet(client_socket,buffer,buffer_tell(buffer))
-	}
+	network_send(NN_MATCH_AVALANCHE_END_TURN, [buffer_u8], [gems_to_send])	
 
 	if global.online
 	{

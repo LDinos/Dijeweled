@@ -1,6 +1,7 @@
 function EV_gem_CREATE(){
 /// @description Gem object
 // You can write your code in this editor
+player_id = 0
 gemglow_alpha = random(1)
 nearby_glown_left = false //am I glown because of a nearby power gem?
 nearby_glown_right = false //am I glown because of a nearby power gem?

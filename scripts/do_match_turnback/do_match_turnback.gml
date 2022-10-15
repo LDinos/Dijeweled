@@ -10,14 +10,7 @@ function do_match_turnback(argument0) {
 		{
 			var idtosend1 = gemtomove1.myid
 			var idtosend2 = gemtomove2.myid
-			with(global.mynet)
-			{
-				buffer_seek(buffer,buffer_seek_start,0)
-				buffer_write(buffer,buffer_u8,NN_MATCH_GEM_SWAP)
-				buffer_write(buffer,buffer_u8,idtosend1)
-				buffer_write(buffer,buffer_u8,idtosend2)
-				network_send_packet(client_socket,buffer,buffer_tell(buffer))
-			}
+			network_send(NN_MATCH_GEM_SWAP, [buffer_u8, buffer_u8], [idtosend1, idtosend2])
 		}
 	ammoving = true
 	with(gemtomove1)

@@ -25,14 +25,7 @@ function make_power(argument0, argument1, argument2) {
 			if Gamerule_1.isQuest with(obj_quest_control) {S_matched_gems++}
 			if global.online
 			{
-				with(global.mynet)
-				{
-					buffer_seek(buffer,buffer_seek_start,0)
-					buffer_write(buffer,buffer_u8,NN_MATCH_GEM_POWER)
-					buffer_write(buffer,buffer_u8,other.myid)
-					buffer_write(buffer,buffer_u8,argument1)
-					network_send_packet(client_socket,buffer,buffer_tell(buffer))
-				}
+				network_send(NN_MATCH_GEM_POWER, [buffer_u8, buffer_u8], [myid, argument1])
 			}
 			with(obj_avalanchedeposit) {if hidden_gems > 0 {hidden_gems--}; event_user(0); }
 			with(obj_avalanchedeposit_local) {if hidden_gems > 0 {hidden_gems--}; event_user(0); }
@@ -85,16 +78,9 @@ function make_power(argument0, argument1, argument2) {
 				if global.online
 				{
 					scr_add_gemid(Gamerule_1)
-					with(global.mynet)
-					{
-						buffer_seek(buffer,buffer_seek_start,0)
-						buffer_write(buffer,buffer_u8,NN_MATCH_GEM_POWER_NEW)
-						buffer_write(buffer,buffer_u8,other._i)
-						buffer_write(buffer,buffer_u8,other._j)
-						buffer_write(buffer,buffer_u8,other.skinnum)
-						buffer_write(buffer,buffer_u8,other.gempower)
-						network_send_packet(client_socket,buffer,buffer_tell(buffer))
-					}				
+					network_send(NN_MATCH_GEM_POWER_NEW, [buffer_u8, buffer_u8, buffer_u8, buffer_u8], 
+					[_i, _j, skinnum, gempower])
+			
 				}
 			
 	        }

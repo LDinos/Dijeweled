@@ -1,5 +1,5 @@
 room_speed = 60
-draw_texture_flush()
+//draw_texture_flush()
 with(Gamerule_1)
 {
 	replay_allowed = false

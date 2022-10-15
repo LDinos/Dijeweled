@@ -6,6 +6,7 @@ with(obj_glassbar) ready = true
 with(obj_rotator) alarm[0] = 60
 Gamerule_local.controlallowed = true
 Gamerule_1.controlallowed = true
+network_send(NN_MATCH_GO)
 with(global.mynet)
 	{
 		buffer_seek(buffer,buffer_seek_start,0)

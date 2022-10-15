@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 var points1, matches1, style1;
-if global.IAMHOST
+if global.IAMHOST || global.spectator
 {
 	points1 = Gamerule_1.points
 	matches1 = Gamerule_1.matches

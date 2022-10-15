@@ -18,8 +18,8 @@ lightOn = false //is a star gem currently being triggered?
 hypeOn = false //is a hypercube currently being triggered?
 fruit_exploding_dontmove = false
 flameon = false
-if global.online
-{
+//if global.online
+//{
 	GEM_ID = -1 //a list that fits 64 gems, so online multiplayer can have ids for each enemy gem
 	for (var i = 0; i < 64; i++) {GEM_ID[i] = -1}
-}
+//}

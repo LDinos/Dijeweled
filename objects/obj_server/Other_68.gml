@@ -10,6 +10,11 @@ var n_id = ds_map_find_value(async_load, "id");
             var sock = ds_map_find_value(async_load, "socket")
             client_socket = sock
 			client_connected = true
+			var game_val = (LOB_gamemode.val == 0) ? LOB_gamemode_2.val : LOB_gamemode_defence.enabled
+			network_send(NN_LBY_SEND_SETTINGS, [buffer_bool, buffer_bool, buffer_bool, buffer_bool, buffer_bool, buffer_bool, buffer_bool, 
+			buffer_u8, buffer_u8, buffer_bool, buffer_bool, buffer_string, buffer_string, buffer_u8], 
+			[false, LOB_blazing.enabled, LOB_ultranovas.enabled, LOB_multiswap.enabled, LOB_hypercubes.enabled, LOB_matchless.enabled,
+			LOB_twist.enabled,LOB_skins.val,LOB_gamemode.val,LOB_circle.enabled,LOB_circle2.enabled, global.user, global.version, game_val])
             break;
         case network_type_disconnect:
 			if room != rm_lobby

@@ -1,5 +1,5 @@
 room_speed = 60
-draw_texture_flush()
+//draw_texture_flush()
 with(obj_background_shadered) shd = irandom(num_shaders)
 if !global.IAMHOST
 {
@@ -68,6 +68,25 @@ with(Gamerule_1)
 		blazingallowed = false
 		force_moves_allowed = false
 	}
+}
+
+if (global.spectator) {
+	var b = instance_create_depth(96, 608, Board_1.depth, SPEC_board)
+	b.player_id = 0
+	b.player_name = global.user1
+	b = instance_create_depth(736, 608, Board_1.depth, SPEC_board)
+	b.player_id = 1
+	b.player_name= global.user2
+	instance_destroy(Board_1)
+	instance_destroy(Board_2)
+	instance_destroy(obj_pbox1)
+	instance_destroy(obj_pbox2)
+	instance_destroy(player1)
+	instance_destroy(obj_twist_spinner)
+	if (global.SET_gamemode == 1) {
+		instance_create(320,1168,obj_avalanchedeposit_spectator)
+		instance_destroy(obj_avalanchedeposit)
+	}	
 }
 
 discord_update_presence(dic,"VS " + global.user2,"ico_512","")
