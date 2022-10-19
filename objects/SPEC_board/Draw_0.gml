@@ -4,7 +4,7 @@ draw_sprite_ext(spr_board_blazing,0,x,y,1,1,0,c_white,alpha) //Blazing board as 
 
 //PBOX
 var length = string_length(player_name)
-draw_sprite(spr_playerbox, player_id - 1, x + (128/2) - 32, y-32-16)
+draw_sprite(spr_playerbox, player_id, x + (128/2) - 32, y-32-16)
 
 draw_set_font(font0)
 draw_set_halign(fa_center)

@@ -6,7 +6,7 @@ if !empty
 {
 	for (var i = 0 +15*(page-1); i<15+15*(page-1); i++)
 	{
-		if array_length_1d(mystring) - 1 >= i
+		if array_length(mystring) - 1 >= i
 		{
 		draw_set_halign(fa_left)
 		draw_text_transformed(x+32+4,y+144+32*(i mod 15),mytitle[i],.75,.75,0)

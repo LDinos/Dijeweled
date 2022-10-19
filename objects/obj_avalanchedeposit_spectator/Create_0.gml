@@ -16,3 +16,20 @@ xdestination = x
 left = 64 + sprite_width/2
 right = room_width - 64 - sprite_width/2
 f = 0
+
+function change_turn(_gems_sent) {
+	hidden_gems = 0
+	whomst_turn = !whomst_turn
+	num_turns++
+	gemsmatched = 0
+	gems_to_send = 1
+	var b = spectator_get_board(whomst_turn)
+	make_avalanche_compliment()
+	xdestination = b.x - 32 + sprite_width/2
+	var non_inv_gems = 0;
+	var p_id = whomst_turn
+	with(Gem_2) {
+		if (!amInvisible && player_id == p_id) non_inv_gems++
+	}
+	if (_gems_sent + non_inv_gems > 64) hidden_gems = (_gems_sent + non_inv_gems) - 64
+}

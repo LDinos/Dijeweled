@@ -1,8 +1,8 @@
 /// @description Insert description here
-image_index = 0
+image_index = global.SET_gamemode2
 image_speed = 0
 margin = 4 //a little small value after which a text starts
-val = 0
+val = global.SET_gamemode2
 valmin = 0
 valmax = 2
 hover = false

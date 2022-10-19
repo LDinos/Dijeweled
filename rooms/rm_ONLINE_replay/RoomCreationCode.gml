@@ -36,18 +36,13 @@ with(Gamerule_1)
 		blazingallowed = false
 		points_allowed = false
 		instance_create(0,0,obj_music)
+		instance_create(room_width/2, 512 + (room_height-512)/2, obj_skip_turn)
 		force_moves_allowed = false
 		compliments_allowed = false
 		dic = "Online: Avalanche";
-		instance_create(320,1168,obj_avalanchedeposit)
+		instance_create(320,1168,obj_avalanchedeposit_spectator)
 	}
-	else //UNUSED
-	{
-		instance_create(room_width/2,room_height-32,obj_tugowar)
-		instance_create(0,0,obj_powerupcontrol)
-		blazingallowed = false
-		force_moves_allowed = false
-	}
+
 }
 
 

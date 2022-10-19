@@ -4,7 +4,6 @@ function scr_recieved_packet(argument0) {
 	buffer_seek(buffer,buffer_seek_start,0)
 	var msg = buffer_read(buffer,buffer_u8)
 	if (global.spectator) {
-		show_debug_message(buffer)
 		sender = buffer_read(buffer,buffer_u8)
 		var gamerule = (sender == 0) ? Gamerule_1 : Gamerule_2
 	}
@@ -14,14 +13,22 @@ function scr_recieved_packet(argument0) {
 	
 	switch msg
 	{
-		case NN_MATCH_AVALANCHE_MAKE_INVGEMS:
-			avalanche_create_invisible_gems(1)
-			break;
 		case NN_MATCH_TUG_INFO:
 			with(obj_tugowar) offset = buffer_read(buffer,buffer_s16)
 			break;
-		case NN_MATCH_AVALANCHE_DESTROY_INVGEMS:
-			with(Gem_2) {if amInvisible instance_destroy()}
+		case NN_SERVER_GAME_SETTINGS:
+			buffer_seek(global.mynet.buffer,buffer_seek_start,0)
+			buffer_write(global.mynet.buffer,buffer_u8,NN_SERVER_GAME_SETTINGS)
+			buffer_write(global.mynet.buffer,buffer_bool,global.SET_blazing)
+			buffer_write(global.mynet.buffer,buffer_bool,global.SET_ultranovas)
+			buffer_write(global.mynet.buffer,buffer_bool,global.SET_multiswap)
+			buffer_write(global.mynet.buffer,buffer_bool,global.SET_hyper)
+			buffer_write(global.mynet.buffer,buffer_bool,global.SET_matchless)
+			buffer_write(global.mynet.buffer,buffer_bool,global.SET_twist)
+			buffer_write(global.mynet.buffer,buffer_u8,global.SET_skin)
+			buffer_write(global.mynet.buffer,buffer_u8,global.SET_gamemode)
+			buffer_write(global.mynet.buffer,buffer_u8,global.SET_gamemode2)
+			network_send_packet(client_socket,global.mynet.buffer,buffer_tell(global.mynet.buffer))
 			break;
 		case NN_MATCH_GEM_SWAP:
 			var id1 = buffer_read(buffer,buffer_u8)
@@ -164,20 +171,7 @@ function scr_recieved_packet(argument0) {
 				xdestination = b.x - 32 + sprite_width/2	
 			}
 			with(obj_avalanchedeposit_spectator) {
-				/*var non_inv_gems = 0;
-				with(Gem_2) {if (!amInvisible && player_id == whomst_turn) non_inv_gems++}
-
-				hidden_gems = gems_to_send + non_inv_gems - 64
-				if hidden_gems < 0 hidden_gems = 0
-				gems_existing = hidden_gems + non_inv_gems
-				*/
-				num_turns++
-				var b = spectator_get_board(!sender)
-				gemsmatched = 0
-				gems_to_send = 1
-				whomst_turn = !whomst_turn
-				make_avalanche_compliment()
-				xdestination = b.x - 32 + sprite_width/2
+				change_turn(g)
 			}
 			if (!global.spectator) with(spawner_avalanche) event_user(0) //spawn gems
 			break;
@@ -290,7 +284,7 @@ function scr_recieved_packet(argument0) {
 		case NN_MATCH_GEM_DEATH:
 			var d = buffer_read(buffer,buffer_u8)
 			var crtcol = buffer_read(buffer,buffer_bool)
-			var s = buffer_read(buffer,buffer_u8)
+			//var s = buffer_read(buffer,buffer_u8)
 			var spec_check_with_playerid = 0
 			if (global.spectator) spec_check_with_playerid = sender
 			with(Gem_2) 
@@ -299,7 +293,7 @@ function scr_recieved_packet(argument0) {
 				{
 					if amHype
 					{
-						skin_to_hype = s
+						skin_to_hype = buffer_read(buffer,buffer_u8)
 					}
 					create_col = crtcol
 					instance_destroy()
@@ -404,6 +398,8 @@ function scr_recieved_packet(argument0) {
 		case NN_MATCH_GEM_HYPER_NEW:
 		    var i = buffer_read(buffer,buffer_u8)
 			var j = buffer_read(buffer,buffer_u8)
+			var p_id = 0
+			if (global.spectator) p_id = sender
 			var g = instance_create_depth(board.x + 64*j,board.y + 64*i,-10,Gem_2, {player_id : p_id, MyGamerule : gmrl, MyBoard : board})
 			with(g) 
 			{
@@ -459,6 +455,8 @@ function scr_recieved_packet(argument0) {
 			break;
 		case NN_DISCONNECT: //client getting the message that server left
 			room_goto(rm_menu)
+			var t = instance_create(room_width/2,room_height/2,obj_online_kick)
+			with(t) {txt = "Opponent disconnected"}
 			audio_stop_all()
 			instance_destroy()
 			break;
@@ -486,8 +484,8 @@ function scr_recieved_packet(argument0) {
 			break;
 		case NN_LBY_SEND_SETTINGS: //client getting info previously asked
 			var spectator_asked = buffer_read(buffer,buffer_bool)
-			if (room != rm_lobby) break;
-			if (!global.spectator && spectator_asked) break; //was this meant to go for spectator only?
+			//if (room != rm_lobby) break;
+			//if (!global.spectator && spectator_asked) break; //was this meant to go for spectator only?
 			LOB_blazing.enabled = buffer_read(buffer,buffer_bool)
 			LOB_blazing.image_index = LOB_blazing.enabled
 			LOB_ultranovas.enabled = buffer_read(buffer,buffer_bool)
@@ -584,6 +582,7 @@ function scr_recieved_packet(argument0) {
 			}
 			if (LOB_circle.enabled && LOB_circle2.enabled)
 			{
+				if (global.IAMHOST) network_send(NN_DISSALLOW_SPECTATORS)
 				fade_to_room(rm_ONLINE)
 				global.SET_multiswap = LOB_multiswap.enabled
 				global.SET_hyper = LOB_hypercubes.enabled
@@ -663,12 +662,29 @@ function scr_recieved_packet(argument0) {
 			}
 			break;
 		case NN_SPECTATOR_DISCONNECT:
+			with(obj_chat)
+			{
+				chat_write("Spectator " + global.spectator_name + " disconnected.",c_yellow)
+			}
 			global.spectator_name = false
 			break;
 		case NN_SERVER_BYE:
+			var reason = buffer_read(buffer, buffer_string)
 			room_goto(rm_menu)
 			var t = instance_create(room_width/2,room_height/2,obj_online_kick)
-			with(t) {txt = "Server is closed"}
+			with(t) {txt = reason}
+			break;
+		case NN_SERVER_CHECK_VER:
+			network_send(NN_SERVER_CHECK_VER, [buffer_string], [global.version])
+			break;
+		case NN_SERVER_REPLAY_DATA:
+			var json = buffer_read(buffer, buffer_string)
+			var _buffer = buffer_create(string_byte_length(json)+1, buffer_fixed, 1)
+			buffer_write(_buffer, buffer_string, json)
+			var n = 0;
+			while(file_exists("OnlineReplays/" + string(n) + ".json")) n++
+			buffer_save(_buffer, "OnlineReplays/" + string(n) + ".json")
+			buffer_delete(_buffer)
 			break;
 	}
 

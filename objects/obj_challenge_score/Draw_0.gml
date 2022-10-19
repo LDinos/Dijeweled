@@ -248,21 +248,11 @@ if quest.L_movesleft != -1
 	draw_text(xcenter,ycenter +i*sprite_height,"Moves Left: " + string(quest.L_movesleft))
 	i++
 }
-/*if quest.L_time != -1
-{
-	var t = round(obj_timebar.time_now)
-	var t1 = t div 60
-	var t2 = t mod 60
-	var t3 = ""
-	if (t2 < 10) t3 = "0"
-	draw_sprite(sprite_index,0,x,y + i*sprite_height)
-	draw_text(xcenter,ycenter +i*sprite_height,string(t1) + ":" + t3 + string(t2))
-	i++
-}*/
+
 if (quest.C_pattern_enabled)
 {
-	var xx = i = 0 ? x + sprite_width / 2 : room_width - 96 //x + sprite_width/2
-	var yy = i = 0 ? y : 512 + 64 //+ i*sprite_height
+	var xx = i == 0 ? x + sprite_width / 2 : room_width - 96 //x + sprite_width/2
+	var yy = i == 0 ? y : 512 + 64 //+ i*sprite_height
 	draw_sprite(spr_chl_pattern,0,xx,yy)
 	for(var l = 0; l< 8; l++)
 	{

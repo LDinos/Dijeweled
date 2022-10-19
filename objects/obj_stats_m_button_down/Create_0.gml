@@ -5,7 +5,6 @@ hover = false
 gamepad_hover = false
 function click() {
 	with(obj_stats_online) {
-		show_debug_message(array_length(stats_board))
 		if ((stats_page*10 + 10) < array_length(stats_board)) {
 			stats_page++
 		}

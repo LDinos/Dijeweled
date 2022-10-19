@@ -1,6 +1,7 @@
 /// @description Insert description here
 var u = 0
 var s = skin_to_hype
+
 switch s
 {
 	case 0: mycolor = c_red break;
@@ -12,23 +13,20 @@ switch s
 	case 6: mycolor = c_blue break;
 	default: mycolor = c_white break;
 }
-for(var i = 0; i <8; i++)
-{
-	for(var j = 0;j <8; j++)
-	{
-		gem2_array[i,j] = -1
-	}
-}
+
 with(Gem_2)
 {
+	var p_id = global.spectator ? other.player_id : 0
+	if (player_id == p_id) {
 	if _i >= 0
 		{
-			other.gem2_array[@_i,_j] = skinnum
 			if s != 8
 			{
 				if s != 7
 				{
-					if (skinnum == s) {other.gem[u,0] = x; other.gem[u,1] = y; u++}
+					if (skinnum == s) {
+						other.gem[u,0] = x; other.gem[u,1] = y; u++
+					} 
 				}
 				else
 				{
@@ -46,6 +44,7 @@ with(Gem_2)
 				}
 			}
 		}
+	}
 }
 
 list_end = u

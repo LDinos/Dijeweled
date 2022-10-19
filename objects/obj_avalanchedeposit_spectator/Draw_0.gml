@@ -13,4 +13,3 @@ if gems_existing >= 64
 }
 draw_sprite(spr_rails2,0,room_width/2,y)
 draw_text_outline(room_width/2,512+room_height/2 - 48,"Turns: " + string(num_turns), c_white,c_black)
-draw_text(x,y-16,whomst_turn)

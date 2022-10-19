@@ -281,10 +281,7 @@ if (!global.spectator) {
 		{
 			var g = instance_create(Board_1.x + j*64, Board_1.y - 64*(i+1), Gem_1)
 			var sk = board[initial_gaps[j]-1,j]
-			if sk == -1
-			{
-				show_debug_message(sk)
-			}
+
 			with(g)
 			{
 				set_skin(sk)

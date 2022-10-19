@@ -25,7 +25,8 @@ if !amInvisible //if I am visible
 				network_send(NN_MATCH_AMEXPLODE, [buffer_u8], [myid])	
 			}
 			var hype_val = amHype ? skin_to_hype : 0
-			network_send(NN_MATCH_GEM_DEATH, [buffer_u8, buffer_bool, buffer_u8], [myid, create_col, hype_val])
+			if amHype network_send(NN_MATCH_GEM_DEATH, [buffer_u8, buffer_bool, buffer_u8], [myid, create_col, hype_val])
+			else network_send(NN_MATCH_GEM_DEATH, [buffer_u8, buffer_bool], [myid, create_col])
 		}
 		MyGamerule.GEM_ID[myid] = -1		
 	}

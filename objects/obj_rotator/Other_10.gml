@@ -5,6 +5,7 @@ if (done == 2)
 	alarm[2] = 3*60
 	if global.IAMHOST
 	{
+		network_send(NN_SERVER_REPLAY_STOP)
 		alarm[1] = 8*60	
 	}	
 }

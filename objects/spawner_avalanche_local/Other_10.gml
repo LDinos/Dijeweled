@@ -279,10 +279,7 @@ for(var j=0; j<8;j++)
 	{
 		var g = instance_create(Board_local.x + j*64, Board_local.y - 64*(i+1), Gem_local)
 		var sk = board[initial_gaps[j]-1,j]
-		if sk == -1
-		{
-			show_debug_message(sk)
-		}
+
 		with(g)
 		{
 			set_skin(sk)

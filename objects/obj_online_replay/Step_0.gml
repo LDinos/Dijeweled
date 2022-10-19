@@ -15,18 +15,24 @@
 if (timer_enabled) {
 	if (timer >= timer_end) {
 		timer_enabled = false
-		audio_play_sound(vo_gameover, 0, false)
-		with(obj_rotator) alarm[2] = 60*3 //find the winner
-		alarm[1] = 60*8 //go back to menu
+		if (global.SET_gamemode == 0) {
+			audio_play_sound(vo_gameover, 0, false)
+			with(obj_rotator) alarm[2] = 60*3 //find the winner
+			alarm[1] = 60*8 //go back to menu
+		}
 	}
 	else {
+		if (global.SET_gamemode == 1) {
+			if array_length(avalanche_turns) > 0 {
+				if (timer == avalanche_turns[0]) array_delete(avalanche_turns, 0, 1)
+			}
+		}
 		for(var i = 0; i < 2; i++) {
 			var t = string(timer)
 			var p_id = i
 			var map = (i == 0) ? player1_map : player2_map
 			var gmrl = (i == 0) ? Gamerule_1 : Gamerule_2
 			var frame = map[$ t]
-			show_debug_message(frame)
 			if !is_undefined(frame) {
 				for(var k = 0; k < array_length(frame); k++) //How many actions happened in that frame
 				{

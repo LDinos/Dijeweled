@@ -110,17 +110,17 @@ do
 
 
 // and now spawn them in board1
-for(i=0;i<=global.board_rows-1;i++)
+for(var i=0;i<=global.board_rows-1;i++)
 {
-	for(j=0;j<=7;j++)
+	for(var j=0;j<=7;j++)
 	{
-		my_x = Board_local.x + 64*j
-		my_y = Board_local.y - 64*(i+1)
-		my_skin = gem_array[i,j]
-		Gem = instance_create_depth(my_x, my_y,-1,Gem_local)
+		var my_x = Board_local.x + 64*j
+		var my_y = Board_local.y - 64*(i+1)
+		var my_skin = gem_array[i,j]
+		var Gem = instance_create_depth(my_x, my_y,-1,Gem_local)
 		with(Gem) 
 		{
-			set_skin(other.gem_array[other.i,other.j])
+			set_skin(my_skin)
 		}
 	}
 }

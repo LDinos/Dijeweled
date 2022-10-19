@@ -11,5 +11,5 @@ with(obj_stats_online)
 {
 	stats_index--
 	if (stats_index < 0) stats_index = array_length(stats_array)-1
-	request_stats(stats_array[stats_index]) 
+	request_stats() 
 }

@@ -4,6 +4,8 @@ alarm[0] = 1
 gem = []
 list_index = 0
 modifier = 1
+MyGamerule = Gamerule_2
+player_id = 0
 audio_play_sound(snd_hype_hit,0,false)
 var hype_explo = part_type_create()
 var hype_explo_ring = part_type_create()

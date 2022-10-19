@@ -8,5 +8,6 @@ x1 = x
 y1 = y
 lim_start = 10
 lim_end = 30
+player_id = 0
 alarm[0] = 1
 

@@ -6,5 +6,7 @@ if global.canbepressed
 		change_to_group("replays")
 	}
 	instance_create(0,0,obj_replaylist)
+	with(obj_button_online_replays) {x = 192+32; y = room_height - 96-16}
+	//instance_create(192+32,room_height - 96-16,obj_button_online_replays)
 	mouse_clear(mb_any);
 }

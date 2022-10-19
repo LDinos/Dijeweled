@@ -29,6 +29,8 @@ if !amInvisible
 				if amHype
 				{
 					var cube = instance_create(x,y,obj_hypercube_detonate2)
+					cube.MyGamerule = gmrl
+					cube.player_id = player_id
 					cube.image_index = hyper_anim
 					cube.skin_to_hype = skin_to_hype
 					gmrl.hypeOn = true
@@ -71,11 +73,11 @@ if !amInvisible
 					part_particles_create(global.sys_above_gem,x,y,global.partSeptaExplosion2,5)
 					for(i=0;i<=7;i++)
 					{	
-						var lek = instance_create(MyBoard.x+32*7, MyBoard.y + 64*i, MyLightObj)
+						var lek = instance_create_depth(MyBoard.x+32*7, MyBoard.y + 64*i, depth, MyLightObj, {"player_id" : player_id})
 						with(lek) {
 							skinnum = other.skinnum
 							if (global.spectator) {
-								lighton(gmrl, player_id)
+								//lighton(gmrl, player_id)
 							}
 						}
 					}
@@ -94,23 +96,23 @@ if !amInvisible
 						le[i] = noone
 						if position_meeting(MyBoard.x +32*7,y + (i-2)*64,MyBoard)
 						{
-							le[i] = instance_create(MyBoard.x +32*7,y+ (i-2)*64,MyLightObj)		
+							le[i] = instance_create_depth(MyBoard.x +32*7,y+ (i-2)*64, depth, MyLightObj, {"player_id" : player_id})		
 							with(le[i]) {
 								skinnum = other.skinnum
 								if (global.spectator) {
-									lighton(gmrl, player_id)
+									//lighton(gmrl, player_id)
 								}
 							}
 						}
 				
 						if position_meeting(x - (i-2)*64,MyBoard.y+32*7,MyBoard) 
 						{
-							le[i] = instance_create(x - (i-2)*64,MyBoard.y+32*7,MyLightObj)
+							le[i] = instance_create_depth(x - (i-2)*64,MyBoard.y+32*7,depth, MyLightObj, {"player_id" : player_id})
 							with(le[i]) {
 								skinnum = other.skinnum; 
 								image_angle = 90
 								if (global.spectator) {
-									lighton(gmrl, player_id)
+									//lighton(gmrl, player_id)
 								}
 							}
 						}
@@ -129,32 +131,32 @@ if !amInvisible
 						//with(MyGamerule) {points_add(300,false); compliment_add(300)}
 				        audio_play_sound(snd_novaexplode,1,false)
 						instance_create(x,y,obj_novaexplode)
-				        if position_meeting(MyBoard.x +32*7,y,MyBoard) le1 = instance_create(MyBoard.x +32*7,y,MyLightObj)
-						if position_meeting(MyBoard.x +32*7,y-64,MyBoard) le2 = instance_create(MyBoard.x +32*7,y-64,MyLightObj)
-						if position_meeting(MyBoard.x +32*7,y+64,MyBoard) le3 = instance_create(MyBoard.x +32*7,y+64,MyLightObj)
-				        if position_meeting(x,MyBoard.y +32*7,MyBoard) le4 = instance_create(x,MyBoard.y +32*7,MyLightObj)
-						if position_meeting(x+64,MyBoard.y +32*7,MyBoard) le5 = instance_create(x+64,MyBoard.y +32*7,MyLightObj)
-						if position_meeting(x-64,MyBoard.y +32*7,MyBoard) le6 = instance_create(x-64,MyBoard.y +32*7,MyLightObj)
+				        if position_meeting(MyBoard.x +32*7,y,MyBoard) le1 = instance_create_depth(MyBoard.x +32*7,y,depth, MyLightObj, {"player_id" : player_id})
+						if position_meeting(MyBoard.x +32*7,y-64,MyBoard) le2 = instance_create_depth(MyBoard.x +32*7,y-64,depth, MyLightObj, {"player_id" : player_id})
+						if position_meeting(MyBoard.x +32*7,y+64,MyBoard) le3 = instance_create_depth(MyBoard.x +32*7,y+64,depth, MyLightObj, {"player_id" : player_id})
+				        if position_meeting(x,MyBoard.y +32*7,MyBoard) le4 = instance_create_depth(x,MyBoard.y +32*7,depth, MyLightObj, {"player_id" : player_id})
+						if position_meeting(x+64,MyBoard.y +32*7,MyBoard) le5 = instance_create_depth(x+64,MyBoard.y +32*7,depth, MyLightObj, {"player_id" : player_id})
+						if position_meeting(x-64,MyBoard.y +32*7,MyBoard) le6 = instance_create_depth(x-64,MyBoard.y +32*7,depth, MyLightObj, {"player_id" : player_id})
 				        with(le4) image_angle += 90
 						with(le5) image_angle += 90
 						with(le6) image_angle += 90
 				        with(le1) {skinnum = other.skinnum if (global.spectator) {
-									lighton(gmrl, player_id)
+									//lighton(gmrl, player_id)
 								}}
 				        with(le2) {skinnum = other.skinnum if (global.spectator) {
-									lighton(gmrl, player_id)
+									//lighton(gmrl, player_id)
 								}}
 						with(le3) {skinnum = other.skinnum if (global.spectator) {
-									lighton(gmrl, player_id)
+									//lighton(gmrl, player_id)
 								}}
 						with(le4) {skinnum = other.skinnum if (global.spectator) {
-									lighton(gmrl, player_id)
+									//lighton(gmrl, player_id)
 								}}
 				        with(le5) {skinnum = other.skinnum if (global.spectator) {
-									lighton(gmrl, player_id)
+									//lighton(gmrl, player_id)
 								}}
 						with(le6) {skinnum = other.skinnum if (global.spectator) {
-									lighton(gmrl, player_id)
+									//lighton(gmrl, player_id)
 								}}
 						#endregion
 				    }
@@ -164,13 +166,13 @@ if !amInvisible
 						var le1 = noone;
 						var le2 = noone;
 				        audio_play_sound(snd_electro,1,false)
-				        le1 = instance_create(MyBoard.x +32*7,y,MyLightObj)
-				        le2 = instance_create(x,MyBoard.y +32*7,MyLightObj)
+				        le1 = instance_create_depth(MyBoard.x +32*7,y,depth, MyLightObj, {"player_id" : player_id})
+				        le2 = instance_create_depth(x,MyBoard.y +32*7,depth, MyLightObj, {"player_id" : player_id})
 				        with(le1) {skinnum = other.skinnum if (global.spectator) {
-									lighton(gmrl, player_id)
+									//lighton(gmrl, player_id)
 								}}
 				        with(le2) {image_angle += 90; skinnum = other.skinnum if (global.spectator) {
-									lighton(gmrl, player_id)
+									//lighton(gmrl, player_id)
 								}}
 						#endregion
 				    }
