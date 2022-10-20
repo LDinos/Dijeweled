@@ -502,8 +502,10 @@ function scr_recieved_packet(argument0) {
 			LOB_gamemode.val = buffer_read(buffer,buffer_u8)
 			LOB_circle.enabled = buffer_read(buffer,buffer_bool)
 			LOB_circle2.enabled = buffer_read(buffer,buffer_bool)
-			global.user2 = buffer_read(buffer,buffer_string)
-			with(obj_chat) chat_write(global.user2 + " is the current host.", c_yellow)
+			var _user = buffer_read(buffer,buffer_string)
+			if spectator_asked global.user1 = _user
+			else global.user2 = _user
+			with(obj_chat) chat_write(_user+ " is the current host.", c_yellow)
 			var ver = buffer_read(buffer,buffer_string)
 			if (LOB_gamemode.val = 0) 
 			{

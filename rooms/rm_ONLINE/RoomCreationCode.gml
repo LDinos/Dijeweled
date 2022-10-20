@@ -74,9 +74,9 @@ if (global.spectator) {
 	var b = instance_create_depth(96, 608, Board_1.depth, SPEC_board)
 	b.player_id = 0
 	b.player_name = global.user1
-	b = instance_create_depth(736, 608, Board_1.depth, SPEC_board)
-	b.player_id = 1
-	b.player_name = global.user2
+	var b2 = instance_create_depth(736, 608, Board_1.depth, SPEC_board)
+	b2.player_id = 1
+	b2.player_name = global.user2
 	instance_destroy(Board_1)
 	instance_destroy(Board_2)
 	instance_destroy(obj_pbox1)

@@ -40,7 +40,7 @@ global.button_group = {
 				obj_button_3min, obj_button_5min, noone, obj_button_back],
 	"secret" : [obj_button_countdown, obj_button_twist, obj_button_compact,
 				obj_button_swift, obj_button_survivor, obj_button_buyo, obj_button_back],
-	"online" : [noone, noone, noone, obj_button_join, obj_button_host, noone, obj_button_back],
+	"online" : [noone, noone, obj_button_dedicated, obj_button_join, obj_button_host, noone, obj_button_back],
 	"replays" : [noone, noone, noone, noone, noone, obj_button_online_replays, obj_button_back],
 	"replay_save" : [obj_replaysave_continue, obj_replaysave_cancel],
 }

@@ -2,6 +2,7 @@
 ## ![enter image description here](https://i.imgur.com/7eDjdYH.png)
 
 ### Useful Links
+- [**Dijeweled Dedicated Server**](https://github.com/LDinos/dijeweled-server)
 - [**Bejeweled Fans Discord Server**](http://discord.gg/jSj2uKB)
 - **[Bejeweled Wiki](https://bejeweled.fandom.com/wiki/Bejeweled_Wiki) - [Dijeweled Remastered](https://bejeweled.fandom.com/wiki/Dijeweled_Remastered)**
 - **[Download Dijeweled Remastered](https://github.com/LDinos/Dijeweled/releases)**

@@ -54,4 +54,11 @@ if (os_type != os_android) {
 		convert = false
 	}
 }
-
+else {
+	if mouse_check_button_pressed(mb_left) {
+		if (mouse_x < x + 256 && mouse_x > x - 256 && mouse_y > y - 32 && mouse_y < y + 32)
+		{
+			dialog = get_string_async("Connecting to the IP",field);
+		}
+	}
+}

@@ -577,6 +577,7 @@
     {"id":{"name":"create_dualhype_newspawn","path":"scripts/create_dualhype_newspawn/create_dualhype_newspawn.yy",},"order":19,},
     {"id":{"name":"fruit_explode","path":"scripts/fruit_explode/fruit_explode.yy",},"order":20,},
     {"id":{"name":"find_gemfallen_posi","path":"scripts/find_gemfallen_posi/find_gemfallen_posi.yy",},"order":21,},
+    {"id":{"name":"obj_button_dedicated","path":"objects/obj_button_dedicated/obj_button_dedicated.yy",},"order":9,},
     {"id":{"name":"find_gemfallen_posj","path":"scripts/find_gemfallen_posj/find_gemfallen_posj.yy",},"order":22,},
     {"id":{"name":"spawn_lock","path":"scripts/spawn_lock/spawn_lock.yy",},"order":23,},
     {"id":{"name":"destroy_lock","path":"scripts/destroy_lock/destroy_lock.yy",},"order":24,},
