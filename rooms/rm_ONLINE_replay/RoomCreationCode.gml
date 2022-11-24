@@ -51,5 +51,5 @@ if (global.SET_gamemode == 1) {
 	instance_destroy(obj_avalanchedeposit)
 }	
 
-
-discord_update_presence(dic,"VS " + global.user2,"ico_512","")
+DISCORD np_setpresence_timestamps(date_current_datetime(), 0, false)
+DISCORD np_setpresence(global.user1 + " VS " + global.user2, "Watching Replay", "ico_512", "")

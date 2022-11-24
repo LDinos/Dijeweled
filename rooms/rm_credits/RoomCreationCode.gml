@@ -1,4 +1,4 @@
-discord_update_presence("In Credits","","ico_512","")
+DISCORD np_setpresence(global.version, "In Credits", "ico_512", "")
 with(Gamerule_1)
 {
 	//points_xpliered_auto = true

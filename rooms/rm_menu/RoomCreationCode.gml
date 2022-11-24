@@ -1,11 +1,13 @@
 #macro CHALLENGES_VER 10 //change me if you make a change in create_challenge_ini
 
+
 draw_set_font(font0)
 randomise()
 effect_clear()
 
 instance_destroy(obj_server)
 instance_destroy(obj_client)
+global.IAMHOST = false
 global.user1 = "Player" //username for player 1 when spectating (different from global.user)
 global.spectator_name = false
 global.spectator = false
@@ -30,6 +32,9 @@ else
 	ini_close()
 }
 
-discord_update_presence("In Main Menu",global.version,"ico_512","")
+DISCORD np_clearpresence()
+DISCORD np_setpresence(global.version,"In Main Menu", "ico_512", "")
 
 with(obj_menu_buttons_master) change_to_group("initial")
+
+if (global.join_ip) != "" room_goto(rm_ipjoin)

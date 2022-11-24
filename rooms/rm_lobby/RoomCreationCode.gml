@@ -12,3 +12,6 @@ if global.IAMHOST
 		g.image_index = LOB_gamemode_defence.enabled
 	}
 }
+
+DISCORD np_clearpresence()
+DISCORD np_setpresence(global.version, "In Lobby", "ico_512", "")

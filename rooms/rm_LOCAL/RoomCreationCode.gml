@@ -34,7 +34,7 @@ if global.SET_twist
 	instance_destroy(player_local)
 }
 
-var dic = "Online: Battle"
+var dic = "Local: Battle"
 with(Gamerule_local)
 {
 	ultranovas_allowed = global.SET_ultranovas
@@ -85,7 +85,7 @@ with(Gamerule_1)
 	
 	if (global.SET_gamemode == 0)
 	{
-		dic = "Online: Time Attack"
+		dic = "Local: Time Attack"
 		if global.SET_gamemode2 = 0 global.timer = 300
 		else if global.SET_gamemode2 = 1 global.timer = 180
 		else global.timer = 60
@@ -102,7 +102,7 @@ with(Gamerule_1)
 		instance_create(0,0,obj_music)
 		force_moves_allowed = false
 		compliments_allowed = false
-		dic = "Online: Avalanche";
+		dic = "Local: Avalanche";
 		instance_create(320,1168,obj_avalanchedeposit_local)
 	}
 	else
@@ -114,3 +114,17 @@ with(Gamerule_1)
 	}
 }
 
+var name = global.user2
+if (global.bot1) {
+	var dif = "A"
+	switch(global.botdifficulty1) {
+		case 0: dif = "Easy" break;
+		case 1: dif = "Medium" break;
+		case 2: dif = "Hard" break;
+		case 3: dif = "Expert" break;
+	}
+	name = dif + " bot"
+}
+
+DISCORD np_setpresence_timestamps(date_current_datetime(), 0, false)
+DISCORD np_setpresence("VS " + name, dic, "ico_512", "")

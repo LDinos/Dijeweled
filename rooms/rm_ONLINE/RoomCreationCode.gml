@@ -89,4 +89,5 @@ if (global.spectator) {
 	}	
 }
 
-discord_update_presence(dic,"VS " + global.user2,"ico_512","")
+DISCORD np_setpresence_timestamps(date_current_datetime(), 0, false)
+DISCORD np_setpresence("VS " + global.user2, dic, "ico_512", "")

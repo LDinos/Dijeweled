@@ -4,7 +4,7 @@ if Gamerule_1.IsGemActive2
 	if !doonce
 	{
 		doonce = true
-		discord_update_presence(global.DIS_name,"Moves: " + string(Gamerule_1.Moves_Made),"ico_512","")
+		DISCORD np_setpresence("Moves: " + string(Gamerule_1.Moves_Made), global.DIS_name, "ico_512", "")
 		var prev_level = Gamerule_1.level
 		Gamerule_1.level = Gamerule_1.Moves_Made div 10
 		if Gamerule_1.level != prev_level

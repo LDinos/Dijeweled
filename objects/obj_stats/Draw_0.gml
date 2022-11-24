@@ -44,7 +44,7 @@ for(var i = 1; i <= 10; i++) {
 	var c = my_place == i-1 ? c_yellow : c_white
 	draw_text_color(x1 - (box_width*box_no_percentage)/2,_y + i*(box_height/10) -  (box_height/20), i, c, c, c, c, 1)
 	draw_text_color(x2 - (x2-x1)/2, _y + i*(box_height/10) -  (box_height/20), _name, c, c, c, c, 1)
-	draw_text_color(X, _y + i*(box_height/10) -  (box_height/20), _score, c, c, c, c, 1)
+	draw_text_color(X, _y + i*(box_height/10) -  (box_height/20), number_convert_with_commas(_score), c, c, c, c, 1)
 	if (has_level) draw_text_color(x4 + 24, _y + i*(box_height/10) -  (box_height/20), _level, c, c, c, c, 1)
 	draw_line_color(_x - box_width/2, _y + i*(box_height/10), _x + box_width/2, _y + i*(box_height/10), c_black, c_black)
 }
@@ -62,6 +62,6 @@ if (show_personal) {
 	_y += box_title_height
 	draw_rectangle_monocolor(_x - box_halfx, _y, _x + box_halfx, _y + box_title_height, LIGHT_GRAY, false)
 	draw_text_color(x2 - (x2-x1)/2, _y + (box_title_height/2), global.user, c, c, c, c, 1)
-	draw_text_color(X, _y + (box_title_height/2), global.STATS_points, c, c, c, c, 1)
+	draw_text_color(X, _y + (box_title_height/2), number_convert_with_commas(global.STATS_points), c, c, c, c, 1)
 	if (has_level) draw_text_color(x4 + 24, _y + (box_title_height/2), global.STATS_level, c, c, c, c, 1)
 }

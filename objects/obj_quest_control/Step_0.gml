@@ -292,6 +292,7 @@ if (num_of_completed_objectives == num_of_objectives) && (!L_endless) {
 }
 else //LOSS CONDITION
 {
+	if (L_pointslimit != -1) && (Gamerule_1.points >= L_pointslimit) loss = true
 	if (L_badgem) loss = true
 	if (L_nospecialgems = 1 && L_nospecialgems_endgame) loss = true
 	if (L_noslightning = 1) && (L_noslightning_endgame) loss = true

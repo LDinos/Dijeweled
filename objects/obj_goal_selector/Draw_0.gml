@@ -31,7 +31,7 @@ centerize_text()
 	{
 		draw_text_transformed_color(304 + (448-304)/2,48 + i*32,info[21+i,0],0.6,0.6,0,c_green,c_green,c_green,c_green,1)
 	}
-	for(var i = 0; i < 6; i++) //Limiters
+	for(var i = 0; i < 7; i++) //Limiters
 	{
 		draw_text_transformed_color(448 + (592-448)/2,48 + i*32,info[21+21+i,0],0.6,0.6,0,c_red,c_red,c_red,c_red,1)
 	}

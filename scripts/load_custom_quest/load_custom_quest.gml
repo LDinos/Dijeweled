@@ -451,6 +451,9 @@ function load_custom_quest(argument0) {
 						case 47:
 							obj_quest_control.L_endless = true;
 							break;
+						case 48:
+							obj_quest_control.L_pointslimit = value;
+							break;
 					}
 			#endregion
 			}

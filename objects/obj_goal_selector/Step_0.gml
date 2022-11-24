@@ -4,7 +4,7 @@ if (mouse_y > 32 && mouse_y < room_height - 16) && (mouse_x > 10*16 && mouse_x <
 	yy = (mouse_y-32) div 32
 	xx = (mouse_x - 10*16) div 144
 	hover = yy + 21*xx
-	if (hover > 37 && hover < 42) || hover > 47
+	if (hover > 37 && hover < 42) || hover > 48
 	{
 		hover = -1
 	}
@@ -22,7 +22,7 @@ if (mouse_check_button_released(mb_left)) {
 		#endregion
 		#region find if hasinput
 		var inp = false
-		if (type = 3) || (hover == 44) || (hover == 45) inp = true
+		if (type = 3) || (hover == 44) || (hover == 45) || (hover == 48) inp = true
 		#endregion
 	
 		with(obj_CUS_newobj)

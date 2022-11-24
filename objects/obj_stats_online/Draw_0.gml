@@ -44,8 +44,8 @@ if (stats_loaded) {
 		if (i + stats_page*10 <= array_length(stats_board)) {
 			var _no = i + stats_page*10
 			var _name = stats_board[i-1 + stats_page*10][NAME]
-			var _score = stats_board[i-1 + stats_page*10][POINTS]
-			var _style = stats_board[i-1 + stats_page*10][STYLE]
+			var _score = number_convert_with_commas(stats_board[i-1 + stats_page*10][POINTS])
+			var _style = number_convert_with_commas(stats_board[i-1 + stats_page*10][STYLE])
 			var _matches = stats_board[i-1 + stats_page*10][MATCHES]
 			var c0 = (global.user == _name) ? c_yellow : c_white
 			var c1 = stats_order == POINTS ? c_white : c_gray

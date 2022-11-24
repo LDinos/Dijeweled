@@ -5,7 +5,7 @@ Gamerule_1.replay_allowed = false
 Gamerule_1.multiswap_allowed = true
 Gamerule_1.blazingallowed = true
 Gamerule_1.isQuest = false
-discord_update_presence("Watching Blitz Replay","","ico_512","")
+DISCORD np_setpresence(global.version, "Watching Blitz Replay", "ico_512", "")
 //Gamerule_1.geode_xplier = 5
 with(obj_levelbar)
 {
