@@ -5,4 +5,7 @@
 function instance_create(argument0, argument1, argument2) {
 	var myDepth = depth
 	return instance_create_depth( argument0, argument1, myDepth-1, argument2 );
+
+
+
 }

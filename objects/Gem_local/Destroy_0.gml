@@ -27,7 +27,7 @@ if !amInvisible //if I am visible
 		{
 			#region gempower conditions
 	
-			if gempower = OCTA
+			if gempower = 5
 			{
 				#region gempower 5
 				MyGamerule.octanovaOn = true
@@ -44,7 +44,7 @@ if !amInvisible //if I am visible
 				}
 				#endregion
 			}
-			else if gempower = SEPTA
+			else if gempower = 4
 			{
 				#region gempower 4
 				audio_play_sound(snd_septanovaexplode,2,false)
@@ -72,7 +72,7 @@ if !amInvisible //if I am visible
 				}
 				#endregion
 			}
-			else if gempower = NOVA
+			else if gempower = 3
 			    {
 					#region gempower 3
 					var le1 = noone;
@@ -111,7 +111,7 @@ if !amInvisible //if I am visible
 					with(lek) skinnum = other.skinnum
 					#endregion
 			    }
-			else if gempower = LIGHTNING
+			else if gempower = 2
 			    {
 					#region gempower 2
 					var le1 = noone;
@@ -126,7 +126,7 @@ if !amInvisible //if I am visible
 					with(lek) skinnum = other.skinnum
 					#endregion
 			    }
-			else if gempower = FLAME
+			else if gempower = 1
 			{
 				explode(Gem_local)
 			}
@@ -189,7 +189,7 @@ if !amInvisible //if I am visible
 		var cube = instance_create(x,y,obj_hypercube_detonate_local)
 		cube.image_index = hyper_anim
 		cube.index = skin_to_hype
-		if instance_exists(gem_to_hype) cube.gem[0] = gem_to_hype
+		cube.gem[0] = gem_to_hype
 		#endregion
 	}
 

@@ -1,5 +1,4 @@
 /// @description Insert description here
-gem = []
 MyGamerule = Gamerule_local
 modifier = 1
 if Gamerule_1.isReplay modifier = 2

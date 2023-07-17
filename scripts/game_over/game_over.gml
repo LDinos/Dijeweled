@@ -8,4 +8,6 @@ function game_over() {
 	instance_destroy(replay)
 	instance_create(x,y,obj_gameover)
 	//room_goto(rm_menu)
+
+
 }

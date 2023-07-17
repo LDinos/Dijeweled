@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_voice",
   },
   "soundFile": "vo_excellent2",
-  "duration": 1.67334509,
+  "duration": 0.0,
   "parent": {
     "name": "voice",
     "path": "folders/Sounds/voice.yy",

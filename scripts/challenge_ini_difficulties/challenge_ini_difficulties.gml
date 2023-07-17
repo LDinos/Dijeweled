@@ -39,9 +39,9 @@ function challenge_ini_difficulties() {
 	challenge_ini_write_info(i,0,Y,X,X,X,X,X,X,X,X,X,X,1,0,X)
 	challenge_ini_write_info(i,1,Y,X,X,X,X,X,X,X,X,X,X,1,1,X)
 	challenge_ini_write_info(i,2,Y,X,X,X,X,X,X,X,X,X,X,3,1,X)
-	challenge_ini_write_info(i,3,Y,X,X,X,X,X,X,X,X,X,X,4,1,X)
-	challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,X,X,X,"2:00",5,1,X)
-	challenge_ini_write_info(i,5,Y,X,X,X,X,X,X,X,X,X,"2:00",6,1,X)
+	challenge_ini_write_info(i,3,Y,X,X,X,X,X,X,X,X,X,X,3,1,X)
+	challenge_ini_write_info(i,4,Y,X,X,X,X,X,X,X,X,X,X,3,1,X)
+	challenge_ini_write_info(i,5,Y,X,X,X,X,X,X,X,X,X,X,3,1,X)
 		i++
 	//5
 	challenge_ini_write_info(i,0,Y,X,X,X,X,X,X,X,X,X,X,1,0,X)

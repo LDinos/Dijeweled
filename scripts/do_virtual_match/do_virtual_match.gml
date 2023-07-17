@@ -1,4 +1,3 @@
-///@description Used for bots, try "making" a match and see how important it would be if you really did it
 ///@param list_moves_array
 ///@param INDEX
 function do_virtual_match(argument0, argument1) {
@@ -11,19 +10,13 @@ function do_virtual_match(argument0, argument1) {
 	var dir = list_moves[INDEX,2]
 	var gem = MyGamerule.gem_board1[i1,j1]
 	importance += find_power_importance(gem.gempower)
-	var virtual_board, virtual_board_gems;
-	for(var i= 0; i < 8; i++) {
-		for(var j = 0; j < 8; j++) {
-			virtual_board[i][j] = MyGamerule.gemboard[i][j]
-			virtual_board_gems[i][j] = MyGamerule.gem_board1[i][j]
-		}
-	}
-	
-	if (gem.amHype) {
-		importance += 16 //hypercubes are as important as lightnings
-	}
-	else
+
+	if gem.amHype importance += 16 //hypercubes are as important as lightnings
+
+	if (importance == 0)
 	{
+		var virtual_board = MyGamerule.gemboard
+		var virtual_board_gems = MyGamerule.gem_board1
 		var i2 = i1
 		var j2 = j1
 		switch dir
@@ -98,5 +91,6 @@ function do_virtual_match(argument0, argument1) {
 	}
 
 	return importance;
-}
 
+
+}

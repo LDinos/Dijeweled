@@ -5,6 +5,7 @@ function matcher_stepevent(argument0) {
 	//Now, we check the third. If the third one isnt the same as the second one, n resets to 1.
 	//If we had reached n > 3 and the j'th gem isnt the same as the j'th gem, then we see what n grade was our match.
 	Should it be a 3 match, call a 3 match on the centered gem. Should it be 4th, call 4th etc... */
+	//if !global.debug 
 	//0 match
 	//1 flame
 	//2 lightning
@@ -12,6 +13,7 @@ function matcher_stepevent(argument0) {
 	//4 nova
 	//5 septa
 	//6 octa
+	//9 diagonal
 	//Then check for horizontal matches
 	var cando = true
 
@@ -34,11 +36,11 @@ function matcher_stepevent(argument0) {
 	        for (j=1;j<=7;j+=1)
 	        {
         
-	          if gem_board1[i][j] = noone || gem_board1[i][j-1] = noone
+	          if gem_board1[i,j] = noone || gem_board1[i,j-1] = noone
 	            {
 					matcher_script1(0)
 	            }
-	          else if (gem_board1[i][j].skinnum == gem_board1[i][j-1].skinnum) && (gem_board1[i][j].skinnum != 7) //else add up
+	          else if (gem_board1[i,j].skinnum == gem_board1[i,j-1].skinnum) && (gem_board1[i,j].skinnum != 7) //else add up
 	            {
 	                n++
 	            }
@@ -47,7 +49,7 @@ function matcher_stepevent(argument0) {
 					if n >=3
 					{
 						nummatches++
-						list_of_matches[| ds_list_size(list_of_matches)] = gem_board1[i][j-1].skinnum
+						list_of_matches[| ds_list_size(list_of_matches)] = gem_board1[i,j-1].skinnum
 					}
 	                matcher_script1(0)
 	            }
@@ -56,7 +58,7 @@ function matcher_stepevent(argument0) {
 		            if n >=3 
 					{
 						nummatches++
-						list_of_matches[| ds_list_size(list_of_matches)] = gem_board1[i][j].skinnum
+						list_of_matches[| ds_list_size(list_of_matches)] = gem_board1[i,j].skinnum
 					}
 		            matcher_script1(1)
 	            }
@@ -70,11 +72,11 @@ function matcher_stepevent(argument0) {
 	        n2 = 1
 	        for (j=1;j<=global.board_rows-1;j+=1)
 	        {
-	          if gem_board1[j][i] = noone || gem_board1[j-1][i] = noone
+	          if gem_board1[j,i] = noone || gem_board1[j-1,i] = noone
 	            {
 					matcher_script2(0)
 	            }
-	          else if (gem_board1[j][i].skinnum == gem_board1[j-1][i].skinnum) && (gem_board1[j][i].skinnum != 7)
+	          else if (gem_board1[j,i].skinnum == gem_board1[j-1,i].skinnum) && (gem_board1[j,i].skinnum != 7)
 	            {
 	                n2++
 	            }
@@ -84,7 +86,7 @@ function matcher_stepevent(argument0) {
 	                if n2 >=3 
 					{
 						nummatches++
-						list_of_matches[| ds_list_size(list_of_matches)] = gem_board1[j-1][i].skinnum
+						list_of_matches[| ds_list_size(list_of_matches)] = gem_board1[j-1,i].skinnum
 					}
 	                matcher_script2(0)        
 	            }
@@ -93,36 +95,66 @@ function matcher_stepevent(argument0) {
 					if n2 >=3 
 					{
 						nummatches++
-						list_of_matches[| ds_list_size(list_of_matches)] = gem_board1[j][i].skinnum
+						list_of_matches[| ds_list_size(list_of_matches)] = gem_board1[j,i].skinnum
 					}
 					matcher_script2(1) 
 	            }
                        
 	        }
 	    }
+		
+	//Now the X match
+	center_gem = noone
+	for (i=1;i<=global.board_columns-2;i+=1)
+	    {
+	        n2 = 9
+	        for (j=1;j<=global.board_rows-2;j+=1)
+	        {
+	          if gem_board1[j+1,i+1] = noone || gem_board1[j-1,i-1] = noone || gem_board1[j+1,i-1] = noone || gem_board1[j-1,i+1] = noone
+	            {
+					matcher_script2(0)
+	            }
+	          else if (gem_board1[j,i].skinnum == gem_board1[j-1,i-1].skinnum) &&  (gem_board1[j,i].skinnum == gem_board1[j+1,i+1].skinnum) &&  (gem_board1[j,i].skinnum == gem_board1[j+1,i-1].skinnum) &&  (gem_board1[j,i].skinnum == gem_board1[j-1,i+1].skinnum) && (gem_board1[j,i].skinnum != 7)
+	            {
+	                matcher_script2(9)
+	          if j = global.board_rows-1 // on last check, check again since we dont have a next check.
+	            {
+					if n2 >= 9 
+					{
+						nummatches++
+						list_of_matches[| ds_list_size(list_of_matches)] = gem_board1[j,i].skinnum
+					}
+					matcher_script2(9) 
+				}
+				else
+				{
+					matcher_script2(0)  
+				}
+			}
+		}
+	}
 	//Now do their script
 	havecombo = false
 	for (i=0;i<=global.board_rows-1;i+=1)
 	    {
 	        for (j=0;j<=7;j+=1)
 	        {
-				
-	        if gem_board1[i][j] != noone
+	        if gem_board1[i,j] != noone
 	        {
-				if gem_board1[i][j].matchme >= 0
+				if gem_board1[i,j].matchme >= 0
 				{
 					if !ultranovas_allowed
 					{
-						if gem_board1[i][j].matchme > 4
+						if gem_board1[i,j].matchme > 4
 						{
-							gem_board1[i][j].matchme = 4
+							gem_board1[i,j].matchme = 4
 						}
 					}
 				
 					//for when a full board colored board happens, kick the top gem a little upwards
-					if (gem_board1[i][j].dragXX != 0) 
+					if (gem_board1[i,j].dragXX != 0) 
 					{
-						with(gem_board1[i][j]) {create_gem_disabler()}
+						with(gem_board1[i,j]) {create_gem_disabler()}
 					}
 					havecombo = true
 				
@@ -133,99 +165,111 @@ function matcher_stepevent(argument0) {
 					
 					if blazingshouldup && blazingallowed
 					{
-						blazing_check()				
+						blazing_check()
+					
 						blazingspeedchain++
 						blazingcounter = 140
 					}
 					blazingchainup = false;
 					blazingshouldup = false	
-					if gem_board1[i][j].gempower != 6
+					if gem_board1[i,j].gempower != 6
 					{
-						//show_message(gem_board1[i][j])
-						if gem_board1[i][j].matchme == 6 //octa
+						if gem_board1[i,j].matchme = 9  //Cross match (X match)
+			            {
+				            if specials_allowed
+							{
+									audio_play_sound(snd_lightcreate,0,false)
+									with(gem_board1[i,j]) make_power(argument0,9,other.id)
+							}
+				                else instance_destroy(gem_board1[i,j])
+                
+			            }
+						else if gem_board1[i,j].matchme = 6 //octa
 						{
 							if specials_allowed
 							{
 								audio_play_sound(snd_octacreate,0,false)
 								audio_play_sound(snd_lightcreate,0,false)
-								with(gem_board1[i][j]) make_power(argument0,5,other.id)
+								with(gem_board1[i,j]) make_power(argument0,5,other.id)
 							}
-			                else instance_destroy(gem_board1[i][j])
+			                else instance_destroy(gem_board1[i,j])
 						}
-						else if gem_board1[i][j].matchme == 5 //septa
+						else if gem_board1[i,j].matchme = 5 //septa
 						{
 							if specials_allowed
 							{
 								audio_play_sound(snd_septacreate,0,false)
 								audio_play_sound(snd_lightcreate,0,false)
-								with(gem_board1[i][j]) make_power(argument0,4,other.id)
+								with(gem_board1[i,j]) make_power(argument0,4,other.id)
 							}
-							else instance_destroy(gem_board1[i][j])
+							else instance_destroy(gem_board1[i,j])
 						}
-						else if gem_board1[i][j].matchme == 4 //nova
+						else if gem_board1[i,j].matchme = 4 //nova
 			            {
 			                if specials_allowed
 							{
 								audio_play_sound(snd_supernovacreate,0,false)
 								audio_play_sound(snd_lightcreate,0,false)
-								with(gem_board1[i][j]) make_power(argument0,3,other.id)
+								with(gem_board1[i,j]) make_power(argument0,3,other.id)
 							}
-							else instance_destroy(gem_board1[i][j])
+							else instance_destroy(gem_board1[i,j])
 			            }
-			            else if gem_board1[i][j].matchme == 3  //lighting (5 match)
+			            else if gem_board1[i,j].matchme = 3  //lighting (5 match)
 			            {
 							if !hypeallowed
 			                {
 				                if specials_allowed
 								{
-									
 									audio_play_sound(snd_lightcreate,0,false)
-									with(gem_board1[i][j]) make_power(argument0,2,other.id)
+									with(gem_board1[i,j]) make_power(argument0,2,other.id)
 								}
-				                else instance_destroy(gem_board1[i][j])
+				                else instance_destroy(gem_board1[i,j])
 							}
 							else
 				            {
 				                if specials_allowed
 								{
 									audio_play_sound(snd_hypecreate,0,false)
-									with(gem_board1[i][j]) make_hype(argument0,other.id)
+									with(gem_board1[i,j]) make_hype(argument0,other.id)
 								}
-				                else instance_destroy(gem_board1[i][j])              
+				                else instance_destroy(gem_board1[i,j])              
 				            }
                 
 			            }
-			            else if gem_board1[i][j].matchme == 2  //star gem (5 match L-T)
+			            else if gem_board1[i,j].matchme = 2  //star gem (5 match L-T)
 			            {
 			                if specials_allowed
 							{
 								audio_play_sound(snd_starcreate,0,false)
-								with(gem_board1[i][j]) make_power(argument0,2,other.id)
+								with(gem_board1[i,j]) make_power(argument0,2,other.id)
 							}
-							else instance_destroy(gem_board1[i][j])
+							else instance_destroy(gem_board1[i,j])
 			            }
-			            else if gem_board1[i][j].matchme == 1 //flame
+			             else if gem_board1[i,j].matchme = 1 //flame
 			            {
 			                if specials_allowed
 							{
 								audio_play_sound(snd_flamecreate,0,false)
-								with(gem_board1[i][j]) make_power(argument0,1,other.id)
+								with(gem_board1[i,j]) make_power(argument0,1,other.id)
 							}
-			                else instance_destroy(gem_board1[i][j])                
+			                else instance_destroy(gem_board1[i,j])                
 			            }
-			            else if gem_board1[i][j].matchme == 0 //nada
+			            else if gem_board1[i,j].matchme = 0 //nada
 			            { 
-							if !gem_board1[i][j].amPowered
+			                with(gem_board1[i,j]) 
 							{
-								if combo > 0 gem_board1[i][j].cascade_diss = true
-								instance_destroy(gem_board1[i][j])
-							}	
-						}
+								if !amPowered 
+									{
+										if other.combo > 0 cascade_diss = true
+										instance_destroy();
+									}
+							}      
+			            }  
 					}
-					else if !gem_board1[i][j].amFruitExploding
+					else if !gem_board1[i,j].amFruitExploding
 					{
-						gem_board1[i][j].amFruitExploding = true
-						ds_list_add(list_of_fruits, gem_board1[i][j])
+						gem_board1[i,j].amFruitExploding = true
+						ds_list_add(list_of_fruits, gem_board1[i,j])
 					}
 			
 				}
@@ -234,7 +278,6 @@ function matcher_stepevent(argument0) {
 
 	        }
 	    }
-		//show_message("are we good 1")
 	
 	if !ds_list_empty(list_of_fruits)
 	{
@@ -256,7 +299,13 @@ function matcher_stepevent(argument0) {
 		combo_check()
 		if global.online
 		{
-			network_send(NN_MATCH_GEM_COMBO_SOUND, [buffer_u8], [combo])
+			with(global.mynet)
+			{
+				buffer_seek(buffer,buffer_seek_start,0)
+				buffer_write(buffer,buffer_u8,NN_MATCH_GEM_COMBO_SOUND)
+				buffer_write(buffer,buffer_u8,other.combo)
+				network_send_packet(client_socket,buffer,buffer_tell(buffer))
+			}
 		}
 		combo++
 		if (combo > bestcombo) bestcombo = combo
@@ -283,5 +332,6 @@ function matcher_stepevent(argument0) {
 		check_for_xplier = false //dont check again until another user move has been made
 	}
 	}
+
 
 }

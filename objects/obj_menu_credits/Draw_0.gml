@@ -10,6 +10,7 @@ draw_text_outline(xx,yy+48,"LDinos",c_white,c_black)
 xx+=256+32
 draw_text_outline(xx,yy,"Music",c_orange,c_black)//
 draw_text_outline(xx,yy+48,"LDinos",c_white,c_black)
+draw_text_outline(xx,yy+48+48,"Markelius (Zen Mode)",c_white,c_black)
 xx+=256+32
 draw_text_outline(xx,yy,"Sound FX",c_orange,c_black)//
 draw_text_outline(xx,yy+48,"LDinos",c_white,c_black)
@@ -21,7 +22,6 @@ draw_text_outline(xx,yy+36+36,"Popcap",c_white,c_black)
 draw_text_outline(xx,yy+36+36+36,"Vista (Zen gems)",c_white,c_black)
 draw_text_outline(xx,yy+36+36+36+36,"Muddy Water (Zen backdrops)",c_white,c_black)
 draw_text_outline(xx,yy+36+36+36+36+36,"LargeCommander (companion)",c_white,c_black)
-draw_text_outline(xx,yy+36+36+36+36+36+36,"B1Gaming (Logo)",c_white,c_black)
 xx=128+64
 yy+=256
 draw_text_outline(xx,yy,"The Voice",c_orange,c_black)//

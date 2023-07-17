@@ -40,12 +40,6 @@
 	}
 	else //if no matches happen
 	{
-		if (replay_version > 0) { //This was not possible before 1.14, so check out replay version
-			if Gamerule_1.illegals_allowed {
-				Gamerule_1.blazingspeedchain = 0
-				Gamerule_1.blazingspeedtotalchain = 0
-			}
-		}
 		with(Gamerule_1.list_of_doom)
 		{
 			audio_play_sound(snd_doom_count,0,0)

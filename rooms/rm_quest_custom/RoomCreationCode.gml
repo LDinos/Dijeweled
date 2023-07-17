@@ -1,5 +1,5 @@
 room_speed = 60
-//draw_texture_flush()
+draw_texture_flush()
 //global.chl_to_unlock = "0:0"
 //global.chl_to_succeed = "26:" +string(global.challenge_index)
 Gamerule_1.levelcompleteallowed = false

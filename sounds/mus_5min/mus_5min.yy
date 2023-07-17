@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_music",
   },
   "soundFile": "mus_5min",
-  "duration": 308.09613,
+  "duration": 0.0,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

@@ -22,7 +22,12 @@ function pass(argument0, argument1) {
 			
 			}
 			audio_play_sound(snd_pass,0,false)
-			network_send(NN_MATCH_AVALANCHE_PASS)
+			with(global.mynet)
+			{
+				buffer_seek(buffer,buffer_seek_start,0)
+				buffer_write(buffer,buffer_u8,NN_MATCH_AVALANCHE_PASS)
+				network_send_packet(client_socket,buffer,buffer_tell(buffer))
+			}
 		}
 		else audio_play_sound(snd_xplier_illegal,0,false)
 	}

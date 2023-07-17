@@ -1,18 +1,27 @@
+/// @description Insert description here
+// You can write your code in this editor
 var X = x+xmover+SWAP_X
 var Y = y+ymover+SWAP_Y
 if !amInvisible
 {
-	if !amHype //if I am not a hypercube
+	if mypowerup > -1
+	{
+		draw_sprite(spr_powerup_base,skinnum,X,Y)
+		draw_sprite(spr_powerups,mypowerup,X,Y)
+	}
+	else if gempower = 9 //If Cross Diagonal
+	{
+		draw_sprite_ext(rainbow_thing_effect, cross_anim, X-8*7, Y-8*7, image_xscale, image_yscale, 0 ,c_white, 1)
+		draw_sprite_ext(sprite_index, image_index, X, Y, image_xscale, image_yscale, 0 , c_white , 1)
+	}
+	else if !amHype //if I am not a hypercube
 	{
 		#region powered bloom
 		if global.OPT_lightallowed && Gamerule_1.shader_allowed
 		{
-			if amLit || (gempower > 0 && gempower < FRUIT) || bloom
+			if amLit || (gempower > 0 && gempower < 6) || bloom
 			{
-				//var value = random_range(.2,.4)
-				gemglow_alpha += 0.005
-				if (gemglow_alpha > 1) gemglow_alpha = 0
-				var value = animcurve_channel_evaluate(global.gemglow_anim,gemglow_alpha)
+				var value = random_range(.2,.4)
 				if amLit value = 1
 					shader_set(shd_bright_contrast);
 				    shader_set_uniform_f(uni_time, var_time_var);
@@ -46,17 +55,9 @@ if !amInvisible
 				{
 					if global.OPT_lightallowed
 					{
-						if (gempower = 0 && !bloom && skinnum < 7) draw_sprite_ext(shadow_index,image_index,X,Y,0.5,0.5,0,c_white,1)
+					if (gempower = 0 && !bloom && skinnum < 7) draw_sprite_ext(shadow_index,image_index,X,Y,0.5,0.5,0,c_white,1)
 					}
 					draw_sprite_ext(sprite_index,image_index,X,Y,image_xscale,image_yscale,0,c_white,1)
-					if (global.OPT_lightallowed) {
-						if (anim_happening == false && gempower != FRUIT) {
-							if (nearby_glown_left) draw_sprite_ext(spr_gemglow_left,skinnum,X,Y,1,1,0,c_white,random_range(0.5,nearby_glown_left/GLOW_FADEOUT_FRAMES))
-							if (nearby_glown_right) draw_sprite_ext(spr_gemglow_right,skinnum,X,Y,1,1,0,c_white,random_range(0.5,nearby_glown_right/GLOW_FADEOUT_FRAMES))
-							if (nearby_glown_up) draw_sprite_ext(spr_gemglow_up,skinnum,X,Y,1,1,0,c_white,random_range(0.5,nearby_glown_up/GLOW_FADEOUT_FRAMES))
-							if (nearby_glown_down) draw_sprite_ext(spr_gemglow_down,skinnum,X,Y,1,1,0,c_white,random_range(0.5,nearby_glown_down/GLOW_FADEOUT_FRAMES))
-						}
-					}
 				}
 			}
 			else //zenify
@@ -109,10 +110,13 @@ if !amInvisible
 
 	if spinning //if im selected
 	{
-		if (!MyGamerule.illegal_cando || !MyGamerule.controlallowed)
+		if (!Gamerule_1.illegal_cando || !Gamerule_1.controlallowed)
 		{
 			draw_sprite(spr_gemselectglow,2,x,y)
 		}
-		else draw_sprite(spr_gemselectglow,MyGamerule.illegals_allowed,x,y)
+		else draw_sprite(spr_gemselectglow,Gamerule_1.illegals_allowed,x,y)
 	}
 }
+else if Gamerule_1.debug draw_sprite(spr_hiddengem,0,X,Y)
+//draw_text(x,y,geodenum)
+//if skinnum = 7 draw_text(x,y,geodenum_points[0])

@@ -1,5 +1,5 @@
 /// @description Insert description here
-if global.OPT_lightallowed && os_type != os_android
+if global.OPT_lightallowed
 {
 	if shd == 4
 	{

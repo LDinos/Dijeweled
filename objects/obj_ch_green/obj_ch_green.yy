@@ -5,7 +5,6 @@
   },
   "solid": false,
   "visible": true,
-  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -27,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Board",
-    "path": "folders/Objects/Custom Quests/Board.yy",
+    "name": "Custom Quests",
+    "path": "folders/Objects/Custom Quests.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_ch_green",

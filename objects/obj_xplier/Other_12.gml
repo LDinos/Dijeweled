@@ -2,7 +2,7 @@
 var xplier = Gamerule_1.xplier;
 alarm[0] = -1
 filler = fill_to_go //just in case the animation wasn't done, finish it
-
+//audio_play_sound(snd_xplier_illegal,0,0)
 if filler = 0 || xplier_real = 11//no gaps filled
 {
 	sprite_index = spr_xplier_flow //in case it was rainbow

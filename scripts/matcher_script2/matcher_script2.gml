@@ -3,7 +3,24 @@ function matcher_script2(argument0) {
 	var t = argument0
 	var xxx = 0
 	var yyy = 0
-					if n2 >= 8
+					
+					
+	                    
+					if n2 = 9                                
+	                    {
+	                    var sc = 150             
+	                    points_add(sc,true)
+						var sx = gem_board1[j,i].x
+						var sy = gem_board1[j,i].y
+						create_score_text(sx,sy,sc,true,gem_board1[j,i].mycolor)
+						if (combo >= 1) style_add(sc,true)
+	                    with(gem_board1[j-1,i-1]) match_script(0)
+	                    with(gem_board1[j+1,i-1]) match_script(0)
+	                    with(gem_board1[j,i])   match_script(9)
+						with(gem_board1[j+1,i+1]) match_script(0)
+	                    with(gem_board1[j-1,i+1]) match_script(0)
+	                    }         
+					else if n2 >= 8 //Octa
 	                    {
 	                    var sc = 1000                    
 	                    points_add(sc,true)
@@ -27,7 +44,7 @@ function matcher_script2(argument0) {
 	                    with(gem_board1[j-7+t,i]) {match_script(0);  dragXX = xxx; dragYY = yyy;}
 	                    with(gem_board1[j-8+t,i]) {match_script(0);  dragXX = xxx; dragYY = yyy;}
 	                    }                     
-	                else if n2 = 7
+	                else if n2 = 7 //Septa
 	                    {
 							var sc = 500
 						if specials_allowed
@@ -51,7 +68,7 @@ function matcher_script2(argument0) {
 	                    with(gem_board1[j-6+t,i]) {match_script(0);  dragXX = xxx; dragYY = yyy;}
 	                    with(gem_board1[j-7+t,i]) {match_script(0);  dragXX = xxx; dragYY = yyy;}
 	                    }
-	                else if n2 = 6
+	                else if n2 = 6 //Nova
 	                    {
 							if specials_allowed
 						{
@@ -73,7 +90,7 @@ function matcher_script2(argument0) {
 	                    with(gem_board1[j-5+t,i]) {match_script(0);  dragXX = xxx; dragYY = yyy;}
 	                    with(gem_board1[j-6+t,i]) {match_script(0);  dragXX = xxx; dragYY = yyy;}
 	                    }
-	                else if n2 = 5
+	                else if n2 = 5 //HyperCube or Lighting (5 match)
 	                    {
 	                    var sc = 150                  
 	                    points_add(sc,true)
@@ -94,7 +111,7 @@ function matcher_script2(argument0) {
 	                    with(gem_board1[j-4+t,i]) {match_script(0);  dragXX = xxx; dragYY = yyy;}
 	                    with(gem_board1[j-5+t,i]) {match_script(0);  dragXX = xxx; dragYY = yyy;}
 	                    }
-	               else if n2 = 4
+	               else if n2 = 4 
 	                    {
 	                    p1 = 1
 	                    p2 = 0
@@ -147,7 +164,7 @@ function matcher_script2(argument0) {
 	                    with(gem_board1[j-1+t,i]) match_script(0)
 	                    with(gem_board1[j-2+t,i]) match_script(0)
 	                    with(gem_board1[j-3+t,i]) match_script(0)
-	                    }                        
+	                    } 
 	                n2 = 1
 
 

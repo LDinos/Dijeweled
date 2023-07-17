@@ -60,13 +60,22 @@ function do_match(argument0) {
 		{
 			var idtosend1 = gem1.myid
 			var idtosend2 = gem2.myid
-			network_send(NN_MATCH_GEM_SWAP, [buffer_u8, buffer_u8], [idtosend1, idtosend2])
+			with(global.mynet)
+			{
+				buffer_seek(buffer,buffer_seek_start,0)
+				buffer_write(buffer,buffer_u8,NN_MATCH_GEM_SWAP)
+				buffer_write(buffer,buffer_u8,idtosend1)
+				buffer_write(buffer,buffer_u8,idtosend2)
+				network_send_packet(client_socket,buffer,buffer_tell(buffer))
+			}
 		}
 		with(gem1)
 		{
 			iprev = _i
 			jprev = _j
 			skinprev = skinnum
+			//myfriend = collision_point(x,y-64,other.myid,false,true)
+			//with(myfriend) matchnear = true
 		}
 		with(gem2)
 		{

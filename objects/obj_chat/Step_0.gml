@@ -9,13 +9,7 @@ if keyboard_check(vk_anykey)
 			if consecutive_first {consecutive_writing = 15; consecutive_first = false}
 			else {consecutive_writing = 2}
 		//alarm[1] = 15
-			if !keyboard_check(vk_shift) || (consecutive_writing != 2)
-			{
-				if (string_width(global.user) + string_width(text) < 452) text += keyboard_lastchar
-			}
-
-			/*if (consecutive_writing == 2) && !keyboard_check(vk_shift){
-			if (string_width(global.user) + string_width(text) < 452) text += keyboard_lastchar}*/
+			if (string_width(global.user) + string_width(text) < 452) text += keyboard_lastchar
 		}
 		else consecutive_writing--
 	}
@@ -32,7 +26,18 @@ if keyboard_check(vk_anykey)
 	}
 	else if keyboard_lastkey == vk_enter && text != ""
 	{
-		send_message()			
+		consecutive_writing = 0
+		consecutive_first = true
+		alarm[1] = -1
+		var txt = global.user + ": " + text
+		text = chat_write(txt,c_white)		
+		with(global.mynet)
+		{
+			buffer_seek(buffer,buffer_seek_start,0)
+			buffer_write(buffer,buffer_u8,NN_CHAT)
+			buffer_write(buffer,buffer_string,txt)
+			network_send_packet(client_socket,buffer,buffer_tell(buffer))
+		}				
 	}
 }
 //else {consecutive_writing = 0; consecutive_first = true}

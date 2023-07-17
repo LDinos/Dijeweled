@@ -156,5 +156,5 @@ bo.image_yscale = 64 //make it fat enough to stop gems from penetrating it
 
 check_summoves(false)
 //gaps = array_create(8,7)
-for(var i=7;i>=0;i--) gaps[i] = 8
+for(var i=8;i>0;i--) gaps[i] = 7
 check_gaps(Board_local,Gem_local)

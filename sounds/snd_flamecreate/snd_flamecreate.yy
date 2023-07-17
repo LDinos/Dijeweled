@@ -1,6 +1,6 @@
 {
   "compression": 3,
-  "volume": 0.25,
+  "volume": 0.3,
   "preload": true,
   "bitRate": 512,
   "sampleRate": 48000,
@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_flamecreate",
-  "duration": 2.937324,
+  "duration": 0.0,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

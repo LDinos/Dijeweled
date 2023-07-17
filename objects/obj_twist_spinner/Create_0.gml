@@ -13,7 +13,7 @@ pos_i = 0;
 touchedBoard = false;
 touchedCCW   = false;
 
-buttonW = 48;
-buttonH = 1280;
-buttonX = 0;
-buttonY = 512;
+buttonW = 255;
+buttonH = 127;
+buttonX = 128;
+buttonY = 843;

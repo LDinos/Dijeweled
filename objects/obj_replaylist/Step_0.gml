@@ -1,5 +1,5 @@
 /// @description Insert description here
-var leng = array_length(mystring)
+var leng = array_length_1d(mystring)
 meet = -1
 if leng > 0
 {
@@ -16,29 +16,21 @@ if leng > 0
 				{
 					if mouse_x >= 32 //not clicking trash
 					{
-						if (local_list) {
-							ini_open(mystring[meet])
-								var t = ini_read_real("replay","time",-1)
-								if t != -1 global.timer = t
-								var fade = instance_create(0,0,obj_black_fade)
-								with(fade) room_to_go = rm_blitz_matchreplay
-								global.replay_string = mystring[meet]
-								global.replay_match_isplaying = true
-							ini_close()
-						}
-						else {
-							global.online_replay_string = mystring[meet]
-							fade_to_room(rm_ONLINE_replay)
-						}
+						ini_open(mystring[meet])
+							var t = ini_read_real("replay","time",-1)
+							if t != -1 global.timer = t
+							var fade = instance_create(0,0,obj_black_fade)
+							with(fade) room_to_go = rm_blitz_matchreplay
+							global.replay_string = mystring[meet]
+							global.replay_match_isplaying = true
+						ini_close()
 						instance_destroy()
 					}
 					else //clicking the bin
 					{
 						file_delete(mystring[meet])
-						var l = local_list
 						instance_destroy()
-						var r = instance_create(0,0,obj_replaylist)
-						if (l == false) r.get_online_replays()
+						instance_create(0,0,obj_replaylist)
 					}
 				}
 			}

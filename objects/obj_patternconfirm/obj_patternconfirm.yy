@@ -1,14 +1,10 @@
 {
-  "resourceType": "GMObject",
-  "resourceVersion": "1.0",
-  "name": "obj_patternconfirm",
   "spriteId": {
     "name": "spr_confirm",
     "path": "sprites/spr_confirm/spr_confirm.yy",
   },
   "solid": false,
   "visible": true,
-  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -25,13 +21,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":4,"eventType":6,"collisionObjectId":null,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":27,"eventType":9,"collisionObjectId":null,},
+    {"isDnD":false,"eventNum":4,"eventType":6,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objectives",
-    "path": "folders/Objects/Custom Quests/Objectives.yy",
+    "name": "Custom Quests",
+    "path": "folders/Objects/Custom Quests.yy",
   },
+  "resourceVersion": "1.0",
+  "name": "obj_patternconfirm",
+  "tags": [],
+  "resourceType": "GMObject",
 }

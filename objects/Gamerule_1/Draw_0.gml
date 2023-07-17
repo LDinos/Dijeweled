@@ -4,6 +4,10 @@ draw_set_font(font2)
 draw_set_halign(fa_left)
 draw_text(8,16+m,string(floor(fps_real)) + " FPS")
 draw_text(8,48+m,"LAG " + string(lagness))
+//draw_text(8,32+m,cur_time)
+//draw_text(8,76+m,IsGemActive)
+//for(i=0;i<ds_list_size(list_of_skulls);i++) draw_text(8,48+m + 16*i,list_of_skulls[| i])
+//for(i=0;i<8;i++) draw_text(8,48+m + 16*i,gaps[i])
 
 #region draw gem_board1[i,j]
 /*
@@ -55,7 +59,7 @@ for(i=0;i<=7;i++)
 {
 	for(j=0;j<=7;j++)
 	{
-		switch gemboard[i,j]
+		switch gemboard[@i,j]
 		{
 			case 0:
 				color = c_red
@@ -93,3 +97,4 @@ for(i=0;i<=7;i++)
 }
 }
 #endregion
+//draw_text(x,y,summoves2)

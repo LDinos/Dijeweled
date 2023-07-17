@@ -2,7 +2,6 @@
 ///@param y
 ///@param big
 function magnify(argument0, argument1, argument2) {
-	/*
 	if !Gamerule_1.isReplay && !Gamerule_1.fruit_exploding && global.OPT_magnifyallowed
 	{
 		if !instance_exists(obj_magnify)
@@ -34,5 +33,7 @@ function magnify(argument0, argument1, argument2) {
 			func[len] = 0
 		}
 
-	}*/
+	}
+
+
 }

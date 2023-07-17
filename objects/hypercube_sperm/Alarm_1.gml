@@ -9,9 +9,9 @@ with(gem_index)
 	create_col = false
 	part_particles_create_colour(global.sys_above_gem,x,y,global.gemsmoketype,mycolor,8)
 	part_particles_create(global.sys_above_gem,irandom_range(x-32,x+32),irandom_range(y-32,y+32),global.gemsmokesparkle,irandom_range(6,10))
-	if (gempower == FRUIT) 
+	if (gempower == 6) 
 	{
-		gempower = FLAME; //convert to flame and explode it
+		gempower = 1; 
 		p = 1000; p2 = 150
 		if Gamerule_1.isQuest with(obj_quest_control)
 		{

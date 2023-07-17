@@ -3,7 +3,13 @@ randomize()
 var seed = random_get_seed()
 if global.IAMHOST
 {
-	network_send(NN_MATCH_BOARD_SPAWN, [buffer_u32], [seed])
+	with(global.mynet)
+	{
+		buffer_seek(buffer,buffer_seek_start,0)
+		buffer_write(buffer,buffer_u8,NN_MATCH_BOARD_SPAWN)
+		buffer_write(buffer,buffer_u32,seed)
+		network_send_packet(client_socket,buffer,buffer_tell(buffer))
+	}
 	
 	if (global.SET_gamemode == 1) 
 	{
@@ -12,10 +18,15 @@ if global.IAMHOST
 		Gamerule_1.controlallowed = true
 		audio_play_sound(vo_go,0,false)
 		instance_create(0,0,spawner_avalanche)
-		instance_create_depth(room_width/2,992,0,obj_avalanche_pass)
+		instance_create(room_width/2,992,obj_avalanche_pass)
 		with(spawner_avalanche) event_user(1)
 		with(obj_avalanchedeposit) doonce = !doonce
-		network_send(NN_MATCH_GO)
+		with(global.mynet)
+		{
+			buffer_seek(buffer,buffer_seek_start,0)
+			buffer_write(buffer,buffer_u8,NN_MATCH_GO)
+			network_send_packet(client_socket,buffer,buffer_tell(buffer))
+		}
 		instance_destroy()
 	}
 	else

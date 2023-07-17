@@ -5,7 +5,6 @@
   },
   "solid": false,
   "visible": true,
-  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -30,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Allow Ice",
-    "path": "folders/Objects/Custom Quests/Allow Ice.yy",
+    "name": "Custom Quests",
+    "path": "folders/Objects/Custom Quests.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_CUS_ice",

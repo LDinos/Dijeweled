@@ -2,15 +2,11 @@
 with(Gamerule_local) check_gaps(Board_local,Gem_local)
 obj_avalanchedeposit_local.spawn_invs = true
 
-var initial_gaps = []
-array_copy(initial_gaps,0,Gamerule_local.gaps,0,8)
-
 do
 {
 	var finished = false
 	var numgems = obj_avalanchedeposit_local.gems_to_send
-	var gaps = []
-	array_copy(gaps,0,Gamerule_local.gaps,0,8)
+	var gaps = Gamerule_local.gaps
 	var col_num_create = -1;
 	for(var i =0; i <8; i++) col_num_create[i] = 0
 	var board = Gamerule_local.gemboard
@@ -26,11 +22,11 @@ do
 			while (gemcount < 64 && numgems > 0)
 			{
 				var r = 0
-				for(var i = 1; i<8; i++) //column indicator
+				for(var i = 1; i<8; i++)
 				{
 					if gaps[i] >= gaps[r]
 					{
-						r = i //best column found (with biggest hole)
+						r = i
 					}
 				}
 
@@ -270,20 +266,19 @@ until finished
 
 obj_avalanchedeposit_local.gems_to_send = 1
 obj_avalanchedeposit_local.hidden_gems = numgems
-
-
-
+var gaps2 = Gamerule_local.gaps
 for(var j=0; j<8;j++)
 {
 	for(var i =0; i < col_num_create[j]; i++)
 	{
 		var g = instance_create(Board_local.x + j*64, Board_local.y - 64*(i+1), Gem_local)
-		var sk = board[initial_gaps[j]-1,j]
-
+		var sk = board[gaps2[j]-1,j]
 		with(g)
 		{
 			set_skin(sk)
 		}
-		initial_gaps[j]--
+		gaps2[j]--
 	}
 }
+
+

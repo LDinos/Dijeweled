@@ -13,7 +13,7 @@ if !global.online
 	}
 }
 
-if deposit.myturn || (!global.bot1 && !global.online) //if its my turn on online/bot match, or if we are locally playing
+if (!global.bot1) || (global.bot1 && deposit.myturn) //dont let me press pass if player 2 is a bot and its his turn
 {
 	if (mouse_check_button_pressed(mb_left) && !deposit.gameover && delay == 0 && position_meeting(mouse_x,mouse_y,id)) || gamepad_button_check_pressed(butt,gp_select) || keyboard_check_pressed(ord("P"))
 	{

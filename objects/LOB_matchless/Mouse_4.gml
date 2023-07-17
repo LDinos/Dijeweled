@@ -3,6 +3,11 @@ if global.IAMHOST
 {
 enabled = !enabled
 image_index = enabled
-network_send(NN_LBY_MATCHLESS, [buffer_u8], [enabled])	
-
+with(global.mynet)
+	{
+		buffer_seek(buffer,buffer_seek_start,0)
+		buffer_write(buffer,buffer_u8,NN_LBY_MATCHLESS)
+		buffer_write(buffer,buffer_u8,other.enabled)
+		network_send_packet(client_socket,buffer,buffer_tell(buffer))
+	}
 }

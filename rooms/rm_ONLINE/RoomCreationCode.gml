@@ -1,5 +1,5 @@
 room_speed = 60
-//draw_texture_flush()
+draw_texture_flush()
 with(obj_background_shadered) shd = irandom(num_shaders)
 if !global.IAMHOST
 {
@@ -15,7 +15,13 @@ if !global.IAMHOST
 	player1.y = player2.y
 	player2.x = xx
 	player2.y = yy
-	obj_textspeed1.x = Board_1.x + 7*64
+	/*
+	var xx = obj_pbox1.x
+	var yy = obj_pbox1.y
+	obj_pbox1.x = obj_pbox2.x
+	obj_pbox1.y = obj_pbox2.y
+	obj_pbox2.x = xx
+	obj_pbox2.y = yy*/
 }
 if global.SET_twist
 {
@@ -30,7 +36,7 @@ with(Gamerule_1)
 	AHM_allowed = true
 	end_on_nomoves = false
 	replay_allowed = false
-	blazingallowed = (global.SET_blazing && global.SET_gamemode == 0) ? true : false
+	blazingallowed = true
 	levelcompleteallowed = false
 	autosave_allowed = false
 	controlallowed = false
@@ -61,7 +67,7 @@ with(Gamerule_1)
 		dic = "Online: Avalanche";
 		instance_create(320,1168,obj_avalanchedeposit)
 	}
-	else //UNUSED
+	else
 	{
 		instance_create(room_width/2,room_height-32,obj_tugowar)
 		instance_create(0,0,obj_powerupcontrol)
@@ -70,24 +76,4 @@ with(Gamerule_1)
 	}
 }
 
-if (global.spectator) {
-	var b = instance_create_depth(96, 608, Board_1.depth, SPEC_board)
-	b.player_id = 0
-	b.player_name = global.user1
-	var b2 = instance_create_depth(736, 608, Board_1.depth, SPEC_board)
-	b2.player_id = 1
-	b2.player_name = global.user2
-	instance_destroy(Board_1)
-	instance_destroy(Board_2)
-	instance_destroy(obj_pbox1)
-	instance_destroy(obj_pbox2)
-	instance_destroy(player1)
-	instance_destroy(obj_twist_spinner)
-	if (global.SET_gamemode == 1) {
-		instance_create(320,1168,obj_avalanchedeposit_spectator)
-		instance_destroy(obj_avalanchedeposit)
-	}	
-}
-
-DISCORD np_setpresence_timestamps(date_current_datetime(), 0, false)
-DISCORD np_setpresence("VS " + global.user2, dic, "ico_512", "")
+discord_update_presence(dic,"VS " + global.user2,"ico_512","")

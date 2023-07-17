@@ -12,9 +12,9 @@ function check_summoves(argument0) {
 		var list_returner = -1
 		var l_index = 0;
 	}
-	for(var i=0;i<=rows-1;i++)
+	for(i=0;i<=rows-1;i++)
 		{
-			for(var j=0;j<=7;j++)
+			for(j=0;j<=7;j++)
 			{
 				if gems_fallen[i,j] != noone //&& instance_exists(gems_fallen[i,j])
 				{
@@ -25,78 +25,68 @@ function check_summoves(argument0) {
 						{
 							if gems_fallen[i-1,j] != noone
 							{
-								if check_surrounding_gem(gems_fallen[i-1,j]) {
-									if return_list
-									{
-										i_gemtouse[summoves2] = i //the i position of the bot gem to use
-										j_gemtouse[summoves2] = j // the j position of the bot gem to use
-										dir_gemtouse[summoves2] = "up" //dir of the gem to make a match by moving it. "right", "left", "up" or "down"		
-										list_returner[l_index,0] = i_gemtouse[summoves2]
-										list_returner[l_index,1] = j_gemtouse[summoves2]
-										list_returner[l_index,2] = dir_gemtouse[summoves2]
-										l_index++
-									}
-									summoves2++
+								if return_list
+								{
+									i_gemtouse[summoves2] = i //the i position of the bot gem to use
+									j_gemtouse[summoves2] = j // the j position of the bot gem to use
+									dir_gemtouse[summoves2] = "up" //dir of the gem to make a match by moving it. "right", "left", "up" or "down"		
+									list_returner[l_index,0] = i_gemtouse[summoves2]
+									list_returner[l_index,1] = j_gemtouse[summoves2]
+									list_returner[l_index,2] = dir_gemtouse[summoves2]
+									l_index++
 								}
+								summoves2++
 							}
 						}
 						if (i < 7)
 						{
 							if gems_fallen[i+1,j] != noone
 							{
-								if check_surrounding_gem(gems_fallen[i+1,j])  {
-									if return_list
-									{
-										i_gemtouse[summoves2] = i //the i position of the bot gem to use
-										j_gemtouse[summoves2] = j // the j position of the bot gem to use
-										dir_gemtouse[summoves2] = "down" //dir of the gem to make a match by moving it. "right", "left", "up" or "down"		
-										list_returner[l_index,0] = i_gemtouse[summoves2]
-										list_returner[l_index,1] = j_gemtouse[summoves2]
-										list_returner[l_index,2] = dir_gemtouse[summoves2]
-										l_index++
-									}
-									summoves2++
+								if return_list
+								{
+									i_gemtouse[summoves2] = i //the i position of the bot gem to use
+									j_gemtouse[summoves2] = j // the j position of the bot gem to use
+									dir_gemtouse[summoves2] = "down" //dir of the gem to make a match by moving it. "right", "left", "up" or "down"		
+									list_returner[l_index,0] = i_gemtouse[summoves2]
+									list_returner[l_index,1] = j_gemtouse[summoves2]
+									list_returner[l_index,2] = dir_gemtouse[summoves2]
+									l_index++
 								}
+								summoves2++
 							}
 						}
 						if (j < 7)
 						{
 							if gems_fallen[i,j+1] != noone
 							{
-								if check_surrounding_gem(gems_fallen[i,j+1]) 
+								if return_list
 								{
-									if return_list
-									{
-										i_gemtouse[summoves2] = i //the i position of the bot gem to use
-										j_gemtouse[summoves2] = j // the j position of the bot gem to use
-										dir_gemtouse[summoves2] = "right" //dir of the gem to make a match by moving it. "right", "left", "up" or "down"		
-										list_returner[l_index,0] = i_gemtouse[summoves2]
-										list_returner[l_index,1] = j_gemtouse[summoves2]
-										list_returner[l_index,2] = dir_gemtouse[summoves2]
-										l_index++
-									}
-									summoves2++
+									i_gemtouse[summoves2] = i //the i position of the bot gem to use
+									j_gemtouse[summoves2] = j // the j position of the bot gem to use
+									dir_gemtouse[summoves2] = "right" //dir of the gem to make a match by moving it. "right", "left", "up" or "down"		
+									list_returner[l_index,0] = i_gemtouse[summoves2]
+									list_returner[l_index,1] = j_gemtouse[summoves2]
+									list_returner[l_index,2] = dir_gemtouse[summoves2]
+									l_index++
 								}
+								summoves2++
 							}
 						}
 						if (j > 0)
 						{
 							if gems_fallen[i,j-1] != noone
 							{
-								if check_surrounding_gem(gems_fallen[i,j-1])
+								if return_list
 								{
-									if return_list
-									{
-										i_gemtouse[summoves2] = i //the i position of the bot gem to use
-										j_gemtouse[summoves2] = j // the j position of the bot gem to use
-										dir_gemtouse[summoves2] = "left" //dir of the gem to make a match by moving it. "right", "left", "up" or "down"		
-										list_returner[l_index,0] = i_gemtouse[summoves2]
-										list_returner[l_index,1] = j_gemtouse[summoves2]
-										list_returner[l_index,2] = dir_gemtouse[summoves2]
-										l_index++
-									}	
-									summoves2++
-								}
+									i_gemtouse[summoves2] = i //the i position of the bot gem to use
+									j_gemtouse[summoves2] = j // the j position of the bot gem to use
+									dir_gemtouse[summoves2] = "left" //dir of the gem to make a match by moving it. "right", "left", "up" or "down"		
+									list_returner[l_index,0] = i_gemtouse[summoves2]
+									list_returner[l_index,1] = j_gemtouse[summoves2]
+									list_returner[l_index,2] = dir_gemtouse[summoves2]
+									l_index++
+								}	
+								summoves2++
 							}
 						}
 					#endregion

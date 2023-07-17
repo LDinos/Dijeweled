@@ -1,4 +1,6 @@
-/// @description Background with GPU shaders
+/// @description Insert description here
+//application_surface_draw_enable(false)
+//draw_set_color(c_white)
 window_get_height()
 
 var wh = x - sprite_width/2
@@ -59,7 +61,7 @@ part_type_orientation(laser_part,0,0,0,0,0)
 part_type_speed(laser_part,3,3,0,0)
 
 depth = 10
-num_shaders = 6 //0,1,2...
+num_shaders = 5 //0,1,2...
 shd = irandom_range(0,num_shaders)
 
 /*0*/
@@ -90,6 +92,17 @@ var_wave_speed = .5; //higher = faster
 shader_enabled = true
 /**/
 
+/*2*/
+/*srf_tunnel = surface_create(room_width, room_height);
+srf_backdrop1 = surface_create(room_width, room_height);
+tunnel_offset_x	= 0;
+tunnel_offset_y	= 0;
+u_deform = shader_get_uniform(shdr_tunnel, "deform");
+u_light_size = shader_get_uniform(shdr_tunnel, "light_size");
+u_gradient_size	= shader_get_uniform(shdr_tunnel, "gradient_size");
+u_light_pos	= shader_get_uniform(shdr_tunnel, "light_pos");
+u_overlay_str = shader_get_uniform(shdr_tunnel, "overlay_str");*/
+/**/
 
 /*3*/
 uni_time_3 = shader_get_uniform(shdr_backdrop2,"iTime");
@@ -97,6 +110,3 @@ uni_resolution_3 = shader_get_uniform(shdr_backdrop2,"iResolution");
 /**/
 Res = shader_get_uniform(shd_starfield,"iResolution"); 
 Time = shader_get_uniform(shd_starfield,"iGlobalTime"); 
-
-rainbow_time = shader_get_uniform(shd_rainbowwater,"u_time");
-rainbow_res = shader_get_uniform(shd_rainbowwater,"u_resolution");

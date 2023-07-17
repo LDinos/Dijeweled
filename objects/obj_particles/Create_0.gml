@@ -1,5 +1,5 @@
 /// @description Define all particles here
-global.gemglow_anim = animcurve_get_channel(anim_gem_glow,"chn_gem_glow")
+
 // SYSTEMS \\
 global.sys_above_gem = part_system_create()
 part_system_depth(global.sys_above_gem,-2)
@@ -38,21 +38,32 @@ part_type_orientation(global.part_icebreak2,0,180,5,0,0);
 part_type_life(global.part_icebreak2,60,60);
 
 
-/*For new flame particles*/
-global.part_newflame =  part_type_create();
-part_type_size(global.part_newflame,0.3,0.5,0,0)
-part_type_sprite(global.part_newflame,spr_flamenew_part,true,true,false)
-part_type_life(global.part_newflame,40,40);
 
-global.part_newflame_ember =  part_type_create();
-part_type_size(global.part_newflame_ember,0.05,0.05,0,0)
-part_type_shape(global.part_newflame_ember,pt_shape_sphere)
-part_type_life(global.part_newflame_ember,64,64);
-part_type_color1(global.part_newflame_ember,c_orange)
-part_type_direction(global.part_newflame_ember,80,100,0,0.8)
-part_type_speed(global.part_newflame_ember,0.3,0.3,0,0)
-part_type_blend(global.part_newflame_ember,bm_add)
-part_type_alpha2(global.part_newflame_ember,1,0)
+
+
+/*For new flame particles*/
+//NOT USED
+/*global.part_newflame_cinder = part_type_create();
+part_type_shape(global.part_newflame_cinder,pt_shape_sphere);
+part_type_size(global.part_newflame_cinder,0.2,0.4,0,0);
+part_type_scale(global.part_newflame_cinder,1,1);
+part_type_color1(global.part_newflame_cinder,4227327);
+part_type_alpha3(global.part_newflame_cinder,0,0.5,0);
+part_type_speed(global.part_newflame_cinder,0.2,0.2,0,0);
+part_type_direction(global.part_newflame_cinder,70,110,0,10);
+part_type_orientation(global.part_newflame_cinder,0,180,0,0,1);
+part_type_blend(global.part_newflame_cinder,1);
+part_type_life(global.part_newflame_cinder,60,60);
+
+global.part_newflame = part_type_create();
+part_type_sprite(global.part_newflame, spr_fireparticle,true,false,false)
+part_type_life(global.part_newflame,128,128)
+part_type_size(global.part_newflame,0.5,0.5,0,0)
+part_type_alpha2(global.part_newflame,1,0);*/
+//part_type_death(global.part_newflame,2,global.part_newflame_cinder);
+
+
+
 
 //------------------------\\
 
@@ -424,9 +435,8 @@ part_type_speed(global.partFire,1,1,0,0);
 part_type_direction(global.partFire,85,95,0,5);
 part_type_orientation(global.partFire,0,359,0,0,0);
 part_type_blend(global.partFire,1);
-part_type_life(global.partFire,3,7);
+part_type_life(global.partFire,5,10);
 part_type_death(global.partFire,1,global.partCinder);
-
 /*---------------------*/
 
 /*FOR LIGHTNING*/

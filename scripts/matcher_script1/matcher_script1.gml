@@ -2,8 +2,27 @@
 function matcher_script1(argument0) {
 	var t = argument0
 	xxx = 0
-	yyy = 0
-					if n >= 8
+	yyy = 0			
+					if n = 9
+	                    {
+	                    var sc = 150             
+	                    points_add(sc,true)
+						var sx = gem_board1[i,j].x
+						var sy = gem_board1[i,j].y
+						create_score_text(sx,sy,sc,true,gem_board1[i,j].mycolor)
+						if (combo >= 1) style_add(sc,true)
+						if specials_allowed
+						{
+						var xxx = gem_board1[i,j-6].x
+						var yyy = gem_board1[i,j-6].y
+						}
+	                    with(gem_board1[j-1,i-1])  {matchme = 0;  dragXX = xxx; dragYY = yyy;} 
+	                    with(gem_board1[j+1,i-1])  {matchme = 0;  dragXX = xxx; dragYY = yyy;}  
+	                    with(gem_board1[j,i])  matchme = 9  
+						with(gem_board1[j+1,i+1])  {matchme = 0;  dragXX = xxx; dragYY = yyy;} 
+	                    with(gem_board1[j-1,i+1])  {matchme = 0;  dragXX = xxx; dragYY = yyy;} 
+					}
+					else if n >= 8
 	                    {
 							var sc = 1000
 	                    points_add(sc,true)
@@ -138,7 +157,7 @@ function matcher_script1(argument0) {
 	                    with(gem_board1[i,j-1+t]) matchme = 0
 	                    with(gem_board1[i,j-2+t]) matchme = 0
 	                    with(gem_board1[i,j-3+t]) matchme = 0
-	                    }                                     
+	                    }  
 	                n = 1
 
 

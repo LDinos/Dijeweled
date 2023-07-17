@@ -38,15 +38,16 @@ ini_open("settings.ini")
  {
 	window_set_fullscreen(isfull)
  }
- 
-if (os_type != os_android) switch(text)
+switch(text)
 {
 	case "720x405":
 		window_set_size(720,405)
-		break;		
+		break;
+		
 	case "1280x720":
 		window_set_size(1280,720)
-		break;		
+		break;
+		
 	case "1600x900":
 		window_set_size(1600,900)
 		break;	

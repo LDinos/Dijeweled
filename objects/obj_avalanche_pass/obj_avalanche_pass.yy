@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_pass",
-    "path": "sprites/spr_pass/spr_pass.yy",
+    "name": "spr_zenifybase",
+    "path": "sprites/spr_zenifybase/spr_zenifybase.yy",
   },
   "solid": false,
   "visible": true,

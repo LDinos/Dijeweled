@@ -8,12 +8,11 @@ function create_random_cube() {
 	{
 		for(var j=0;j<8;j++)
 		{
-			var g = Gamerule_1.gem_board1[i,j]
-			if instance_exists(g)
+			if instance_exists(Gamerule_1.gem_board1[i,j])
 			{
-				if (g.gempower = 0) && (!g.amInvisible) && g.amLocked == 0
+				if (Gamerule_1.gem_board1[i,j].gempower = 0)
 				{
-					if check_surrounding_gems(i,j) ds_list_add(wheretospawn,g)	
+					ds_list_add(wheretospawn,Gamerule_1.gem_board1[i,j])
 				}
 			}
 			else
@@ -22,14 +21,14 @@ function create_random_cube() {
 			}
 		}
 	}
-	
 	ds_list_shuffle(wheretospawn)
-	if !ds_list_empty(wheretospawn) gem_to_spawn = wheretospawn[| 0] 
-	else {
-		create_textellent("SOFTLOCK!") //...end the game
-		game_over()
+	var q = 0
+	do
+	{
+		gem_to_spawn = wheretospawn[| q] 
+		q++
 	}
-
+	until gem_to_spawn != noone
 	ds_list_destroy(wheretospawn)
 
 	if shalldoit 
@@ -38,38 +37,4 @@ function create_random_cube() {
 	}
 
 
-}
-
-function check_surrounding_gem(g) {
-	if instance_exists(g) {
-			if (!g.amInvisible) && (g.amLocked == 0) return true;
-		}
-}
-
-function check_surrounding_gems(i,j) {
-	if (i > 0) {
-		var g = Gamerule_1.gem_board1[i-1,j]
-		if instance_exists(g) {
-			if (!g.amInvisible) && (g.amLocked == 0) return true;
-		}
-	}
-	if (j > 0) {
-		var g = Gamerule_1.gem_board1[i,j-1]
-		if instance_exists(g) {
-			if (!g.amInvisible) && (g.amLocked == 0) return true;
-		}
-	}
-	if (i < 7) {
-		var g = Gamerule_1.gem_board1[i+1,j]
-		if instance_exists(g) {
-			if (!g.amInvisible) && (g.amLocked == 0) return true;
-		}
-	}
-	if (j < 7) {
-		var g = Gamerule_1.gem_board1[i,j+1]
-		if instance_exists(g) {
-			if (!g.amInvisible) && (g.amLocked == 0) return true;
-		}
-	}
-	return false;
 }

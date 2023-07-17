@@ -1,5 +1,5 @@
 /// @description Fade in
-perc += FADE_OFF_SPEED 
+perc += 0.05
 x = lerp(room_width + 32,xx,1 - power(perc-1,2))
 if perc < 1 alarm[1] = 1
 else 
@@ -131,7 +131,7 @@ do
 	{
 		with(gemsspawned[| index])
 		{
-			gempower = FLAME
+			gempower = 1
 		}
 		Gamerule_1.NXT_flames--
 		index++
@@ -141,7 +141,7 @@ do
 	{
 		with(gemsspawned[| index])
 		{
-		gempower = LIGHTNING
+		gempower = 2
 		}
 		Gamerule_1.NXT_lights--
 		index++
@@ -151,7 +151,7 @@ do
 	{
 		with(gemsspawned[| index]) 
 		{
-		gempower = NOVA
+		gempower = 3
 		}
 		Gamerule_1.NXT_novas--
 		index++
@@ -161,7 +161,7 @@ do
 	{
 		with(gemsspawned[| index]) 
 		{
-		gempower = SEPTA
+		gempower = 4
 		}
 		Gamerule_1.NXT_septas--
 		index++
@@ -171,7 +171,7 @@ do
 	{
 		with(gemsspawned[| index]) 
 		{
-		gempower = OCTA
+		gempower = 5
 		}
 		Gamerule_1.NXT_octas--
 		index++
@@ -181,10 +181,21 @@ do
 	{
 		with(gemsspawned[| index]) 
 		{
-		gempower = FRUIT
+		gempower = 6
 
 		}
 		Gamerule_1.NXT_fruits--
+		index++
+	}
+	
+	if Gamerule_1.NXT_diagonal > 0
+	{
+		with(gemsspawned[| index]) 
+		{
+		gempower = 9
+
+		}
+		Gamerule_1.NXT_diagonal--
 		index++
 	}
 	
@@ -201,7 +212,7 @@ do
 	}
 	
 }
-until (Gamerule_1.NXT_flames = 0) && (Gamerule_1.NXT_hypes = 0) && (Gamerule_1.NXT_fruits = 0) && (Gamerule_1.NXT_lights = 0) && (Gamerule_1.NXT_novas = 0) && (Gamerule_1.NXT_septas = 0) && (Gamerule_1.NXT_octas = 0)
+until (Gamerule_1.NXT_flames = 0) && (Gamerule_1.NXT_hypes = 0) && (Gamerule_1.NXT_fruits = 0) && (Gamerule_1.NXT_lights = 0) && (Gamerule_1.NXT_novas = 0) && (Gamerule_1.NXT_septas = 0) && (Gamerule_1.NXT_octas = 0) && (Gamerule_1.NXT_diagonal = 0)
 
 //Tell replay about that
 if Gamerule_1.replay_allowed

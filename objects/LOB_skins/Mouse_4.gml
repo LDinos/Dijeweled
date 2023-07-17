@@ -6,6 +6,11 @@ if global.IAMHOST
 		val++
 	}
 	else val = valmin
-	
-	network_send(NN_LBY_SKINS, [buffer_u8], [val])	
+	with(global.mynet)
+	{
+		buffer_seek(buffer,buffer_seek_start,0)
+		buffer_write(buffer,buffer_u8,NN_LBY_SKINS)
+		buffer_write(buffer,buffer_u8,other.val)
+		network_send_packet(client_socket,buffer,buffer_tell(buffer))
+	}
 }

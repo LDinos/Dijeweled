@@ -1,5 +1,4 @@
 /// @description Insert description here
-hover = false
 image_speed = 0
 depth = -100
 ini_open("settings.ini")
