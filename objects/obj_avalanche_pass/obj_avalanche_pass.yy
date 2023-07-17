@@ -1,12 +1,7 @@
 {
   "spriteId": {
-<<<<<<< HEAD
     "name": "spr_zenifybase",
     "path": "sprites/spr_zenifybase/spr_zenifybase.yy",
-=======
-    "name": "spr_pass",
-    "path": "sprites/spr_pass/spr_pass.yy",
->>>>>>> 1.9
   },
   "solid": false,
   "visible": true,

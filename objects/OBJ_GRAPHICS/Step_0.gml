@@ -1,5 +1,5 @@
 /// @description Window size value update
-if window_has_focus() && (os_type != os_android)
+if window_has_focus()
 {
 		var w = window_get_width()
 		var h = window_get_height()
@@ -7,7 +7,7 @@ if window_has_focus() && (os_type != os_android)
 		if (mysizex != w) || (mysizey != h)
 		{	
 			//if !window_get_fullscreen() window_set_size(display_get_gui_width(), display_get_gui_width()/(16/9))
-			if (w != 0 && h != 0) surface_resize(application_surface, w, h)	
+			surface_resize(application_surface, w, h)	
 			if (window_get_width() != 1280) && (window_get_height() != 720)
 			{
 				if (window_get_width() != 720) && (window_get_height() != 405)

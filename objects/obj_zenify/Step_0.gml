@@ -58,6 +58,7 @@ if Gamerule_1.zenify && !cooldown
 			alarm[1] = -1;
 			}
 		}		
+		//alarm[1] = 15
 	}
 	index_temp = index
 }

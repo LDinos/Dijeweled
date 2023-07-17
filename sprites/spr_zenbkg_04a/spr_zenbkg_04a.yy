@@ -1,10 +1,4 @@
 {
-<<<<<<< HEAD
-=======
-  "resourceType": "GMSprite",
-  "resourceVersion": "1.0",
-  "name": "spr_zenbkg_04a",
->>>>>>> 1.9
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -20,17 +14,12 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
-<<<<<<< HEAD
-=======
-  "DynamicTexturePage": false,
->>>>>>> 1.9
   "width": 1280,
   "height": 720,
   "textureGroupId": {
     "name": "Backgrounds",
     "path": "texturegroups/Backgrounds",
   },
-<<<<<<< HEAD
   "swatchColours": [],
   "gridX": 0,
   "gridY": 0,
@@ -41,18 +30,6 @@
   ],
   "sequence": {
     "spriteId": {"name":"spr_zenbkg_04a","path":"sprites/spr_zenbkg_04a/spr_zenbkg_04a.yy",},
-=======
-  "swatchColours": null,
-  "gridX": 0,
-  "gridY": 0,
-  "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6161a6dc-f285-41e5-837f-aa9c9d343b91",},
-  ],
-  "sequence": {
-    "resourceType": "GMSequence",
-    "resourceVersion": "1.4",
-    "name": "",
->>>>>>> 1.9
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -63,19 +40,11 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-<<<<<<< HEAD
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"1ec0c665-0a95-44c1-ad2e-0f15d45c86f1","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6161a6dc-f285-41e5-837f-aa9c9d343b91","path":"sprites/spr_zenbkg_04a/spr_zenbkg_04a.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},
-=======
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"5a965512-428e-46e3-9f01-f9f153943beb","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6161a6dc-f285-41e5-837f-aa9c9d343b91","path":"sprites/spr_zenbkg_04a/spr_zenbkg_04a.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
-    ],
-    "visibleRange": null,
->>>>>>> 1.9
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -89,7 +58,6 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-<<<<<<< HEAD
     "parent": {"name":"spr_zenbkg_04a","path":"sprites/spr_zenbkg_04a/spr_zenbkg_04a.yy",},
     "resourceVersion": "1.3",
     "name": "",
@@ -98,22 +66,14 @@
   },
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"94d5af33-17d6-405b-9bb7-9822318c949e","tags":[],"resourceType":"GMImageLayer",},
-=======
-  },
-  "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"94d5af33-17d6-405b-9bb7-9822318c949e","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
->>>>>>> 1.9
   ],
   "nineSlice": null,
   "parent": {
     "name": "Zen Backgrounds",
     "path": "folders/Sprites/Backgrounds/Zen Backgrounds.yy",
   },
-<<<<<<< HEAD
   "resourceVersion": "1.0",
   "name": "spr_zenbkg_04a",
   "tags": [],
   "resourceType": "GMSprite",
-=======
->>>>>>> 1.9
 }

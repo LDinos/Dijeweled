@@ -7,26 +7,15 @@ function ice_create_hiddengems() {
 	{
 		if !stop
 		{
-<<<<<<< HEAD
 			if instance_exists(Gamerule_1.gem_board1[i,J])
 			{
 				if !Gamerule_1.gem_board1[i,J].amInvisible
-=======
-			var gem = Gamerule_1.gem_board1[i,J]
-			if instance_exists(gem)
-			{
-				if !gem.amInvisible
->>>>>>> 1.9
 				{
 					stop = true
 				}
 				else
 				{
-<<<<<<< HEAD
 					with(Gamerule_1.gem_board1[i,J]) delete_gem()
-=======
-					with(gem) delete_gem()
->>>>>>> 1.9
 				}
 			}
 			if !stop

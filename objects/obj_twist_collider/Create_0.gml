@@ -1,4 +1,7 @@
-/// @description
+/// @description Insert description here
+//with(instance_position(x,y-32,Gem_1)) {dont_fall_yet = true;} //alarm[7] = 11}
+//with(instance_position(x+64,y-32,Gem_1)) {dont_fall_yet = true;}//alarm[7] = 11}
+
 gem[0] = noone
 gem[1] = noone
 gem[2] = noone

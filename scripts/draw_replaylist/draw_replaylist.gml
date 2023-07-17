@@ -22,12 +22,7 @@ function draw_replaylist() {
 
 	draw_set_font(font0)
 	centerize_text()
-<<<<<<< HEAD
 	draw_text_transformed(16,112,"No.",0.8,0.8,0); draw_text_transformed(224,112,"Title",0.8,0.8,0); draw_text_transformed(464,112,"Time",0.8,0.8,0); draw_text_transformed(568,112,"Points",0.8,0.8,0); draw_text_transformed(688,112,"Date",0.8,0.8,0);
-=======
-	var s = local_list ? "Points" : "Gamemode"
-	draw_text_transformed(16,112,"No.",0.8,0.8,0); draw_text_transformed(224,112,"Title",0.8,0.8,0); draw_text_transformed(464,112,"Time",0.8,0.8,0); draw_text_transformed(568,112,s,0.8,0.8,0); draw_text_transformed(688,112,"Date",0.8,0.8,0);
->>>>>>> 1.9
 
 
 }

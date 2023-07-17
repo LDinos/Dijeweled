@@ -5,7 +5,7 @@ Gamerule_1.replay_allowed = false
 Gamerule_1.multiswap_allowed = true
 Gamerule_1.blazingallowed = true
 Gamerule_1.isQuest = false
-DISCORD np_setpresence(global.version, "Watching Blitz Replay", "ico_512", "")
+discord_update_presence("Watching Blitz Replay","","ico_512","")
 //Gamerule_1.geode_xplier = 5
 with(obj_levelbar)
 {
@@ -13,7 +13,7 @@ with(obj_levelbar)
 	time_now = time_full
 	alarm[2] = 80
 }
-//draw_texture_flush()
+draw_texture_flush()
 //RADIO\\
 //
 if global.timer <= 60 

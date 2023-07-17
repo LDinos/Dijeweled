@@ -44,7 +44,7 @@ if w_count <= 7
 					if instance_exists(player_local) {if (player_local.gem1 == id) player_local.gem1 = noone}
 					instance_destroy()
 				}
-				else if gempower != FRUIT
+				else if gempower !=6
 				{
 		            part_particles_create_colour(global.sys_above_gem,x,y,global.gemsmoketype,mycolor,8)
 		            part_particles_create(global.sys_above_gem,irandom_range(x-32,x+32),irandom_range(y-32,y+32),global.gemsmokesparkle,irandom_range(6,10))                

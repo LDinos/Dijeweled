@@ -11,11 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "rowblow",
-<<<<<<< HEAD
   "duration": 0.0,
-=======
-  "duration": 1.241859,
->>>>>>> 1.9
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

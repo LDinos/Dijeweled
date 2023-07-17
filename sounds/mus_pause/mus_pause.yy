@@ -11,11 +11,7 @@
     "path": "audiogroups/audiogroup_music",
   },
   "soundFile": "mus_pause",
-<<<<<<< HEAD
   "duration": 0.0,
-=======
-  "duration": 3.692313,
->>>>>>> 1.9
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

@@ -1,10 +1,4 @@
 {
-<<<<<<< HEAD
-=======
-  "resourceType": "GMSprite",
-  "resourceVersion": "1.0",
-  "name": "spr_chl_pattern",
->>>>>>> 1.9
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -20,17 +14,12 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
-<<<<<<< HEAD
-=======
-  "DynamicTexturePage": false,
->>>>>>> 1.9
   "width": 128,
   "height": 128,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
   },
-<<<<<<< HEAD
   "swatchColours": [],
   "gridX": 0,
   "gridY": 0,
@@ -41,18 +30,6 @@
   ],
   "sequence": {
     "spriteId": {"name":"spr_chl_pattern","path":"sprites/spr_chl_pattern/spr_chl_pattern.yy",},
-=======
-  "swatchColours": null,
-  "gridX": 0,
-  "gridY": 0,
-  "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"7d489215-e947-461c-9b96-3e45601c5740",},
-  ],
-  "sequence": {
-    "resourceType": "GMSequence",
-    "resourceVersion": "1.4",
-    "name": "",
->>>>>>> 1.9
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -63,19 +40,11 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-<<<<<<< HEAD
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"14341339-335f-45b2-82a1-7bb5a08e963b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7d489215-e947-461c-9b96-3e45601c5740","path":"sprites/spr_chl_pattern/spr_chl_pattern.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},
-=======
-      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"0d1c000f-19ee-47e9-aaf0-02f56e70e962","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7d489215-e947-461c-9b96-3e45601c5740","path":"sprites/spr_chl_pattern/spr_chl_pattern.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
-    ],
-    "visibleRange": null,
->>>>>>> 1.9
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -89,7 +58,6 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-<<<<<<< HEAD
     "parent": {"name":"spr_chl_pattern","path":"sprites/spr_chl_pattern/spr_chl_pattern.yy",},
     "resourceVersion": "1.3",
     "name": "",
@@ -98,22 +66,14 @@
   },
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a4cbb6df-93e7-4a27-b4a5-4646166c7c90","tags":[],"resourceType":"GMImageLayer",},
-=======
-  },
-  "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a4cbb6df-93e7-4a27-b4a5-4646166c7c90","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
->>>>>>> 1.9
   ],
   "nineSlice": null,
   "parent": {
     "name": "Quest Assets",
     "path": "folders/Sprites/Quest Related/Quest Assets.yy",
   },
-<<<<<<< HEAD
   "resourceVersion": "1.0",
   "name": "spr_chl_pattern",
   "tags": [],
   "resourceType": "GMSprite",
-=======
->>>>>>> 1.9
 }

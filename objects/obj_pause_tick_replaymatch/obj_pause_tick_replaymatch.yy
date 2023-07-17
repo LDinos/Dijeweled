@@ -5,10 +5,6 @@
   },
   "solid": false,
   "visible": true,
-<<<<<<< HEAD
-=======
-  "managed": true,
->>>>>>> 1.9
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -32,13 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-<<<<<<< HEAD
     "name": "Pause",
     "path": "folders/Objects/Pause.yy",
-=======
-    "name": "Blitz",
-    "path": "folders/Objects/Menu Buttons/Menu/Play/Blitz.yy",
->>>>>>> 1.9
   },
   "resourceVersion": "1.0",
   "name": "obj_pause_tick_replaymatch",

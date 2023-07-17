@@ -1,2 +1,2 @@
 /// @description Insert description here
-room_goto(rm_ONLINE_replay)
+if global.debug room_goto(rm_credits)

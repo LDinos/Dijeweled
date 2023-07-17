@@ -1,1 +1,1 @@
-DISCORD np_setpresence(global.version, "In Quest Editor", "ico_512", "")
+discord_update_presence("In Quest editor","","ico_512","")

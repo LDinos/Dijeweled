@@ -11,11 +11,7 @@
     "path": "audiogroups/audiogroup_music",
   },
   "soundFile": "mus_timerunning_danger",
-<<<<<<< HEAD
   "duration": 0.0,
-=======
-  "duration": 144.0,
->>>>>>> 1.9
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

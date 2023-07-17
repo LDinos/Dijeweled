@@ -11,7 +11,7 @@ if (_i < 0 || _i2 < 0)
 {
 	with(obj_buyo_gamerule) {alarm[0] = 3*60}; 
 	audio_play_sound(vo_gameover,0,0); 
-	audio_group_stop_all(audiogroup_music)
+	audio_stop_sound(mus_puyo)
 }
 else obj_buyo_gamerule.check = true
 instance_destroy()

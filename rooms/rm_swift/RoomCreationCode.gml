@@ -1,8 +1,8 @@
 room_speed = 60
 
-//draw_texture_flush()
+draw_texture_flush()
 //RADIO\\
-DISCORD np_setpresence("Level " + string(Gamerule_1.level), global.DIS_name, "ico_512", "")
+discord_update_presence(global.DIS_name,"Level " + string(Gamerule_1.level),"ico_512","")
 with(Gamerule_1)
 {
 	isQuest = false

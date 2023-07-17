@@ -1,2 +1,3 @@
 /// @description Insert description here
-enable()
+instance_activate_object(CUS_companion_num)
+		instance_activate_object(CUS_companion_locked)

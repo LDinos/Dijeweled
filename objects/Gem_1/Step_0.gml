@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #region Spinning animation disable
 if anim_happening && !spinning //if I am doing the spinning animation, but I am unclicked
 {
@@ -332,6 +331,3 @@ if visible //if I am visible
 }
 
 #endregion
-=======
-EV_gem_STEP()
->>>>>>> 1.9

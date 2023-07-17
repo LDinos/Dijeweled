@@ -1,2 +1,5 @@
 /// @description Insert description here
-enable()
+instance_activate_object(CUS_coals_turns)
+instance_activate_object(CUS_coals_max)
+instance_activate_object(CUS_coals_chance)
+instance_activate_object(CUS_coals_random)

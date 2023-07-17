@@ -3,8 +3,7 @@
 draw_sprite(spr_lvlbar_bot,0,x-8,y)
 if !Gamerule_1.time_allowed
 {
-	var bar = Gamerule_1.bar_be_full ? 1 : ((obj_score.scoretemp-previous_points)/(Gamerule_1.levelpointsneeded-previous_points))
-	draw_sprite_part(spr_flow,image_index,0,0, bar*bar_end,32,x,y+8)
+	draw_sprite_part(spr_flow,image_index,0,0,((obj_score.scoretemp-previous_points)/(Gamerule_1.levelpointsneeded-previous_points))*bar_end,32,x,y+8)
 }
 else
 {

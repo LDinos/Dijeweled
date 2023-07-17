@@ -1,1 +1,0 @@
-if canclick room_goto(rm_menu)

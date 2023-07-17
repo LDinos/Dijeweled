@@ -11,11 +11,7 @@
     "path": "audiogroups/audiogroup_voice",
   },
   "soundFile": "vo_timeup",
-<<<<<<< HEAD
   "duration": 0.0,
-=======
-  "duration": 2.040351,
->>>>>>> 1.9
   "parent": {
     "name": "voice",
     "path": "folders/Sounds/voice.yy",

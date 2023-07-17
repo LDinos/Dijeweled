@@ -11,7 +11,7 @@ if global.debug
 
 draw_text(8,32,"v"+global.version + rmname )
 
-if shader_enabled && shader_is_compiled(shd_greyscale) //Combo replay gray screen effect
+if shader_enabled && shader_is_compiled(shd_greyscale)
 {
 shader_set(shd_greyscale);
     shader_set_uniform_f(uni_time, var_time_var);

@@ -1,15 +1,8 @@
 /// @description Insert description here
-with(obj_stats)
+with(obj_button_stats_back)
 {
-	stats_index--
-	if (stats_index < 0) stats_index = array_length(stats_array)-1
-	global.STATS_file = stats_array[stats_index]
-	open_stats()
-}
-
-with(obj_stats_online)
-{
-	stats_index--
-	if (stats_index < 0) stats_index = array_length(stats_array)-1
-	request_stats() 
+	instance_destroy(sts[index])
+	if (index > 0) index--
+	else index = ind_max
+	instance_create(0,0,sts[index])
 }

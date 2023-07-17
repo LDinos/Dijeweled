@@ -12,7 +12,12 @@ if Gamerule_1.IsGemActive2
 	{
 		//audio_play_sound(vo_gameover,0,false)
 		with(obj_rotator) event_user(0)
-		network_send(NN_MATCH_TIMEUP)
+		with(global.mynet)
+		{
+			buffer_seek(buffer,buffer_seek_start,0)
+			buffer_write(buffer,buffer_u8,NN_MATCH_TIMEUP)
+			network_send_packet(client_socket,buffer,buffer_tell(buffer))
+		}
 	}
 }
 else alarm[0] = 1

@@ -1,4 +1,3 @@
-///@description Used for bots, try "making" a match and see how important it would be if you really did it
 ///@param list_moves_array
 ///@param INDEX
 function do_virtual_match(argument0, argument1) {
@@ -11,7 +10,6 @@ function do_virtual_match(argument0, argument1) {
 	var dir = list_moves[INDEX,2]
 	var gem = MyGamerule.gem_board1[i1,j1]
 	importance += find_power_importance(gem.gempower)
-<<<<<<< HEAD
 
 	if gem.amHype importance += 16 //hypercubes are as important as lightnings
 
@@ -53,55 +51,6 @@ function do_virtual_match(argument0, argument1) {
 		if i1 > i2 {iend = i1; istart = i2}
 		for(var i = istart; i <= iend; i++)
 		{
-=======
-	var virtual_board, virtual_board_gems;
-	for(var i= 0; i < 8; i++) {
-		for(var j = 0; j < 8; j++) {
-			virtual_board[i][j] = MyGamerule.gemboard[i][j]
-			virtual_board_gems[i][j] = MyGamerule.gem_board1[i][j]
-		}
-	}
-	
-	if (gem.amHype) {
-		importance += 16 //hypercubes are as important as lightnings
-	}
-	else
-	{
-		var i2 = i1
-		var j2 = j1
-		switch dir
-		{
-			case "up":
-				i2--
-				break;
-			case "down":
-				i2++
-				break;
-			case "left":
-				j2--
-				break;
-			case "right":
-				j2++
-				break;
-		}
-		//1) virtual swap
-		var temp = virtual_board[i1,j1]
-		virtual_board[i1,j1] = virtual_board[i2,j2]
-		virtual_board[i2,j2] = temp
-		var temp = virtual_board_gems[i1,j1]
-		virtual_board_gems[i1,j1] = virtual_board_gems[i2,j2]
-		virtual_board_gems[i2,j2] = temp
-	
-		//2) remove gems
-		var n = 1
-	
-		//Horizontal
-		var iend = i2
-		var istart = i1
-		if i1 > i2 {iend = i1; istart = i2}
-		for(var i = istart; i <= iend; i++)
-		{
->>>>>>> 1.9
 			n = 1
 			var power_importance = 0;
 			for( var j = 1; j < 8; j++)
@@ -140,15 +89,8 @@ function do_virtual_match(argument0, argument1) {
 			else {n = 1; power_importance = 0;}
 		}
 	}
-<<<<<<< HEAD
 
 	return importance;
 
 
 }
-=======
-
-	return importance;
-}
-
->>>>>>> 1.9

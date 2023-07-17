@@ -11,11 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_buyo_move",
-<<<<<<< HEAD
   "duration": 0.0,
-=======
-  "duration": 0.138333,
->>>>>>> 1.9
   "parent": {
     "name": "buyo",
     "path": "folders/Sounds/buyo.yy",

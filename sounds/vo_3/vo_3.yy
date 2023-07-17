@@ -11,11 +11,7 @@
     "path": "audiogroups/audiogroup_voice",
   },
   "soundFile": "vo_3",
-<<<<<<< HEAD
   "duration": 0.0,
-=======
-  "duration": 1.072732,
->>>>>>> 1.9
   "parent": {
     "name": "voice",
     "path": "folders/Sounds/voice.yy",

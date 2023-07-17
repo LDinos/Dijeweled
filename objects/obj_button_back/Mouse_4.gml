@@ -1,20 +1,15 @@
 /// @description Insert description here
-if global.canbepressed {
-	if room != rm_menu_challenges {
-		with(obj_menu_buttons_master) {
-			kill_current_group()
-			if (current_group == global.button_group[$ "play"] || current_group == global.button_group[$ "replays"]) {
-				change_to_group("initial")
-			}
-			else if (current_group == global.button_group[$ "single"] || current_group == global.button_group[$ "online"]) {
-				change_to_group("play")
-			}
-			else if (current_group == global.button_group[$ "blitz"] || current_group == global.button_group[$ "secret"]) {
-				change_to_group("single")
-			}
-		}
+if global.canbepressed
+{
+	if room != rm_menu_challenges
+	{
+	alarm[1] = 1
+	with(obj_button_zen) alarm[1] = 5
+	with(obj_button_challenge) alarm[1] = 9
+	with(obj_button_classic) alarm[1] = 5
+	with(obj_button_blitz) alarm[1] = 3
+	with(obj_button_arcade) alarm[1] = 1
 	
-<<<<<<< HEAD
 	with(obj_button_singleplayer) instance_destroy()
 	with(obj_button_multiplayer) instance_destroy()
 	with(obj_button_online) instance_destroy()
@@ -48,14 +43,6 @@ if global.canbepressed {
 	instance_create(xx,y - sprite_height*4 - 32*4,obj_button_options)
 	instance_create(xx,y - sprite_height*5 - 32*5,obj_button_play)
 	global.canbepressed = false
-=======
-		with(obj_pause_tick_replaymatch) instance_destroy()
-		with(obj_replaylist) instance_destroy()
-		global.replay_match_allowed = false
-		with(obj_button_online_replays) instance_destroy()
-		with(obj_challenges_room) instance_destroy()
-		with(obj_challenges_selection) instance_destroy()
->>>>>>> 1.9
 	}
 	else room_goto(rm_menu)
 }

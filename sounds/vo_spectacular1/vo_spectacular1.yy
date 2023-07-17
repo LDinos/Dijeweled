@@ -11,11 +11,7 @@
     "path": "audiogroups/audiogroup_voice",
   },
   "soundFile": "vo_spectacular1",
-<<<<<<< HEAD
   "duration": 0.0,
-=======
-  "duration": 2.173821,
->>>>>>> 1.9
   "parent": {
     "name": "voice",
     "path": "folders/Sounds/voice.yy",

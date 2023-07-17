@@ -14,7 +14,6 @@ function points_add_nocombo(argument0) {
 		{
 			if (!Gamerule_1.lightOn && !Gamerule_1.hypeOn)
 			{
-<<<<<<< HEAD
 				with(global.mynet)
 				{
 					buffer_seek(buffer,buffer_seek_start,0)
@@ -22,10 +21,6 @@ function points_add_nocombo(argument0) {
 					buffer_write(buffer,buffer_u16,value)
 					network_send_packet(client_socket,buffer,buffer_tell(buffer))
 				}
-=======
-				network_send(NN_POINTS_ADD, [buffer_u16], [value])
-				
->>>>>>> 1.9
 			}
 		}
 	}

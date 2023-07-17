@@ -115,55 +115,31 @@ if global.replay_match_allowed
 }
 
 // and now spawn them in board1
-if (!global.spectator) { //When spectating, we will spawn gems on both boards on user_event1
-	for(i=0;i<=global.board_rows-1;i++)
+for(i=0;i<=global.board_rows-1;i++)
+{
+	if match_replay match_up_index[i] = 1
+	for(j=0;j<=7;j++)
 	{
-		if match_replay match_up_index[i] = 1
-		for(j=0;j<=7;j++)
+		#region Match replay only
+		if match_replay
 		{
-			#region Match replay only
-			if match_replay
+			var key = string(i)+"-"+string(j)
+			ds_map_add(Gamerule_1.Replay_match_map,key + "_spawn",gem_array[i,j])
+		}
+		#endregion
+		my_x = Board_1.x + 64*j
+		my_y = Board_1.y - 64*(i+1)
+		my_skin = gem_array[i,j]
+		Gem = instance_create_depth(my_x, my_y,-1,Gem_1)
+		with(Gem) 
+		{
+			set_skin(other.gem_array[other.i,other.j])
+			if global.online
 			{
-				var key = string(i)+"-"+string(j)
-				ds_map_add(Gamerule_1.Replay_match_map,key + "_spawn",gem_array[i,j])
-			}
-			#endregion
-			my_x = Board_1.x + 64*j
-			my_y = Board_1.y - 64*(i+1)
-			my_skin = gem_array[i,j]
-			Gem = instance_create_depth(my_x, my_y,-1,Gem_1)
-			with(Gem) 
-			{
-				set_skin(other.gem_array[other.i,other.j])
-				if global.online
-				{
-					scr_add_gemid(Gamerule_1)
-				}
+				scr_add_gemid(Gamerule_1)
 			}
 		}
 	}
 }
 #endregion
-}
-
-function initial_spawn(gem_id, board_id, gamerule_id, p_id = 0) {
-	var x1,y1,G,mskin
-	for(i=0;i<=global.board_rows-1;i++)
-	{
-		for(j=0;j<=7;j++)
-		{
-			x1 = board_id.x + 64*j
-			y1 = board_id.y - 64*(i+1)
-			mskin = gem_array[i,j]
-			G = instance_create_depth(x1, y1,-1,gem_id,  {player_id : p_id, MyBoard : board_id, MyGamerule : gamerule_id}) 
-			G.player_id = p_id
-			G.MyBoard = board_id
-			G.MyGamerule = gamerule_id
-			with(G) 
-			{
-				set_skin(other.gem_array[other.i,other.j])
-				if global.online scr_add_gemid(gamerule_id)
-			}
-		}
-	}
 }

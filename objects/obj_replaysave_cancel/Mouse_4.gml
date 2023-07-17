@@ -1,1 +1,0 @@
-room_goto(rm_stats_blitz)

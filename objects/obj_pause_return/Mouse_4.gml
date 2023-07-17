@@ -6,5 +6,5 @@ if room = rm_menu_options
 else
 {
 	mouse_clear(mb_left)
-	toggle_pause()
+	return_from_pause()
 }

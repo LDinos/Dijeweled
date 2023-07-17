@@ -7,7 +7,7 @@ if (global.replay_match_allowed || global.replay_match_isplaying) cur_time++ //t
 if (points >= levelpointsneeded) && !time_allowed //if points are more than levelpointsneeded and time is not allowed, we know the progress bar is full
 {
 	if (levelcompleteallowed) levelbarfull = true
-	else levelbarfull = false
+	else leverballfull = false
 }
 else levelbarfull = false
 
@@ -30,20 +30,43 @@ if (levelbarfull)
 		part_particles_clear(global.sys_above_gem)
 		part_particles_clear(global.sys_below_gem)
 		level_complete_get_powers()
-		bar_be_full = true //make level bar be full until the board transitions in
 		spawnallowed = false
 		level++
-		DISCORD np_setpresence("Level " + string(Gamerule_1.level), global.DIS_name, "ico_512", "")
+		discord_update_presence(global.DIS_name,"Level " + string(Gamerule_1.level),"ico_512","")
 		#region secret
-		if (level == 10) //secret unlock
+		if (level == 20) //secret unlock
 		{
 			if (room == rm_timeattack)
 			{
-				gamemode_unlock(MODE_TWIST, 0, 512)
+				if !file_exists("secrets.ini") file_create_secrets()
+				var l = ds_list_create()
+				ini_open("secrets.ini")
+					var str = ini_read_string("secret","data","")
+					ds_list_read(l,str)
+					if l[| 0] == false
+					{
+						instance_create_depth(0,512,-99,obj_secretunlock)
+						l[| 0] = true
+						var str = ds_list_write(l)
+						ini_write_string("secret","data",str)
+					}
+				ini_close()
 			}
 			else if (room == rm_zen)
 			{
-				gamemode_unlock(MODE_COMPACT, 0, 512)
+				if !file_exists("secrets.ini") file_create_secrets()
+				var l = ds_list_create()
+				ini_open("secrets.ini")
+					var str = ini_read_string("secret","data","")
+					ds_list_read(l,str)
+					if l[| 1] == false
+					{
+						instance_create_depth(0,512,-99,obj_secretunlock)
+						l[| 1] = true
+						var str = ds_list_write(l)
+						ini_write_string("secret","data",str)
+					}
+				ini_close()
 			}
 		}
 		#endregion
@@ -65,11 +88,7 @@ if (levelbarfull)
 		ds_list_clear(list_of_coals) 
 		ds_list_clear(list_of_bombs) 
 		ds_list_clear(list_of_locks)
-<<<<<<< HEAD
 		ds_list_clear(list_of_skulls)
-=======
-		ds_list_clear(list_of_skulls) 
->>>>>>> 1.9
 		list_of_doom = noone
 		
 		with(obj_score) alarm[0] = 60

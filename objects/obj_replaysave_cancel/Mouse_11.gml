@@ -1,3 +1,0 @@
-/// @description
-hover = false
-

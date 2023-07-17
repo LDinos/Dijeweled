@@ -5,6 +5,7 @@ if i_d == dialog
     {
     if async_load[?"status"]
         {
-			field = string(async_load[?"result"]);
+        global.ip = string(async_load[?"result"]);
+		instance_create(x,y,obj_client)
         }
     }

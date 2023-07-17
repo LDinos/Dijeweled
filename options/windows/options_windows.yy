@@ -1,31 +1,15 @@
 {
-<<<<<<< HEAD
   "option_windows_display_name": "Dijeweled Remastered  (v1.9.1)",
   "option_windows_executable_name": "${project_name}",
   "option_windows_version": "0.1.9.1",
   "option_windows_company_info": "LDinos",
   "option_windows_product_info": "Dijeweled",
   "option_windows_copyright_info": "(c) 2019 LDinos",
-=======
-  "resourceType": "GMWindowsOptions",
-  "resourceVersion": "1.1",
-  "name": "Windows",
-  "option_windows_display_name": "Dijeweled Remastered  (v1.17)",
-  "option_windows_executable_name": "${project_name}",
-  "option_windows_version": "1.1.7.0",
-  "option_windows_company_info": "LDinos",
-  "option_windows_product_info": "Dijeweled",
-  "option_windows_copyright_info": "(c) 2018-2022 LDinos",
->>>>>>> 1.9
   "option_windows_description_info": "A Bejeweled(c) Fanmade Game",
   "option_windows_display_cursor": true,
   "option_windows_icon": "${options_dir}/windows/icons/icon.ico",
   "option_windows_save_location": 0,
-<<<<<<< HEAD
   "option_windows_splash_screen": "${options_dir}/windows/splash/splash.png",
-=======
-  "option_windows_splash_screen": "splash/splash.png",
->>>>>>> 1.9
   "option_windows_use_splash": true,
   "option_windows_start_fullscreen": false,
   "option_windows_allow_fullscreen_switching": false,
@@ -35,11 +19,7 @@
   "option_windows_borderless": false,
   "option_windows_scale": 0,
   "option_windows_copy_exe_to_dest": false,
-<<<<<<< HEAD
   "option_windows_sleep_margin": 10,
-=======
-  "option_windows_sleep_margin": 1,
->>>>>>> 1.9
   "option_windows_texture_page": "2048x2048",
   "option_windows_installer_finished": "${options_dir}/windows/installer/finished.bmp",
   "option_windows_installer_header": "${options_dir}/windows/installer/header.bmp",
@@ -48,12 +28,9 @@
   "option_windows_enable_steam": false,
   "option_windows_disable_sandbox": true,
   "option_windows_steam_use_alternative_launcher": false,
-<<<<<<< HEAD
   "option_windows_use_x64": false,
   "resourceVersion": "1.1",
   "name": "Windows",
   "tags": [],
   "resourceType": "GMWindowsOptions",
-=======
->>>>>>> 1.9
 }

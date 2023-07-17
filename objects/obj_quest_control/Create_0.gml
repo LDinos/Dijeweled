@@ -61,8 +61,6 @@ L_badgem = false //activated if companion dies here
 L_nospecialgems = -1 //-1 deactivated, 0 activated, 1 triggered. Player loses if special gems are activated
 L_nospecialgems_endgame = 1 //0 false, 1 true
 L_noslightning_endgame = 0 //0 false, 1 true
-L_endless = false //Is the quest endless (no way to win, only lose by timer and bad gems)
-L_pointslimit = -1 //Do we game over after reaching this amount of points?
 #endregion
 
 #region CONDITIONS (-1 or false = disabled)

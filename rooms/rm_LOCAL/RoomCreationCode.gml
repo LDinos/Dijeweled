@@ -1,7 +1,7 @@
 room_speed = 60
 instance_create(0,0,obj_local_getready)
 global.user2 = global.user + "(2)"
-//draw_texture_flush()
+draw_texture_flush()
 with(obj_background_shadered) shd = irandom(num_shaders)
 
 if !global.bot1
@@ -34,14 +34,14 @@ if global.SET_twist
 	instance_destroy(player_local)
 }
 
-var dic = "Local: Battle"
+var dic = "Online: Battle"
 with(Gamerule_local)
 {
 	ultranovas_allowed = global.SET_ultranovas
 	AHM_allowed = true
 	end_on_nomoves = false
 	replay_allowed = false
-	blazingallowed = (global.SET_blazing && global.SET_gamemode == 0) ? true : false
+	blazingallowed = true
 	levelcompleteallowed = false
 	autosave_allowed = false
 	controlallowed = false
@@ -49,7 +49,6 @@ with(Gamerule_local)
 	multiswap_allowed = global.SET_multiswap
 	hypeallowed = global.SET_hyper
 	illegals_allowed = global.SET_matchless
-	num_skin = global.SET_skin - 1
 
 	if (global.SET_gamemode == 1)
 	{
@@ -73,7 +72,7 @@ with(Gamerule_1)
 	AHM_allowed = true
 	end_on_nomoves = false
 	replay_allowed = false
-	blazingallowed = (global.SET_blazing && global.SET_gamemode == 0) ? true : false
+	blazingallowed = true
 	levelcompleteallowed = false
 	autosave_allowed = false
 	controlallowed = false
@@ -85,7 +84,7 @@ with(Gamerule_1)
 	
 	if (global.SET_gamemode == 0)
 	{
-		dic = "Local: Time Attack"
+		dic = "Online: Time Attack"
 		if global.SET_gamemode2 = 0 global.timer = 300
 		else if global.SET_gamemode2 = 1 global.timer = 180
 		else global.timer = 60
@@ -102,7 +101,7 @@ with(Gamerule_1)
 		instance_create(0,0,obj_music)
 		force_moves_allowed = false
 		compliments_allowed = false
-		dic = "Local: Avalanche";
+		dic = "Online: Avalanche";
 		instance_create(320,1168,obj_avalanchedeposit_local)
 	}
 	else
@@ -114,17 +113,3 @@ with(Gamerule_1)
 	}
 }
 
-var name = global.user2
-if (global.bot1) {
-	var dif = "A"
-	switch(global.botdifficulty1) {
-		case 0: dif = "Easy" break;
-		case 1: dif = "Medium" break;
-		case 2: dif = "Hard" break;
-		case 3: dif = "Expert" break;
-	}
-	name = dif + " bot"
-}
-
-DISCORD np_setpresence_timestamps(date_current_datetime(), 0, false)
-DISCORD np_setpresence("VS " + name, dic, "ico_512", "")

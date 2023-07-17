@@ -1,11 +1,9 @@
 /* PURPOSE */
 // A hypercube detonating in player 2's board in Online (a cheap version of a obj_hypercube_detonate)
 alarm[0] = 1
-gem = []
+gem = -1
 list_index = 0
 modifier = 1
-MyGamerule = Gamerule_2
-player_id = 0
 audio_play_sound(snd_hype_hit,0,false)
 var hype_explo = part_type_create()
 var hype_explo_ring = part_type_create()

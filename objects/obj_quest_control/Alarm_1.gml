@@ -6,5 +6,4 @@ if (global.DIS_quest_category == 26)
 	desc = "In Custom Quest"
 	//downline = ""
 }
-
-DISCORD np_setpresence(downline, desc, "ico_512", "")
+discord_update_presence(desc,downline,"ico_512","")

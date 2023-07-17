@@ -11,11 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "tick",
-<<<<<<< HEAD
   "duration": 0.0,
-=======
-  "duration": 0.052948,
->>>>>>> 1.9
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

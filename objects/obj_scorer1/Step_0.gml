@@ -12,7 +12,7 @@ if !global.online
 }
 else
 {
-	if global.IAMHOST || global.spectator
+	if global.IAMHOST
 	{
 		points1 = Gamerule_1.points
 		points2 = Gamerule_2.points

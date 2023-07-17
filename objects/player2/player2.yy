@@ -1,20 +1,10 @@
 {
-<<<<<<< HEAD
-=======
-  "resourceType": "GMObject",
-  "resourceVersion": "1.0",
-  "name": "player2",
->>>>>>> 1.9
   "spriteId": {
     "name": "spr_gemselector",
     "path": "sprites/spr_gemselector/spr_gemselector.yy",
   },
   "solid": false,
   "visible": false,
-<<<<<<< HEAD
-=======
-  "managed": true,
->>>>>>> 1.9
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -37,11 +27,8 @@
     "name": "Online",
     "path": "folders/Objects/Online.yy",
   },
-<<<<<<< HEAD
   "resourceVersion": "1.0",
   "name": "player2",
   "tags": [],
   "resourceType": "GMObject",
-=======
->>>>>>> 1.9
 }

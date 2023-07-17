@@ -36,6 +36,9 @@ if bombis0 && !levelbarfull
 					var ded = instance_create(my_bomb.x,my_bomb.y,obj_bombexplosion)
 					ded.image_index = my_bomb.skinnum
 					my_bomb.amInvisible = true
+				/*file_delete("autosave_rm_timeattack")
+				audio_group_stop_all(audiogroup_music)
+				room_goto(rm_menu)*/
 				}
 			else //if its a doom
 				{
@@ -49,6 +52,7 @@ if bombis0 && !levelbarfull
 				}
 		}
 		IsGemActive = false
+		//audio_play_sound(vo_incredible,0,0)
 	}
 	else alarm[7] = 1
 }

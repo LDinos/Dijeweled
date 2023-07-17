@@ -60,20 +60,6 @@ var showtick = false
 	}
 	
 	if showtick draw_sprite(spr_tick,ind,1208,192+8 +(11+1)*32)
-	else
-	{
-		var amstring = false;
-		for(var i = 0; i < string_length(AR_info[11]); i++) 
-		{
-			if (string_char_at(AR_info[11],i+1) == ":") {amstring = true; break;}
-		}
-		if !amstring
-		{
-			var num = real(AR_info[11])
-			draw_text(1208,192+8 +(11+1)*32,convert_seconds_to_time(round(num)))
-		}
-		else draw_text(1208,192+8 +(11+1)*32,AR_info[11])
-	}
-	//else draw_text(1208,192+8 +(11+1)*32,convert_seconds_to_time(round(AR_info[11])))
+	else draw_text(1208,192+8 +(11+1)*32,convert_seconds_to_time(round(AR_info[11])))
 
 draw_sprite(spr_chl_difficulty,AR_info[12],0,0)

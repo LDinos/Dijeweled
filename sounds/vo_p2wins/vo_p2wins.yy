@@ -11,11 +11,7 @@
     "path": "audiogroups/audiogroup_voice",
   },
   "soundFile": "vo_p2wins",
-<<<<<<< HEAD
   "duration": 0.0,
-=======
-  "duration": 5.125,
->>>>>>> 1.9
   "parent": {
     "name": "voice",
     "path": "folders/Sounds/voice.yy",
