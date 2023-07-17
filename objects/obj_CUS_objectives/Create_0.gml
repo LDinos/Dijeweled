@@ -1,5 +1,6 @@
 /// @description Insert description here
 objectives = 0
+
 var filename = obj_CUS_general.filename
 if file_exists(filename)
 {
@@ -27,7 +28,7 @@ if file_exists(filename)
 					#endregion
 					#region find if hasinput
 					var inp = false
-					if (type = 3) || (hover == 44) || (hover == 45) inp = true
+					if (type = 3) || (hover == 44) || (hover == 45) || (hover == 48) inp = true
 				#endregion
 	
 				with(obj_CUS_newobj)

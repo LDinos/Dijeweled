@@ -1,9 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-/*
-var canmove;
-if !Gamerule_1.moving && !dont_swap && !Gamerule_1.lightOn && !Gamerule_1.fruit_exploding && !Gamerule_1.fruit_want_to_spawn && !Gamerule_1.fruit_spawning canmove = true
-else canmove = false*/
 var cur = Gamerule_1.cur_time
 
 if ds_map_exists(Replay_load, string(cur))

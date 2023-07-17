@@ -7,6 +7,8 @@ The lightning itself. Mostly its doubled, since its a cross
 lightning. Uses color aswell
 
 */
+base_alpha = 0
+alarm[1] = 1 //alpha change
 depth = -10
 octa = false
 glowalpha = 1

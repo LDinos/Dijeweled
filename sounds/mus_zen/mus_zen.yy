@@ -10,8 +10,13 @@
     "name": "audiogroup_music",
     "path": "audiogroups/audiogroup_music",
   },
+<<<<<<< HEAD
   "soundFile": "mus_zen",
   "duration": 0.0,
+=======
+  "soundFile": "mus_zen.ogg",
+  "duration": 585.447144,
+>>>>>>> 1.9
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

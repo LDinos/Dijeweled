@@ -1,3 +1,88 @@
+=1.14=
+- Broadened gamepad support. You can use gamepad everywhere except for these places: Menu replay 
+viewer, Custom Quest Editor, Custom Quest list scrolling, Multiplayer Lobbies
+- Added pause button under the board for phone users
+- Changed CCW button on phones to be in the left area of the screen so it wont get obstructed in multiplayer modes
+- Changed hybrid (WASD) movement to not do anything when mouse is outside of board
+- Pattern Design quests will have the pattern board on the right corner of the screen when quests have more than one objective (fixed zenify + pattern board being on top of each other)
+- Pattern gems are more distinguishable now (thanks B1!)
+- Custom Quest editor will now prompt a system input screen when needed so phones can finally use it too!
+- **Time attack has now global stats** (as long as gem colors are kept at 7, and you are online or Player 1 in local multiplayer). Keep in mind that the stats server wont always be online for stats uploading/requesting for now.
+- When illegal swaps are allowed, a matchless swap will reset the blazing speed chain (Note: Previous blitz replays are compatible and will still work)
+- Changes to the stats folder. NOTE: STATS WILL BE RECREATED SO YOUR PREVIOUS STATS WONT BE IN THIS VERSION. However they will still be in the Appdata/Local/bej_temp_remaster/stats_*.ini, so you can just move them in the Appdata/Local/bej_temp_remaster/Stats folder to get them back.
+- Blitz mode always records games, you just have to press cancel when the prompt appears if you don't want to save your replay.
+- This version also allows an external server to be hosted where two players can join without having to port forward. Currently the server is only available to me and will be used in tourneys.
+
+=1.13=
+- Changed secret gamemode requirements.
+    Compact -> Reach level 10 in Zen
+    Twist -> Reach level 10 in Arcade
+    Swift -> Reach 300,000 in blitz
+    Survivor -> Finish 15 quests (go to Quests menu to unlock survivor if you have already met the requirements)
+- Nerfed Chain Creator 6th quest from 300 chains to 250
+- Added Back button in Lobby for mobile users
+- Added ability to chat and write quest descriptions in phones
+- Buyo mode is now playable in phones
+- Renamed Lobby setting "Skin numbers" to "Gem colors"
+- Slight change to AHM, mandatory hypercube now always spawns in places where it can be swapped. If impossible, the game is over
+- Removed 3D backgrounds, Fullscreen option and screen size options from phone version
+- Added Join and Back buttons on server join window
+- Fixed wrong information on which player has won on Avalanche online
+- Made online STANDBY wait until we are sure the level has loaded up for both players
+- Minor logo change
+
+=1.12=
+- Changed flame particles, made them look like in the original Bejeweled games. If the performance hit is too strong for your pc, it can go back to the previous particle system by turning off Enhanced Graphics
+- Fixed rare bug if you load an autosave during gems spawning when AHM algorithm is running, because it tries to setup a combo replay that doesn't exist
+- Nerfed last two Preserver quests by adding one more minute to the timer
+- Multiplayer lobby now remembers the latest settings until you close the game
+- Updated splash screen by using anti-aliasing in the text. Now the horrible 'W' letter is much better looking
+- Added new visualizer
+- Jellified green visualizer (it looks more like jelly)
+- Made bomb explosion say gameover on gamemodes other than Quest
+- Fixed Online lobby Ultranova option being wrong for the other player
+
+=1.11.1=
+- Fixed stupid hypercube bug
+- Fixed game over error when moving a gem upwards to an ice-created gap, when a skull/bomb/doom gem is on 0
+
+=1.11=
+- Added new music for Zen Mode. This means that I am officialy using music in the game that is entirely created by me (finally).
+- Fixed buyo bug on last row where gems would suddenly teleport down
+- Added a bag randomization in buyo, so now you are guaranteed to get each combination of color
+- Made buyo level ups change the board skin
+- IP is now resolved when trying to connect online, so now letters can be accepted as valid ip addresses
+- Fixed 100 gems in one move quest bug. Now you truly have to destroy them in one move
+- Hypercube now destroys the correct gems when swapped with coals and companion gems
+- Fixed Avalanche Pass bug, now you can't pass the other player's turn
+- Fixed online pausing depth, now gameplay elements won't be on top of the pause menu
+- Checking for updates with no internet connection should now give you "Cannot retrieve info" correctly
+- Nerfed Skull Destroyer Quests (increased countdown base value for the last quests)
+- Added extremely subtle fade in/out on lightning effects
+- Fixed Skull bug that would softlock the game
+- I made all sfx sounds ( = everything except the voice and the music) be viewable in the game folder, since it was requested that sounds should be easily mod-able.
+
+=1.10=
+- Fixed quest information errors (mostly info for Time)
+- Fixed error when completing a bonus challenge with no multiplier
+- Fruit gems can now affect skull gem countdowns
+- Skull gems can no longer reach negative values
+- Fixed pattern quest types not having a skin for coal gems
+- Minor changes to the level up sequence
+- Added logo by B1Gaming
+- Fixed not having moves on Point Scorer quests
+- Fixed the fifth Board Cleaner 2 quest, now you MUST complete it in 10 moves
+- Magnification effect is now unavailable and the option is obsolete
+- Fixed bug with pressing ESC when paused and looking at bindings
+- Fixed score points appearing in board cleaner quests (they are not needed)
+- Fixed QUEST COMPLETE / GAME OVER at the same time when completing quests with 0 countdown in bombs/skulls/etc
+- Nerfed and fixed Zenifier quests since octanovas recently had been nerfed too
+- Making a Septanova will update both stats for Supernova and Septanova creations in Quests. As such, Octanova will increase the creation stats for Septanova and Supernova aswell.
+- Discord rich presence is unavailable due to developer errors, will be fixed in a future update (if the developer fixes it aswell)
+- Replaced copyrighted Puyo music with some unused music I had sitting. It has 4 changes throughout the game depending on how high your level is
+- Made Buyo Buyo slightly less clunky (still is though, I hate it)
+- Powered gems will now glow nearby gems as long as enhanced graphics are enabled
+
 =1.9.1=
 - Fixed floating score text not appearing when gems were cleared
 - Twist spinning is more stable now, thus fixing most errors

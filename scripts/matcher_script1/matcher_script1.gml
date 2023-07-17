@@ -2,6 +2,7 @@
 function matcher_script1(argument0) {
 	var t = argument0
 	xxx = 0
+<<<<<<< HEAD
 	yyy = 0			
 					if n = 9
 	                    {
@@ -23,6 +24,10 @@ function matcher_script1(argument0) {
 	                    with(gem_board1[j-1,i+1])  {matchme = 0;  dragXX = xxx; dragYY = yyy;} 
 					}
 					else if n >= 8
+=======
+	yyy = 0
+					if n >= 8
+>>>>>>> 1.9
 	                    {
 							var sc = 1000
 	                    points_add(sc,true)
@@ -157,7 +162,11 @@ function matcher_script1(argument0) {
 	                    with(gem_board1[i,j-1+t]) matchme = 0
 	                    with(gem_board1[i,j-2+t]) matchme = 0
 	                    with(gem_board1[i,j-3+t]) matchme = 0
+<<<<<<< HEAD
 	                    }  
+=======
+	                    }                                     
+>>>>>>> 1.9
 	                n = 1
 
 

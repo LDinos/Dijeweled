@@ -1,15 +1,7 @@
 /// @description Insert description here
 x = lerp(x,xdestination,0.1)
 if myturn //if it is my turn
-{
-	/*if !doonce
-	{
-		if Gamerule_1.IsGemActive2 && gems_existing < 64 && spawn_invs
-		{
-			doonce = true
-			//avalanche_create_invisible_gems(0)				
-		}
-	}*/
+{	
 	var non_inv_gems = 0;
 	with(Gem_1) {if !amInvisible non_inv_gems++}
 	gems_existing = hidden_gems + non_inv_gems //non_inv gems einai ta diamantia hdh sto board
@@ -31,12 +23,7 @@ if myturn //if it is my turn
 				audio_stop_all()
 				audio_play_sound(vo_gameover,0,false)	
 				gemdrop(Gem_1)
-				with(global.mynet)
-				{
-					buffer_seek(buffer,buffer_seek_start,0)
-					buffer_write(buffer,buffer_u8,NN_MATCH_AVALANCHE_GAMEOVER)
-					network_send_packet(client_socket,buffer,buffer_tell(buffer))
-				}
+				network_send(NN_MATCH_AVALANCHE_GAMEOVER)
 			}
 		}
 	}
@@ -52,13 +39,6 @@ else
 		if Gamerule_1.IsGemActive
 		{
 			doonce = false
-			/*with(Gem_1) {if amInvisible instance_destroy()}
-			with(global.mynet)
-			{
-				buffer_seek(buffer,buffer_seek_start,0)
-				buffer_write(buffer,buffer_u8,NN_MATCH_AVALANCHE_DESTROY_INVGEMS)
-				network_send_packet(client_socket,buffer,buffer_tell(buffer))
-			}*/
 		}
 	}
 }

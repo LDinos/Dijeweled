@@ -8,6 +8,7 @@ function make_hype(argument0, argument1) {
 		#region online
 			if global.online
 			{
+<<<<<<< HEAD
 				with(global.mynet)
 				{
 					buffer_seek(buffer,buffer_seek_start,0)
@@ -15,6 +16,9 @@ function make_hype(argument0, argument1) {
 					buffer_write(buffer,buffer_u8,other.myid)
 					network_send_packet(client_socket,buffer,buffer_tell(buffer))
 				}
+=======
+				network_send(NN_MATCH_GEM_HYPER, [buffer_u8], [myid])
+>>>>>>> 1.9
 			}
 		#endregion
 			with(obj_avalanchedeposit) {if hidden_gems > 0 {hidden_gems--};event_user(0);}
@@ -66,6 +70,7 @@ function make_hype(argument0, argument1) {
 				if global.online
 				{
 					scr_add_gemid(Gamerule_1)
+<<<<<<< HEAD
 					with(global.mynet)
 					{
 						buffer_seek(buffer,buffer_seek_start,0)
@@ -74,6 +79,9 @@ function make_hype(argument0, argument1) {
 						buffer_write(buffer,buffer_u8,other._j)
 						network_send_packet(client_socket,buffer,buffer_tell(buffer))
 					}				
+=======
+					network_send(NN_MATCH_GEM_HYPER_NEW, [buffer_u8, buffer_u8], [_i, _j])			
+>>>>>>> 1.9
 				}
 			#endregion
 	        }   

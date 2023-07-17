@@ -166,17 +166,8 @@ if !out_of_bounds
 				with(obj_avalanchedeposit_local) ammoving = true
 				if global.online
 				{
-					with(global.mynet)
-					{
-						buffer_seek(buffer,buffer_seek_start,0)
-						buffer_write(buffer,buffer_u8,NN_MATCH_TWIST_SWAP)
-						buffer_write(buffer,buffer_u8,gems[0].myid)
-						buffer_write(buffer,buffer_u8,gems[1].myid)
-						buffer_write(buffer,buffer_u8,gems[2].myid)
-						buffer_write(buffer,buffer_u8,gems[3].myid)
-						buffer_write(buffer,buffer_u8,cc)
-						network_send_packet(client_socket,buffer,buffer_tell(buffer))
-					}
+					network_send(NN_MATCH_TWIST_SWAP, [buffer_u8,buffer_u8,buffer_u8,buffer_u8,buffer_u8], 
+												[gems[0].myid,gems[1].myid,gems[2].myid,gems[3].myid, cc])
 				}
 				Gamerule_1.moving = true
 				gems[0].ammoving = true

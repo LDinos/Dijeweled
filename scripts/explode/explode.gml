@@ -46,7 +46,11 @@ function explode(argument0) {
 							skin_to_hype = other.skinnum
 							instance_destroy()
 						}
+<<<<<<< HEAD
 						else if gempower = 6
+=======
+						else if gempower = FRUIT
+>>>>>>> 1.9
 						{
 							if !amFruitExploding
 							{
@@ -62,7 +66,11 @@ function explode(argument0) {
 							}
 							amFruitExploding = true
 						}
+<<<<<<< HEAD
 						else if gempower != 1 instance_destroy()
+=======
+						else if gempower != FLAME instance_destroy()
+>>>>>>> 1.9
 						else 
 						{
 							alarm[1] = 10*modi

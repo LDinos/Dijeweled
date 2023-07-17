@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "compression": 1,
+=======
+  "compression": 3,
+>>>>>>> 1.9
   "volume": 1.0,
   "preload": false,
   "bitRate": 128,
@@ -11,7 +15,11 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_doubleset",
+<<<<<<< HEAD
   "duration": 0.0,
+=======
+  "duration": 1.404195,
+>>>>>>> 1.9
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

@@ -448,6 +448,15 @@ function load_custom_quest(argument0) {
 							obj_quest_control.L_nospecialgems = 0
 							obj_quest_control.L_nospecialgems_endgame = ini_read_real(s,"isticked_"+string(i),1)
 							break;
+<<<<<<< HEAD
+=======
+						case 47:
+							obj_quest_control.L_endless = true;
+							break;
+						case 48:
+							obj_quest_control.L_pointslimit = value;
+							break;
+>>>>>>> 1.9
 					}
 			#endregion
 			}

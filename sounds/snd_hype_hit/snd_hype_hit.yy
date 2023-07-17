@@ -11,7 +11,11 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_hype_hit",
+<<<<<<< HEAD
   "duration": 0.0,
+=======
+  "duration": 0.500408,
+>>>>>>> 1.9
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

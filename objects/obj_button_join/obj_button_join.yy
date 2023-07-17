@@ -5,6 +5,10 @@
   },
   "solid": false,
   "visible": true,
+<<<<<<< HEAD
+=======
+  "managed": true,
+>>>>>>> 1.9
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -28,6 +32,10 @@
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":1,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":4,"eventType":6,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+<<<<<<< HEAD
+=======
+    {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+>>>>>>> 1.9
   ],
   "properties": [],
   "overriddenProperties": [],

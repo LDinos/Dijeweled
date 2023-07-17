@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "compression": 0,
+=======
+  "compression": 3,
+>>>>>>> 1.9
   "volume": 1.0,
   "preload": false,
   "bitRate": 512,
@@ -11,7 +15,11 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_buttonchangeright",
+<<<<<<< HEAD
   "duration": 0.0,
+=======
+  "duration": 2.19712,
+>>>>>>> 1.9
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

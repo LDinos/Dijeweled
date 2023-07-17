@@ -11,7 +11,11 @@
     "path": "audiogroups/audiogroup_music",
   },
   "soundFile": "mus_credits",
+<<<<<<< HEAD
   "duration": 0.0,
+=======
+  "duration": 102.818184,
+>>>>>>> 1.9
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

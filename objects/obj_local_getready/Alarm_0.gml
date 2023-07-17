@@ -11,7 +11,7 @@ if (global.SET_gamemode == 1)
 	audio_play_sound(vo_go,0,false)
 	instance_create(0,0,spawner_avalanche)
 	instance_create(0,0,spawner_avalanche_local)
-	instance_create(room_width/2,992,obj_avalanche_pass)
+	instance_create_depth(room_width/2,992,0,obj_avalanche_pass)
 	with(spawner_avalanche) event_user(1)
 	with(obj_avalanchedeposit_local) doonce = !doonce
 	instance_destroy()

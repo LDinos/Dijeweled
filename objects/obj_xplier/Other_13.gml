@@ -102,7 +102,6 @@ else //if we are viewing a replay
 		sp.gotox = gem_to_spawn.x
 		sp.gotoy = gem_to_spawn.y
 		sp.gotoobject = gem_to_spawn
-		//image_speed = 1
 		lerpy_speed = 1
 }
 	

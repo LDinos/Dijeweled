@@ -5,6 +5,10 @@
   },
   "solid": false,
   "visible": true,
+<<<<<<< HEAD
+=======
+  "managed": true,
+>>>>>>> 1.9
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -33,8 +37,13 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
+<<<<<<< HEAD
     "name": "Menu",
     "path": "folders/Objects/Menu Buttons/Menu.yy",
+=======
+    "name": "Play",
+    "path": "folders/Objects/Menu Buttons/Menu/Play.yy",
+>>>>>>> 1.9
   },
   "resourceVersion": "1.0",
   "name": "obj_button_online",

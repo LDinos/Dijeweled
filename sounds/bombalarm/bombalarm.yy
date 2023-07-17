@@ -11,7 +11,11 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "bombalarm",
+<<<<<<< HEAD
   "duration": 0.0,
+=======
+  "duration": 2.352245,
+>>>>>>> 1.9
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

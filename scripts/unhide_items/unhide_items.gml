@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+///@description Used for zen mode element hide when player is afk. This one makes all elements visible
+>>>>>>> 1.9
 function unhide_items() {
 	hidden = false
 	//set visible for all
@@ -9,6 +13,9 @@ function unhide_items() {
 	if mouse_was_hidden player1.visible = true
 	if instance_exists(replay) replay.visible = true
 	doonce = false
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 1.9
 }

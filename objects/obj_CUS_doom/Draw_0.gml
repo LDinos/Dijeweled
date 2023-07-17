@@ -8,6 +8,4 @@ if enabled
 {
 	draw_sprite(spr_check,0,x+8,y+8)
 	draw_sprite(spr_generic_bot,0,x,y+32)
-	//draw_sprite(spr_generic_bot,0,x,y+64)
-	//draw_sprite(spr_generic_bot,0,x,y+96)
 }

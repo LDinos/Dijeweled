@@ -1,5 +1,4 @@
 /// @description blazing speed countdown
-// You can write your code in this editor
 if !blazingspeed && IsGemActive
 {
 	if blazingspeedchain > 0 && blazingspeedchain < 15

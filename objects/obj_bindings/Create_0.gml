@@ -1,10 +1,22 @@
 /// @description Bindings after pressing "controls" in pause menu
 //32769 is the first button for gamepad
+function find_gamepad() {
+	gamepad_id = noone
+	var gp_num = gamepad_get_device_count();
+	for (var i = 0; i < gp_num; i++;) {
+		if (gamepad_is_connected(i)) {
+			gamepad_id = i
+			break;
+		}
+	}
+}
 unable = false //are we unable to click anything?
 n = 32769
 click = -1
+hover = -1
+find_gamepad()
 instance_create(x+576,y+560,obj_bindings_return)
-#region Bind names
+#region Bind gamepad names
 B_names[0] = "A"
 B_names[1] = "B"
 B_names[2] = "X"
@@ -28,6 +40,7 @@ B_names[19] = "RSTICK V"
 #endregion
 
 ini_open("binds.ini")
+//Binds
 B_list[0,0]	= ini_read_real("binds","GP_swapdown",gp_face1) 
 B_list[1,0]	= ini_read_real("binds","GP_swapright",gp_face2)
 B_list[2,0]	= ini_read_real("binds","GP_swapleft",gp_face3)
@@ -39,6 +52,7 @@ B_list[7,0]	= ini_read_real("binds","GP_clockwise2",gp_face1)
 B_list[8,0]	= ini_read_real("binds","GP_cclockwise1",gp_face3)
 B_list[9,0]	= ini_read_real("binds","GP_cclockwise2",gp_face4)
 
+//Bind descriptions
 B_list[0,1] = "Swap Down"
 B_list[1,1] = "Swap Right"
 B_list[2,1] = "Swap Left"

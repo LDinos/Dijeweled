@@ -11,7 +11,11 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_hypecreate",
+<<<<<<< HEAD
   "duration": 0.0,
+=======
+  "duration": 3.26381,
+>>>>>>> 1.9
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

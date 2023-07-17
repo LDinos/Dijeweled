@@ -14,4 +14,4 @@ draw_text_transformed_color(x+16,y,"YOU NEED TO MATCH\nAT LEAST " + string(gems_
 //draw_sprite_ext(spr_warn,player_turn-1,room_width/2,512,1,1,0,c_white,alpha-0.5)
 }
 draw_sprite(spr_rails2,0,room_width/2,y)
-draw_text_outline(room_width/2,512+room_height/2 - 64,"Turns: " + string(num_turns), c_white,c_black)
+draw_text_outline(room_width/2,512+room_height/2 - 48,"Turns: " + string(num_turns), c_white,c_black)

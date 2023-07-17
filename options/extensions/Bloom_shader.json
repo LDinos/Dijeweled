@@ -1,0 +1,9 @@
+{
+  "extensionId": {
+    "name": "Bloom_shader",
+    "path": "extensions/Bloom_shader/Bloom_shader.yy"
+  },
+  "resourceVersion": "1.0",
+  "resourceType": "GMExtensionConfigSet",
+  "configurables": null
+}

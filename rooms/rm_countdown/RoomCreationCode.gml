@@ -2,9 +2,10 @@ room_speed = 60
 obj_radio.music = mus_blitz5min
 obj_radio.loop = true
 
-draw_texture_flush()
+//draw_texture_flush()
 //RADIO\\
-discord_update_presence(global.DIS_name,"","ico_512","")
+//discord_update_presence(global.DIS_name,"","ico_512","")
+DISCORD np_setpresence(global.version, global.DIS_name, "ico_512", "")
 with(obj_levelbar)
 {
 	global.timer = 300

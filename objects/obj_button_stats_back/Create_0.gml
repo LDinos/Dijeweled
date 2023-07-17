@@ -1,5 +1,6 @@
 /// @description Menu stats button to go back to main menu. Also includes the data for the stats
 index = 0
+<<<<<<< HEAD
 ind_max = 11
 sts[0] = obj_stats_arcade_M
 sts[1] = obj_stats_swift_M
@@ -13,6 +14,9 @@ sts[8] = obj_stats_blitz_M300
 sts[9] = obj_stats_countdown_M
 sts[10] = obj_stats_buyo_M
 sts[11] = obj_stats_insanity_M
+=======
+//ind_max = 10
+>>>>>>> 1.9
 image_speed = 0
 //x = room_width/2
-instance_create(0,0,obj_stats_arcade_M)
+//instance_create(0,0,obj_stats_arcade_M)

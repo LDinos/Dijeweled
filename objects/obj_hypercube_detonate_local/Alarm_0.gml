@@ -44,5 +44,5 @@ make_gems_fallen(MyGamerule)
 		}
 	}
 //}
-list_end = array_length_1d(gem)
+list_end = array_length(gem)
 alarm[1] = 1

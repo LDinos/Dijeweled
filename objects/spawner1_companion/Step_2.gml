@@ -73,7 +73,7 @@ if !Gamerule_1.IsGemActive && !Gamerule_1.fruit_exploding && !Gamerule_1.hypeOn 
 					
 						if Gamerule_1.summoves2 = 0 && !havedone && Gamerule_1.AHM_allowed
 							{
-								spawn_script(Gamerule_1,Gem_1)
+								spawn_script(Gamerule_1,Gem_1,true)
 							}
 					}
 					else

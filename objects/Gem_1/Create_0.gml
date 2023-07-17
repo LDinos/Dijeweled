@@ -1,43 +1,5 @@
-/// @description Gem object
-// You can write your code in this editor
-mypowerup = -1
-myid = -4
-
-isturnback = false
-dont_fall_yet = false //while twist rotating, we dont want the gems above to fall down, thus we made this variable
-SWAP_X = 0 //swapping x firt point
-SWAP_X_END = 0 //swapping x last point (the other gem's.x)
-SWAP_Y_END = 0 //swapping y firt point
-SWAP_Y = 0 //swapping x last point (the other gem's.y)
-percent = 0; //used in lerp in swapping
-shake = false //for when fruit is triggering me make me shake
-allowgemdestroytext = true //if its lasthurrah, dont show gemstext
-lvlcomplete = false //if lvlcomplete, follow the Board when it goes away
-shadow_index = spr_shadows
-//candraw = shader_is_compiled(shd_bright_contrast) //can i draw some shaders? lets see if it has compiled
-anim_happening = false //for when spinning animation
-
-cascade_diss = false //normal gems just dissappear, but if you have a combo, a slightly different dissappearing animation happens
-make_inv_dis = false //make image alpha of dissappearing gem 0 when dead?
-create_col = true //create collider on death? If I make a flame gem 4 gem match, it should not create a collider
-amInvisible = false //used for icegems below
-
-modifier = 1 //slow mo speed modifier (1 = normal)
-
-#region Directional light
-light_right = false
-light_up = false
-light_down = false
-light_left = false //check begin step
-#endregion
-
-dragXX = 0
-dragYY = 0 //used in matcherstep event for when 4+ matches happen, do a gem drag animation
-
-geodenum = irandom_range(1,Gamerule_1.geodemax) //number of geodes if I am coal
-for(i=0;i<geodenum;i++) geodenum_points[i] = choose(50,100,150,200,250,300) //geode points if i am coal
-
 #region My
+<<<<<<< HEAD
 MyGem = Gem_1 //Instance variables so that copy pasting code through gems will be easier
 MyGamerule = Gamerule_1
 MyBoard = Board_1
@@ -154,3 +116,17 @@ image_yscale = .5
 
 acc = 0 //speed
 gempower = 0
+=======
+	MyGem = Gem_1 //Instance variables so that copy pasting code through gems will be easier
+	MyGamerule = Gamerule_1
+	MyBoard = Board_1
+	MyLightObj = lightningObj1
+	MyLightKiller = lightningkiller
+	MyPlayer = player1
+	if (room == rm_blitz_matchreplay) MyPlayer = player1_matchreplay
+	//else if room = rm_twist MyPlayer = obj_twist_spinner
+	MyDiss = gem_dissappear
+#endregion
+
+EV_gem_CREATE()
+>>>>>>> 1.9

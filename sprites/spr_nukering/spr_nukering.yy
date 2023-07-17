@@ -1,4 +1,10 @@
 {
+<<<<<<< HEAD
+=======
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_nukering",
+>>>>>>> 1.9
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -14,12 +20,17 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
+<<<<<<< HEAD
+=======
+  "DynamicTexturePage": false,
+>>>>>>> 1.9
   "width": 650,
   "height": 651,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
   },
+<<<<<<< HEAD
   "swatchColours": [],
   "gridX": 0,
   "gridY": 0,
@@ -30,6 +41,18 @@
   ],
   "sequence": {
     "spriteId": {"name":"spr_nukering","path":"sprites/spr_nukering/spr_nukering.yy",},
+=======
+  "swatchColours": null,
+  "gridX": 0,
+  "gridY": 0,
+  "frames": [
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"d1151bdf-e05f-48bc-a6c2-d3056a90c7d9",},
+  ],
+  "sequence": {
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "",
+>>>>>>> 1.9
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -40,9 +63,15 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
+<<<<<<< HEAD
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"63245229-2561-4719-90e5-7450c923b597","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d1151bdf-e05f-48bc-a6c2-d3056a90c7d9","path":"sprites/spr_nukering/spr_nukering.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+=======
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+            {"id":"69641621-e41f-4944-8aeb-657befc6d2e1","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d1151bdf-e05f-48bc-a6c2-d3056a90c7d9","path":"sprites/spr_nukering/spr_nukering.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
+>>>>>>> 1.9
     ],
     "visibleRange": {"x":0.0,"y":0.0,},
     "lockOrigin": false,
@@ -58,6 +87,7 @@
     "yorigin": 325,
     "eventToFunction": {},
     "eventStubScript": null,
+<<<<<<< HEAD
     "parent": {"name":"spr_nukering","path":"sprites/spr_nukering/spr_nukering.yy",},
     "resourceVersion": "1.3",
     "name": "",
@@ -66,14 +96,22 @@
   },
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0d5abc35-e681-4f0c-89fe-49353fc61dca","tags":[],"resourceType":"GMImageLayer",},
+=======
+  },
+  "layers": [
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"0d5abc35-e681-4f0c-89fe-49353fc61dca","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
+>>>>>>> 1.9
   ],
   "nineSlice": null,
   "parent": {
     "name": "GemPower FX",
     "path": "folders/Sprites/Gems/GemPower FX.yy",
   },
+<<<<<<< HEAD
   "resourceVersion": "1.0",
   "name": "spr_nukering",
   "tags": [],
   "resourceType": "GMSprite",
+=======
+>>>>>>> 1.9
 }

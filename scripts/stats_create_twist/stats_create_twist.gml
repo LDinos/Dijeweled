@@ -25,10 +25,18 @@ function stats_create_twist() {
 
 
 
+<<<<<<< HEAD
 	ini_open("stats_twist.ini")
 		ini_write_string("Title","value","TWIST") //This is what will be shown on top of the stats
 		var str = ds_grid_write(grid)
 		ini_write_string("Data","grid",str)
+=======
+	ini_open("Stats/stats_twist.ini")
+		ini_write_string("Title","value","TWIST") //This is what will be shown on top of the stats
+		var str = ds_grid_write(grid)
+		ini_write_string("Data","grid",str)
+		ini_write_real("Info","has_level", true)
+>>>>>>> 1.9
 	ini_close()
 
 	ds_grid_destroy(grid)

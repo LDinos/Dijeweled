@@ -1,2 +1,5 @@
 /// @description Insert description here
-room_goto(rm_buyobuyo)
+if global.canbepressed
+{
+	fade_to_room(rm_buyobuyo)
+}

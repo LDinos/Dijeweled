@@ -2,6 +2,10 @@
   "spriteId": null,
   "solid": false,
   "visible": true,
+<<<<<<< HEAD
+=======
+  "managed": true,
+>>>>>>> 1.9
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,

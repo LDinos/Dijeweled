@@ -3,7 +3,7 @@ function macros() {
 #macro LIGHT_GRAY $363636
 #macro BLACK_GRAY $0d0d0d
 #macro KEYBOARD -1
-
+#macro FADE_OFF_SPEED 0.02
 #macro NN_DISCONNECT 0
 #macro NN_LBY_CONNECTED 1
 #macro NN_CHAT 2
@@ -46,23 +46,44 @@ function macros() {
 #macro NN_MATCH_AVALANCHE_GAMEOVER 39
 #macro NN_MUSIC_DANGERON 40
 #macro NN_MUSIC_DANGEROFF 41
-#macro NN_MATCH_AVALANCHE_MAKE_INVGEMS 42
-#macro NN_MATCH_AVALANCHE_DESTROY_INVGEMS 43
+#macro NN_SERVER_CHECK_VER 42
+#macro NN_SERVER_GAME_SETTINGS 43
 #macro NN_LBY_DEFENSE 44
 #macro NN_MATCH_AVALANCHE_PASS 45
 #macro NN_LBY_ULTRANOVAS 46
-#macro NN_MATCH_POWERUP_SPAWN 47
-#macro NN_MATCH_POWERUP_TRIGGER 48
-#macro NN_MATCH_POWERUP_POWERREMOVE 49
+#macro NN_DISSALLOW_SPECTATORS 47
+#macro NN_ALLOW_SPECTATORS 48
+#macro NN_SERVER_REPLAY_STOP 49
 #macro NN_MATCH_POWERUP_LOCK 50
 #macro NN_MATCH_SEND_POINTS 51 //after a lightning/hypercube ends, we send the points that we got during that time
 #macro NN_MATCH_INVERTED_OVER 52 //when inverted swap is over, send that info
-#macro NN_MATCH_HORVER_OVER 53 //when horizontal or vertical swap is over, send that info
-#macro NN_MATCH_TUG_INFO 54 
+#macro NN_SERVER_REPLAY_DATA 53 //when horizontal or vertical swap is over, send that info
+#macro NN_MATCH_TUG_INFO 54
+#macro NN_AMREADY 55
+#macro NN_YOUARE_HOST 56
+#macro NN_LBY_BLAZING 57
+#macro NN_YOUARE_SPECTATOR 58
+#macro NN_SPECTATOR_JOINED 59
+#macro NN_SPECTATOR_DISCONNECT 60
+#macro NN_MATCH_AMEXPLODE 61
+#macro NN_SERVER_BYE 62
+#macro GLOW_FADEOUT_FRAMES 10
+#macro FLAME 1
+#macro LIGHTNING 2
+#macro NOVA 3
+#macro SEPTA 4
+#macro OCTA 5
+#macro FRUIT 6
 
 
 
 
 
 
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> 1.9
 }

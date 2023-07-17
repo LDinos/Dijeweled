@@ -13,5 +13,10 @@ function set_skin(argument0) {
 		default: mycolor = c_white break;
 	}
 
+<<<<<<< HEAD
+=======
+	particle_flame_asset = asset_get_index("coord_" + string(image_index))
+	particle_flame_points = path_get_number(particle_flame_asset)
+>>>>>>> 1.9
 
 }

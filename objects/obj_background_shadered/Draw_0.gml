@@ -1,6 +1,6 @@
 /// @description Insert description here
 
-if global.OPT_lightallowed
+if global.OPT_lightallowed && os_type != os_android
 {
 if shd = 0	
 {
@@ -32,20 +32,18 @@ else if shd = 1
 		draw_sprite_ext(spr_bck1,0,x,y,1.2,1.2,0,c_white,1)
 	shader_reset();
 }
-else if shd = 6
+else if shd = 2
 {
-	shader_set(shd_starfield) 
-		shader_set_uniform_f(Res,512,512,0); 
-		shader_set_uniform_f(Time,current_time/5000); 
-		draw_self();
-	shader_reset(); 
+	var_time_var++
+	draw_sprite(spr_bck5,0,0,512)
+	draw_sprite_tiled(spr_bck5_laser_lines,0,0,var_time_var)
 }
 else if shd = 3
 {
 	var_time_var+=0.01;
 	shader_set(shdr_backdrop1);
-	    shader_set_uniform_f(uni_time_3, var_time_var);
-	    shader_set_uniform_f(uni_resolution_3, room_width*1.1, room_height*1.5);
+	    shader_set_uniform_f(uni_time_2, var_time_var);
+	    shader_set_uniform_f(uni_resolution_2, room_width*1.1, room_height*1.5);
 		draw_self()
 	shader_reset();
 }
@@ -57,11 +55,23 @@ else if shd = 5
 {
 	draw_sprite(spr_bck4,0,0,512)
 }
-else if shd = 2
+else if shd = 6
 {
-	var_time_var++
-	draw_sprite(spr_bck5,0,0,512)
-	draw_sprite_tiled(spr_bck5_laser_lines,0,0,var_time_var)
+	var_time_var+=0.01;
+	shader_set(shd_rainbowwater) 
+		shader_set_uniform_f(rainbow_res,1280,720,0); 
+		shader_set_uniform_f(rainbow_time,current_time/5000); 
+		draw_self();
+	shader_reset();
+	
+}
+else if shd = 7
+{
+	shader_set(shd_starfield) 
+		shader_set_uniform_f(Res,512,512,0); 
+		shader_set_uniform_f(Time,current_time/5000); 
+		draw_self();
+	shader_reset(); 
 }
 else
 {

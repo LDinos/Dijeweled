@@ -1,0 +1,2 @@
+/// @description
+global.canbepressed = true

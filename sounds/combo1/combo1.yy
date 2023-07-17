@@ -11,7 +11,11 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "combo1",
+<<<<<<< HEAD
   "duration": 0.0,
+=======
+  "duration": 2.105215,
+>>>>>>> 1.9
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

@@ -32,15 +32,13 @@ if file_exists("autosave_"+string(room_get_name(room)))
 						{
 							var my_x = Board_1.x + 64*j
 							var dif = 1 //spawn gems 1 pixel up so gemactive will be enabled
-							if AMLOCKED = 3 dif = 0 //dont do that to ice locks
+							if AMLOCKED == 3 dif = 0 //dont do that to ice locks
 							var my_y = Board_1.y - 64*(7-i) + 64*7 - dif
 							
 							var Gem = instance_create_depth(my_x, my_y,-1,Gem_1)
 							Gem.gempower = GEMPOWER
 							Gem.amHype = AMHYPE
 							with(Gem) set_skin(GEMSKIN)
-							//Gem.skinnum = my_skin
-							//Gem.image_index = my_skin
 							Gem.amBomb = AMBOMB
 							Gem.amLocked = AMLOCKED
 							Gem.countdown = COUNTDOWN
@@ -65,6 +63,11 @@ if file_exists("autosave_"+string(room_get_name(room)))
 								else if AMBEINGLOCKED = 3 && AMLOCKED = 0 //In the case where the lock is settling, both ambeinglocked and amlocked are true. We want the case w
 								{
 								 var app = instance_create(x,y,iceAppear)
+								 app.mygem = Gem
+								}
+								else if AMBEINGLOCKED = 4 && AMLOCKED = 0 //In the case where the lock is settling, both ambeinglocked and amlocked are true. We want the case w
+								{
+								 var app = instance_create(x,y,skullAppear)
 								 app.mygem = Gem
 								}
 								else if AMLOCKED = 1 //In the case where the lock is settling, both ambeinglocked and amlocked are true. We want the case w

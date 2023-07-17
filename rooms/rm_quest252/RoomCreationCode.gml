@@ -1,5 +1,5 @@
 room_speed = 60
-draw_texture_flush()
+//draw_texture_flush()
 global.chl_to_unlock = "25:3"
 global.chl_to_succeed = "25:2"
 with(Gamerule_1)

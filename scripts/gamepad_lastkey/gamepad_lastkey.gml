@@ -32,7 +32,11 @@ function gamepad_lastkey(argument0) {
 	var but = -1
 	for (var i=gp_face1; i<gp_axisrv; i++)
 	{
+<<<<<<< HEAD
 	    if gamepad_button_check(argument0, i)
+=======
+	    if gamepad_button_check_pressed(argument0, i)
+>>>>>>> 1.9
 		{
 	        but = i
 		}

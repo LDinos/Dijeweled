@@ -11,7 +11,11 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_supernovacreate",
+<<<<<<< HEAD
   "duration": 0.0,
+=======
+  "duration": 2.703515,
+>>>>>>> 1.9
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

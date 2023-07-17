@@ -4,12 +4,16 @@
 ///@param text
 ///@param textColor
 ///@param outlineColor
+<<<<<<< HEAD
 function draw_text_outline(argument0, argument1, argument2, argument3, argument4) {
 	var xx=argument0;
 	var yy=argument1;
 	var text=argument2;
 	var tcolor=argument3;
 	var ocolor=argument4;
+=======
+function draw_text_outline(xx, yy, text, tcolor, ocolor) {
+>>>>>>> 1.9
  
 	var pcolor=draw_get_color();
  

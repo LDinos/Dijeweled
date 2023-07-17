@@ -11,7 +11,11 @@
     "path": "audiogroups/audiogroup_music",
   },
   "soundFile": "mus_blitz5min",
+<<<<<<< HEAD
   "duration": 0.0,
+=======
+  "duration": 335.056824,
+>>>>>>> 1.9
   "parent": {
     "name": "music",
     "path": "folders/Sounds/music.yy",

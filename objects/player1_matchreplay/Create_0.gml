@@ -29,8 +29,6 @@ xlim = 3 //cursor position
 ylim = 3
 
 Replay_load = ds_map_create()
-//var mystring = string(date_get_day(date_current_datetime())) + "-" + string(date_get_month(date_current_datetime())) + "-" + string(date_get_year(date_current_datetime()))	
-
 
 for(i=0;i<=global.board_rows-1;i++)
 {
@@ -44,6 +42,7 @@ ini_open(global.replay_string)
 	var sect = ini_read_string("replay","data","-")
 	ds_map_read(Replay_load,sect)
 	Gamerule_1.geode_xplier = ini_read_real("replay","geode_xplier",1)
+	replay_version = ini_read_real("replay","replay_ver",0)
 ini_close()
 
 random_set_seed(Replay_load[? "seed"])

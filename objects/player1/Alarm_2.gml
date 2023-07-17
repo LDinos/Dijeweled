@@ -11,7 +11,7 @@
 	}
 	with(gemtomove1) {check_ifmatch(Gamerule_1)}
 	with(gemtomove2) {check_ifmatch(Gamerule_1)}
-	
+
 	if flag
 	{
 		with(obj_countdown_controller) moves--
@@ -28,9 +28,6 @@
 		if !Gamerule_1.blazingspeed
 		{
 			Gamerule_1.blazingshouldup = true;
-			//with(Gamerule_1) blazing_check()
-			//Gamerule_1.blazingspeedchain++
-			//Gamerule_1.blazingcounter = 140
 		}
 		else
 			{
@@ -51,7 +48,11 @@
 	}
 	else //if no matches happen
 	{
-		if Gamerule_1.illegals_allowed with(obj_countdown_controller) moves--
+		if Gamerule_1.illegals_allowed {
+			with(obj_countdown_controller) moves--
+			Gamerule_1.blazingspeedchain = 0
+			Gamerule_1.blazingspeedtotalchain = 0
+		}
 		if Gamerule_1.isQuest
 		{
 			if Gamerule_1.illegals_allowed
@@ -83,8 +84,7 @@
 			countdown_decrease()
 		}
 		with(obj_bonus_challenge) bonus_set_index(0)
-		//Gamerule_1.blazingspeedchain = 0
-		//Gamerule_1.blazingcounter = 140
+
 		if instance_exists(gemtomove1) && instance_exists(gemtomove2)
 		{
 			temp = gemtomove1

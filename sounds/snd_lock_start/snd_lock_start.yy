@@ -11,7 +11,11 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_lock_start",
+<<<<<<< HEAD
   "duration": 0.0,
+=======
+  "duration": 0.837279,
+>>>>>>> 1.9
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

@@ -1,7 +1,16 @@
 /// @description Insert description here
-enabled = false;
-instance_create(x,y + 16*3,CUS_doom_counter)
+function enable() {
+	obj_CUS_skulls.y += 3*16
+	instance_activate_object(buttons[0])
+}
 
+function disable() {
+	obj_CUS_skulls.y -= 3*16
+	instance_deactivate_object(buttons[0])
+}
+
+enabled = false;
+buttons = [ quest_editor_create_box(x, y + 3*16, BOX_TYPE_NUM, "Doom Counter", "Doom Counter", "15", 1, 99, "Doom", "counter")]
 var filename = obj_CUS_general.filename
 if file_exists(filename)
 {
@@ -10,11 +19,11 @@ if file_exists(filename)
 		obj_CUS_doom.enabled = ini_read_real(s,"allowed",0)
 		if obj_CUS_doom.enabled
 		{
-			CUS_doom_counter.value = string(ini_read_real(s,"counter",1))
+			buttons[0].value = string(ini_read_real(s,"counter",1))
 		}
 	ini_close()
 }
 
-instance_deactivate_object(CUS_doom_counter)
+for(var i = 0; i < array_length(buttons); i++) instance_deactivate_object(buttons[i])
 
 if enabled alarm[0] = 1

@@ -11,7 +11,11 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "bombvictory",
+<<<<<<< HEAD
   "duration": 0.0,
+=======
+  "duration": 3.227256,
+>>>>>>> 1.9
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

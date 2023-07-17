@@ -14,19 +14,19 @@ if MyGamerule.controlallowed && isready
 	}
 	if list_moves != -1
 	{
-		var list_height = array_height_2d(list_moves)-1
+		var list_height = array_length(list_moves)-1
 		var INDEX = irandom(list_height)
 		if (global.SET_gamemode == 1)
 		{
 			var list_moves_matchsorted = -1;
-			for (var i = 0; i<array_height_2d(list_moves); i++)
+			for (var i = 0; i<array_length(list_moves); i++)
 			{
 				list_moves_matchsorted[i] = do_virtual_match(list_moves,i) //lets find the most important swap
 			}
 			var findbest = 0;
 			var findworst = 0;
 			var findmedium = 0;
-			for (var i = 1; i<array_height_2d(list_moves); i++)
+			for (var i = 1; i<array_length(list_moves); i++)
 			{
 				if list_moves_matchsorted[i] > list_moves_matchsorted[findbest] {findbest = i}
 				if list_moves_matchsorted[i] < list_moves_matchsorted[findworst] {findworst = i}
@@ -39,7 +39,7 @@ if MyGamerule.controlallowed && isready
 			else if (global.botdifficulty1 == 1) INDEX = findmedium //if im medium makes the decent move
 			else if (global.botdifficulty1 == 2) INDEX = choose(findmedium,findbest) //if im hard, choose between decent and best
 			else if (global.botdifficulty1 == 3) INDEX = findbest //if im expert, choose the best move
-			show_debug_message(string(list_moves_matchsorted[findworst])+ "-" +string(list_moves_matchsorted[findmedium])+ "-" +string(list_moves_matchsorted[findbest]))
+			
 		}
 		var itodo = list_moves[INDEX,I]
 		var jtodo = list_moves[INDEX,J]

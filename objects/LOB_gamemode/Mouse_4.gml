@@ -6,13 +6,8 @@ if global.IAMHOST
 		val++
 	}
 	else val = valmin
-	with(global.mynet)
-	{
-		buffer_seek(buffer,buffer_seek_start,0)
-		buffer_write(buffer,buffer_u8,NN_LBY_GAMEMODE)
-		buffer_write(buffer,buffer_u8,other.val)
-		network_send_packet(client_socket,buffer,buffer_tell(buffer))
-	}
+	
+	network_send(NN_LBY_GAMEMODE, [buffer_u8], [val])	
 	
 	if val = 0 && !instance_exists(LOB_gamemode_2) 
 	{

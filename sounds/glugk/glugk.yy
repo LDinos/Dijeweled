@@ -11,7 +11,11 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "glugk",
+<<<<<<< HEAD
   "duration": 0.0,
+=======
+  "duration": 0.44229,
+>>>>>>> 1.9
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

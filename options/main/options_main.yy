@@ -1,6 +1,10 @@
 {
   "option_gameguid": "7e3e75cc-2e9c-4c82-8679-ff3542b00d05",
+<<<<<<< HEAD
   "option_gameid": "",
+=======
+  "option_gameid": "0",
+>>>>>>> 1.9
   "option_game_speed": 60,
   "option_mips_for_3d_textures": true,
   "option_draw_colour": 4294967295,
@@ -8,9 +12,20 @@
   "option_steam_app_id": "480",
   "option_sci_usesci": false,
   "option_author": "LDinos",
+<<<<<<< HEAD
   "option_lastchanged": "19 December 2019 22:51:45",
   "option_spine_licence": false,
   "resourceVersion": "1.2",
+=======
+  "option_collision_compatibility": true,
+  "option_copy_on_write_enabled": true,
+  "option_lastchanged": "19 December 2019 22:51:45",
+  "option_spine_licence": false,
+  "option_template_image": "${base_options_dir}/main/template_image.png",
+  "option_template_icon": "${base_options_dir}/main/template_icon.png",
+  "option_template_description": null,
+  "resourceVersion": "1.4",
+>>>>>>> 1.9
   "name": "Main",
   "tags": [],
   "resourceType": "GMMainOptions",

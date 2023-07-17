@@ -6,20 +6,22 @@
 
 #region Gem movement and collision
 var shouldmove = true
+var gmrl = MyGamerule
+if (global.spectator && player_id == 0) gmrl = Gamerule_1 //read gamerule 1 stuff when player 1 when spectating
 if (ammoving) || (dont_fall_yet) shouldmove = false
 else if (amInvisible) shouldmove = false
-else if (MyGamerule.lightOn) shouldmove = false
-else if (MyGamerule.hypeOn) shouldmove = false
+else if (gmrl.lightOn) shouldmove = false
+else if (gmrl.hypeOn) shouldmove = false
 else if (amLocked = 3) shouldmove = false
-else if (MyGamerule.fruit_exploding_dontmove) shouldmove = false
+else if (gmrl.fruit_exploding_dontmove) shouldmove = false
 if shouldmove
 {
 	{		
 			acc += accspeed
-			if (y + acc > Board_2.y + 512-64)
+			if (y + acc > MyBoard.y + 512-64)
 			{
 				acc = 0
-				y = Board_2.y + 512-64
+				y = MyBoard.y + 512-64
 			}
 			else
 			{
@@ -66,81 +68,27 @@ _j = (x-MyBoard.x) div 64
 #endregion
 
 #region Gempower particles
-var luck,sys;
-if gempower > 0 && visible
+if (visible)
 {
-	if gempower = 1
+	if gempower > 0
 	{
-		part_particles_create(global.sys_below_gem,x,y,global.partFire,1)
+		scr_gempower_particles()
 	}
-	else if gempower = 2 //lighting
+	else if amHype
 	{
-		luck = irandom(10)
-		if luck < 2 sys = global.sys_above_gem
-		else sys = global.sys_below_gem
-		part_emitter_region(sys,global.emit_newstar,x-32,x+32,y-32,y+32,ps_shape_ellipse,ps_distr_gaussian)
-		part_emitter_burst(sys,global.emit_newstar,global.part_star_bolt,2)
+		part_particles_create(global.sys_below_gem,irandom_range(x-24,x+24),irandom_range(y-24,y+24),global.part_hypercube,1)
+		if alarm[3] = -1 alarm[3] = 2
 	}
-	else if gempower = 3 //nova
+	else if amLocked = 2 //Doom
 	{
-		luck = irandom(10)
-		if luck < 2 sys = global.sys_above_gem
-		else sys = global.sys_below_gem
-		part_emitter_region(sys,global.emit_newstar,x-32,x+32,y-32,y+32,ps_shape_ellipse,ps_distr_gaussian)
-		part_emitter_burst(sys,global.emit_newstar,global.part_star_bolt,2)
-		part_particles_create(global.sys_below_gem,x,y,global.partNovaFire,1)
-	}
-	else if gempower = 4 //septa
-	{
-		part_particles_create(global.sys_below_gem,x,y,global.partFire,1)
-		part_particles_create(global.sys_below_gem,x,y,global.partCinder,1)
-		luck = irandom(10)
-		if luck < 2 sys = global.sys_above_gem
-		else sys = global.sys_below_gem
-		part_emitter_region(sys,global.emit_newstar,x-32,x+32,y-32,y+32,ps_shape_ellipse,ps_distr_gaussian)
-		part_emitter_burst(sys,global.emit_newstar,global.part_star_bolt,2)
-		part_particles_create(choose(global.sys_below_gem,global.sys_above_gem),x,y,global.partSeptafractal,1)
-	}
-	else if gempower = 5 //octa
-	{
-		part_particles_create(global.sys_below_gem,x,y,global.partFire,1)
-		part_particles_create(global.sys_below_gem,x,y,global.partCinder,1)
-		luck = irandom(10)
-		if luck < 2 sys = global.sys_above_gem
-		else sys = global.sys_below_gem
-		part_emitter_region(sys,global.emit_newstar,x-32,x+32,y-32,y+32,ps_shape_ellipse,ps_distr_gaussian)
-		part_emitter_burst(sys,global.emit_newstar,global.part_star_bolt,2)
-		part_particles_create(choose(global.sys_below_gem,global.sys_above_gem),x,y,global.partOctafractal,1)
-	}
-	else if gempower = 6 //fruit
-	{
-		if (sprite_index != spr_fruits) sprite_index = spr_fruits
-		if amFruitExploding
-		{
-			xmover = irandom_range(-2,2)
-			ymover = irandom_range(-2,2)
-		}
-		else
-		{
-			part_particles_create(global.sys_above_gem,x,y,global.part_fruit_sparkles,1)
-		}
+		part_type_direction(global.d_g2,100,120,0,1)
+	    part_particles_create(global.sys_below_gem,x-16,y-32,global.d_g2,1)
+	    part_type_direction(global.d_g2,100-45,120-45,0,1)
+	    part_particles_create(global.sys_below_gem,x+16,y-32,global.d_g2,1) 
+	    part_type_direction(global.d_g1,100,120,0,1)   
+	    part_particles_create(global.sys_below_gem,x-16,y-32,global.d_g1,2)
+	    part_type_direction(global.d_g1,100-45,120-45,0,1)
+	    part_particles_create(global.sys_below_gem,x+16,y-32,global.d_g1,2)
 	}
 }
-else if amHype
-{
-	part_particles_create(global.sys_below_gem,irandom_range(x-24,x+24),irandom_range(y-24,y+24),global.part_hypercube,1)
-	if alarm[3] = -1 alarm[3] = 2
-}
-else if amLocked = 2 //Doom
-{
-	part_type_direction(global.d_g2,100,120,0,1)
-    part_particles_create(global.sys_below_gem,x-16,y-32,global.d_g2,1)
-    part_type_direction(global.d_g2,100-45,120-45,0,1)
-    part_particles_create(global.sys_below_gem,x+16,y-32,global.d_g2,1) 
-    part_type_direction(global.d_g1,100,120,0,1)   
-    part_particles_create(global.sys_below_gem,x-16,y-32,global.d_g1,2)
-    part_type_direction(global.d_g1,100-45,120-45,0,1)
-    part_particles_create(global.sys_below_gem,x+16,y-32,global.d_g1,2)
-}
-
 #endregion

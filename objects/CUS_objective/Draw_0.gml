@@ -11,12 +11,12 @@ else if hasinput
 {
 	draw_set_halign(fa_left)
 	draw_set_valign(fa_middle)
-	draw_text_transformed(x + 48+24,y + sprite_height/2,text,.6,.6,0)
+	draw_text_transformed(x + 48+24,y + sprite_height/2, text,.6,.6,0)
 	draw_sprite(spr_num_input,0,x,y+32)
 	draw_sprite(spr_num_input,0,x+32,y+32)
 	
 	centerize_text()
-	draw_text_transformed(x+32,y+40,text2 + blink,0.5,0.5,0)
+	draw_text_transformed(x+32,y+40,number_convert_with_commas(text2) + blink,0.5,0.5,0)
 }
 else if hastickbox
 {

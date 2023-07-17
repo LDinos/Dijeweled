@@ -1,6 +1,7 @@
 /// @description Insert description here
 if global.canbepressed
 {
+<<<<<<< HEAD
 	instance_destroy()
 	with(obj_button_arcade) instance_destroy()
 	with(obj_button_blitz) instance_destroy()
@@ -19,4 +20,10 @@ if global.canbepressed
 	instance_create(xx,y+ sprite_height*4 +32*4,obj_button_survivor)
 	instance_create(xx,y+ sprite_height*5 +32*5,obj_button_buyo)
 	//instance_create(xx,y+ sprite_height*5 +32*5,obj_button_back)
+=======
+	with(obj_menu_buttons_master) {
+		kill_current_group()
+		change_to_group("secret")
+	}
+>>>>>>> 1.9
 }

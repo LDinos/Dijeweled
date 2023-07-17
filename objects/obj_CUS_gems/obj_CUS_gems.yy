@@ -5,6 +5,10 @@
   },
   "solid": false,
   "visible": true,
+<<<<<<< HEAD
+=======
+  "managed": true,
+>>>>>>> 1.9
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -27,8 +31,13 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
+<<<<<<< HEAD
     "name": "Custom Quests",
     "path": "folders/Objects/Custom Quests.yy",
+=======
+    "name": "Board",
+    "path": "folders/Objects/Custom Quests/Board.yy",
+>>>>>>> 1.9
   },
   "resourceVersion": "1.0",
   "name": "obj_CUS_gems",
