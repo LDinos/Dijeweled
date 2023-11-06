@@ -6,7 +6,7 @@ if global.canbepressed {
 			if (current_group == global.button_group[$ "play"] || current_group == global.button_group[$ "replays"]) {
 				change_to_group("initial")
 			}
-			else if (current_group == global.button_group[$ "single"] || current_group == global.button_group[$ "online"]) {
+			else if (current_group == global.button_group[$ "single"] || current_group == global.button_group[$ "online"] || current_group == global.button_group[$ "tfjeweled"]) {
 				change_to_group("play")
 			}
 			else if (current_group == global.button_group[$ "blitz"] || current_group == global.button_group[$ "secret"]) {

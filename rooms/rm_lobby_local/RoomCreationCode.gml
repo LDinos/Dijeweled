@@ -1,3 +1,4 @@
+setPREV_MENU(room);
 LOB_blazing.enabled = global.SET_blazing
 LOB_blazing.image_index = LOB_blazing.enabled
 LOB_multiswap.enabled = global.SET_multiswap

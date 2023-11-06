@@ -1,3 +1,4 @@
+setPREV_MENU(room);
 room_speed = 60
 //draw_texture_flush()
 with(obj_background_shadered) shd = irandom(num_shaders)

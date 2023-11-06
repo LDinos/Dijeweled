@@ -1,11 +1,10 @@
 {
-  "type": 1,
+  "resourceType": "GMShader",
+  "resourceVersion": "1.0",
+  "name": "shd_rainbowwater",
   "parent": {
     "name": "Backdrops",
     "path": "folders/Shaders/Backdrops.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "shd_rainbowwater",
-  "tags": [],
-  "resourceType": "GMShader",
+  "type": 1,
 }

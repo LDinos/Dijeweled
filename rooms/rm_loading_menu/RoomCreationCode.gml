@@ -30,7 +30,7 @@ for (var i = 0; i < gp_num; i++;)
    {
 		if gamepad_is_connected(i) {global.gp[0] = i; break}
    }
-if !instance_exists(OBJ_GRAPHICS) instance_create(x,y,OBJ_GRAPHICS)
+if !instance_exists(OBJ_GRAPHICS) instance_create(0,0,OBJ_GRAPHICS)
 
 if (os_type == os_windows || os_type == os_linux) global._discord_allowed = true
 else global._discord_allowed = false
@@ -60,3 +60,4 @@ if !file_exists("binds.ini")
 	ini_close()
 }
 read_gamepad_binds()
+global.PREV_MENU = "initial"
