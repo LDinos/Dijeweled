@@ -22,4 +22,5 @@ if global.canbepressed {
 		with(obj_challenges_selection) instance_destroy()
 	}
 	else room_goto(rm_menu)
+	instance_destroy(obj_tfj_client)
 }

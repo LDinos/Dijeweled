@@ -1,11 +1,11 @@
 {
   "FolderOrderSettings": [
-    {"name":"TFJeweled","order":1,"path":"folders/Rooms/TFJeweled.yy",},
     {"name":"TFJeweled buttons","order":12,"path":"folders/Objects/Menu Buttons/Menu/Play/TFJeweled buttons.yy",},
-    {"name":"TFJ","order":38,"path":"folders/Sprites/TFJ.yy",},
+    {"name":"button_lobby","order":7,"path":"folders/Objects/Menu Buttons/Menu/Play/TFJeweled buttons/button_lobby.yy",},
     {"name":"TFJ","order":31,"path":"folders/Objects/TFJ.yy",},
     {"name":"LOBBY","order":1,"path":"folders/Objects/TFJ/LOBBY.yy",},
-    {"name":"button_lobby","order":7,"path":"folders/Objects/Menu Buttons/Menu/Play/TFJeweled buttons/button_lobby.yy",},
+    {"name":"TFJeweled","order":1,"path":"folders/Rooms/TFJeweled.yy",},
+    {"name":"TFJ","order":38,"path":"folders/Sprites/TFJ.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_gem_sm_red","order":1,"path":"sprites/spr_gem_sm_red/spr_gem_sm_red.yy",},
@@ -833,6 +833,7 @@
     {"name":"doomAppear","order":7,"path":"objects/doomAppear/doomAppear.yy",},
     {"name":"spr_downarrow","order":3,"path":"sprites/spr_downarrow/spr_downarrow.yy",},
     {"name":"obj_doom_sperms","order":8,"path":"objects/obj_doom_sperms/obj_doom_sperms.yy",},
+    {"name":"obj_tfj_client","order":2,"path":"objects/obj_tfj_client/obj_tfj_client.yy",},
     {"name":"obj_textspeed1","order":1,"path":"objects/obj_textspeed1/obj_textspeed1.yy",},
     {"name":"obj_text_stayer","order":2,"path":"objects/obj_text_stayer/obj_text_stayer.yy",},
     {"name":"obj_challenge_score","order":3,"path":"objects/obj_challenge_score/obj_challenge_score.yy",},
