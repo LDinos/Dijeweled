@@ -22,5 +22,8 @@ if global.canbepressed {
 		with(obj_challenges_selection) instance_destroy()
 	}
 	else room_goto(rm_menu)
+	
+	//TFJ STUFF
 	instance_destroy(obj_tfj_client)
+	instance_destroy(obj_tfj_lobby_master)
 }

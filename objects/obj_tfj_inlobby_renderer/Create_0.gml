@@ -6,17 +6,17 @@ var right_column=room_width*0.7
 
 for (var i=1;i<4;i++)
 {
-	instance_create(left_column,(room_height/4)*(i%3)+160,obj_tfj_lobby_playerslot)
+	instance_create(left_column,(room_height/4)*(i%3)+160,obj_tfj_inlobby_playerslot)
 }
 
 for (var i=1;i<3;i++)
 {
-	instance_create(middle_column,(room_height/4)*(i%2)+160,obj_tfj_lobby_playerslot)
+	instance_create(middle_column,(room_height/4)*(i%2)+160,obj_tfj_inlobby_playerslot)
 }
 
 for (var i=1;i<4;i++)
 {
-	instance_create(right_column,(room_height/4)*(i%3)+160,obj_tfj_lobby_playerslot)
+	instance_create(right_column,(room_height/4)*(i%3)+160,obj_tfj_inlobby_playerslot)
 }
 
 var lobby_ready_x=sprite_get_width(spr_TFJ_lobby_slot)-sprite_get_width(spr_base_button)/2+middle_column

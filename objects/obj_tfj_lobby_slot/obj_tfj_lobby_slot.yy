@@ -1,13 +1,16 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_tfj_lobby_playerslot",
-  "eventList": [],
+  "name": "obj_tfj_lobby_slot",
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+  ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "LOBBY",
-    "path": "folders/Objects/TFJ/LOBBY.yy",
+    "name": "PRELOBBY",
+    "path": "folders/Objects/TFJ/PRELOBBY.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -26,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_TFJ_lobby_slot",
-    "path": "sprites/spr_TFJ_lobby_slot/spr_TFJ_lobby_slot.yy",
+    "name": "spr_TFJ_lobby",
+    "path": "sprites/spr_TFJ_lobby/spr_TFJ_lobby.yy",
   },
   "spriteMaskId": null,
   "visible": true,

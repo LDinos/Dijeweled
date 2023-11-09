@@ -1,15 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_tfj_lobby_renderer",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-  ],
+  "name": "obj_tfj_inlobby_playerslot",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "LOBBY",
-    "path": "folders/Objects/TFJ/LOBBY.yy",
+    "name": "INLOBBY",
+    "path": "folders/Objects/TFJ/INLOBBY.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -27,7 +25,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_TFJ_lobby_slot",
+    "path": "sprites/spr_TFJ_lobby_slot/spr_TFJ_lobby_slot.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }
