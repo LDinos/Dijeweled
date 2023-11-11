@@ -1,6 +1,6 @@
 /// @description Change sprite
 with(obj_menu_tooltip)
 {
-	text = "Start a server"
+	text = "Host a lobby!"
 }
 image_index = 1

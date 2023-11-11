@@ -4,10 +4,10 @@
     {"name":"button_lobby","order":7,"path":"folders/Objects/Menu Buttons/Menu/Play/TFJeweled buttons/button_lobby.yy",},
     {"name":"TFJ","order":31,"path":"folders/Objects/TFJ.yy",},
     {"name":"INLOBBY","order":1,"path":"folders/Objects/TFJ/INLOBBY.yy",},
-    {"name":"TFJeweled","order":1,"path":"folders/Rooms/TFJeweled.yy",},
-    {"name":"TFJ","order":38,"path":"folders/Sprites/TFJ.yy",},
-    {"name":"TFJ","order":65,"path":"folders/Scripts/TFJ.yy",},
     {"name":"PRELOBBY","order":4,"path":"folders/Objects/TFJ/PRELOBBY.yy",},
+    {"name":"TFJeweled","order":1,"path":"folders/Rooms/TFJeweled.yy",},
+    {"name":"TFJ","order":65,"path":"folders/Scripts/TFJ.yy",},
+    {"name":"TFJ","order":38,"path":"folders/Sprites/TFJ.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_gem_sm_red","order":1,"path":"sprites/spr_gem_sm_red/spr_gem_sm_red.yy",},

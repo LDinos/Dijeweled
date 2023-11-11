@@ -16,6 +16,7 @@ function refresh_lobby_info()
 		{
 			lobby_buttons[i].name=lobbies[i+page*4].name
 			lobby_buttons[i].host=lobbies[i+page*4].host
+			lobby_buttons[i].is_pressable=true
 		}
 		else
 		{
@@ -24,3 +25,4 @@ function refresh_lobby_info()
 		}
 	}
 }
+selected_lobby = undefined

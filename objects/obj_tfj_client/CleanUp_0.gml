@@ -1,0 +1,2 @@
+network_destroy(soc)
+instance_destroy(obj_tfj_lobby_master)

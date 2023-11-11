@@ -25,5 +25,4 @@ if global.canbepressed {
 	
 	//TFJ STUFF
 	instance_destroy(obj_tfj_client)
-	instance_destroy(obj_tfj_lobby_master)
 }

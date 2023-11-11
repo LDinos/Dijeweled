@@ -1,9 +1,8 @@
 /// @description Insert description here
+if (!global.canbepressed) exit
+
 fade_to_room(rm_TFJeweled_lobby)
 global.IAMHOST = true
 global.canbepressed = false
+obj_tfj_client.sendRequest("LBH") //LOBBYHOST
 
-
-
-/*global.mynet = obj_server
-instance_create(16,16,obj_server)*/
