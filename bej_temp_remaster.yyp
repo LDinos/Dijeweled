@@ -780,6 +780,7 @@
     {"id":{"name":"snd_doubleset","path":"sounds/snd_doubleset/snd_doubleset.yy",},},
     {"id":{"name":"snd_blz4","path":"sounds/snd_blz4/snd_blz4.yy",},},
     {"id":{"name":"snd_octacreate","path":"sounds/snd_octacreate/snd_octacreate.yy",},},
+    {"id":{"name":"obj_button_tfj_refresh","path":"objects/obj_button_tfj_refresh/obj_button_tfj_refresh.yy",},},
     {"id":{"name":"fruit_explosion","path":"sounds/fruit_explosion/fruit_explosion.yy",},},
     {"id":{"name":"snd_xplier_illegal","path":"sounds/snd_xplier_illegal/snd_xplier_illegal.yy",},},
     {"id":{"name":"snd_zenify_ready","path":"sounds/snd_zenify_ready/snd_zenify_ready.yy",},},

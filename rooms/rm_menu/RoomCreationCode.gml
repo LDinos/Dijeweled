@@ -37,4 +37,6 @@ DISCORD np_setpresence(global.version,"In Main Menu", "ico_512", "")
 
 with(obj_menu_buttons_master) change_to_group(global.PREV_MENU)
 
+if (global.PREV_MENU == "tfjeweled") obj_tfj_client.sendRequest("LBS")
+
 if (global.join_ip) != "" room_goto(rm_ipjoin)

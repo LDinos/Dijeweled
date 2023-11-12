@@ -43,7 +43,7 @@ global.button_group = {
 	"online" : [noone, noone, obj_button_dedicated, obj_button_join, obj_button_host, noone, obj_button_back],
 	"replays" : [noone, noone, noone, noone, noone, obj_button_online_replays, obj_button_back],
 	"replay_save" : [obj_replaysave_continue, obj_replaysave_cancel],
-	"tfjeweled" : [noone, noone, noone, obj_button_tfj_join, obj_button_tfj_host, noone, obj_button_back]
+	"tfjeweled" : [noone, noone, obj_button_tfj_refresh, obj_button_tfj_join, obj_button_tfj_host, noone, obj_button_back]
 }
 
 change_to_group("none", false)

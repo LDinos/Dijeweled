@@ -450,6 +450,7 @@
     {"name":"snd_doubleset","order":85,"path":"sounds/snd_doubleset/snd_doubleset.yy",},
     {"name":"snd_blz4","order":86,"path":"sounds/snd_blz4/snd_blz4.yy",},
     {"name":"snd_octacreate","order":87,"path":"sounds/snd_octacreate/snd_octacreate.yy",},
+    {"name":"obj_button_tfj_refresh","order":8,"path":"objects/obj_button_tfj_refresh/obj_button_tfj_refresh.yy",},
     {"name":"fruit_explosion","order":88,"path":"sounds/fruit_explosion/fruit_explosion.yy",},
     {"name":"snd_xplier_illegal","order":89,"path":"sounds/snd_xplier_illegal/snd_xplier_illegal.yy",},
     {"name":"snd_zenify_ready","order":90,"path":"sounds/snd_zenify_ready/snd_zenify_ready.yy",},
