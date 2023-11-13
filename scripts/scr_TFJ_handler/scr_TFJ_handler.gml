@@ -18,12 +18,12 @@ function scr_TFJ_handler(req){
 		break
 			
 		case "LBJ": ///lebron james (lobby join)
-			show_debug_message(req_split[1])
 			if (req_split[1]) room_goto(rm_TFJeweled_lobby)
 		break
 		
 		case "ULP": //update lobby participants
 			if (array_length(req_split) == 1) break //in case you're alone :(
+			with (obj_button_tfj_lobby_button_start) {disabled = false}
 			obj_tfj_inlobby_renderer.generateSelfSlot()
 			var players=string_split(req_split[1], "/")
 			for (var i=0;i<array_length(players);i++)
@@ -31,15 +31,22 @@ function scr_TFJ_handler(req){
 				obj_tfj_inlobby_renderer.lobby_slots[i+1].name=""
 				var players_split = string_split(players[i], "?") 
 				obj_tfj_inlobby_renderer.lobby_slots[i+1].name=players_split[0]
-				if (i==0 && !global.IAMHOST){obj_tfj_inlobby_renderer.lobby_slots[i+1].name = "Host: " + obj_tfj_inlobby_renderer.lobby_slots[i+1].name;break;}
-				obj_tfj_inlobby_renderer.lobby_slots[i+1].name+= " - "
-				obj_tfj_inlobby_renderer.lobby_slots[i+1].name+=players_split[1] == true ? "READY" : "NOT READY"
+				obj_tfj_inlobby_renderer.lobby_slots[i+1].ready_status=players_split[1]
+				if (i==0 && !global.IAMHOST){obj_tfj_inlobby_renderer.lobby_slots[i+1].host = true;return;}
+				if (global.IAMHOST) 
+				{
+					if (obj_tfj_inlobby_renderer.lobby_slots[i+1].ready_status==false) {with (obj_button_tfj_lobby_button_start) {disabled = true}}
+				}
 			}
 		break
 		
 		case "LDH":
 			room_goto(rm_menu)
 			show_message("Disconnected by the host")
+		break
+		
+		case "SRT":
+			room_goto(rm_tfj)
 		break
 	}
 }

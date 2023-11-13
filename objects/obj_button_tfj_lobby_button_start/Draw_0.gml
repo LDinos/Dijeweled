@@ -3,8 +3,9 @@
 
 
 
+
+
 // Inherit the parent event
+image_alpha=0.5 + (disabled-1)*-1
 event_inherited();
-text="START";
-disabled = true
 

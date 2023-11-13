@@ -3,8 +3,9 @@
 
 
 
+
+
 // Inherit the parent event
+if (disabled) exit
 event_inherited();
-text="START";
-disabled = true
 

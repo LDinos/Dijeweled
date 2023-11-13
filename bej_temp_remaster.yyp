@@ -676,6 +676,7 @@
     {"id":{"name":"vo_extraordinary","path":"sounds/vo_extraordinary/vo_extraordinary.yy",},},
     {"id":{"name":"vo_gameover","path":"sounds/vo_gameover/vo_gameover.yy",},},
     {"id":{"name":"vo_excellent","path":"sounds/vo_excellent/vo_excellent.yy",},},
+    {"id":{"name":"rm_tfj","path":"rooms/rm_tfj/rm_tfj.yy",},},
     {"id":{"name":"vo_questcomplete","path":"sounds/vo_questcomplete/vo_questcomplete.yy",},},
     {"id":{"name":"vo_3","path":"sounds/vo_3/vo_3.yy",},},
     {"id":{"name":"vo_challengecomplete","path":"sounds/vo_challengecomplete/vo_challengecomplete.yy",},},
@@ -823,6 +824,7 @@
     {"id":{"name":"keyboard_islastkey_number","path":"scripts/keyboard_islastkey_number/keyboard_islastkey_number.yy",},},
     {"id":{"name":"keyboard_islastkey_numletter","path":"scripts/keyboard_islastkey_numletter/keyboard_islastkey_numletter.yy",},},
     {"id":{"name":"keyboard_islastkey_letter","path":"scripts/keyboard_islastkey_letter/keyboard_islastkey_letter.yy",},},
+    {"id":{"name":"spawner1_tfj","path":"objects/spawner1_tfj/spawner1_tfj.yy",},},
     {"id":{"name":"fade_to_room","path":"scripts/fade_to_room/fade_to_room.yy",},},
     {"id":{"name":"draw_rectangle_monocolor","path":"scripts/draw_rectangle_monocolor/draw_rectangle_monocolor.yy",},},
     {"id":{"name":"keyboard_swap_check","path":"scripts/keyboard_swap_check/keyboard_swap_check.yy",},},
@@ -1379,6 +1381,7 @@
     {"roomId":{"name":"rm_stats_countdown","path":"rooms/rm_stats_countdown/rm_stats_countdown.yy",},},
     {"roomId":{"name":"rm_ONLINE_replay","path":"rooms/rm_ONLINE_replay/rm_ONLINE_replay.yy",},},
     {"roomId":{"name":"rm_TFJeweled_lobby","path":"rooms/rm_TFJeweled_lobby/rm_TFJeweled_lobby.yy",},},
+    {"roomId":{"name":"rm_tfj","path":"rooms/rm_tfj/rm_tfj.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [

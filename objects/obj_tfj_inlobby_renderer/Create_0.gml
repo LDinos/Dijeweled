@@ -3,9 +3,9 @@ lobby_slots=[]
 i_am_ready=false
 function generateSelfSlot()
 {
-	if (global.IAMHOST) {lobby_slots[0].name = "Host: " + global.user;return; }
-	if (i_am_ready ) {lobby_slots[0].name= global.user + " - READY" return}
-	lobby_slots[0].name= global.user + " - NOT READY"
+	lobby_slots[0].name= global.user
+	if (global.IAMHOST) {lobby_slots[0].host = true ;return }
+	lobby_slots[0].ready_status=i_am_ready
 }
 
 

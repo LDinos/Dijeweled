@@ -36,7 +36,7 @@ do
 
 				if gaps[r] > 0
 				{
-					if board[gaps[r]-1,r] != -1 show_message("not empty board changes skin lol")
+					//if board[gaps[r]-1,r] != -1 show_message("not empty board changes skin lol")
 					board[gaps[r]-1,r] = irandom(Gamerule_1.num_skin) //make a gem for that place with random skin
 					col_num_create[r]++
 					gaps[r]--
@@ -252,7 +252,7 @@ do
 						
 						if stop < 4 s = irandom(Gamerule_1.num_skin)
 					}
-					if board[gaps[r]-1,r] != -1 show_message("not empty board changes skin lol")
+					///if board[gaps[r]-1,r] != -1 show_message("not empty board changes skin lol")
 					board[gaps[r]-1,r] = irandom(Gamerule_1.num_skin) //make a gem for that place with random skin
 					col_num_create[r]++
 					gaps[r]--

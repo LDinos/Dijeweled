@@ -1,10 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-
-
-// Inherit the parent event
-event_inherited();
-text="START";
-disabled = true
-
+ds_list_destroy(num_choices)
