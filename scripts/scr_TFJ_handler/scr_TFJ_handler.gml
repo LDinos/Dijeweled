@@ -22,6 +22,7 @@ function scr_TFJ_handler(req){
 		break
 		
 		case "ULP": //update lobby participants
+		{
 			if (array_length(req_split) == 1) break //in case you're alone :(
 			with (obj_button_tfj_lobby_button_start) {disabled = false}
 			obj_tfj_inlobby_renderer.generateSelfSlot()
@@ -38,6 +39,7 @@ function scr_TFJ_handler(req){
 					if (obj_tfj_inlobby_renderer.lobby_slots[i+1].ready_status==false) {with (obj_button_tfj_lobby_button_start) {disabled = true}}
 				}
 			}
+		}
 		break
 		
 		case "LDH":
@@ -47,6 +49,32 @@ function scr_TFJ_handler(req){
 		
 		case "SRT":
 			room_goto(rm_tfj)
+		break
+		
+		case "FPO":
+		{
+			var params=string_split(req_split[1], "/")
+			obj_tfj_ingame_renderer.players[params[0]].is_me=true
+			for (var i=0;i<array_length(params)-1;i++) //should be 8
+			{
+				obj_tfj_ingame_renderer.players[i].setName(params[i+1])
+			}
+			obj_tfj_client.sendRequest("INI|"+scr_board_to_string(spawner1_tfj.gem_array))
+		}
+		break
+		
+		case "EOR": //EOR|part0board?part0gold?part0hp/part1board?part1gold...
+		{
+			var params = string_split(req_split[1], "/")
+			var params2;
+			for (var i=0;i<array_length(params);i++) //should be 8
+			{
+				params2 = string_split(params[i], "?")
+				scr_string_to_board(params2[0],obj_tfj_ingame_renderer.players[i].board)
+				obj_tfj_ingame_renderer.players[i].gold=params2[1]
+				obj_tfj_ingame_renderer.players[i].hp=params2[2]
+			}
+		}
 		break
 	}
 }

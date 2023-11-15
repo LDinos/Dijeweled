@@ -46,14 +46,15 @@ function generateSkinArray()
 
 function spawnGems()
 {
+	instance_destroy(Gem_1)
 	for(i=0;i<8;i++)
 	{
 		for(j=0;j<8;j++)
 		{
 			var my_x = Board_1.x + 64*j
 			var my_y = Board_1.y - 64*(i+1)
-			var my_skin = gem_array[i,j]
 			var Gem = instance_create_depth(my_x, my_y,-1,Gem_1)
+			array_push(g_a,Gem)
 			with(Gem) {set_skin(other.gem_array[other.i,other.j])}
 		}
 	}
@@ -68,8 +69,9 @@ num_choices = ds_list_create()
 
 if !Gamerule_1.spawnallowed exit
 gem_array = []
+g_a = [] //gem array 2 ig 
 generateSkinArray() //modifies gem_array
-spawnGems()
+spawnGems(gem_array)
 
 function initial_spawn(gem_id, board_id, gamerule_id, p_id = 0)
 {

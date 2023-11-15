@@ -1,7 +1,7 @@
 room_speed = 60
-
 with(Gamerule_1)
 {
+	controlallowed = false //at first disable moving
 	AHM_allowed = true
 	illegals_allowed = false
 	hypeallowed = true
@@ -9,4 +9,3 @@ with(Gamerule_1)
 	isQuest = false
 	multiswap_allowed = true
 }
-audio_play_sound(mus_zen,0,true)
