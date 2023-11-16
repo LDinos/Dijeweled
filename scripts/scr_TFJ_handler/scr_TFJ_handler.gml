@@ -59,7 +59,7 @@ function scr_TFJ_handler(req){
 			{
 				obj_tfj_ingame_renderer.players[i].setName(params[i+1])
 			}
-			obj_tfj_client.sendRequest("INI|"+scr_board_to_string(spawner1_tfj.gem_array))
+			obj_tfj_client.sendRequest("INI|"+scr_board_to_string(spawner1_tfj.gem_array,true))
 		}
 		break
 		
