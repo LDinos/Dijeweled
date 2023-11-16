@@ -59,7 +59,7 @@ function scr_TFJ_handler(req){
 			{
 				obj_tfj_ingame_renderer.players[i].setName(params[i+1])
 			}
-			obj_tfj_client.sendRequest("INI|"+scr_board_to_string(spawner1_tfj.gem_array,true))
+			obj_tfj_client.sendRequest("INI|"+scr_board_to_string(Gamerule_1.gems_fallen))
 		}
 		break
 		
@@ -75,6 +75,26 @@ function scr_TFJ_handler(req){
 				obj_tfj_ingame_renderer.players[i].hp=params2[2]
 			}
 		}
+		break
+		
+		case "TMM":
+			show_debug_message( req_split[1] )
+		break
+		
+		case "GOR":
+			show_debug_message( "aaaa" )
+			for (var i =0 ; i<8 ; i++)
+			{
+				if (obj_tfj_ingame_renderer.players[i].is_me) 
+				{
+					obj_tfj_ingame_renderer.players[i].selectPlayer()
+				}
+			}
+			Gamerule_1.controlallowed=true
+		break
+		
+		case "STP":
+			Gamerule_1.controlallowed=false
 		break
 	}
 }
