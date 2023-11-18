@@ -1,7 +1,6 @@
 name = ""
 hp = 100
 lvl = 1
-is_me=false
 board = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
 gold = 0
 image_speed = 0
@@ -9,11 +8,13 @@ image_speed = 0
 function setName (nm)
 {
 	name=nm
-	if(is_me) name+= " (you)"
+	if(obj_tfj_ingame_renderer.my_player() == id) name+= " (you)"
 }
 
 function selectPlayer()
 {
+	with (obj_tfj_ingame_player) { image_index=0 }
+	image_index=1
 	for (var i=0;i<8;i++)
 	{
 		for (var j=0;j<8;j++)

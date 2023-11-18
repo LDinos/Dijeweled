@@ -1,4 +1,5 @@
 function scr_TFJ_handler(req){
+	show_debug_message(req)
 	var req_split=string_split(req, "|")
 	switch(req_split[0])
 	{
@@ -54,12 +55,12 @@ function scr_TFJ_handler(req){
 		case "FPO":
 		{
 			var params=string_split(req_split[1], "/")
-			obj_tfj_ingame_renderer.players[params[0]].is_me=true
+			obj_tfj_ingame_renderer.me=params[0] //for getting my player
 			for (var i=0;i<array_length(params)-1;i++) //should be 8
 			{
 				obj_tfj_ingame_renderer.players[i].setName(params[i+1])
 			}
-			obj_tfj_client.sendRequest("INI|"+scr_board_to_string(Gamerule_1.gems_fallen))
+			obj_tfj_client.sendRequest("CBS|"+scr_board_to_string(Gamerule_1.gems_fallen)+"?"+"SCORE")
 		}
 		break
 		
@@ -78,23 +79,23 @@ function scr_TFJ_handler(req){
 		break
 		
 		case "TMM":
-			show_debug_message( req_split[1] )
+			obj_tfj_ingame_renderer.set_timer(req_split[1])
 		break
 		
-		case "GOR":
-			show_debug_message( "aaaa" )
-			for (var i =0 ; i<8 ; i++)
-			{
-				if (obj_tfj_ingame_renderer.players[i].is_me) 
-				{
-					obj_tfj_ingame_renderer.players[i].selectPlayer()
-				}
-			}
+		case "GOC": //GO COMBAT
+			obj_tfj_ingame_renderer.my_player().selectPlayer()
 			Gamerule_1.controlallowed=true
+		break
+		
+		case "GOS": //go special GOS|S OR GOS|C informs of next special round and starts current one
+			obj_tfj_ingame_renderer.my_player().selectPlayer()
+			obj_tfj_ingame_renderer.special_round=req_split[1]
 		break
 		
 		case "STP":
 			Gamerule_1.controlallowed=false
+			obj_tfj_ingame_renderer.next_round()
+			obj_tfj_client.sendRequest("CBS|"+scr_board_to_string(Gamerule_1.gems_fallen)+"?"+"SCORE")
 		break
 	}
 }
