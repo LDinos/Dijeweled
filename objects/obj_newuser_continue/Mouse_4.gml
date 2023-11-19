@@ -20,6 +20,7 @@
 		{
 		ini_open("settings.ini")
 			ini_write_string("Settings", "user", obj_newuser.text)
+			ini_write_string("Settings", "stats_server", "ldinos.ddns.net")
 		ini_close()
 		room_goto(rm_menu)
 		}
