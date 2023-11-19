@@ -14,7 +14,7 @@ num_choices = ds_list_create()
 if Gamerule_1.spawnallowed && !file_exists("autosave_"+string(room_get_name(room)))
 {
 #region make gems for first time
-//1) create gems
+//1) create gem array
 for(i=0;i<=global.board_rows-1;i++)
 {
 	for(j=0;j<=7;j++)

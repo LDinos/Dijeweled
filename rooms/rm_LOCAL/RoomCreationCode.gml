@@ -1,3 +1,4 @@
+setPREV_MENU(room);
 room_speed = 60
 instance_create(0,0,obj_local_getready)
 global.user2 = global.user + "(2)"

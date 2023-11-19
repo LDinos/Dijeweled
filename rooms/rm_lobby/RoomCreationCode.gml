@@ -1,3 +1,4 @@
+setPREV_MENU(room);
 global.online = true
 
 if global.IAMHOST

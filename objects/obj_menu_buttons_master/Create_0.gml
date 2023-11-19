@@ -32,7 +32,7 @@ global.button_group = {
 	"none" : [],
 	"initial" : [noone, obj_button_play, obj_button_options, obj_button_replays, 
 				obj_button_help, obj_button_credits, obj_button_quit],
-	"play" : [noone, obj_button_singleplayer, obj_button_multiplayer, obj_button_online, noone,
+	"play" : [noone, obj_button_singleplayer, obj_button_multiplayer, obj_button_online, obj_button_tfjeweled,
 				noone, obj_button_back],
 	"single" : [obj_button_secret, obj_button_arcade, obj_button_blitz,
 				obj_button_classic, obj_button_challenge, obj_button_zen, obj_button_back],
@@ -43,6 +43,7 @@ global.button_group = {
 	"online" : [noone, noone, obj_button_dedicated, obj_button_join, obj_button_host, noone, obj_button_back],
 	"replays" : [noone, noone, noone, noone, noone, obj_button_online_replays, obj_button_back],
 	"replay_save" : [obj_replaysave_continue, obj_replaysave_cancel],
+	"tfjeweled" : [noone, noone, obj_button_tfj_refresh, obj_button_tfj_join, obj_button_tfj_host, noone, obj_button_back]
 }
 
 change_to_group("none", false)
