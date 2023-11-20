@@ -1,9 +1,20 @@
+enum Rounds
+{
+	Combat_Round_1,
+	Combat_Round_2,
+	Combat_Round_3,
+	Special_Round,
+	Reset
+}
+
 players=[]
 special_round="S" 
 me=0
 room_start_y=515
-current_round=0
+current_round=-1
 timer=10
+
+
 
 //spawn the player slots on the left
 for (var i=0;i<8;i++)
@@ -24,6 +35,16 @@ function my_player()
 
 function next_round()
 {
-	if (current_round==4) current_round=0;return
 	current_round++
+	if (current_round==Rounds.Special_Round) 
+	{
+		instance_create(350,960,obj_tfj_ingame_special_button)
+		return
+	}
+	if (current_round==Rounds.Reset) current_round=Rounds.Combat_Round_1
+}
+
+function destroy_all_special()
+{
+	instance_destroy(obj_tfj_ingame_special_button)
 }

@@ -78,23 +78,34 @@ function scr_TFJ_handler(req){
 		}
 		break
 		
+		case "NXR": //special round end
+			//do nothing for now
+		break
+		
 		case "TMM":
 			obj_tfj_ingame_renderer.set_timer(req_split[1])
 		break
 		
 		case "GOC": //GO COMBAT
+			obj_tfj_ingame_renderer.next_round()
 			obj_tfj_ingame_renderer.my_player().selectPlayer()
 			Gamerule_1.controlallowed=true
 		break
 		
 		case "GOS": //go special GOS|S OR GOS|C informs of next special round and starts current one
+			obj_tfj_ingame_renderer.next_round()
 			obj_tfj_ingame_renderer.my_player().selectPlayer()
 			obj_tfj_ingame_renderer.special_round=req_split[1]
 		break
 		
 		case "STP":
+			if (obj_tfj_ingame_renderer.current_round==3) //if the round was a special round
+			{
+				obj_tfj_ingame_renderer.destroy_all_special()
+				obj_tfj_client.sendRequest("NXR") //debug request to continue round 
+				break
+			}
 			Gamerule_1.controlallowed=false
-			obj_tfj_ingame_renderer.next_round()
 			obj_tfj_client.sendRequest("CBS|"+scr_board_to_string(Gamerule_1.gems_fallen)+"?"+"SCORE")
 		break
 	}
