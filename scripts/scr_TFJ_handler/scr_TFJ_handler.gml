@@ -60,11 +60,11 @@ function scr_TFJ_handler(req){
 			{
 				obj_tfj_ingame_renderer.players[i].setName(params[i+1])
 			}
-			obj_tfj_client.sendRequest("CBS|"+scr_board_to_string(Gamerule_1.gems_fallen)+"?"+"SCORE")
+			obj_tfj_client.sendRequest("CBS|"+scr_board_to_string(Gamerule_1.gems_fallen)+"?"+"INI")
 		}
 		break
 		
-		case "EOR": //EOR|part0board?part0gold?part0hp/part1board?part1gold...
+		case "EOR": //EOR|part0board?part0gold?part0hp?part0placement?part0score/part1board?part1gold...
 		{
 			var params = string_split(req_split[1], "/")
 			var params2;
@@ -74,6 +74,9 @@ function scr_TFJ_handler(req){
 				scr_string_to_board(params2[0],obj_tfj_ingame_renderer.players[i].board)
 				obj_tfj_ingame_renderer.players[i].gold=params2[1]
 				obj_tfj_ingame_renderer.players[i].hp=params2[2]
+				obj_tfj_ingame_renderer.players[i].placement=params2[3]
+				obj_tfj_ingame_renderer.players[i]._score=params2[4]
+				
 			}
 		}
 		break
@@ -105,8 +108,7 @@ function scr_TFJ_handler(req){
 				obj_tfj_client.sendRequest("NXR") //debug request to continue round 
 				break
 			}
-			Gamerule_1.controlallowed=false
-			obj_tfj_client.sendRequest("CBS|"+scr_board_to_string(Gamerule_1.gems_fallen)+"?"+"SCORE")
+			obj_tfj_client.alarm[0]=1
 		break
 	}
 }

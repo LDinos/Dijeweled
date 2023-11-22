@@ -62,6 +62,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Text","folderPath":"folders/Objects/Text.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"TFJ","folderPath":"folders/Objects/TFJ.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"INGAME","folderPath":"folders/Objects/TFJ/INGAME.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"SPECIAL OBJECTS","folderPath":"folders/Objects/TFJ/INGAME/SPECIAL OBJECTS.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"INLOBBY","folderPath":"folders/Objects/TFJ/INLOBBY.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"PRELOBBY","folderPath":"folders/Objects/TFJ/PRELOBBY.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Paths","folderPath":"folders/Paths.yy",},
@@ -129,7 +130,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Zenify","folderPath":"folders/Sprites/Zenify.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"SPECIAL OBJECTS","folderPath":"folders/Objects/TFJ/INGAME/SPECIAL OBJECTS.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"challenge00.ini","CopyToMask":-1,"filePath":"datafiles/challenges",},
