@@ -5,12 +5,17 @@ board = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]
 gold = 0
 placement = 0
 _score = 0
+cards=[undefined,undefined,undefined]
+cards_count=0
 image_speed = 0
 
 function setName (nm)
 {
 	name=nm
-	if(obj_tfj_ingame_renderer.my_player() == id) name+= " (you)"
+	if(obj_tfj_ingame_renderer.my_player() == id)
+	{
+		name+= " (you)"
+	}
 }
 
 function selectPlayer()

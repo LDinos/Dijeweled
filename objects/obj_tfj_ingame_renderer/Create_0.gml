@@ -15,7 +15,6 @@ current_round=-1
 timer=10
 
 
-
 //spawn the player slots on the left
 for (var i=0;i<8;i++)
 {

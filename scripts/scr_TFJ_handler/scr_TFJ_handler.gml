@@ -81,8 +81,25 @@ function scr_TFJ_handler(req){
 		}
 		break
 		
-		case "NXR": //special round end
-			//do nothing for now
+		case "NXR": //special round end NXR|part0gold?part0card0?part0card1../part1gold?part1card0?part1card1..
+		{
+			var params = string_split(req_split[1], "/")
+			var params2;
+			for (var i=0;i<array_length(params);i++)
+			{
+				params2 = string_split(params[i], "?")
+				for (var j=0;j<array_length(params2);j++)
+				{
+					if (j == 0) 
+					{
+						obj_tfj_ingame_renderer.players[i].gold=params2[0];
+						continue;
+					}
+					obj_tfj_ingame_renderer.players[i].cards[j-1]=params2[j]
+				}
+			}
+		}
+			
 		break
 		
 		case "TMM":
@@ -109,6 +126,13 @@ function scr_TFJ_handler(req){
 				break
 			}
 			obj_tfj_client.alarm[0]=1
+		break
+		
+		case "CRD":
+			var params = string_split(req_split[1], "/")
+			obj_tfj_ingame_special_button.assigned_cards=params
+			obj_tfj_ingame_special_button.create3CardSlots()
+			obj_tfj_ingame_special_button.setCards()
 		break
 	}
 }
