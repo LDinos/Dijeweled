@@ -60,11 +60,11 @@ function scr_TFJ_handler(req){
 			{
 				obj_tfj_ingame_renderer.players[i].setName(params[i+1])
 			}
-			obj_tfj_client.sendRequest("CBS|"+scr_board_to_string(Gamerule_1.gems_fallen)+"?"+"SCORE")
+			obj_tfj_client.sendRequest("CBS|"+scr_board_to_string(Gamerule_1.gems_fallen)+"?"+"INI")
 		}
 		break
 		
-		case "EOR": //EOR|part0board?part0gold?part0hp/part1board?part1gold...
+		case "EOR": //EOR|part0board?part0gold?part0hp?part0placement?part0score/part1board?part1gold...
 		{
 			var params = string_split(req_split[1], "/")
 			var params2;
@@ -74,8 +74,32 @@ function scr_TFJ_handler(req){
 				scr_string_to_board(params2[0],obj_tfj_ingame_renderer.players[i].board)
 				obj_tfj_ingame_renderer.players[i].gold=params2[1]
 				obj_tfj_ingame_renderer.players[i].hp=params2[2]
+				obj_tfj_ingame_renderer.players[i].placement=params2[3]
+				obj_tfj_ingame_renderer.players[i]._score=params2[4]
+				
 			}
 		}
+		break
+		
+		case "NXR": //special round end NXR|part0gold?part0card0?part0card1../part1gold?part1card0?part1card1..
+		{
+			var params = string_split(req_split[1], "/")
+			var params2;
+			for (var i=0;i<array_length(params);i++)
+			{
+				params2 = string_split(params[i], "?")
+				for (var j=0;j<array_length(params2);j++)
+				{
+					if (j == 0) 
+					{
+						obj_tfj_ingame_renderer.players[i].gold=params2[0];
+						continue;
+					}
+					obj_tfj_ingame_renderer.players[i].cards[j-1]=params2[j]
+				}
+			}
+		}
+			
 		break
 		
 		case "TMM":
@@ -83,19 +107,32 @@ function scr_TFJ_handler(req){
 		break
 		
 		case "GOC": //GO COMBAT
+			obj_tfj_ingame_renderer.next_round()
 			obj_tfj_ingame_renderer.my_player().selectPlayer()
 			Gamerule_1.controlallowed=true
 		break
 		
 		case "GOS": //go special GOS|S OR GOS|C informs of next special round and starts current one
+			obj_tfj_ingame_renderer.next_round()
 			obj_tfj_ingame_renderer.my_player().selectPlayer()
 			obj_tfj_ingame_renderer.special_round=req_split[1]
 		break
 		
 		case "STP":
-			Gamerule_1.controlallowed=false
-			obj_tfj_ingame_renderer.next_round()
-			obj_tfj_client.sendRequest("CBS|"+scr_board_to_string(Gamerule_1.gems_fallen)+"?"+"SCORE")
+			if (obj_tfj_ingame_renderer.current_round==3) //if the round was a special round
+			{
+				obj_tfj_ingame_renderer.destroy_all_special()
+				obj_tfj_client.sendRequest("NXR") //debug request to continue round 
+				break
+			}
+			obj_tfj_client.alarm[0]=1
+		break
+		
+		case "CRD":
+			var params = string_split(req_split[1], "/")
+			obj_tfj_ingame_special_button.assigned_cards=params
+			obj_tfj_ingame_special_button.create3CardSlots()
+			obj_tfj_ingame_special_button.setCards()
 		break
 	}
 }
