@@ -16,6 +16,6 @@ if audio_group_is_loaded(audiogroup_music) && audio_group_is_loaded(audiogroup_v
 		ini_close()
 
 	if newuser instance_create(0,0,obj_newuser)
-	else room_goto(rm_menu)
+	else room_goto(rm_intro)
 	instance_destroy()
 }

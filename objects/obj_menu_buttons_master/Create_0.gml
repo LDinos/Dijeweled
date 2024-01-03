@@ -32,7 +32,7 @@ global.button_group = {
 	"none" : [],
 	"initial" : [noone, obj_button_play, obj_button_options, obj_button_replays, 
 				obj_button_help, obj_button_credits, obj_button_quit],
-	"play" : [noone, obj_button_singleplayer, obj_button_multiplayer, obj_button_online, obj_button_tfjeweled,
+	"play" : [noone, obj_button_singleplayer, obj_button_multiplayer, obj_button_online, noone,
 				noone, obj_button_back],
 	"single" : [obj_button_secret, obj_button_arcade, obj_button_blitz,
 				obj_button_classic, obj_button_challenge, obj_button_zen, obj_button_back],

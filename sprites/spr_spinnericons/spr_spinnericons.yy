@@ -63,7 +63,7 @@
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3607263a-8c3b-4e4d-951c-0c6bfb6af8ef","path":"sprites/spr_spinnericons/spr_spinnericons.yy",},},},"Disabled":false,"id":"825a12e7-5015-4936-b03d-7d952ebf84d9","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "volume": 1.0,
     "xorigin": 272,
     "yorigin": 272,

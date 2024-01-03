@@ -39,6 +39,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Gem Controls","folderPath":"folders/Objects/Gem Controls.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Gems","folderPath":"folders/Objects/Gems.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Locks","folderPath":"folders/Objects/Gems/Locks.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Intro","folderPath":"folders/Objects/Intro.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Lobby","folderPath":"folders/Objects/Lobby.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Local","folderPath":"folders/Objects/Local.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Menu Buttons","folderPath":"folders/Objects/Menu Buttons.yy",},
@@ -295,7 +296,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.11.1.129",
   },
   "resources": [
     {"id":{"name":"spr_gems_small","path":"sprites/spr_gems_small/spr_gems_small.yy",},},
@@ -399,6 +400,7 @@
     {"id":{"name":"spr_buyomobiledown","path":"sprites/spr_buyomobiledown/spr_buyomobiledown.yy",},},
     {"id":{"name":"photon","path":"sprites/photon/photon.yy",},},
     {"id":{"name":"spr_fruits","path":"sprites/spr_fruits/spr_fruits.yy",},},
+    {"id":{"name":"obj_intro","path":"objects/obj_intro/obj_intro.yy",},},
     {"id":{"name":"spr_hiddengem","path":"sprites/spr_hiddengem/spr_hiddengem.yy",},},
     {"id":{"name":"dev_spawn","path":"sprites/dev_spawn/dev_spawn.yy",},},
     {"id":{"name":"dev_radio","path":"sprites/dev_radio/dev_radio.yy",},},
@@ -755,6 +757,7 @@
     {"id":{"name":"snd_gemselection","path":"sounds/snd_gemselection/snd_gemselection.yy",},},
     {"id":{"name":"buyo_play_music","path":"scripts/buyo_play_music/buyo_play_music.yy",},},
     {"id":{"name":"snd_lightning_fill10","path":"sounds/snd_lightning_fill10/snd_lightning_fill10.yy",},},
+    {"id":{"name":"mus_intro","path":"sounds/mus_intro/mus_intro.yy",},},
     {"id":{"name":"vrooom","path":"sounds/vrooom/vrooom.yy",},},
     {"id":{"name":"snd_lvlcomp_01","path":"sounds/snd_lvlcomp_01/snd_lvlcomp_01.yy",},},
     {"id":{"name":"snd_clocktick","path":"sounds/snd_clocktick/snd_clocktick.yy",},},
@@ -823,6 +826,7 @@
     {"id":{"name":"obj_buyomobile_controls","path":"objects/obj_buyomobile_controls/obj_buyomobile_controls.yy",},},
     {"id":{"name":"ease_inout_sine","path":"scripts/ease_inout_sine/ease_inout_sine.yy",},},
     {"id":{"name":"obj_uploadstats","path":"objects/obj_uploadstats/obj_uploadstats.yy",},},
+    {"id":{"name":"rm_intro","path":"rooms/rm_intro/rm_intro.yy",},},
     {"id":{"name":"ease_out_sine","path":"scripts/ease_out_sine/ease_out_sine.yy",},},
     {"id":{"name":"convert_seconds_to_time","path":"scripts/convert_seconds_to_time/convert_seconds_to_time.yy",},},
     {"id":{"name":"convert_num_to_tick","path":"scripts/convert_num_to_tick/convert_num_to_tick.yy",},},
@@ -1400,6 +1404,7 @@
     {"roomId":{"name":"rm_ONLINE_replay","path":"rooms/rm_ONLINE_replay/rm_ONLINE_replay.yy",},},
     {"roomId":{"name":"rm_TFJeweled_lobby","path":"rooms/rm_TFJeweled_lobby/rm_TFJeweled_lobby.yy",},},
     {"roomId":{"name":"rm_tfj","path":"rooms/rm_tfj/rm_tfj.yy",},},
+    {"roomId":{"name":"rm_intro","path":"rooms/rm_intro/rm_intro.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [

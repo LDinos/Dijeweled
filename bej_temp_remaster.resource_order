@@ -1,5 +1,6 @@
 {
   "FolderOrderSettings": [
+    {"name":"Intro","order":32,"path":"folders/Objects/Intro.yy",},
     {"name":"TFJeweled buttons","order":12,"path":"folders/Objects/Menu Buttons/Menu/Play/TFJeweled buttons.yy",},
     {"name":"button_lobby","order":7,"path":"folders/Objects/Menu Buttons/Menu/Play/TFJeweled buttons/button_lobby.yy",},
     {"name":"TFJ","order":31,"path":"folders/Objects/TFJ.yy",},
@@ -425,6 +426,7 @@
     {"name":"snd_gemselection","order":54,"path":"sounds/snd_gemselection/snd_gemselection.yy",},
     {"name":"buyo_play_music","order":55,"path":"scripts/buyo_play_music/buyo_play_music.yy",},
     {"name":"snd_lightning_fill10","order":55,"path":"sounds/snd_lightning_fill10/snd_lightning_fill10.yy",},
+    {"name":"mus_intro","order":27,"path":"sounds/mus_intro/mus_intro.yy",},
     {"name":"vrooom","order":56,"path":"sounds/vrooom/vrooom.yy",},
     {"name":"snd_lvlcomp_01","order":57,"path":"sounds/snd_lvlcomp_01/snd_lvlcomp_01.yy",},
     {"name":"snd_clocktick","order":58,"path":"sounds/snd_clocktick/snd_clocktick.yy",},
@@ -490,6 +492,7 @@
     {"name":"obj_buyomobile_controls","order":2,"path":"objects/obj_buyomobile_controls/obj_buyomobile_controls.yy",},
     {"name":"ease_inout_sine","order":9,"path":"scripts/ease_inout_sine/ease_inout_sine.yy",},
     {"name":"obj_uploadstats","order":28,"path":"objects/obj_uploadstats/obj_uploadstats.yy",},
+    {"name":"rm_intro","order":6,"path":"rooms/rm_intro/rm_intro.yy",},
     {"name":"ease_out_sine","order":10,"path":"scripts/ease_out_sine/ease_out_sine.yy",},
     {"name":"convert_seconds_to_time","order":11,"path":"scripts/convert_seconds_to_time/convert_seconds_to_time.yy",},
     {"name":"convert_num_to_tick","order":12,"path":"scripts/convert_num_to_tick/convert_num_to_tick.yy",},

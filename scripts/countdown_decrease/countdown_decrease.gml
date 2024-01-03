@@ -2,9 +2,7 @@
 function countdown_decrease() {
 	if !Gamerule_1.zenify
 	{
-	countdown--
-	playcountdown = true
+		countdown--
+		playcountdown = true
 	}
-
-
 }

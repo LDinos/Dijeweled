@@ -1,6 +1,24 @@
 function EV_gem_CREATE(){
 /// @description Gem object
 // You can write your code in this editor
+//0 = no, 1 = locked, 2 = doomlocked, 3 = ice locked, 4 = skull locked
+function isIce() {
+	return (amLocked == 3)
+}
+
+function isDoom() {
+	return (amLocked == 2)
+}
+
+function isNormalLocked() {
+	return (amLocked == 1)
+}
+
+function isLocked() {
+	return (amLocked > 0)
+}
+
+
 player_id = 0
 gemglow_alpha = random(1)
 nearby_glown_left = false //am I glown because of a nearby power gem?
