@@ -804,10 +804,12 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 			g1 = argument0.gemboard[gaps[j]+1,j]
 			for( var i = 0; i < 8; i++) {
 				var g_test = argument0.gems_fallen[i][j]
-				if g_test.isIce() {
-					hasIceGem = true
-					break;
-				}
+				if (g_test != noone) {
+					if g_test.isIce() {
+						hasIceGem = true
+						break;
+					}
+				}				
 			}		
 			if (g1 != -1) && (g1 != 7) && (!hasIceGem)
 			{
