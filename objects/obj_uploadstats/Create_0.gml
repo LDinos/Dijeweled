@@ -1,7 +1,10 @@
 /// @description
 client_socket = network_create_socket(network_socket_ws);
 buffer = buffer_create(1,buffer_grow,1)
-var ip = network_resolve("ldinos.ddns.net")
+ini_open("settings.ini")
+var ip_string = ini_read_string("Settings","stats_server","ldinos.ddns.net")
+var ip = network_resolve(ip_string)
+ini_close()
 text = "Attempting stats upload..."
 max_alpha = 0.8
 min_alpha = 0.2

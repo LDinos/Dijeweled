@@ -1,3 +1,4 @@
+setPREV_MENU(room);
 if (global.join_ip) != "" {
 	obj_serveripjoin.field = global.join_ip
 	obj_serveripjoin.join()

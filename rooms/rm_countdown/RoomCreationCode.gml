@@ -32,4 +32,4 @@ with(Gamerule_1)
 	wheel_spinner_allowed = false
 	replay_allowed = false
 }
-instance_create(x,y,spawner1)
+instance_create(0,0,spawner1)

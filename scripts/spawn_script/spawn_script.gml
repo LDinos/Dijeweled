@@ -800,8 +800,16 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	{
 		if gaps[j] >= 2 && gaps[j] <= global.board_rows - 3 //have space to check back
 		{
+			var hasIceGem = false;
 			g1 = argument0.gemboard[gaps[j]+1,j]
-			if (g1 != -1) && (g1 != 7)
+			for( var i = 0; i < 8; i++) {
+				var g_test = argument0.gems_fallen[i][j]
+				if g_test.isIce() {
+					hasIceGem = true
+					break;
+				}
+			}		
+			if (g1 != -1) && (g1 != 7) && (!hasIceGem)
 			{
 				if (include_gem_creators)
 				{
@@ -816,8 +824,16 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	{
 		if gaps[j] >= 3 && gaps[j] <= global.board_rows - 2 //have space to check back
 		{
+			var hasIceGem = false;
+			for( var i = 0; i < 8; i++) {
+				var g_test = argument0.gems_fallen[i][j]
+				if g_test.isIce() {
+					hasIceGem = true
+					break;
+				}
+			}	
 			g1 = argument0.gemboard[gaps[j],j]
-			if (g1 != -1) && (g1 != 7)
+			if (g1 != -1) && (g1 != 7) && (!hasIceGem)
 			{
 				if (include_gem_creators)
 				{
