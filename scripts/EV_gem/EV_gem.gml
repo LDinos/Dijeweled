@@ -10,6 +10,10 @@ function isDoom() {
 	return (amLocked == 2)
 }
 
+function isSkull() {
+	return (amLocked == 4)
+}
+
 function isNormalLocked() {
 	return (amLocked == 1)
 }
@@ -181,7 +185,7 @@ function EV_gem_STEP() {
 	var accspeed = Gamerule_1.isReplay ? 0.3 : 0.6; //default speed acceleration = 0.6
 	modifier = Gamerule_1.isReplay ? 2 : 1; //speed slow-mo modifier. 1 = normal, 2 = half the speed
 
-	var am_countdown_gem = (amBomb || amLocked = 2 || amLocked = 4)
+	var am_countdown_gem = (amBomb || isDoom() || isSkull())
 	if (am_countdown_gem) //if I am bomb or doom or skull
 	{
 		if (!bombappear && amBomb) //if its the first time I appear and I am a bomb
@@ -202,7 +206,7 @@ function EV_gem_STEP() {
 
 			if (countdown == 0)
 			{
-				if (amBomb || amLocked = 2) Gamerule_1.bombis0 = true //if am Bomb/Doom
+				if (amBomb || isDoom()) Gamerule_1.bombis0 = true //if am Bomb/Doom
 				else skull_gameover_check() //if am Skull
 			}
 			else if (was_skull_0) Gamerule_1.skullis0 = false; //if previously was skull on 0, now bring back control to the player
@@ -241,7 +245,7 @@ function EV_gem_STEP() {
 	previous_i = _i
 	_i = (y-MyBoard.y+63) div 64 //find my grid index. first row = 0, second = 1 etc
 	_j = (x-MyBoard.x) div 64 //find my grid index. first column = 0, second = 1 etc
-	if (amLocked = 4) check_skull_counter_change() //if im skull
+	if (isSkull()) check_skull_counter_change() //if im skull
 
 
 	if (visible) //if I am visible
@@ -254,7 +258,7 @@ function EV_gem_STEP() {
 			scr_gempower_particles()
 		}
 		else if (amHype) show_hypercube_particles()
-		else if (amLocked = 2) show_doom_particles() //if im Doom
+		else if (isDoom()) show_doom_particles() //if im Doom
 	}
 
 }
