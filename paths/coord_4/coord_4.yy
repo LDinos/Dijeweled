@@ -1,14 +1,14 @@
 {
-  "resourceType": "GMPath",
-  "resourceVersion": "1.0",
-  "name": "coord_4",
-  "closed": true,
-  "kind": 0,
-  "parent": {
-    "name": "Paths",
-    "path": "folders/Paths.yy",
+  "$GMPath":"",
+  "%Name":"coord_4",
+  "closed":true,
+  "kind":0,
+  "name":"coord_4",
+  "parent":{
+    "name":"Paths",
+    "path":"folders/Paths.yy",
   },
-  "points": [
+  "points":[
     {"speed":100.0,"x":-0.33608627,"y":-25.999786,},
     {"speed":100.0,"x":-3.8600693,"y":-21.156385,},
     {"speed":100.0,"x":-5.438263,"y":-18.000002,},
@@ -48,5 +48,7 @@
     {"speed":100.0,"x":4.015869,"y":-19.364777,},
     {"speed":100.0,"x":2.153675,"y":-22.08917,},
   ],
-  "precision": 4,
+  "precision":4,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
 }

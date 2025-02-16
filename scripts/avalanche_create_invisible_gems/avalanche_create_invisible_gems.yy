@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "avalanche_create_invisible_gems",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Online",
-    "path": "folders/Scripts/Online.yy",
+  "$GMScript":"v1",
+  "%Name":"avalanche_create_invisible_gems",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"avalanche_create_invisible_gems",
+  "parent":{
+    "name":"Online",
+    "path":"folders/Scripts/Online.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

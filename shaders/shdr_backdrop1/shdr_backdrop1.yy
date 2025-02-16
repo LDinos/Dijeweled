@@ -1,10 +1,12 @@
 {
-  "resourceType": "GMShader",
-  "resourceVersion": "1.0",
-  "name": "shdr_backdrop1",
-  "parent": {
-    "name": "Backdrops",
-    "path": "folders/Shaders/Backdrops.yy",
+  "$GMShader":"",
+  "%Name":"shdr_backdrop1",
+  "name":"shdr_backdrop1",
+  "parent":{
+    "name":"Backdrops",
+    "path":"folders/Shaders/Backdrops.yy",
   },
-  "type": 1,
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "network_send",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Algorithms",
-    "path": "folders/Scripts/Algorithms.yy",
+  "$GMScript":"v1",
+  "%Name":"network_send",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"network_send",
+  "parent":{
+    "name":"Algorithms",
+    "path":"folders/Scripts/Algorithms.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

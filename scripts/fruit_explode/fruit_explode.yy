@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "fruit_explode",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Gem related",
-    "path": "folders/Scripts/Gem related.yy",
+  "$GMScript":"v1",
+  "%Name":"fruit_explode",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"fruit_explode",
+  "parent":{
+    "name":"Gem related",
+    "path":"folders/Scripts/Gem related.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

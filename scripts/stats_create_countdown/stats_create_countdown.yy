@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "stats_create_countdown",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Stats",
-    "path": "folders/Scripts/Stats.yy",
+  "$GMScript":"v1",
+  "%Name":"stats_create_countdown",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"stats_create_countdown",
+  "parent":{
+    "name":"Stats",
+    "path":"folders/Scripts/Stats.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

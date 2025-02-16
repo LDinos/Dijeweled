@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scr_string_to_board",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "TFJ",
-    "path": "folders/Scripts/TFJ.yy",
+  "$GMScript":"v1",
+  "%Name":"scr_string_to_board",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_string_to_board",
+  "parent":{
+    "name":"TFJ",
+    "path":"folders/Scripts/TFJ.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

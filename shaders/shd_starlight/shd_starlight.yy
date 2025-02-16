@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_starlight",
+  "name":"shd_starlight",
+  "parent":{
+    "name":"Backdrops",
+    "path":"folders/Shaders/Backdrops.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

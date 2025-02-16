@@ -1,9 +1,8 @@
 {
-  "resourceType": "GMAnimCurve",
-  "resourceVersion": "1.2",
-  "name": "anim_gem_glow",
-  "channels": [
-    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"chn_gem_glow","colour":4290799884,"points":[
+  "$GMAnimCurve":"",
+  "%Name":"anim_gem_glow",
+  "channels":[
+    {"$GMAnimCurveChannel":"","%Name":"chn_gem_glow","colour":4290799884,"name":"chn_gem_glow","points":[
         {"th0":-0.1,"th1":0.017243166,"tv0":0.0,"tv1":0.0,"x":0.0,"y":0.4,},
         {"th0":-0.045952283,"th1":0.011893474,"tv0":-0.039889127,"tv1":0.01032801,"x":0.06166985,"y":0.205966,},
         {"th0":-0.024472147,"th1":0.026210696,"tv0":-0.0051156282,"tv1":0.0054780543,"x":0.11,"y":0.3627817,},
@@ -30,11 +29,14 @@
         {"th0":-0.010743341,"th1":0.016076744,"tv0":-0.0016293564,"tv1":0.0024382472,"x":0.9225,"y":0.3219086,},
         {"th0":-0.013764262,"th1":0.01448363,"tv0":-0.018436149,"tv1":0.019399686,"x":0.98,"y":0.3028542,},
         {"th0":-0.0052033067,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":1.0,"y":0.4,},
-      ],"visible":true,},
+      ],"resourceType":"GMAnimCurveChannel","resourceVersion":"2.0","visible":true,},
   ],
-  "function": 2,
-  "parent": {
-    "name": "Animation Curves",
-    "path": "folders/Animation Curves.yy",
+  "function":2,
+  "name":"anim_gem_glow",
+  "parent":{
+    "name":"Animation Curves",
+    "path":"folders/Animation Curves.yy",
   },
+  "resourceType":"GMAnimCurve",
+  "resourceVersion":"2.0",
 }

@@ -167,3 +167,15 @@ function initial_spawn(gem_id, board_id, gamerule_id, p_id = 0) {
 		}
 	}
 }
+
+function add_match_replay_keyframe(Gem_create, column) {
+	var j = column
+	var key = string(7+match_up_index[j])+"-"+string(j)
+	ds_map_add(Gamerule_1.Replay_match_map,key + "_spawn",Gem_create.skinnum)
+	ds_map_add(Gamerule_1.Replay_match_map,key + "_amHype",Gem_create.amHype)
+	ds_map_add(Gamerule_1.Replay_match_map,key + "_amBomb",Gem_create.amBomb)
+	ds_map_add(Gamerule_1.Replay_match_map,key + "_countdown",Gem_create.countdown)
+	ds_map_set(Gamerule_1.Replay_match_map,key + "_geodenum",Gem_create.geodenum)
+	for(var u=0;u<Gem_create.geodenum;u++) ds_map_set(Gamerule_1.Replay_match_map,key + "_geodenum_points"+string(u),Gem_create.geodenum_points[u])
+	match_up_index[j]++
+}

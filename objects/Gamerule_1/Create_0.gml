@@ -242,3 +242,21 @@ bo.image_yscale = 64 //make it fat enough to stop gems from penetrating it
 check_summoves(false)
 for(var i=7;i>=0;i--) gaps[i] = 8
 check_gaps(Board_1,Gem_1)
+
+function add_combo_replay_keyframe(Gem_create, column) {
+	var key = string(up_index[column]+8)+"-"+string(column)
+								
+	ds_map_set(Replay_map, key + "amHype",Gem_create.amHype)
+	ds_map_set(Replay_map, key + "skin",Gem_create.skinnum)
+	ds_map_set(Replay_map, key + "power",0)
+	ds_map_set(Replay_map, key + "amLocked",0)
+	ds_map_set(Replay_map, key + "amBeingLocked",0)
+	ds_map_set(Replay_map, key + "amBomb",Gem_create.amBomb)
+	ds_map_set(Replay_map, key + "countdown",Gem_create.countdown)
+	ds_map_set(Replay_map,key + "geodenum",Gem_create.geodenum)
+	for(var K = 0; K<Gem_create.geodenum;K++)
+	{
+		ds_map_set(Replay_map,key + "geodenum_points"+string(K), Gem_create.geodenum_points[K])
+	}
+	up_index[column]++
+}

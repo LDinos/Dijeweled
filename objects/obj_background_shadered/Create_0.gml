@@ -59,8 +59,8 @@ part_type_orientation(laser_part,0,0,0,0,0)
 part_type_speed(laser_part,3,3,0,0)
 
 depth = 10
-num_shaders = 6 //0,1,2...
-shd = irandom_range(0,num_shaders)
+num_shaders = 7 //0,1,2...
+shd = 7//irandom_range(0,num_shaders)
 
 /*0*/
 uni_time_2 = shader_get_uniform(shdr_backdrop1,"iTime");
@@ -100,3 +100,7 @@ Time = shader_get_uniform(shd_starfield,"iGlobalTime");
 
 rainbow_time = shader_get_uniform(shd_rainbowwater,"u_time");
 rainbow_res = shader_get_uniform(shd_rainbowwater,"u_resolution");
+
+/*7*/
+Res_starlight = shader_get_uniform(shd_starlight,"iResolution"); 
+Time_starlight = shader_get_uniform(shd_starlight,"iGlobalTime");

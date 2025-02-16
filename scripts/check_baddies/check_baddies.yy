@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "check_baddies",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Gem related",
-    "path": "folders/Scripts/Gem related.yy",
+  "$GMScript":"v1",
+  "%Name":"check_baddies",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"check_baddies",
+  "parent":{
+    "name":"Gem related",
+    "path":"folders/Scripts/Gem related.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

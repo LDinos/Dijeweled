@@ -67,10 +67,16 @@ else if shd = 6
 }
 else if shd = 7
 {
+	/*
 	shader_set(shd_starfield) 
 		shader_set_uniform_f(Res,512,512,0); 
 		shader_set_uniform_f(Time,current_time/5000); 
 		draw_self();
+	shader_reset();*/
+	shader_set(shd_starlight) 
+		shader_set_uniform_f(Res_starlight,512,512,0); 
+		shader_set_uniform_f(Time_starlight,current_time/1000); 
+		draw_self(); 
 	shader_reset(); 
 }
 else

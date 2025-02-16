@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "chat_write",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Online",
-    "path": "folders/Scripts/Online.yy",
+  "$GMScript":"v1",
+  "%Name":"chat_write",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"chat_write",
+  "parent":{
+    "name":"Online",
+    "path":"folders/Scripts/Online.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
