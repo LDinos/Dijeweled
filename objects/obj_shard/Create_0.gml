@@ -14,7 +14,7 @@ vsp = random_range(-5,5)
 hsp = random_range(-20,20)
 
 //System
-smoketrail_sys = part_system_create();
+//smoketrail_sys = part_system_create();
 //Particle
 smoketrail = part_type_create();
 part_type_shape(smoketrail,pt_shape_explosion)
@@ -23,7 +23,7 @@ part_type_size(smoketrail,0.4,0.5,-0.1,0)
 part_type_alpha2(smoketrail,0.4,0)
 part_type_life(smoketrail,25,30)
 //emit
-smoketrail_emit = part_emitter_create(smoketrail_sys)
+smoketrail_emit = part_emitter_create(global.sys_below_gem)
 
 /* */
 /*  */

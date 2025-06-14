@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":0.400317,
+  "duration":0.40031746,
   "name":"snd_geode",
   "parent":{
     "name":"Sounds",

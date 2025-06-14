@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":2.355556,
+  "duration":2.3555555,
   "name":"snd_doom_count",
   "parent":{
     "name":"Sounds",

@@ -23,3 +23,14 @@ flameon = false
 	GEM_ID = -1 //a list that fits 64 gems, so online multiplayer can have ids for each enemy gem
 	for (var i = 0; i < 64; i++) {GEM_ID[i] = -1}
 //}
+
+bombLetterAnimAlpha = 0
+bombLetterAnimAlphaValue = 0
+bombLetterAnimStep = 0.003
+
+function step_bomb_letter_glow_anim() {
+	bombLetterAnimAlpha += bombLetterAnimStep
+	if (bombLetterAnimAlpha > 1) bombLetterAnimAlpha = 0
+	var _channel = animcurve_get_channel(anim_bomb_letter_glow, 0);
+	bombLetterAnimAlphaValue = animcurve_channel_evaluate(_channel, bombLetterAnimAlpha);
+}

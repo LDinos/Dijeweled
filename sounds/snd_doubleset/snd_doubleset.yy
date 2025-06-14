@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":1.404195,
+  "duration":1.4041951,
   "name":"snd_doubleset",
   "parent":{
     "name":"Sounds",

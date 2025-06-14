@@ -1,2 +1,3 @@
 /// @description Insert description here
-room_goto(rm_countdown)
+if (!global.canbepressed) exit;
+fade_to_room(rm_countdown)

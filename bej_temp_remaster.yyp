@@ -1,5 +1,5 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"bej_temp_remaster",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -131,6 +131,7 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"challenge00.ini","CopyToMask":-1,"filePath":"datafiles/challenges","name":"challenge00.ini","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"challenge01.ini","CopyToMask":-1,"filePath":"datafiles/challenges","name":"challenge01.ini","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -295,10 +296,11 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"bej_temp_remaster",
   "resources":[
+    {"id":{"name":"anim_bomb_letter_glow","path":"animcurves/anim_bomb_letter_glow/anim_bomb_letter_glow.yy",},},
     {"id":{"name":"anim_gem_glow","path":"animcurves/anim_gem_glow/anim_gem_glow.yy",},},
     {"id":{"name":"cur_swap","path":"animcurves/cur_swap/cur_swap.yy",},},
     {"id":{"name":"Bloom_shader","path":"extensions/Bloom_shader/Bloom_shader.yy",},},
@@ -1261,6 +1263,7 @@
     {"id":{"name":"spr_pipes","path":"sprites/spr_pipes/spr_pipes.yy",},},
     {"id":{"name":"spr_player1","path":"sprites/spr_player1/spr_player1.yy",},},
     {"id":{"name":"spr_playerbox","path":"sprites/spr_playerbox/spr_playerbox.yy",},},
+    {"id":{"name":"spr_pochita","path":"sprites/spr_pochita/spr_pochita.yy",},},
     {"id":{"name":"spr_powerup_arrow","path":"sprites/spr_powerup_arrow/spr_powerup_arrow.yy",},},
     {"id":{"name":"spr_powerup_base","path":"sprites/spr_powerup_base/spr_powerup_base.yy",},},
     {"id":{"name":"spr_powerups","path":"sprites/spr_powerups/spr_powerups.yy",},},

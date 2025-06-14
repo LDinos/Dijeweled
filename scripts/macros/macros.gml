@@ -1,4 +1,6 @@
 function macros() {
+#macro BOMB_TEXT_OFFSET_X 0
+#macro BOMB_TEXT_OFFSET_Y 0
 #macro DARK_GRAY $212121
 #macro LIGHT_GRAY $363636
 #macro BLACK_GRAY $0d0d0d

@@ -22,6 +22,38 @@ function isLocked() {
 	return (amLocked > 0)
 }
 
+// Spawn angry bomb smokes in this order
+function defineBombSmokeCornerOrder() {
+	bomb_corner_to_spawn_index = 0
+	bomb_corner_relative_pos = array_shuffle(bomb_corner_relative_pos)
+}
+
+function bombAngryStep() {
+	if (amBomb && countdown < array_length(bomb_corner_smoke_anim_step_values)) {
+		if (bomb_corner_smoke_anim_step <= 0) {
+			bombAngrySmokeCorner()
+			bomb_corner_smoke_anim_step = bomb_corner_smoke_anim_step_values[countdown]
+		}
+		else bomb_corner_smoke_anim_step--
+	}
+	else bomb_corner_smoke_anim_step = -1
+}
+
+function bombAngrySmokeCorner() {
+	var i = bomb_corner_to_spawn_index
+	var corner_info = bomb_corner_relative_pos[i]
+	var _x = x + corner_info.posx
+	var _y = y + corner_info.posy
+	var dir = corner_info.dir
+	part_type_direction(global.part_angry_bomb_smoke, dir, dir, 0, 0)
+	part_particles_create(global.sys_above_gem, _x, _y, global.part_angry_bomb_smoke, 1)
+	
+	bomb_corner_to_spawn_index++
+	if (bomb_corner_to_spawn_index >= array_length(bomb_corner_relative_pos)) {
+		defineBombSmokeCornerOrder()
+	}
+}
+
 
 player_id = 0
 gemglow_alpha = random(1)
@@ -72,6 +104,12 @@ for(i=0;i<geodenum;i++) geodenum_points[i] = choose(50,100,150,200,250,300) //ge
 playcountdown = false //playing the bomb countdown audio when gems are stationiary and countdown <= 5
 bombappear = false //have i made the bomb appear noise?
 countdown = 20 //bomb or doom countdown
+bomb_corner_to_spawn_index = 0
+bomb_corner_smoke_anim_alpha = 0
+bomb_corner_smoke_anim_step = -1 // -1 = dont smoke corners, otherwise spawn smoke every {bomb_corner_smoke_anim_step} frames
+bomb_corner_smoke_anim_step_values = [1, 2, 2, 3, 4, 5, 6, 8, 8] // Each index is equal to the countdown value (0 countdown will use index 0 step for smoke animation
+bomb_corner_relative_pos = [{posx: -24, posy: -24, dir: 135}, {posx: 24, posy: -24, dir: 45}, {posx: -24, posy: 24, dir: 225}, {posx: 24, posy: 24, dir: 315}]
+defineBombSmokeCornerOrder()
 #endregion
 
 #region BLOOM SHADER
@@ -188,6 +226,7 @@ function EV_gem_STEP() {
 	var am_countdown_gem = (amBomb || isDoom() || isSkull())
 	if (am_countdown_gem) //if I am bomb or doom or skull
 	{
+		bombAngryStep()
 		if (!bombappear && amBomb) //if its the first time I appear and I am a bomb
 		{
 			if MyGamerule.IsGemActive //wait until I am stationary
@@ -202,7 +241,8 @@ function EV_gem_STEP() {
 		{
 			check_bomb_countdown_effects()
 			var shakeval = (countdown <= 7) ? irandom_range(countdown-8,8-countdown) : 0
-			set_shake(shakeval)
+			var shakeval2 = (countdown <= 7) ? irandom_range(countdown-8,8-countdown) : 0
+			set_shake(shakeval, shakeval2)
 
 			if (countdown == 0)
 			{

@@ -13,6 +13,7 @@
     {"name":"TFJ","order":38,"path":"folders/Sprites/TFJ.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"anim_bomb_letter_glow","order":2,"path":"animcurves/anim_bomb_letter_glow/anim_bomb_letter_glow.yy",},
     {"name":"cur_swap","order":1,"path":"animcurves/cur_swap/cur_swap.yy",},
     {"name":"DSPrint","order":1,"path":"extensions/DSPrint/DSPrint.yy",},
     {"name":"Easing_and_Tweening","order":2,"path":"extensions/Easing_and_Tweening/Easing_and_Tweening.yy",},
@@ -879,6 +880,7 @@
     {"name":"spr_pipes","order":2,"path":"sprites/spr_pipes/spr_pipes.yy",},
     {"name":"spr_player1","order":1,"path":"sprites/spr_player1/spr_player1.yy",},
     {"name":"spr_playerbox","order":19,"path":"sprites/spr_playerbox/spr_playerbox.yy",},
+    {"name":"spr_pochita","order":39,"path":"sprites/spr_pochita/spr_pochita.yy",},
     {"name":"spr_powerup_arrow","order":2,"path":"sprites/spr_powerup_arrow/spr_powerup_arrow.yy",},
     {"name":"spr_powerup_base","order":1,"path":"sprites/spr_powerup_base/spr_powerup_base.yy",},
     {"name":"spr_rails1","order":13,"path":"sprites/spr_rails1/spr_rails1.yy",},

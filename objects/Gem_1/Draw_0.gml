@@ -31,6 +31,7 @@ if !amInvisible
 				centerize_text()
 				draw_sprite_ext(spr_skull,0,X,Y,image_xscale,image_yscale,0,c_white,1)
 				draw_text_outline(X,Y-12,countdown,c_white,c_green)
+				draw_text_outline_alpha(X,Y-12,countdown,c_red,c_white,MyGamerule.bombLetterAnimAlphaValue)
 				draw_set_font(font0)
 		}
 		else if amCompanion
@@ -48,7 +49,10 @@ if !amInvisible
 					{
 						if (gempower = 0 && !bloom && skinnum < 7) draw_sprite_ext(shadow_index,image_index,X,Y,0.5,0.5,0,c_white,1)
 					}
-					draw_sprite_ext(sprite_index,image_index,X,Y,image_xscale,image_yscale,0,c_white,1)
+					// Draw normal gem
+					var spr_index = (Gamerule_1.pochita && skinnum == 7) ? spr_pochita : sprite_index
+					draw_sprite_ext(spr_index,image_index,X,Y,image_xscale,image_yscale,0,c_white,1)
+					
 					if (global.OPT_lightallowed) {
 						if (anim_happening == false && gempower != FRUIT) {
 							if (nearby_glown_left) draw_sprite_ext(spr_gemglow_left,skinnum,X,Y,1,1,0,c_white,random_range(0.5,nearby_glown_left/GLOW_FADEOUT_FRAMES))
@@ -79,6 +83,7 @@ if !amInvisible
 				centerize_text()
 				draw_sprite_ext(spr_doomgem,skinnum,X,Y,image_xscale,image_yscale,0,c_white,1)
 				draw_text_outline(X,Y,countdown,c_white,c_black)
+				draw_text_outline_alpha(X,Y,countdown,c_red,c_white,MyGamerule.bombLetterAnimAlphaValue)
 				draw_set_font(font0)
 			}
 			else if amLocked = 3
@@ -87,10 +92,13 @@ if !amInvisible
 			}
 			else if amBomb
 			{
+				var bombx = X + BOMB_TEXT_OFFSET_X
+				var bomby = Y + BOMB_TEXT_OFFSET_Y
 				draw_set_font(fnt_open24display)
 				centerize_text()
 				draw_sprite_ext(spr_bombs,skinnum,X,Y,image_xscale,image_yscale,0,c_white,1)
-				draw_text_outline(X,Y,countdown,c_white,c_black)
+				draw_text_outline(bombx,bomby,countdown,c_white,c_black)
+				draw_text_outline_alpha(bombx,bomby,countdown,c_red,c_white,MyGamerule.bombLetterAnimAlphaValue)
 				draw_set_font(font0)
 			}
 		}

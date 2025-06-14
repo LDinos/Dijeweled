@@ -2,6 +2,11 @@
 //gem_board1 = gem id's
 //gemboard = gem skins (fallen down)
 //gems_fallen = gem ids fallen down
+pochita = false
+
+bombLetterAnimAlpha = 0
+bombLetterAnimAlphaValue = 0
+bombLetterAnimStep = 0.003
 
 #region Powerups
 	horizontal_swaps_only = false
@@ -259,4 +264,11 @@ function add_combo_replay_keyframe(Gem_create, column) {
 		ds_map_set(Replay_map,key + "geodenum_points"+string(K), Gem_create.geodenum_points[K])
 	}
 	up_index[column]++
+}
+
+function step_bomb_letter_glow_anim() {
+	bombLetterAnimAlpha += bombLetterAnimStep
+	if (bombLetterAnimAlpha > 1) bombLetterAnimAlpha = 0
+	var _channel = animcurve_get_channel(anim_bomb_letter_glow, 0);
+	bombLetterAnimAlphaValue = animcurve_channel_evaluate(_channel, bombLetterAnimAlpha);
 }
