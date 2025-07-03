@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "convert_seconds_to_time",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Algorithms",
-    "path": "folders/Scripts/Algorithms.yy",
+  "$GMScript":"v1",
+  "%Name":"convert_seconds_to_time",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"convert_seconds_to_time",
+  "parent":{
+    "name":"Algorithms",
+    "path":"folders/Scripts/Algorithms.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

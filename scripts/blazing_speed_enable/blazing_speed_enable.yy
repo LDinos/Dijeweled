@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "blazing_speed_enable",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Battle",
-    "path": "folders/Scripts/Battle.yy",
+  "$GMScript":"v1",
+  "%Name":"blazing_speed_enable",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"blazing_speed_enable",
+  "parent":{
+    "name":"Battle",
+    "path":"folders/Scripts/Battle.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

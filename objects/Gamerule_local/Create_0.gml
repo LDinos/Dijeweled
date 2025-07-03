@@ -3,6 +3,11 @@
 //gemboard = gem skins (fallen down)
 //gems_fallen = gem ids fallen down
 isReplay = false
+speed_modifier = 1
+bombLetterAnimAlpha = 0
+bombLetterAnimAlphaValue = 0
+bombLetterAnimStep = 0.003
+
 #region Powerups
 	horizontal_swaps_only = false
 	vertical_swaps_only = false
@@ -158,3 +163,10 @@ check_summoves(false)
 //gaps = array_create(8,7)
 for(var i=7;i>=0;i--) gaps[i] = 8
 check_gaps(Board_local,Gem_local)
+
+function step_bomb_letter_glow_anim() {
+	bombLetterAnimAlpha += bombLetterAnimStep
+	if (bombLetterAnimAlpha > 1) bombLetterAnimAlpha = 0
+	var _channel = animcurve_get_channel(anim_bomb_letter_glow, 0);
+	bombLetterAnimAlphaValue = animcurve_channel_evaluate(_channel, bombLetterAnimAlpha);
+}

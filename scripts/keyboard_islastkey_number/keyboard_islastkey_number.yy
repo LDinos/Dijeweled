@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "keyboard_islastkey_number",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Algorithms",
-    "path": "folders/Scripts/Algorithms.yy",
+  "$GMScript":"v1",
+  "%Name":"keyboard_islastkey_number",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"keyboard_islastkey_number",
+  "parent":{
+    "name":"Algorithms",
+    "path":"folders/Scripts/Algorithms.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

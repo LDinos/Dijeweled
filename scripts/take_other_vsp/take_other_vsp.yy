@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"take_other_vsp",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"take_other_vsp",
+  "parent":{
+    "name":"Algorithms",
+    "path":"folders/Scripts/Algorithms.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

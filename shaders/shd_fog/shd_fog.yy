@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_fog",
+  "name":"shd_fog",
+  "parent":{
+    "name":"Backdrops",
+    "path":"folders/Shaders/Backdrops.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

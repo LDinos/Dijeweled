@@ -198,7 +198,7 @@ if file_exists("autosave_"+string(room_get_name(room)))
 				obj_lock_control.TurnsToSpawn = map[? "lock_TurnsToSpawn"]
 				obj_lock_control.TurnsToSpawnCur = map[? "lock_TurnsToSpawnCur"]
 			}
-		//LOCK CONTROLS\\
+		//ICE LOCK CONTROLS\\
 			if instance_exists(obj_ice_lock_control)
 			{
 				obj_ice_lock_control.TurnsToSpawn = map[? "icelock_TurnsToSpawn"]

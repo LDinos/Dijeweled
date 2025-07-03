@@ -167,7 +167,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 	var newg = noone
 	ds_list_clear(num_choices) //number of choices reset
 	var gaps;
-	for(i=0;i<=7;i++)
+	for(var i=0;i<=7;i++)
 	{
 		gaps[i] = argument0.gaps[i]
 	}
@@ -1917,7 +1917,7 @@ function spawn_script(argument0, argument1, include_gem_creators) {
 				break;
 			case 46:
 				g1 = argument0.gemboard[gaps[j]+1,j]
-				if Gamerule_1.debug show_debug_message(gaps[j])
+				if (Gamerule_1.debug) show_debug_message(gaps[j])
 				newg = instance_create(Gem_create.x, Gem_create.y-64,argument1)
 				newacc = Gem_create.acc
 				with(Gem_create) set_skin(other.g1)

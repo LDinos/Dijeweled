@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "reset_challenge_stats",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Stats",
-    "path": "folders/Scripts/Stats.yy",
+  "$GMScript":"v1",
+  "%Name":"reset_challenge_stats",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"reset_challenge_stats",
+  "parent":{
+    "name":"Stats",
+    "path":"folders/Scripts/Stats.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

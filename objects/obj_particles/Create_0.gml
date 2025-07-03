@@ -37,6 +37,16 @@ part_type_orientation(global.part_icebreak2,0,180,5,0,0);
 //part_type_blend(global.part_icebreak2,1);
 part_type_life(global.part_icebreak2,60,60);
 
+/* For angry bomb smoke */
+global.part_angry_bomb_smoke = part_type_create();
+part_type_shape(global.part_angry_bomb_smoke, pt_shape_explosion)
+part_type_size(global.part_angry_bomb_smoke, 0.2, 0.3, 0.025,0)
+part_type_speed(global.part_angry_bomb_smoke, 2, 2, 0, 0)
+part_type_life(global.part_angry_bomb_smoke, 15,25)
+part_type_color1(global.part_angry_bomb_smoke,#D3D3D3)
+part_type_alpha2(global.part_angry_bomb_smoke, 0.8, 0)
+part_type_orientation(global.part_angry_bomb_smoke, 0, 359, 3, 0, 0)
+//------------------------\\
 
 /*For new flame particles*/
 global.part_newflame =  part_type_create();

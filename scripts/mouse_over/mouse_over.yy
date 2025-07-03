@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "mouse_over",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Algorithms",
-    "path": "folders/Scripts/Algorithms.yy",
+  "$GMScript":"v1",
+  "%Name":"mouse_over",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"mouse_over",
+  "parent":{
+    "name":"Algorithms",
+    "path":"folders/Scripts/Algorithms.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -2,6 +2,11 @@
 //gem_board1 = gem id's
 //gemboard = gem skins (fallen down)
 //gems_fallen = gem ids fallen down
+pochita = false
+
+bombLetterAnimAlpha = 0
+bombLetterAnimAlphaValue = 0
+bombLetterAnimStep = 0.003
 
 #region Powerups
 	horizontal_swaps_only = false
@@ -9,6 +14,8 @@
 	inverted_swaps = false
 #endregion
 
+speed_modifier = 1 //speed where physics and stuff are happening
+coal_speed_modifier = 1
 should_move = true //gems should be able to move physically
 points_base_value = 25; //for classic mode, add plus base value for combos that are more than 1
 points_type = 1; //different way to get points in classic mode ( = 2)
@@ -242,3 +249,33 @@ bo.image_yscale = 64 //make it fat enough to stop gems from penetrating it
 check_summoves(false)
 for(var i=7;i>=0;i--) gaps[i] = 8
 check_gaps(Board_1,Gem_1)
+
+function add_combo_replay_keyframe(Gem_create, column) {
+	var key = string(up_index[column]+8)+"-"+string(column)
+								
+	ds_map_set(Replay_map, key + "amHype",Gem_create.amHype)
+	ds_map_set(Replay_map, key + "skin",Gem_create.skinnum)
+	ds_map_set(Replay_map, key + "power",0)
+	ds_map_set(Replay_map, key + "amLocked",0)
+	ds_map_set(Replay_map, key + "amBeingLocked",0)
+	ds_map_set(Replay_map, key + "amBomb",Gem_create.amBomb)
+	ds_map_set(Replay_map, key + "countdown",Gem_create.countdown)
+	ds_map_set(Replay_map,key + "geodenum",Gem_create.geodenum)
+	for(var K = 0; K<Gem_create.geodenum;K++)
+	{
+		ds_map_set(Replay_map,key + "geodenum_points"+string(K), Gem_create.geodenum_points[K])
+	}
+	up_index[column]++
+}
+
+function step_bomb_letter_glow_anim() {
+	bombLetterAnimAlpha += bombLetterAnimStep
+	if (bombLetterAnimAlpha > 1) bombLetterAnimAlpha = 0
+	var _channel = animcurve_get_channel(anim_bomb_letter_glow, 0);
+	bombLetterAnimAlphaValue = animcurve_channel_evaluate(_channel, bombLetterAnimAlpha);
+}
+
+function set_speed_modifier() {
+	var replaymodifier = isReplay ? 0.5 : 1
+	speed_modifier = replaymodifier*coal_speed_modifier
+}

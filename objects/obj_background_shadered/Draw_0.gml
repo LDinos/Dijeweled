@@ -1,5 +1,4 @@
 /// @description Insert description here
-
 if global.OPT_lightallowed && os_type != os_android
 {
 if shd = 0	
@@ -67,10 +66,44 @@ else if shd = 6
 }
 else if shd = 7
 {
+	/*
 	shader_set(shd_starfield) 
 		shader_set_uniform_f(Res,512,512,0); 
 		shader_set_uniform_f(Time,current_time/5000); 
 		draw_self();
+	shader_reset();*/
+	shader_set(shd_starlight) 
+		shader_set_uniform_f(Res_starlight,512,512,0); 
+		shader_set_uniform_f(Time_starlight,current_time/1000); 
+		draw_self(); 
+	shader_reset(); 
+}
+else if shd = 8 {
+	shader_set(shd_starbust) 
+		//shader_set_uniform_f(Res_starlight,512,512,0); 
+		shader_set_uniform_f(starbust_time,current_time/1000); 
+		draw_self(); 
+	shader_reset(); 
+}
+else if shd = 9 {
+	shader_set(shd_wavegrid) 
+		//shader_set_uniform_f(Res_starlight,512,512,0); 
+		shader_set_uniform_f(wavegrid_time,current_time/1000); 
+		draw_self(); 
+	shader_reset(); 
+}
+else if shd = 10 {
+	shader_set(shd_fog) 
+		//shader_set_uniform_f(Res_starlight,512,512,0); 
+		shader_set_uniform_f(fog_time,current_time/2500); 
+		draw_self(); 
+	shader_reset(); 
+}
+else if shd = 11 {
+	shader_set(shd_candle) 
+		//shader_set_uniform_f(Res_starlight,512,512,0); 
+		shader_set_uniform_f(candle_time,current_time/2500); 
+		draw_self(); 
 	shader_reset(); 
 }
 else

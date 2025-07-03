@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "reset_compliments",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Points",
-    "path": "folders/Scripts/Points.yy",
+  "$GMScript":"v1",
+  "%Name":"reset_compliments",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"reset_compliments",
+  "parent":{
+    "name":"Points",
+    "path":"folders/Scripts/Points.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

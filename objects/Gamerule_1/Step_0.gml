@@ -1,4 +1,16 @@
 /// @description Level complete check + cur_time
+step_bomb_letter_glow_anim()
+set_speed_modifier()
+if keyboard_check_pressed(vk_anykey) && (!pochita) {
+	if (string_length(keyboard_string) > 6) {
+		var last_keys = string_lower(keyboard_string)
+		if (string_ends_with(last_keys, "pochita")) {
+			audio_play_sound(snd_geode,0,false)
+			pochita = true
+		}
+	}
+}
+
 should_move = true
 if (lightOn || hypeOn || fruit_exploding_dontmove) should_move = false
 if (global.replay_match_allowed || global.replay_match_isplaying) cur_time++ //this var is used on replay only

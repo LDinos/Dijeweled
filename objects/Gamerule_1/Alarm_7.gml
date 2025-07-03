@@ -13,12 +13,21 @@ if bombis0 && !levelbarfull
 	if isok
 	{
 		var isok2 = false //is it doom?
-		for(var i =0;i<ds_list_size(list_of_bombs);i++) {if (list_of_bombs[| i].countdown = 0) isok2 = true}
+		var bomb_to_explode = noone;
+		for(var i =0;i<ds_list_size(list_of_bombs);i++) {
+			if (list_of_bombs[| i].countdown = 0) {
+				if (bomb_to_explode == noone) bomb_to_explode = list_of_bombs[| i]
+				isok2 = true
+			}
+		}
 		if list_of_doom != noone
 		{
 			if (list_of_doom.countdown = 0) isok2 = false
 		}
-		if isok2 && wheel_spinner_allowed instance_create_depth(room_width/2,512,-10,wheel_spinner)
+		if (isok2 && wheel_spinner_allowed) {
+			var wheel = instance_create_depth(room_width/2,512,-10,wheel_spinner)
+			wheel.bomb = bomb_to_explode
+		}
 		else
 		{
 			controlallowed = false

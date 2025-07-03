@@ -95,7 +95,8 @@ for(i=0;i<8;i++)
 				amLocked = Gamerule_1.Replay_map[? key + "amLocked"]
 				amBeingLocked = Gamerule_1.Replay_map[? key + "amBeingLocked"]
 				amBomb = Gamerule_1.Replay_map[? key + "amBomb"]
-				countdown = Gamerule_1.Replay_map[? key + "countdown"]
+				if (amBomb) bombappear = true;
+				countdown = Gamerule_1.Replay_map[? key + "countdown"]	
 				geodenum_points = -1
 				geodenum = Gamerule_1.Replay_map[? key + "geodenum"]
 				if amInvisible ds_list_add(Gamerule_1.list_of_hiddengems,id)

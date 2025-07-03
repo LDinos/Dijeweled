@@ -2,6 +2,17 @@
 // You can write your code in this editor
 if !global.paused
 {
+	// Wheel spinner control with gamepad
+	if( (gamepad_button_swap_check(global.gp[0], global.GP_swapright, Gamerule_1))
+		|| (gamepad_button_swap_check(global.gp[0], global.GP_swapdown, Gamerule_1))
+		|| (gamepad_button_swap_check(global.gp[0], global.GP_swapup, Gamerule_1))
+		|| (gamepad_button_swap_check(global.gp[0], global.GP_swapleft, Gamerule_1)) )
+	{
+		if (instance_exists(wheel_butt)) {
+			wheel_butt.press();
+		}
+	}
+	//
 var multiswap_allowed; //if multiswap_allowed is allowed, we dont care if gems are stationary.
 if Gamerule_1.multiswap_allowed multiswap_allowed = true
 else
@@ -188,6 +199,7 @@ else if mouse_check_button(mb_left)
 	var press = false
 	var distx = 0
 	var disty = 0
+	
 	#region swap buttons
 	if !Gamerule_1.moving
 	{

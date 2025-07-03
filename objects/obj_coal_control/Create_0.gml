@@ -11,3 +11,7 @@ CoalSpawnLevelMax = -1 //When do we stop allowing coals? (-1 = infinite)
 	TurnsToSpawn = 15; //After how many turns will a coal spawn? This changes every level if it is level based.
 	TurnsToSpawnCur = TurnsToSpawn //This gets decreased every turn. after going to 0, it becomes TurnsToSpawn again.
 CoalMax = 5 //Max amount of coals on screen
+
+function decreaseSpawnCounter() {
+	event_user(0)
+}

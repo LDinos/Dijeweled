@@ -1,3 +1,4 @@
+//image_speed = Gamerule_1.speed_modifier*image_speed_default
 if image_index = image_number - 1
 {
 	image_speed = 0

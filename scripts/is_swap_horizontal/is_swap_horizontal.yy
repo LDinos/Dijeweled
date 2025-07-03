@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "is_swap_horizontal",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Battle",
-    "path": "folders/Scripts/Battle.yy",
+  "$GMScript":"v1",
+  "%Name":"is_swap_horizontal",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"is_swap_horizontal",
+  "parent":{
+    "name":"Battle",
+    "path":"folders/Scripts/Battle.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

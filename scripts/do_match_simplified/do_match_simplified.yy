@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "do_match_simplified",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Online",
-    "path": "folders/Scripts/Online.yy",
+  "$GMScript":"v1",
+  "%Name":"do_match_simplified",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"do_match_simplified",
+  "parent":{
+    "name":"Online",
+    "path":"folders/Scripts/Online.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

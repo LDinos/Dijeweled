@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "spawn_script",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Algorithms",
-    "path": "folders/Scripts/Algorithms.yy",
+  "$GMScript":"v1",
+  "%Name":"spawn_script",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"spawn_script",
+  "parent":{
+    "name":"Algorithms",
+    "path":"folders/Scripts/Algorithms.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

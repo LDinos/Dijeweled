@@ -5,9 +5,9 @@ function explode(argument0) {
 	else if (argument0 == Gem_local) gmrl = Gamerule_local
 	//\\
 	magnify(x,y,true)
-	var modi = 1
+	var modi = Gamerule_1.speed_modifier == 1 ? 1 : 1.5
 	var stle = 0
-	if Gamerule_1.isReplay modi = 1.5
+	//if Gamerule_1.isReplay modi = 1.5
 	with(gmrl) {compliment_add(150)}
 	//\\
 	with(gmrl)

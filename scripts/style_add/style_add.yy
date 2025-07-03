@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "style_add",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Points",
-    "path": "folders/Scripts/Points.yy",
+  "$GMScript":"v1",
+  "%Name":"style_add",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"style_add",
+  "parent":{
+    "name":"Points",
+    "path":"folders/Scripts/Points.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
