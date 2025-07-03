@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":4.531429,
+  "duration":4.5314283,
   "name":"fruitappear2",
   "parent":{
     "name":"Sounds",

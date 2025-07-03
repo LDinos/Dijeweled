@@ -3,7 +3,7 @@
 //gemboard = gem skins (fallen down)
 //gems_fallen = gem ids fallen down
 isReplay = false
-
+speed_modifier = 1
 bombLetterAnimAlpha = 0
 bombLetterAnimAlphaValue = 0
 bombLetterAnimStep = 0.003

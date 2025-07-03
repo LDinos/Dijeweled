@@ -12,4 +12,4 @@ BombCounterDefault = 20 //The value to give to the newly spawned bomb
 BombCounter = BombCounterDefault //The value to give to the newly spawned bomb
 BombMax = 4 //Max amount of bombs on screen
 ExaggerateOnce = false
-BombExaggerate = 65 //Make bombs spawn in less time (1/3 of turns to spawn). -1 = disabled, 0-100 percent of bar to pass to enable it
+BombExaggerate = 75 //Make bombs spawn in less time (1/3 of turns to spawn). -1 = disabled, 0-100 percent of bar to pass to enable it

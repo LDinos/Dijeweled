@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":2.5025,
+  "duration":2.502517,
   "name":"bomb5",
   "parent":{
     "name":"Sounds",

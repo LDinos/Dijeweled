@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":0.052948,
+  "duration":0.049342405,
   "name":"tick",
   "parent":{
     "name":"Sounds",

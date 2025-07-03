@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":0.44229,
+  "duration":0.44229025,
   "name":"glugk",
   "parent":{
     "name":"Sounds",

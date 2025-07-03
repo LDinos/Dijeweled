@@ -8,7 +8,7 @@ for(var i = 0; i < parameter_count(); i++) {
 	}
 }
 
-global.version = "1.17" //dont forget to upload vercheck and change windows version on game options!
+global.version = "1.18" //dont forget to upload vercheck and change windows version on game options!
 
 global.canbepressed = false
 global.vsync_checked_once = false

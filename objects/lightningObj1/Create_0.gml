@@ -1,6 +1,6 @@
 modifier = 1
 if Gamerule_1.isReplay modifier = 2
-image_speed = 0.4/modifier
+image_speed = 0.4*Gamerule_1.speed_modifier
 /* Desc
 
 The lightning itself. Mostly its doubled, since its a cross
@@ -19,7 +19,7 @@ skinnum = -1
 image_yscale = 1.7
 Gamerule_1.lightOn = true
 with(Gem_1) acc = 0
-alarm[0] = 75*modifier
+alarm[0] = 75/Gamerule_1.speed_modifier
 
 /* */
 /*  */

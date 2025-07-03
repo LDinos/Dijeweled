@@ -8,7 +8,9 @@ if bombis0 && !levelbarfull
 {
 	if !challengewon
 	{
-		if !fruit_want_to_spawn alarm[7] = 1
+		if (!fruit_want_to_spawn) {
+			alarm[7] = 1
+		}
 		else IsGemActive2 = true
 	}
 	else IsGemActive2 = true

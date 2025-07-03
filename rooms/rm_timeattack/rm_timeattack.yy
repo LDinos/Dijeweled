@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"rm_timeattack",
-  "creationCodeFile":"${project_dir}/rooms/rm_timeattack/RoomCreationCode.gml",
+  "creationCodeFile":"rooms/rm_timeattack/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,

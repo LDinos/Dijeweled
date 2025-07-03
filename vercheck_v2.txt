@@ -1,0 +1,2 @@
+1.18
+https://github.com/LDinos/Dijeweled/releases/tag/v.1.18

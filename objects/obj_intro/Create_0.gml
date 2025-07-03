@@ -51,3 +51,10 @@ canclick = false
 alarm[3] = 120
 alarm[0] = 30 // Start Fading in logo after 0.5 seconds
 alarm[1] = 90 // Start Fading in bottom text
+
+function click() {
+	if (canclick) {
+		audio_sound_gain(mus_intro, 0, 1000)
+		alarm[2] = 1 
+	}
+}

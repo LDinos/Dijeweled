@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":0.02288,
+  "duration":0.02031746,
   "name":"snd_gemselection",
   "parent":{
     "name":"Sounds",

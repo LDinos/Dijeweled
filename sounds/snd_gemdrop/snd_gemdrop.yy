@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":3,
   "conversionMode":0,
-  "duration":1.773152,
+  "duration":1.7731519,
   "name":"snd_gemdrop",
   "parent":{
     "name":"Sounds",

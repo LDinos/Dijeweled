@@ -28,6 +28,7 @@ function defineBombSmokeCornerOrder() {
 	bomb_corner_relative_pos = array_shuffle(bomb_corner_relative_pos)
 }
 
+// Spawn angry bomb smokes every frame if bomb_corner_smoke_anim_step = 0
 function bombAngryStep() {
 	if (amBomb && countdown < array_length(bomb_corner_smoke_anim_step_values)) {
 		if (bomb_corner_smoke_anim_step <= 0) {
@@ -39,6 +40,7 @@ function bombAngryStep() {
 	else bomb_corner_smoke_anim_step = -1
 }
 
+// Spawn angry bomb smokes (particle creation)
 function bombAngrySmokeCorner() {
 	var i = bomb_corner_to_spawn_index
 	var corner_info = bomb_corner_relative_pos[i]
@@ -69,9 +71,9 @@ myid = -4
 
 isturnback = false
 dont_fall_yet = false //while twist rotating, we dont want the gems above to fall down, thus we made this variable
-SWAP_X = 0 //swapping x firt point
+SWAP_X = 0 //swapping x first point
 SWAP_X_END = 0 //swapping x last point (the other gem's.x)
-SWAP_Y_END = 0 //swapping y firt point
+SWAP_Y_END = 0 //swapping y first point
 SWAP_Y = 0 //swapping x last point (the other gem's.y)
 percent = 0; //used in lerp in swapping
 shake = false //for when fruit is triggering me make me shake
@@ -83,9 +85,9 @@ anim_happening = false //for when spinning animation
 cascade_diss = false //normal gems just dissappear, but if you have a combo, a slightly different dissappearing animation happens
 make_inv_dis = false //make image alpha of dissappearing gem 0 when dead?
 create_col = true //create collider on death? If I make a flame gem 4 gem match, it should not create a collider
-amInvisible = false //used for icegems below
+amInvisible = false //used for icegems below (yes invisible blocks are actually gems)
 
-modifier = 1 //slow mo speed modifier (1 = normal)
+//modifier = 1 //slow mo speed modifier (1 = normal)
 
 #region Directional light
 light_right = false
@@ -95,7 +97,7 @@ light_left = false //check begin step
 #endregion
 
 dragXX = 0
-dragYY = 0 //used in matcherstep event for when 4+ matches happen, do a gem drag animation
+dragYY = 0 //used in matcherstep event for when 4+ matches happen, do a gem drag animation of a gem moving to the center where the flame is created
 
 geodenum = irandom_range(1,MyGamerule.geodemax) //number of geodes if I am coal
 for(i=0;i<geodenum;i++) geodenum_points[i] = choose(50,100,150,200,250,300) //geode points if i am coal
@@ -103,13 +105,12 @@ for(i=0;i<geodenum;i++) geodenum_points[i] = choose(50,100,150,200,250,300) //ge
 #region Bomb stuff
 playcountdown = false //playing the bomb countdown audio when gems are stationiary and countdown <= 5
 bombappear = false //have i made the bomb appear noise?
-countdown = 20 //bomb or doom countdown
-bomb_corner_to_spawn_index = 0
-bomb_corner_smoke_anim_alpha = 0
+countdown = 20 //bomb, skull or doom countdown value
+bomb_corner_to_spawn_index = 0 //which corner out of the 4 to spawn the next smoke particle
 bomb_corner_smoke_anim_step = -1 // -1 = dont smoke corners, otherwise spawn smoke every {bomb_corner_smoke_anim_step} frames
-bomb_corner_smoke_anim_step_values = [1, 2, 2, 3, 4, 5, 6, 8, 8] // Each index is equal to the countdown value (0 countdown will use index 0 step for smoke animation
-bomb_corner_relative_pos = [{posx: -24, posy: -24, dir: 135}, {posx: 24, posy: -24, dir: 45}, {posx: -24, posy: 24, dir: 225}, {posx: 24, posy: 24, dir: 315}]
-defineBombSmokeCornerOrder()
+bomb_corner_smoke_anim_step_values = [1, 2, 2, 3, 4, 5, 6, 8, 8] // list of how many frames are needed in step event to spawn a smoke particle, based on the countdown value (=array index)
+bomb_corner_relative_pos = [{posx: -24, posy: -24, dir: 135}, {posx: 24, posy: -24, dir: 45}, {posx: -24, posy: 24, dir: 225}, {posx: 24, posy: 24, dir: 315}] //bomb corner definitions for smoke particle x,y spawning and direction
+defineBombSmokeCornerOrder() //shuffle the above array so a random corner is chosen everytime a smoke has to spawn
 #endregion
 
 #region BLOOM SHADER
@@ -143,6 +144,7 @@ _i = floor((y-MyBoard.y+63)/64) //returns 0-7 grid index (row)
 _j = (x-MyBoard.x+63) div 64 //returns 0-7 grid index (collumn)
 previous_i = _i
 previous_j = _j
+accspeed_alpha = 0.6
 #endregion
 
 
@@ -158,7 +160,7 @@ ammoving = false //if moving by user drag animation
 amMulti = false //am I a multiplier gem?
 amHype = false //am I a hypercube?
 amTimeGem = false //am I a time gem?
-amPowered = false //Did I just get powered? Used to not be destroyed immediatley on power creation
+amPowered = false //Did I just get powered? Used to not be destroyed immediately on power creation
 amLit = false //is a lightning strike onto me?
 amSpecial = 0 //0 = false, 1 = special one, 2 = special two, 3 = special three... Used to check best move for bot
 TimeGem = 0 //either +5 or +10 if its timegem
@@ -189,7 +191,7 @@ image_index = skinnum
 particle_flame_asset = asset_get_index("coord_" + string(image_index))
 particle_flame_points = path_get_number(particle_flame_asset)
 image_speed = 0
-image_xscale = .5 //Gem sprites are 256x256, so we need to scale them to 64
+image_xscale = .5 //scale gems to 64px
 image_yscale = .5
 #endregion
 
@@ -220,16 +222,15 @@ function EV_gem_STEP() {
 		deplete_glow_frames()
 	}
 
-	var accspeed = Gamerule_1.isReplay ? 0.3 : 0.6; //default speed acceleration = 0.6
-	modifier = Gamerule_1.isReplay ? 2 : 1; //speed slow-mo modifier. 1 = normal, 2 = half the speed
+	var accspeed = accspeed_alpha * MyGamerule.speed_modifier
 
 	var am_countdown_gem = (amBomb || isDoom() || isSkull())
 	if (am_countdown_gem) //if I am bomb or doom or skull
 	{
-		bombAngryStep()
+		bombAngryStep() //create angry smoke particles if its bomb
 		if (!bombappear && amBomb) //if its the first time I appear and I am a bomb
 		{
-			if MyGamerule.IsGemActive //wait until I am stationary
+			if (MyGamerule.IsGemActive) //wait until I am stationary
 			{
 				instance_create(x,y,obj_gemoutlines) //create a bomb outline effect
 				bombappear = true //no more first time appear checking
@@ -305,14 +306,14 @@ function EV_gem_STEP() {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////	
 function EV_gem_ALARM5(){
 	/// @description MATCH ANIM
-	var modi = modifier
+	var modi = MyGamerule.speed_modifier
 	if instance_exists(MyPlayer.gemtomove1) && instance_exists(MyPlayer.gemtomove2)
 	{
 		var a = animcurve_channel_evaluate(global.match_curve, percent) 
 		SWAP_X = lerp(0, SWAP_X_END, a) //ease_inout_sine(percent,0,SWAP_X_END,1)//round(lerp(0,SWAP_X_END,power(percent,2))) //- x
 		SWAP_Y = lerp(0, SWAP_Y_END, a) //ease_inout_sine(percent,0,SWAP_Y_END,1)//round(lerp(0,SWAP_Y_END,power(percent,2))) //- y
 
-		percent += 0.1/modi
+		percent += 0.1*modi
 
 		if percent <= 1 alarm[5] = 1
 		else
@@ -421,9 +422,11 @@ function skull_gameover_check() {
 }
 
 function gem_physics_move(accspeed) {
+	var was_stopped = (acc == 0)
 	acc += accspeed //accelerate
 	if (y + acc > MyBoard.y + 512-64) //if that acceleration will bring us under the board
 	{
+		if (!was_stopped) play_gem_hit_sound()
 		acc = 0 //stop
 		y = MyBoard.y + 512-64 //and set us to the bottom row
 	}
@@ -443,6 +446,7 @@ function gem_physics_move(accspeed) {
 			if toucher.acc = 0 //check if that gem isn't moving (which means we are going to crash on it)
 			{
 				acc = 0 //stop me
+				if (!was_stopped) play_gem_hit_sound()
 				y = toucher.y - toucher.sprite_yoffset - (sprite_height/2)//...find the other y, and depending on the y origin, move me exactly above it
 			}
 			else if acc >= toucher.acc //if the other gem is moving too with a less speed than ours (we are crashing on it)

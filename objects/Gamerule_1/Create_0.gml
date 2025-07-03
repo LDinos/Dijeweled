@@ -14,6 +14,8 @@ bombLetterAnimStep = 0.003
 	inverted_swaps = false
 #endregion
 
+speed_modifier = 1 //speed where physics and stuff are happening
+coal_speed_modifier = 1
 should_move = true //gems should be able to move physically
 points_base_value = 25; //for classic mode, add plus base value for combos that are more than 1
 points_type = 1; //different way to get points in classic mode ( = 2)
@@ -271,4 +273,9 @@ function step_bomb_letter_glow_anim() {
 	if (bombLetterAnimAlpha > 1) bombLetterAnimAlpha = 0
 	var _channel = animcurve_get_channel(anim_bomb_letter_glow, 0);
 	bombLetterAnimAlphaValue = animcurve_channel_evaluate(_channel, bombLetterAnimAlpha);
+}
+
+function set_speed_modifier() {
+	var replaymodifier = isReplay ? 0.5 : 1
+	speed_modifier = replaymodifier*coal_speed_modifier
 }

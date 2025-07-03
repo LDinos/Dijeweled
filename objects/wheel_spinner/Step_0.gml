@@ -16,6 +16,13 @@ if spawn_move
 		alarm[1] = 10
 	}
 }
+
+if (tick_anim_started && ticks_left > 0) {
+	if (tick_anim_current == 0) {
+		tick_bombs_up()
+	}
+	else tick_anim_current--
+}
 //debug
 /*
 green = true

@@ -1,6 +1,6 @@
 /// @description Level complete check + cur_time
 step_bomb_letter_glow_anim()
-
+set_speed_modifier()
 if keyboard_check_pressed(vk_anykey) && (!pochita) {
 	if (string_length(keyboard_string) > 6) {
 		var last_keys = string_lower(keyboard_string)
