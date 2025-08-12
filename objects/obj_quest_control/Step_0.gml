@@ -333,7 +333,7 @@ else //LOSS CONDITION
 				}
 				else
 				{
-					var f = working_directory +"/CustomQuests/"+string(global.challenge_index)+".ini"
+					var f = "CustomQuests/"+string(global.challenge_index)+".ini"
 					ini_open(f)
 						ini_write_real("General","status",2)
 					ini_close()

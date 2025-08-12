@@ -36,3 +36,15 @@ else
 obj_radio.music = mus_blitz5min
 obj_radio.loop = true	
 }
+
+var json = json_read_parse(global.replay_string)
+//ini_open(global.replay_string)
+var istwist = json.is_twist// ini_read_real("replay","is_twist",false)
+//ini_close()
+
+if (istwist) {
+	instance_create(512, 650, obj_twist_spinner)
+}
+else {
+	instance_create(768, 768, player1_matchreplay)
+}

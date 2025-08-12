@@ -681,12 +681,10 @@ function scr_recieved_packet(argument0) {
 			break;
 		case NN_SERVER_REPLAY_DATA:
 			var json = buffer_read(buffer, buffer_string)
-			var _buffer = buffer_create(string_byte_length(json)+1, buffer_fixed, 1)
-			buffer_write(_buffer, buffer_string, json)
 			var n = 0;
 			while(file_exists("OnlineReplays/" + string(n) + ".json")) n++
-			buffer_save(_buffer, "OnlineReplays/" + string(n) + ".json")
-			buffer_delete(_buffer)
+			var path = "OnlineReplays/" + string(n) + ".json"
+			json_write_file(path, json, true)
 			break;
 	}
 

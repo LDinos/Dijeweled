@@ -1,32 +1,40 @@
-//
-// Simple passthrough fragment shader
-//
-varying vec2 v_vTexcoord;
+// https://www.shadertoy.com/view/W3GSRc
 uniform float u_time;
-
-vec3 hsv2rgb(vec3 c) {
-    vec3 rgb = clamp(abs(mod(c.x * 6.0 + vec3(0, 4, 2), 6.0) - 3.0) - 1.0, 0.0, 1.0);
-    return c.z * mix(vec3(1.0), rgb, c.y);
-}
+uniform vec2 u_resolution;
 
 void main() {
-    vec2 uv = v_vTexcoord * 5.0;
-    float time = u_time * 0.2;
-    // Plasma base pattern (combined sine waves)
-    float val = sin(uv.x + time)
-              + sin(uv.y + time * 1.2)
-              + sin(uv.x + uv.y + time * 0.7)
-              + cos(length(uv) + time * 0.5);
+    vec2 p = gl_FragCoord.xy;
+    vec2 v = u_resolution.xy;
 
-    val /= 4.0;
+    // set position
+    p = (p - v * 0.5) * 0.1 / v.y;
 
-    // Shift hue over time, based on plasma distortion
-    float hue = mod(val * 0.5 + time * 0.05, 1.0);
+    // breathing effect
+    p += p * sin(dot(p, p) * 20.0) * 0.01;
 
-    // Lower value and clamp for more saturated color
-    float value = 0.6 + 0.3 * val;  // range ~0.3–0.9
-    float saturation = 1.0;
+    // accumulate color
+    vec4 c = vec4(0.0);
 
-    vec3 color = hsv2rgb(vec3(hue, saturation, clamp(value, 0.0, 1.0)));
-    gl_FragColor = vec4(color, 1.0);
+    for (int ii = 0; ii < 8; ii++) {
+        float i = float(ii) + 0.5;
+
+        // fractal formula and rotation
+        p = abs(2.0 * fract(p - 0.5) - 1.0) * 
+            mat2(
+                cos(0.004 * (u_time) * i * i + 0.78),
+                cos(0.004 * (u_time) * i * i + 0.78 * 7.0),
+                cos(0.004 * (u_time) * i * i + 0.78 * 3.0),
+                cos(0.004 * (u_time) * i * i + 0.78)
+            );
+
+        // coloration
+        c += exp(-abs(p.y) * 9.0) * 
+             (cos(vec4(2.0, 1.0, 0.3, 0.0) * i) * 0.3 + 0.1);
+    }
+
+    // palette
+    c.gb *= 0.5;
+	c.a = 1.0;
+
+    gl_FragColor = c;
 }

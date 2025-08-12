@@ -7,6 +7,6 @@ centerize_text() //make v_align and h_align centred
 
 draw_set_font(font0)
 draw_self()
-var text = "ONLINE"
-with(obj_replaylist) if (!local_list) text = "LOCAL"
+var text = next_button_text[0]
+with(obj_replaylist) text = other.next_button_text[list_type]
 draw_text(x_center,y_center,text)

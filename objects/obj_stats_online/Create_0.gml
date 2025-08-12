@@ -18,6 +18,7 @@ buffer = buffer_create(1,buffer_grow,1)
 ini_open("settings.ini")
 var ip_string = ini_read_string("Settings","stats_server","ldinos.ddns.net")
 var ip = network_resolve(ip_string)
+show_debug_message(ip)
 ini_close()
 network_connect_raw_async(client_socket, ip, 6970)
 
@@ -37,6 +38,7 @@ function request_stats() {
 	stats_board = []
 	stats_page = 0
 	var request = {
+		"request": "retrieve_stats",
 		"gamemode" : "stats",
 		"type" : stats_array[stats_index]
 	}

@@ -37,11 +37,11 @@ global.button_group = {
 	"single" : [obj_button_secret, obj_button_arcade, obj_button_blitz,
 				obj_button_classic, obj_button_challenge, obj_button_zen, obj_button_back],
 	"blitz" : [noone, noone, obj_button_1min,
-				obj_button_3min, obj_button_5min, noone, obj_button_back],
+				obj_button_3min, obj_button_5min, obj_button_blitz_twist, obj_button_back],
 	"secret" : [obj_button_countdown, obj_button_twist, obj_button_compact,
 				obj_button_swift, obj_button_survivor, obj_button_buyo, obj_button_back],
 	"online" : [noone, noone, obj_button_dedicated, obj_button_join, obj_button_host, noone, obj_button_back],
-	"replays" : [noone, noone, noone, noone, noone, obj_button_online_replays, obj_button_back],
+	"replays" : [noone, noone, noone, noone, obj_button_online_replays, obj_button_search_replays, obj_button_back],
 	"replay_save" : [obj_replaysave_continue, obj_replaysave_cancel],
 	"tfjeweled" : [noone, noone, obj_button_tfj_refresh, obj_button_tfj_join, obj_button_tfj_host, noone, obj_button_back]
 }

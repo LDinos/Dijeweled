@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"write_replay_local",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"write_replay_local",
+  "parent":{
+    "name":"Algorithms",
+    "path":"folders/Scripts/Algorithms.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

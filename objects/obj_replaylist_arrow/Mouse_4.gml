@@ -1,18 +1,5 @@
 /// @description Insert description here
-if image_index = 0 //down
-{
-	with(obj_replaylist)
-	{
-		if array_length_1d(mystring) > page*15
-		{
-			page++
-		}
-	}
-}
-else
-{
-	with(obj_replaylist)
-	{
-		if page != 1 page--
-	}
-}
+if (!global.canbepressed) exit;
+var increment = (image_index == 0) ? 1 : -1
+with(obj_replaylist) change_page(increment)
+

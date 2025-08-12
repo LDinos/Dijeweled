@@ -1,6 +1,6 @@
 /* PURPOSE */
 //Just a box holding general info in Quest Editor. It also holds info for a loaded custom quest when its being edited
-filename = working_directory +"/CustomQuests/"+string(global.challenge_index)+".ini"
+filename = "CustomQuests/"+string(global.challenge_index)+".ini"
 canclick = true
 
 //Every change we make, it is written in this struct immediately

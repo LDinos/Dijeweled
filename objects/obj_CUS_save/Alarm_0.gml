@@ -1,4 +1,4 @@
-var f = working_directory +"/CustomQuests/"+string(global.challenge_index) + ".ini" //UNCOMMENT ME \\
+var f = "CustomQuests/"+string(global.challenge_index) + ".ini" //UNCOMMENT ME \\
 ini_open(f)
 	#region GENERAL
 		var s = "General"

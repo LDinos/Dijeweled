@@ -9,7 +9,7 @@ for(var i = 0; i < parameter_count(); i++) {
 }
 
 global.version = "1.18" //dont forget to upload vercheck and change windows version on game options!
-
+global.blitz_twist = false //are we initiating a blitz game with twist enabled?
 global.canbepressed = false
 global.vsync_checked_once = false
 global.mynet = noone

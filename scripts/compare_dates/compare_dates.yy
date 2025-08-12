@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"compare_dates",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"compare_dates",
+  "parent":{
+    "name":"Algorithms",
+    "path":"folders/Scripts/Algorithms.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

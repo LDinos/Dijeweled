@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_goo",
+  "name":"shd_goo",
+  "parent":{
+    "name":"Backdrops",
+    "path":"folders/Shaders/Backdrops.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

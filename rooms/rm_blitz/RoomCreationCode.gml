@@ -7,6 +7,12 @@ Gamerule_1.blazingallowed = true
 Gamerule_1.isQuest = false
 Gamerule_1.geode_xplier = 5
 DISCORD np_setpresence("Time set: " + convert_seconds_to_time(global.timer), global.DIS_name, "ico_512", "")
+if (global.blitz_twist) {
+	instance_create(512, 650, obj_twist_spinner)
+}
+else {
+	instance_create(768, 768, player1)
+}
 
 with(obj_levelbar)
 {

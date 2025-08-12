@@ -3,7 +3,6 @@ if global.OPT_lightallowed && os_type != os_android
 {
 if shd = 0	
 {
-
 	var_mouse_pos_x = mouse_x - camera_get_view_x(0);
 	var_mouse_pos_y = mouse_y - camera_get_view_y(0);
 	var_time_var+=0.01
@@ -15,20 +14,11 @@ if shd = 0
 
 }
 else if shd = 1
-{
-	var_time_var+=0.04;
-
-	var_mouse_pos_x = mouse_x - camera_get_view_x(0);
-	var_mouse_pos_y = mouse_y - camera_get_view_y(0);
-	gpu_set_texrepeat(false);
-	if shader_enabled shader_set(shd_wave);
-	    shader_set_uniform_f(uni_time, var_time_var);
-	    shader_set_uniform_f(uni_mouse_pos, var_mouse_pos_x, var_mouse_pos_y);
-	    shader_set_uniform_f(uni_resolution, var_resolution_x, var_resolution_y);
-	    shader_set_uniform_f(uni_wave_amount, var_wave_amount);
-	    shader_set_uniform_f(uni_wave_distortion, var_wave_distortion );
-	    shader_set_uniform_f(uni_wave_speed, var_wave_speed);
-		draw_sprite_ext(spr_bck1,0,x,y,1.2,1.2,0,c_white,1)
+{	
+	shader_set(shd_goo);
+		shader_set_uniform_f(goo_u_time, current_time/1000);
+		shader_set_uniform_f(goo_u_resolution, camera_get_view_width(0), camera_get_view_height(0));
+		draw_rectangle(0, 0, room_width, room_height, false);
 	shader_reset();
 }
 else if shd = 2
@@ -66,12 +56,6 @@ else if shd = 6
 }
 else if shd = 7
 {
-	/*
-	shader_set(shd_starfield) 
-		shader_set_uniform_f(Res,512,512,0); 
-		shader_set_uniform_f(Time,current_time/5000); 
-		draw_self();
-	shader_reset();*/
 	shader_set(shd_starlight) 
 		shader_set_uniform_f(Res_starlight,512,512,0); 
 		shader_set_uniform_f(Time_starlight,current_time/1000); 
@@ -80,28 +64,26 @@ else if shd = 7
 }
 else if shd = 8 {
 	shader_set(shd_starbust) 
-		//shader_set_uniform_f(Res_starlight,512,512,0); 
+		shader_set_uniform_f(starbust_res,1280,720,0); 
 		shader_set_uniform_f(starbust_time,current_time/1000); 
-		draw_self(); 
+		draw_sprite_ext(spr_black,0,0,0,room_width,room_height,0,c_white,1)
+		//draw_self(); 
 	shader_reset(); 
 }
 else if shd = 9 {
 	shader_set(shd_wavegrid) 
-		//shader_set_uniform_f(Res_starlight,512,512,0); 
 		shader_set_uniform_f(wavegrid_time,current_time/1000); 
 		draw_self(); 
 	shader_reset(); 
 }
 else if shd = 10 {
 	shader_set(shd_fog) 
-		//shader_set_uniform_f(Res_starlight,512,512,0); 
 		shader_set_uniform_f(fog_time,current_time/2500); 
 		draw_self(); 
 	shader_reset(); 
 }
 else if shd = 11 {
 	shader_set(shd_candle) 
-		//shader_set_uniform_f(Res_starlight,512,512,0); 
 		shader_set_uniform_f(candle_time,current_time/2500); 
 		draw_self(); 
 	shader_reset(); 

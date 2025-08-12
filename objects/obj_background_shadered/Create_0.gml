@@ -60,7 +60,7 @@ part_type_speed(laser_part,3,3,0,0)
 
 depth = 10
 num_shaders = 11 //0,1,2...
-shd = 11 //irandom_range(0,num_shaders)
+shd = irandom_range(0,num_shaders)
 
 /*0*/
 uni_time_2 = shader_get_uniform(shdr_backdrop1,"iTime");
@@ -90,6 +90,10 @@ var_wave_speed = .5; //higher = faster
 shader_enabled = true
 /**/
 
+/*goo*/
+
+goo_u_time = shader_get_uniform(shd_goo, "u_time");
+goo_u_resolution = shader_get_uniform(shd_goo, "u_resolution");
 
 /*3*/
 uni_time_3 = shader_get_uniform(shdr_backdrop2,"iTime");
@@ -107,6 +111,7 @@ Time_starlight = shader_get_uniform(shd_starlight,"iGlobalTime");
 
 /*8*/
 starbust_time = shader_get_uniform(shd_starbust, "u_time");
+starbust_res = shader_get_uniform(shd_starbust, "u_resolution");
 
 /*9*/
 wavegrid_time = shader_get_uniform(shd_wavegrid, "u_time");

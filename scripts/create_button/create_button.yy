@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"create_button",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"create_button",
+  "parent":{
+    "name":"Algorithms",
+    "path":"folders/Scripts/Algorithms.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
