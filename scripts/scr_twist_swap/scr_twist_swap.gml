@@ -33,5 +33,5 @@ function scr_twist_swap(argument0, argument1) {
 		gemyy[3] = gems[3].y 
 	}
 
-
+	
 }

@@ -5,6 +5,17 @@
 	var key_left = keyboard_swap_check(vk_left,Gamerule_1) || gamepad_button_swap_check(global.gp[0],gp_padl,Gamerule_1);
 	var key_down = keyboard_swap_check(vk_down,Gamerule_1) || gamepad_button_swap_check(global.gp[0],gp_padd,Gamerule_1);
 	var key_up = keyboard_swap_check(vk_up,Gamerule_1) || gamepad_button_swap_check(global.gp[0],gp_padu,Gamerule_1);
+	// Wheel spinner control with gamepad
+	if( (gamepad_button_swap_check(global.gp[0], global.GP_swapright, Gamerule_1))
+		|| (gamepad_button_swap_check(global.gp[0], global.GP_swapdown, Gamerule_1))
+		|| (gamepad_button_swap_check(global.gp[0], global.GP_swapup, Gamerule_1))
+		|| (gamepad_button_swap_check(global.gp[0], global.GP_swapleft, Gamerule_1)) )
+	{
+		if (instance_exists(wheel_butt)) {
+			wheel_butt.press();
+		}
+	}
+	//
 	var mx = mouse_x;
 	var my = mouse_y;
 	var cycle_cw = gamepad_button_swap_check_pressed(global.gp[0], global.GP_clockwise2,Gamerule_1) || gamepad_button_swap_check_pressed(global.gp[0], global.GP_clockwise1,Gamerule_1) || keyboard_swap_check_pressed(vk_space,Gamerule_1);
@@ -50,7 +61,30 @@
 	}
 #endregion
 
-if (prev_mousey != my || prev_mousex != mx)
+if (global.replay_match_isplaying) {
+	key_right = false
+	key_left = false
+	key_down = false
+	key_up = false
+	cycle_cw = false
+	cycle_ccw = false
+	var cur = Gamerule_1.cur_time
+
+	if ds_map_exists(Replay_load, string(cur))
+	{
+		replay_posi = Replay_load[? "pos_i" + string(cur)]
+		replay_posj = Replay_load[? "pos_j" + string(cur)]
+		var replaycc = Replay_load[? "cc_" + string(cur)]
+		if (replaycc == 1) {
+			cycle_cw = true
+		}
+		else {
+			cycle_ccw = true
+		}
+	}
+}
+
+if (prev_mousey != my || prev_mousex != mx || global.replay_match_isplaying)
 {
 	keyboard_control = false
 }
@@ -62,8 +96,8 @@ var prevj = pos_j
 
 if !keyboard_control
 {
-pos_j = (mx - Board_1.x) div 64
-pos_i = (my - Board_1.y) div 64
+pos_j = global.replay_match_isplaying ? replay_posj : ((mx - Board_1.x) div 64)
+pos_i = global.replay_match_isplaying ? replay_posi : ((my - Board_1.y) div 64)
 }
 
 	#region keyboard/gamepad
@@ -179,6 +213,20 @@ if !out_of_bounds
 				{
 					scr_twist_swap(gems,cc)
 				}
+				#region match_replay
+					if (global.replay_match_allowed && !global.replay_match_isplaying)
+					{
+						ds_map_add(Gamerule_1.Replay_match_map,string(Gamerule_1.cur_time),Gamerule_1.cur_time)
+						var key = "gamepad" + string(Gamerule_1.cur_time)
+						ds_map_add(Gamerule_1.Replay_match_map,key,false)
+						var key = "pos_i" + string(Gamerule_1.cur_time)
+						ds_map_add(Gamerule_1.Replay_match_map,key,pos_i)
+						key = "pos_j" + string(Gamerule_1.cur_time)
+						ds_map_add(Gamerule_1.Replay_match_map,key,pos_j)
+						key = "cc_" + string(Gamerule_1.cur_time)
+						ds_map_add(Gamerule_1.Replay_match_map,key,cc)
+					}
+				#endregion
 				with(Gamerule_1)
 				{
 					if !isReplay

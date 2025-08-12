@@ -11,10 +11,11 @@ if global.replay_match_isplaying
 {
 	
 	Replay_load = ds_map_create()
-	ini_open(global.replay_string)
-		var sect = ini_read_string("replay","data","-")
+	var json = json_read_parse(global.replay_string)
+	//ini_open(global.replay_string)
+		var sect = json.data//ini_read_string("replay","data","-")
 		ds_map_read(Replay_load,sect)
-	ini_close()
+	//ini_close()
 	
 	num_of_challenges_cur = 1
 	num_of_challenges =  Replay_load[? "num_of_challenges"]

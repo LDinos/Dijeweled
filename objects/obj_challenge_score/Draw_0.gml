@@ -199,7 +199,6 @@ if quest.C_destroy_lightning != -1
 	var t = "Lightnings Destroyed: " + string(quest.S_destroyed_lights)
 	var s = string_width(t + rem) > w ? w/string_width(t + rem) : 1
 	draw_sprite(sprite_index,0,x,y + i*sprite_height)
-	draw_text(xcenter,ycenter +i*sprite_height,"Lightnings Destroyed: " + string(quest.S_destroyed_lights))
 	draw_text_transformed(xcenter,ycenter +i*sprite_height,t + rem, s, s, 0)
 	i++
 }

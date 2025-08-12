@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"json_read_parse",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"json_read_parse",
+  "parent":{
+    "name":"Algorithms",
+    "path":"folders/Scripts/Algorithms.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -5,7 +5,7 @@ function load_custom_quest(argument0) {
 	obj_quest_control.custom_quest = false
 	if argument0 //if is custom quest
 	{
-		file = working_directory +"/CustomQuests/"+string(global.challenge_index)+".ini"; //path for custom quests
+		file = "CustomQuests/"+string(global.challenge_index)+".ini"; //path for custom quests
 		obj_quest_control.custom_quest = true
 	
 	}

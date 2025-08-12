@@ -1,4 +1,5 @@
 /// @description Insert description here
+if (global.replay_match_isplaying) exit;
 #region keyboard/gamepad
 	var pres = false
 	if keyboard_check(vk_right) || gamepad_button_check(global.gp[0],gp_padr) {if pos_j < 6 pos_j++; keyboard_control = true; pres = true}

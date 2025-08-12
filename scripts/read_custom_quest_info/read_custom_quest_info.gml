@@ -1,6 +1,6 @@
 ///Used in quest menu, load all the info we need aka descriptions, allowances etc
 function read_custom_quest_info() {
-	var f = working_directory +"/CustomQuests/"+string(index)+".ini"
+	var f = "CustomQuests/"+string(index)+".ini"
 	if file_exists(f)
 	{
 		ini_open(f)

@@ -36,7 +36,7 @@ if global.timer > 0
 else 
 {
 	audio_play_sound(vo_timeup,0,false)
-	create_textellent("TIME UP!")
+	create_textellent_winner("TIME UP!")
 	if (!global.spectator) {
 		Gamerule_1.controlallowed = false; 
 		if !global.online {Gamerule_local.controlallowed = false; instance_create(x,y,obj_lasthur_local)}

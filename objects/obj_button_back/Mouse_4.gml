@@ -18,6 +18,7 @@ if global.canbepressed {
 		with(obj_replaylist) instance_destroy()
 		global.replay_match_allowed = false
 		with(obj_button_online_replays) instance_destroy()
+		with(obj_button_search_replays) instance_destroy()
 		with(obj_challenges_room) instance_destroy()
 		with(obj_challenges_selection) instance_destroy()
 	}

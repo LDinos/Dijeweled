@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"json_write_file",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"json_write_file",
+  "parent":{
+    "name":"Algorithms",
+    "path":"folders/Scripts/Algorithms.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

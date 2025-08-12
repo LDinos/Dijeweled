@@ -82,8 +82,8 @@ if !amInvisible
 				draw_set_font(fnt_open24display)
 				centerize_text()
 				draw_sprite_ext(spr_doomgem,skinnum,X,Y,image_xscale,image_yscale,0,c_white,1)
-				draw_text_outline(X,Y,countdown,c_white,c_black)
-				draw_text_outline_alpha(X,Y,countdown,c_red,c_white,MyGamerule.bombLetterAnimAlphaValue)
+				draw_text_outline(X,Y-4,countdown,c_white,c_black)
+				draw_text_outline_alpha(X,Y-4,countdown,c_red,c_white,MyGamerule.bombLetterAnimAlphaValue)
 				draw_set_font(font0)
 			}
 			else if amLocked = 3

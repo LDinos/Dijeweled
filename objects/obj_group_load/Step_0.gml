@@ -2,6 +2,7 @@
 // You can write your code in this editor
 if audio_group_is_loaded(audiogroup_music) && audio_group_is_loaded(audiogroup_voice)
 {
+	var roomtogo = global.debug ? rm_menu : rm_intro
 	var newuser = false
 		ini_open("settings.ini")
 			var marg = ini_read_real("Settings","SleepMargin",15)
@@ -16,6 +17,6 @@ if audio_group_is_loaded(audiogroup_music) && audio_group_is_loaded(audiogroup_v
 		ini_close()
 
 	if newuser instance_create(0,0,obj_newuser)
-	else room_goto(rm_intro)
+	else room_goto(roomtogo)
 	instance_destroy()
 }

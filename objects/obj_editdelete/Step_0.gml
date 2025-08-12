@@ -7,7 +7,7 @@ if amontop
 		{
 			if image_index = 1 //delete
 			{
-				var f = working_directory +"/CustomQuests/"+string(index) + ".ini"
+				var f = "CustomQuests/"+string(index) + ".ini"
 				file_delete(f)
 				with(obj_challenges_selection) if (index = other.index)
 				{

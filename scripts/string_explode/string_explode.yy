@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"string_explode",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"string_explode",
+  "parent":{
+    "name":"Algorithms",
+    "path":"folders/Scripts/Algorithms.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

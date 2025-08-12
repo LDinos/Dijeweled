@@ -1,7 +1,7 @@
 function create_deledit(argument0) {
 	with(obj_challenges_selection)
 	{
-		var filename = working_directory +"/CustomQuests/"+string(index)+".ini"
+		var filename = "CustomQuests/"+string(index)+".ini"
 		if file_exists(filename)
 		{
 			ini_open(filename)

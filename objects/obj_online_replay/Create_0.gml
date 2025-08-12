@@ -6,29 +6,34 @@ var _buffer = buffer_load(global.online_replay_string)
 var _string = buffer_read(_buffer, buffer_string)
 buffer_delete(_buffer)
 var json = json_parse(_string)
-global.user1 = json[$ "player1_name"]
-global.user2 = json[$ "player2_name"]
-player1_map = json[$ "player1"]
-player2_map = json[$ "player2"]
+var data = json.data;
+if (typeof(json.data) == "string") {
+	data = json_parse(json.data)
+} 
+
+global.user1 = data[$ "player1_name"]
+global.user2 = data[$ "player2_name"]
+player1_map = data[$ "player1"]
+player2_map = data[$ "player2"]
 global.spectator = true
 global.online = true
 
-global.SET_ultranovas = json[$ "ultranovas_allowed"]
-global.SET_blazing = json[$ "blazing_allowed"]
-global.SET_gamemode = json[$ "gamemode"]
-global.SET_multiswap = json[$ "multiswap_allowed"]
-global.SET_hyper = json[$ "hypercubes_allowed"]
-global.SET_matchless = json[$ "matchless_allowed"]
-global.SET_skin = json[$ "skins"]
+global.SET_ultranovas = data[$ "ultranovas_allowed"]
+global.SET_blazing = data[$ "blazing_allowed"]
+global.SET_gamemode = data[$ "gamemode_value"]
+global.SET_multiswap = data[$ "multiswap_allowed"]
+global.SET_hyper = data[$ "hypercubes_allowed"]
+global.SET_matchless = data[$ "matchless_allowed"]
+global.SET_skin = data[$ "skins"]
 Gamerule_1.num_skin = global.SET_skin-1
-global.SET_gamemode2 = json[$ "gamemode_val"]
+global.SET_gamemode2 = data[$ "gamemode_type"]
 global.IAMHOST = false
-avalanche_turns = json[$ "avalanche_turns"]
+avalanche_turns = data[$ "avalanche_turns"]
 
 timer_enabled = false
 timer = 0
-timer_end = json[$ "game_end"]
-var seed = json[$ "seed"]
+timer_end = data[$ "game_end"]
+var seed = data[$ "seed"]
 random_set_seed(seed)
 alarm[0] = 60*3
 var istop = 8
